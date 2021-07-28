@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSReportTo" targetNamespace="http://tempuri.org/DSReportTo.xsd" xmlns:mstns="http://tempuri.org/DSReportTo.xsd" xmlns="http://tempuri.org/DSReportTo.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="HRMSCon" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HRMSCon (MySettings)" PropertyReference="ApplicationSettings.ERP_HRMS.My.MySettings.GlobalReference.Default.HRMSCon" Provider="System.Data.Odbc" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="View_Emp_Report_TOTableAdapter" GeneratorDataComponentClassName="View_Emp_Report_TOTableAdapter" Name="View_Emp_Report_TO" UserDataComponentName="View_Emp_Report_TOTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HRMSCon (MySettings)" DbObjectName="HRMS.dbo.View_Emp_Report_TO" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        CardNo, Name
+FROM            View_Emp_Report_TO
+ORDER BY CardNo</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CardNo" DataSetColumn="CardNo" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSReportTo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSReportTo" msprop:Generator_UserDSName="DSReportTo">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="View_Emp_Report_TO" msprop:Generator_TableClassName="View_Emp_Report_TODataTable" msprop:Generator_TableVarName="tableView_Emp_Report_TO" msprop:Generator_TablePropName="View_Emp_Report_TO" msprop:Generator_RowDeletingName="View_Emp_Report_TORowDeleting" msprop:Generator_RowChangingName="View_Emp_Report_TORowChanging" msprop:Generator_RowEvHandlerName="View_Emp_Report_TORowChangeEventHandler" msprop:Generator_RowDeletedName="View_Emp_Report_TORowDeleted" msprop:Generator_UserTableName="View_Emp_Report_TO" msprop:Generator_RowChangedName="View_Emp_Report_TORowChanged" msprop:Generator_RowEvArgName="View_Emp_Report_TORowChangeEvent" msprop:Generator_RowClassName="View_Emp_Report_TORow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CardNo" msprop:Generator_ColumnVarNameInTable="columnCardNo" msprop:Generator_ColumnPropNameInRow="CardNo" msprop:Generator_ColumnPropNameInTable="CardNoColumn" msprop:Generator_UserColumnName="CardNo" type="xs:int" />
+              <xs:element name="Name" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="61" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:View_Emp_Report_TO" />
+      <xs:field xpath="mstns:CardNo" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

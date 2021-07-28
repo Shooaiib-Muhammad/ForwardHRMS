@@ -1,0 +1,2970 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1D622CF7-99E7-4A55-8FBC-B54B52A2C2DD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>ERP_HRMS.My.MyApplication</StartupObject>
+    <RootNamespace>ERP_HRMS</RootNamespace>
+    <AssemblyName>ERP_HRMS</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>\\Server\IT Shared\HRMS\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>true</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <UpdateUrl>\\Server\IT Shared\HRMS\</UpdateUrl>
+    <ProductName>HRMS</ProductName>
+    <PublisherName>Forward Group</PublisherName>
+    <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
+    <ApplicationRevision>781</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>ERP_HRMS.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>ERP_HRMS.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>9A1457B5B1855CE0451A87A6568F4C5D36A21DFE</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>ERP_HRMS_1_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon_n8N_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Interop.Excel2">
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio 10.0\Visual Studio Tools for Office\PIA\Office14\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Outlook, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools.Excel.v9.0, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accounts\DS\DataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\DS\DataSet2.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\DS\DataSet4.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\DS\DataSet5.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\DS\DataSet7.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\DS\DSAdvance.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSAdvance.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\DS\DSAnnualLeavesTransactions.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSAnnualLeavesTransactions.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\DS\DSCalculateSalary.vb">
+      <DependentUpon>DSCalculateSalary.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\DS\DSDeptsForPayrollReport.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSDeptsForPayrollReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\DS\DSEmpTermination.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSEmpTermination.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\DS\DSSP.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSSP.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\DS\UpGradeSalary.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UpGradeSalary.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\forms\Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\forms\Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\forms\frmAccAnnualLeaveTransactions.Designer.vb">
+      <DependentUpon>frmAccAnnualLeaveTransactions.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\forms\frmAccAnnualLeaveTransactions.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\forms\frmAdvance.Designer.vb">
+      <DependentUpon>frmAdvance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\forms\frmAdvance.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\forms\frmBonus.Designer.vb">
+      <DependentUpon>frmBonus.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\forms\frmBonus.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\DS\ACCDS.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ACCDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\DS\ACCDS.vb">
+      <DependentUpon>ACCDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\forms\frmSalaryUpgrade.Designer.vb">
+      <DependentUpon>frmSalaryUpgrade.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\forms\frmSalaryUpgrade.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\forms\frmUndoTermination1.Designer.vb">
+      <DependentUpon>frmUndoTermination1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\forms\frmUndoTermination1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\forms\SalaryManagnment.Designer.vb">
+      <DependentUpon>SalaryManagnment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\forms\SalaryManagnment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\forms\frmEmpTermination.Designer.vb">
+      <DependentUpon>frmEmpTermination.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\forms\frmEmpTermination.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\forms\frmMonthlySalary.Designer.vb">
+      <DependentUpon>frmMonthlySalary.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\forms\frmMonthlySalary.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\Reports\AdvncRptViewer.Designer.vb">
+      <DependentUpon>AdvncRptViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\Reports\AdvncRptViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\Reports\AllREpViewer.Designer.vb">
+      <DependentUpon>AllREpViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\Reports\AllREpViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\Reports\frmAdvanceReports.Designer.vb">
+      <DependentUpon>frmAdvanceReports.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\Reports\frmAdvanceReports.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\Reports\frmAllowanceReports.Designer.vb">
+      <DependentUpon>frmAllowanceReports.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\Reports\frmAllowanceReports.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\Reports\frmAnnualLeavesReports.Designer.vb">
+      <DependentUpon>frmAnnualLeavesReports.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\Reports\frmAnnualLeavesReports.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\Reports\frmOtherReports.Designer.vb">
+      <DependentUpon>frmOtherReports.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\Reports\frmOtherReports.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\Reports\frmOverTimeAcc.Designer.vb">
+      <DependentUpon>frmOverTimeAcc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\Reports\frmOverTimeAcc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\Reports\frmReportViewer.designer.vb">
+      <DependentUpon>frmReportViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\Reports\frmReportViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\Reports\frmBonusReport.Designer.vb">
+      <DependentUpon>frmBonusReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\Reports\frmBonusReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\Reports\frmSalaryReports.Designer.vb">
+      <DependentUpon>frmSalaryReports.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\Reports\frmSalaryReports.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\Reports\SalaryReportViewer.Designer.vb">
+      <DependentUpon>SalaryReportViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\Reports\SalaryReportViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\DS\DSNewAdvance.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSNewAdvance.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Att2003DataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Att2003DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Canteen\DS\DsAccessToDB.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsAccessToDB.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Canteen\DS\DSBuffetAttendance.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSBuffetAttendance.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Canteen\Form\frmBoofeMealAttendance.Designer.vb">
+      <DependentUpon>frmBoofeMealAttendance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Canteen\Form\frmBoofeMealAttendance.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Canteen\Form\frmCanteenAttAcessToDB.Designer.vb">
+      <DependentUpon>frmCanteenAttAcessToDB.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Canteen\Form\frmCanteenAttAcessToDB.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Canteen\Form\frmCanteenAttendanceUploadingBarCode.Designer.vb">
+      <DependentUpon>frmCanteenAttendanceUploadingBarCode.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Canteen\Form\frmCanteenAttendanceUploadingBarCode.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Canteen\Form\frmCanteenAttendanceUploading.Designer.vb">
+      <DependentUpon>frmCanteenAttendanceUploading.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Canteen\Form\frmCanteenAttendanceUploading.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Canteen\Reports\CanteenRepots.Designer.vb">
+      <DependentUpon>CanteenRepots.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Canteen\Reports\CanteenRepots.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contractual\ConnDS\ConnDS.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConnDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Contractual\ConnDS\DSCont.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSCont.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Contractual\Forms\frmAutoAttConnEntry.Designer.vb">
+      <DependentUpon>frmAutoAttConnEntry.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Contractual\Forms\frmAutoAttConnEntry.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contractual\Forms\frmConAttAcessToDB.Designer.vb">
+      <DependentUpon>frmConAttAcessToDB.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Contractual\Forms\frmConAttAcessToDB.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contractual\Forms\frmConAttCorrection.Designer.vb">
+      <DependentUpon>frmConAttCorrection.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Contractual\Forms\frmConAttCorrection.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contractual\Forms\frmConPayrollManagment.Designer.vb">
+      <DependentUpon>frmConPayrollManagment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Contractual\Forms\frmConPayrollManagment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contractual\Forms\frmContPayment.Designer.vb">
+      <DependentUpon>frmContPayment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Contractual\Forms\frmContPayment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSVisitors.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSVisitors.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Evo\DS\DataSet6.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Evo\DS\DSemployeeSelfAss.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSemployeeSelfAss.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Evo\DS\DSEMS.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSEMS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Evo\Forms\EmployeeEvaluationForm.Designer.vb">
+      <DependentUpon>EmployeeEvaluationForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Evo\Forms\EmployeeEvaluationForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Evo\Forms\FrmEmpEval.Designer.vb">
+      <DependentUpon>FrmEmpEval.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Evo\Forms\FrmEmpEval.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Evo\Forms\frmSelfAssessment.Designer.vb">
+      <DependentUpon>frmSelfAssessment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Evo\Forms\frmSelfAssessment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GateVisitors\frmGateVisitors.Designer.vb">
+      <DependentUpon>frmGateVisitors.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GateVisitors\frmGateVisitors.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GateVisitors\VisitiorsReports.Designer.vb">
+      <DependentUpon>VisitiorsReports.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GateVisitors\VisitiorsReports.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grievance System\DS\DSEmpEval.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSEmpEval.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Grievance System\DS\DSGrievance.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSGrievance.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Grievance System\Forms\EmployeeGrievanceSystem.Designer.vb">
+      <DependentUpon>EmployeeGrievanceSystem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Grievance System\Forms\EmployeeGrievanceSystem.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grievance System\Forms\frmGrievanceCategory.Designer.vb">
+      <DependentUpon>frmGrievanceCategory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Grievance System\Forms\frmGrievanceCategory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grievance System\Forms\GrivanceReports.Designer.vb">
+      <DependentUpon>GrivanceReports.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Grievance System\Forms\GrivanceReports.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRM\DS\BloodDoner.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BloodDoner.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\DS\COnDS.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>COnDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\DS\DSContractPrd.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSContractPrd.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\DS\DSContractual.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSContractual.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\DS\DSDept.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSDept.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\DS\DSEMP.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSEMP.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\DS\DSEMP.vb">
+      <DependentUpon>DSEMP.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\DS\DSEmpEvaluation.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSEmpEvaluation.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\DS\DSLongLeaves.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSLongLeaves.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\DS\DSPESSI.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSPESSI.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\DS\DSReportTo.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSReportTo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\DS\DSRPTTO.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSRPTTO.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\DS\EMail.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EMail.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\DS\Termination.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Termination.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\Forms\cardprinting.Designer.vb">
+      <DependentUpon>cardprinting.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\Forms\cardprinting.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRM\Forms\Contractual.Designer.vb">
+      <DependentUpon>Contractual.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\Forms\Contractual.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRM\Forms\EvoEmail.Designer.vb">
+      <DependentUpon>EvoEmail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\Forms\EvoEmail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRM\Forms\FrmBloodDoner.Designer.vb">
+      <DependentUpon>FrmBloodDoner.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\Forms\FrmBloodDoner.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRM\Forms\FrmDisability.Designer.vb">
+      <DependentUpon>FrmDisability.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\Forms\FrmDisability.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRM\Forms\FrmDoner.Designer.vb">
+      <DependentUpon>FrmDoner.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\Forms\FrmDoner.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRM\Forms\frmEmpEvaluation.Designer.vb">
+      <DependentUpon>frmEmpEvaluation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\Forms\frmEmpEvaluation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRM\Forms\FrmEmployeeSaveAs.Designer.vb">
+      <DependentUpon>FrmEmployeeSaveAs.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\Forms\FrmEmployeeSaveAs.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRM\Forms\frmGradeUPgrade.Designer.vb">
+      <DependentUpon>frmGradeUPgrade.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\Forms\frmGradeUPgrade.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contractual\Forms\Contractualinfo.Designer.vb">
+      <DependentUpon>Contractualinfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Contractual\Forms\Contractualinfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRM\Forms\frmPESSI.Designer.vb">
+      <DependentUpon>frmPESSI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\Forms\frmPESSI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRM\Forms\frmSMSPortal.Designer.vb">
+      <DependentUpon>frmSMSPortal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\Forms\frmSMSPortal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRM\Forms\frmtermination.Designer.vb">
+      <DependentUpon>frmtermination.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\Forms\frmtermination.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRM\Forms\test.Designer.vb">
+      <DependentUpon>test.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\Forms\test.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRM\Reports\EOBIReports.Designer.vb">
+      <DependentUpon>EOBIReports.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\Reports\EOBIReports.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contractual\Forms\frmContManagment.Designer.vb">
+      <DependentUpon>frmContManagment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Contractual\Forms\frmContManagment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRM\Reports\frmRptEmpEvaluation.Designer.vb">
+      <DependentUpon>frmRptEmpEvaluation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\Reports\frmRptEmpEvaluation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRM\Reports\HRAllowance.Designer.vb">
+      <DependentUpon>HRAllowance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\Reports\HRAllowance.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kaizen\DS\DSKAIZENRpt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSKAIZENRpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="kaizen\DS\DSTeamWork.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSTeamWork.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="kaizen\Forms\frmFormalKaizenWalk.Designer.vb">
+      <DependentUpon>frmFormalKaizenWalk.vb</DependentUpon>
+    </Compile>
+    <Compile Include="kaizen\Forms\frmFormalKaizenWalk.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kaizen\Forms\frmkaizen.Designer.vb">
+      <DependentUpon>frmkaizen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="kaizen\Forms\frmkaizen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kaizen\Forms\frmKAIZENideas.Designer.vb">
+      <DependentUpon>frmKAIZENideas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="kaizen\Forms\frmKAIZENideas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kaizen\Forms\frmKAIZENReports.Designer.vb">
+      <DependentUpon>frmKAIZENReports.vb</DependentUpon>
+    </Compile>
+    <Compile Include="kaizen\Forms\frmKAIZENReports.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\DSUM.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSUM.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Login\FrmLockUser.Designer.vb">
+      <DependentUpon>FrmLockUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login\FrmLockUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\FrmReset.Designer.vb">
+      <DependentUpon>FrmReset.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login\FrmReset.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\frmResetPWd.Designer.vb">
+      <DependentUpon>frmResetPWd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login\frmResetPWd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\FrmUserMgt.Designer.vb">
+      <DependentUpon>FrmUserMgt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login\FrmUserMgt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Madication\DS\DSMedication.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSMedication.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Madication\Forms\FrmFormacy.Designer.vb">
+      <DependentUpon>FrmFormacy.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Madication\Forms\FrmFormacy.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Madication\Forms\frmMadication.Designer.vb">
+      <DependentUpon>frmMadication.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Madication\Forms\frmMadication.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Madication\Forms\frmMadicationIN.Designer.vb">
+      <DependentUpon>frmMadicationIN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Madication\Forms\frmMadicationIN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Madication\Forms\frmMadicationRecord1.Designer.vb">
+      <DependentUpon>frmMadicationRecord1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Madication\Forms\frmMadicationRecord1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Madication\Forms\frmMediIN.Designer.vb">
+      <DependentUpon>frmMediIN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Madication\Forms\frmMediIN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Madication\Forms\Newmaterial.Designer.vb">
+      <DependentUpon>Newmaterial.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Madication\Forms\Newmaterial.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Madication\Reports\mediReports.Designer.vb">
+      <DependentUpon>mediReports.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Madication\Reports\mediReports.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayRoll\DS\DSAttAdj.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSAttAdj.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PayRoll\DS\DSAttAdj.vb">
+      <DependentUpon>DSAttAdj.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PayRoll\DS\DSExcelEmpData.vb">
+      <DependentUpon>DSExcelEmpData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PayRoll\forms\frmAttAcessToDBOld.Designer.vb">
+      <DependentUpon>frmAttAcessToDBOld.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PayRoll\forms\frmAttAcessToDBOld.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayRoll\forms\frmAutoAttEmpEntry.Designer.vb">
+      <DependentUpon>frmAutoAttEmpEntry.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PayRoll\forms\frmAutoAttEmpEntry.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayRoll\forms\frmAutoAttEntry.Designer.vb">
+      <DependentUpon>frmAutoAttEntry.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PayRoll\forms\frmAutoAttEntry.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayRoll\forms\frmEmpDataToExcel.Designer.vb">
+      <DependentUpon>frmEmpDataToExcel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PayRoll\forms\frmEmpDataToExcel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayRoll\forms\frmInenstive.Designer.vb">
+      <DependentUpon>frmInenstive.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PayRoll\forms\frmInenstive.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayRoll\forms\frmPayRollShortLeave.Designer.vb">
+      <DependentUpon>frmPayRollShortLeave.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PayRoll\forms\frmPayRollShortLeave.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayRoll\forms\frmShiftUpgrade.Designer.vb">
+      <DependentUpon>frmShiftUpgrade.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PayRoll\forms\frmShiftUpgrade.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayRoll\DS\att2000DataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>att2000DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\DS\DSBonus.Designer.vb">
+      <DependentUpon>DSBonus.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Accounts\forms\frmAutoSalCalculation.Designer.vb">
+      <DependentUpon>frmAutoSalCalculation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\forms\frmAutoSalCalculation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\forms\frmDeductions.Designer.vb">
+      <DependentUpon>frmDeductions.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\forms\frmDeductions.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\forms\frmExtraOTCalculation.designer.vb">
+      <DependentUpon>frmExtraOTCalculation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\forms\frmExtraOTCalculation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\forms\frmManageSalary.Designer.vb">
+      <DependentUpon>frmManageSalary.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\forms\frmManageSalary.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\forms\frmSalaryAdjustment.Designer.vb">
+      <DependentUpon>frmSalaryAdjustment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\forms\frmSalaryAdjustment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\forms\frmSalaryTransactions.Designer.vb">
+      <DependentUpon>frmSalaryTransactions.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\forms\frmSalaryTransactions.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\forms\frmUndoTermination.Designer.vb">
+      <DependentUpon>frmUndoTermination.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\forms\frmUndoTermination.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRM\Forms\App Authourity.Designer.vb">
+      <DependentUpon>App Authourity.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\Forms\App Authourity.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Classes\UtilityClass.vb" />
+    <Compile Include="Accounts\DS\DSCalculateSalary.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSCalculateSalary.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\DS\DSLogin.Designer.vb">
+      <DependentUpon>DSLogin.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Accounts\DS\DSLongTermAdv.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSLongTermAdv.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\DS\DsManageOverTime.Designer.vb">
+      <DependentUpon>DsManageOverTime.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Accounts\DS\DSManageSalary.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSManageSalary.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\DS\DSSalaryAdjustment.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSSalaryAdjustment.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\DS\DSSalaryTrans.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSSalaryTrans.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\DS\DsShortLeaves.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsShortLeaves.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\DS\DSNewDept.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSNewDept.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\DS\DSCalculateSalaryManually.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSCalculateSalaryManually.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\DS\DSBusRoofInfo.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSBusRoofInfo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\DS\HRMDBDataset1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HRMDBDataset1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\DS\HRMDBDataset1.vb">
+      <DependentUpon>HRMDBDataset1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\Forms\Emp_dept_Info.Designer.vb">
+      <DependentUpon>Emp_dept_Info.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\Forms\Emp_dept_Info.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRM\Forms\frmEmpManagment.Designer.vb">
+      <DependentUpon>frmEmpManagment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\Forms\frmEmpManagment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRM\Reports\AnalysisRptViewer.Designer.vb">
+      <DependentUpon>AnalysisRptViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\Reports\AnalysisRptViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRM\Reports\DateWiseFrm.Designer.vb">
+      <DependentUpon>DateWiseFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\Reports\DateWiseFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRM\Reports\DateWiseRptViewer.Designer.vb">
+      <DependentUpon>DateWiseRptViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\Reports\DateWiseRptViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRM\Reports\EmpCardViewer.Designer.vb">
+      <DependentUpon>EmpCardViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\Reports\EmpCardViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRM\Reports\FrmAnalysisRcd.Designer.vb">
+      <DependentUpon>FrmAnalysisRcd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\Reports\FrmAnalysisRcd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRM\Reports\FrmDeptWiseViewer.Designer.vb">
+      <DependentUpon>FrmDeptWiseViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\Reports\FrmDeptWiseViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRM\Reports\FrmRptViewer.Designer.vb">
+      <DependentUpon>FrmRptViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\Reports\FrmRptViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRM\Reports\MiscRecord.Designer.vb">
+      <DependentUpon>MiscRecord.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\Reports\MiscRecord.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRM\Reports\MISCRptViewer.Designer.vb">
+      <DependentUpon>MISCRptViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\Reports\MISCRptViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRM\Reports\RptDepartRecord.Designer.vb">
+      <DependentUpon>RptDepartRecord.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\Reports\RptDepartRecord.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRM\Reports\RptemployeeRecord.Designer.vb">
+      <DependentUpon>RptemployeeRecord.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\Reports\RptemployeeRecord.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\change Password.Designer.vb">
+      <DependentUpon>change Password.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login\change Password.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\CompanyInfo.Designer.vb">
+      <DependentUpon>CompanyInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login\CompanyInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRM\DS\DSUser.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSUser.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\DS\DSUser.vb">
+      <DependentUpon>DSUser.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\Forms\Employeecatagory.Designer.vb">
+      <DependentUpon>Employeecatagory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\Forms\Employeecatagory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRM\Forms\EmployeeNotice.Designer.vb">
+      <DependentUpon>EmployeeNotice.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\Forms\EmployeeNotice.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRM\Forms\Emp_Bank_info.Designer.vb">
+      <DependentUpon>Emp_Bank_info.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\Forms\Emp_Bank_info.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRM\Forms\Emp_Branch_Info.Designer.vb">
+      <DependentUpon>Emp_Branch_Info.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\Forms\Emp_Branch_Info.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRM\Forms\emp_card_info.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRM\Forms\emp_card_info.Designer.vb">
+      <DependentUpon>emp_card_info.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRM\Forms\Emp_Designation_Info.Designer.vb">
+      <DependentUpon>Emp_Designation_Info.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\Forms\Emp_Designation_Info.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRM\Forms\Emp_Employment_Info.Designer.vb">
+      <DependentUpon>Emp_Employment_Info.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\Forms\Emp_Employment_Info.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRM\Forms\Emp_Grade_Info.Designer.vb">
+      <DependentUpon>Emp_Grade_Info.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\Forms\Emp_Grade_Info.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRM\Forms\Emp_JobType_Info.Designer.vb">
+      <DependentUpon>Emp_JobType_Info.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\Forms\Emp_JobType_Info.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRM\Forms\Emp_Leaving_Reason.Designer.vb">
+      <DependentUpon>Emp_Leaving_Reason.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\Forms\Emp_Leaving_Reason.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRM\Forms\Emp_Qualfication_Info.Designer.vb">
+      <DependentUpon>Emp_Qualfication_Info.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\Forms\Emp_Qualfication_Info.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRM\Forms\Emp_Shift_Info.Designer.vb">
+      <DependentUpon>Emp_Shift_Info.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\Forms\Emp_Shift_Info.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRM\DS\DSHRM.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSHRM.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HRM\DS\DSHRM.vb">
+      <DependentUpon>DSHRM.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Login\frmLogin.Designer.vb">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login\frmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\frmMain.Designer.vb">
+      <DependentUpon>frmMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login\frmMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\MIS User Dept.Designer.vb">
+      <DependentUpon>MIS User Dept.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login\MIS User Dept.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\MIS Users.Designer.vb">
+      <DependentUpon>MIS Users.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login\MIS Users.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PayRoll\DS\DSAttCorection.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSAttCorection.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PayRoll\DS\DSAutoAtt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSAutoAtt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PayRoll\DS\DSDevice.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSDevice.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PayRoll\DS\DSDisplayEI.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSDisplayEI.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PayRoll\DS\DSExcelEmpData.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSExcelEmpData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PayRoll\DS\DSMealAtt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSMealAtt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PayRoll\DS\DSPayRoll.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSPayRoll.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PayRoll\forms\frmAttAcessToDB.Designer.vb">
+      <DependentUpon>frmAttAcessToDB.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PayRoll\forms\frmAttAcessToDB.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayRoll\forms\frmAttCorrection.Designer.vb">
+      <DependentUpon>frmAttCorrection.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PayRoll\forms\frmAttCorrection.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayRoll\forms\frmAttDevice.Designer.vb">
+      <DependentUpon>frmAttDevice.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PayRoll\forms\frmAttDevice.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayRoll\forms\frmAutoAttendence.Designer.vb">
+      <DependentUpon>frmAutoAttendence.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PayRoll\forms\frmAutoAttendence.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayRoll\forms\frmAutoLeaves.Designer.vb">
+      <DependentUpon>frmAutoLeaves.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PayRoll\forms\frmAutoLeaves.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayRoll\forms\frmAutoOTEntry.Designer.vb">
+      <DependentUpon>frmAutoOTEntry.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PayRoll\forms\frmAutoOTEntry.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Canteen\Form\frmEmpMealAtt.Designer.vb">
+      <DependentUpon>frmEmpMealAtt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Canteen\Form\frmEmpMealAtt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayRoll\forms\frmExcelAttendanceUploading.Designer.vb">
+      <DependentUpon>frmExcelAttendanceUploading.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PayRoll\forms\frmExcelAttendanceUploading.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayRoll\forms\frmHolidays.Designer.vb">
+      <DependentUpon>frmHolidays.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PayRoll\forms\frmHolidays.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayRoll\forms\frmPayrollManagment.Designer.vb">
+      <DependentUpon>frmPayrollManagment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PayRoll\forms\frmPayrollManagment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayRoll\PayRoll Reports\frmAttCorr.Designer.vb">
+      <DependentUpon>frmAttCorr.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PayRoll\PayRoll Reports\frmAttCorr.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayRoll\PayRoll Reports\frmLeavesPR.Designer.vb">
+      <DependentUpon>frmLeavesPR.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PayRoll\PayRoll Reports\frmLeavesPR.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayRoll\PayRoll Reports\frmOverTimePR.Designer.vb">
+      <DependentUpon>frmOverTimePR.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PayRoll\PayRoll Reports\frmOverTimePR.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayRoll\PayRoll Reports\frmPayRollReportSelector3.Designer.vb">
+      <DependentUpon>frmPayRollReportSelector3.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PayRoll\PayRoll Reports\frmPayRollReportSelector3.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayRoll\PayRoll Reports\InCentive.Designer.vb">
+      <DependentUpon>InCentive.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PayRoll\PayRoll Reports\InCentive.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shop\DS\DSint.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSint.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Shop\DS\DSNEWShop.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSNEWShop.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Shop\DS\DSShop.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSShop.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Shop\DS\DSShop.vb">
+      <DependentUpon>DSShop.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Shop\Forms\frmCatagory.Designer.vb">
+      <DependentUpon>frmCatagory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Shop\Forms\frmCatagory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shop\Forms\FrmIntIntems.Designer.vb">
+      <DependentUpon>FrmIntIntems.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Shop\Forms\FrmIntIntems.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shop\Forms\FrmShopitemssp.Designer.vb">
+      <DependentUpon>FrmShopitemssp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Shop\Forms\FrmShopitemssp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shop\Forms\FrmSupplier.Designer.vb">
+      <DependentUpon>FrmSupplier.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Shop\Forms\FrmSupplier.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shop\Forms\frmTranSactionIN.Designer.vb">
+      <DependentUpon>frmTranSactionIN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Shop\Forms\frmTranSactionIN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shop\Forms\FrmTransactionOut.Designer.vb">
+      <DependentUpon>FrmTransactionOut.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Shop\Forms\FrmTransactionOut.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shop\Forms\FrmTransout.Designer.vb">
+      <DependentUpon>FrmTransout.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Shop\Forms\FrmTransout.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shop\Reports\FrmShopReports.Designer.vb">
+      <DependentUpon>FrmShopReports.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Shop\Reports\FrmShopReports.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Traning\DS\DSTraingData.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSTraingData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Traning\Forms\frmTraing.Designer.vb">
+      <DependentUpon>frmTraing.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Traning\Forms\frmTraing.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Traning\Forms\frmTraingData.Designer.vb">
+      <DependentUpon>frmTraingData.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Traning\Forms\frmTraingData.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Traning\Forms\frmTraingHead.Designer.vb">
+      <DependentUpon>frmTraingHead.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Traning\Forms\frmTraingHead.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Travel\DS\DSBusAtt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSBusAtt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Travel\DS\DSBusChages.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSBusChages.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Travel\DS\DSBusInfo.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSBusInfo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Travel\DS\DSMisSec.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSMisSec.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Travel\DS\DSTranCalc.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSTranCalc.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Travel\Forms\frmAutoCompleteCombo.Designer.vb">
+      <DependentUpon>frmAutoCompleteCombo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Travel\Forms\frmAutoCompleteCombo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Travel\Forms\frmBillingTran.Designer.vb">
+      <DependentUpon>frmBillingTran.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Travel\Forms\frmBillingTran.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Travel\Forms\FrmBusAddAmout.Designer.vb">
+      <DependentUpon>FrmBusAddAmout.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Travel\Forms\FrmBusAddAmout.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Travel\Forms\frmBusAtt.Designer.vb">
+      <DependentUpon>frmBusAtt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Travel\Forms\frmBusAtt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Travel\Forms\frmBusFine.Designer.vb">
+      <DependentUpon>frmBusFine.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Travel\Forms\frmBusFine.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Travel\Forms\frmBusInfo.Designer.vb">
+      <DependentUpon>frmBusInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Travel\Forms\frmBusInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Travel\Forms\frmBusLeaveEntry.Designer.vb">
+      <DependentUpon>frmBusLeaveEntry.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Travel\Forms\frmBusLeaveEntry.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Travel\Forms\frmBusOwnerInfo.Designer.vb">
+      <DependentUpon>frmBusOwnerInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Travel\Forms\frmBusOwnerInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Travel\Forms\frmBusTempAdv.Designer.vb">
+      <DependentUpon>frmBusTempAdv.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Travel\Forms\frmBusTempAdv.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Travel\Forms\frmDailyVehicleMove.Designer.vb">
+      <DependentUpon>frmDailyVehicleMove.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Travel\Forms\frmDailyVehicleMove.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Travel\Forms\frmDriver.Designer.vb">
+      <DependentUpon>frmDriver.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Travel\Forms\frmDriver.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Travel\Forms\frmRoutesInfo.Designer.vb">
+      <DependentUpon>frmRoutesInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Travel\Forms\frmRoutesInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Travel\Forms\frmTest.Designer.vb">
+      <DependentUpon>frmTest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Travel\Forms\frmTest.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Travel\Forms\frmTransDate.Designer.vb">
+      <DependentUpon>frmTransDate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Travel\Forms\frmTransDate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Travel\Forms\frmVehicles.Designer.vb">
+      <DependentUpon>frmVehicles.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Travel\Forms\frmVehicles.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Travel\Reports\Class_Utility.vb" />
+    <Compile Include="Travel\Reports\frmRptTransportInfo.Designer.vb">
+      <DependentUpon>frmRptTransportInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Travel\Reports\frmRptTransportInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Travel\Reports\frmSecReports.Designer.vb">
+      <DependentUpon>frmSecReports.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Travel\Reports\frmSecReports.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Accounts\forms\Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\forms\frmAccAnnualLeaveTransactions.resx">
+      <DependentUpon>frmAccAnnualLeaveTransactions.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\forms\frmAdvance.resx">
+      <DependentUpon>frmAdvance.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\forms\frmBonus.resx">
+      <DependentUpon>frmBonus.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\forms\frmSalaryUpgrade.resx">
+      <DependentUpon>frmSalaryUpgrade.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\forms\frmUndoTermination1.resx">
+      <DependentUpon>frmUndoTermination1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\forms\SalaryManagnment.resx">
+      <DependentUpon>SalaryManagnment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\forms\frmAutoSalCalculation.resx">
+      <DependentUpon>frmAutoSalCalculation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\forms\frmDeductions.resx">
+      <DependentUpon>frmDeductions.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\forms\frmEmpTermination.resx">
+      <DependentUpon>frmEmpTermination.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\forms\frmExtraOTCalculation.resx">
+      <DependentUpon>frmExtraOTCalculation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\forms\frmManageSalary.resx">
+      <DependentUpon>frmManageSalary.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\forms\frmMonthlySalary.resx">
+      <DependentUpon>frmMonthlySalary.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\forms\frmSalaryAdjustment.resx">
+      <DependentUpon>frmSalaryAdjustment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\forms\frmSalaryTransactions.resx">
+      <DependentUpon>frmSalaryTransactions.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\forms\frmUndoTermination.resx">
+      <DependentUpon>frmUndoTermination.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\Reports\AdvncRptViewer.resx">
+      <DependentUpon>AdvncRptViewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\Reports\AllREpViewer.resx">
+      <DependentUpon>AllREpViewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\Reports\frmAdvanceReports.resx">
+      <DependentUpon>frmAdvanceReports.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\Reports\frmAllowanceReports.resx">
+      <DependentUpon>frmAllowanceReports.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\Reports\frmAnnualLeavesReports.resx">
+      <DependentUpon>frmAnnualLeavesReports.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\Reports\frmOtherReports.resx">
+      <DependentUpon>frmOtherReports.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\Reports\frmOverTimeAcc.resx">
+      <DependentUpon>frmOverTimeAcc.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\Reports\frmReportViewer.resx">
+      <DependentUpon>frmReportViewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\Reports\frmBonusReport.resx">
+      <DependentUpon>frmBonusReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\Reports\frmSalaryReports.resx">
+      <DependentUpon>frmSalaryReports.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\Reports\SalaryReportViewer.resx">
+      <DependentUpon>SalaryReportViewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Canteen\Form\frmBoofeMealAttendance.resx">
+      <DependentUpon>frmBoofeMealAttendance.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Canteen\Form\frmCanteenAttAcessToDB.resx">
+      <DependentUpon>frmCanteenAttAcessToDB.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Canteen\Form\frmCanteenAttendanceUploadingBarCode.resx">
+      <DependentUpon>frmCanteenAttendanceUploadingBarCode.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Canteen\Form\frmCanteenAttendanceUploading.resx">
+      <DependentUpon>frmCanteenAttendanceUploading.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Canteen\Reports\CanteenRepots.resx">
+      <DependentUpon>CanteenRepots.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contractual\Forms\frmAutoAttConnEntry.resx">
+      <DependentUpon>frmAutoAttConnEntry.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contractual\Forms\frmConAttAcessToDB.resx">
+      <DependentUpon>frmConAttAcessToDB.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contractual\Forms\frmConAttCorrection.resx">
+      <DependentUpon>frmConAttCorrection.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contractual\Forms\frmConPayrollManagment.resx">
+      <DependentUpon>frmConPayrollManagment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contractual\Forms\frmContPayment.resx">
+      <DependentUpon>frmContPayment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Evo\Forms\EmployeeEvaluationForm.resx">
+      <DependentUpon>EmployeeEvaluationForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Evo\Forms\FrmEmpEval.resx">
+      <DependentUpon>FrmEmpEval.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Evo\Forms\frmSelfAssessment.resx">
+      <DependentUpon>frmSelfAssessment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GateVisitors\frmGateVisitors.resx">
+      <DependentUpon>frmGateVisitors.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GateVisitors\VisitiorsReports.resx">
+      <DependentUpon>VisitiorsReports.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grievance System\Forms\EmployeeGrievanceSystem.resx">
+      <DependentUpon>EmployeeGrievanceSystem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grievance System\Forms\frmGrievanceCategory.resx">
+      <DependentUpon>frmGrievanceCategory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grievance System\Forms\GrivanceReports.resx">
+      <DependentUpon>GrivanceReports.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRM\Forms\cardprinting.resx">
+      <DependentUpon>cardprinting.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRM\Forms\Contractual.resx">
+      <DependentUpon>Contractual.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRM\Forms\EvoEmail.resx">
+      <DependentUpon>EvoEmail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRM\Forms\FrmBloodDoner.resx">
+      <DependentUpon>FrmBloodDoner.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRM\Forms\FrmDisability.resx">
+      <DependentUpon>FrmDisability.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRM\Forms\FrmDoner.resx">
+      <DependentUpon>FrmDoner.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRM\Forms\frmEmpEvaluation.resx">
+      <DependentUpon>frmEmpEvaluation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRM\Forms\FrmEmployeeSaveAs.resx">
+      <DependentUpon>FrmEmployeeSaveAs.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRM\Forms\frmGradeUPgrade.resx">
+      <DependentUpon>frmGradeUPgrade.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contractual\Forms\Contractualinfo.resx">
+      <DependentUpon>Contractualinfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRM\Forms\frmPESSI.resx">
+      <DependentUpon>frmPESSI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRM\Forms\frmSMSPortal.resx">
+      <DependentUpon>frmSMSPortal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRM\Forms\frmtermination.resx">
+      <DependentUpon>frmtermination.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRM\Reports\EOBIReports.resx">
+      <DependentUpon>EOBIReports.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contractual\Forms\frmContManagment.resx">
+      <DependentUpon>frmContManagment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRM\Reports\frmRptEmpEvaluation.resx">
+      <DependentUpon>frmRptEmpEvaluation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRM\Reports\HRAllowance.resx">
+      <DependentUpon>HRAllowance.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kaizen\Forms\frmFormalKaizenWalk.resx">
+      <DependentUpon>frmFormalKaizenWalk.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kaizen\Forms\frmkaizen.resx">
+      <DependentUpon>frmkaizen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kaizen\Forms\frmKAIZENideas.resx">
+      <DependentUpon>frmKAIZENideas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kaizen\Forms\frmKAIZENReports.resx">
+      <DependentUpon>frmKAIZENReports.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\FrmLockUser.resx">
+      <DependentUpon>FrmLockUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\FrmReset.resx">
+      <DependentUpon>FrmReset.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\frmResetPWd.resx">
+      <DependentUpon>frmResetPWd.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\FrmUserMgt.resx">
+      <DependentUpon>FrmUserMgt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Madication\Forms\FrmFormacy.resx">
+      <DependentUpon>FrmFormacy.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Madication\Forms\frmMadication.resx">
+      <DependentUpon>frmMadication.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Madication\Forms\frmMadicationIN.resx">
+      <DependentUpon>frmMadicationIN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Madication\Forms\frmMadicationRecord1.resx">
+      <DependentUpon>frmMadicationRecord1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Madication\Forms\frmMediIN.resx">
+      <DependentUpon>frmMediIN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Madication\Forms\Newmaterial.resx">
+      <DependentUpon>Newmaterial.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Madication\Reports\mediReports.resx">
+      <DependentUpon>mediReports.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayRoll\forms\frmAttAcessToDBOld.resx">
+      <DependentUpon>frmAttAcessToDBOld.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayRoll\forms\frmAutoAttEmpEntry.resx">
+      <DependentUpon>frmAutoAttEmpEntry.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayRoll\forms\frmAutoAttEntry.resx">
+      <DependentUpon>frmAutoAttEntry.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayRoll\forms\frmEmpDataToExcel.resx">
+      <DependentUpon>frmEmpDataToExcel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayRoll\forms\frmInenstive.resx">
+      <DependentUpon>frmInenstive.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayRoll\forms\frmPayRollShortLeave.resx">
+      <DependentUpon>frmPayRollShortLeave.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayRoll\forms\frmShiftUpgrade.resx">
+      <DependentUpon>frmShiftUpgrade.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRM\Forms\App Authourity.resx">
+      <DependentUpon>App Authourity.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRM\Forms\Emp_dept_Info.resx">
+      <DependentUpon>Emp_dept_Info.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRM\Forms\frmEmpManagment.resx">
+      <DependentUpon>frmEmpManagment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRM\Reports\AnalysisRptViewer.resx">
+      <DependentUpon>AnalysisRptViewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRM\Reports\DateWiseFrm.resx">
+      <DependentUpon>DateWiseFrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRM\Reports\DateWiseRptViewer.resx">
+      <DependentUpon>DateWiseRptViewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRM\Reports\EmpCardViewer.resx">
+      <DependentUpon>EmpCardViewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRM\Reports\FrmAnalysisRcd.resx">
+      <DependentUpon>FrmAnalysisRcd.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRM\Reports\FrmDeptWiseViewer.resx">
+      <DependentUpon>FrmDeptWiseViewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRM\Reports\FrmRptViewer.resx">
+      <DependentUpon>FrmRptViewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRM\Reports\MiscRecord.resx">
+      <DependentUpon>MiscRecord.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRM\Reports\MISCRptViewer.resx">
+      <DependentUpon>MISCRptViewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRM\Reports\RptDepartRecord.resx">
+      <DependentUpon>RptDepartRecord.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRM\Reports\RptemployeeRecord.resx">
+      <DependentUpon>RptemployeeRecord.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\change Password.resx">
+      <DependentUpon>change Password.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\CompanyInfo.resx">
+      <DependentUpon>CompanyInfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRM\Forms\Employeecatagory.resx">
+      <DependentUpon>Employeecatagory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRM\Forms\EmployeeNotice.resx">
+      <DependentUpon>EmployeeNotice.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRM\Forms\Emp_Bank_info.resx">
+      <DependentUpon>Emp_Bank_info.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRM\Forms\Emp_Branch_Info.resx">
+      <DependentUpon>Emp_Branch_Info.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRM\Forms\emp_card_info.resx">
+      <DependentUpon>emp_card_info.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRM\Forms\Emp_Designation_Info.resx">
+      <DependentUpon>Emp_Designation_Info.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRM\Forms\Emp_Employment_Info.resx">
+      <DependentUpon>Emp_Employment_Info.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRM\Forms\Emp_Grade_Info.resx">
+      <DependentUpon>Emp_Grade_Info.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRM\Forms\Emp_JobType_Info.resx">
+      <DependentUpon>Emp_JobType_Info.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRM\Forms\Emp_Leaving_Reason.resx">
+      <DependentUpon>Emp_Leaving_Reason.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRM\Forms\Emp_Qualfication_Info.resx">
+      <DependentUpon>Emp_Qualfication_Info.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRM\Forms\Emp_Shift_Info.resx">
+      <DependentUpon>Emp_Shift_Info.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\frmLogin.resx">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\frmMain.resx">
+      <DependentUpon>frmMain.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\MIS User Dept.resx">
+      <DependentUpon>MIS User Dept.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\MIS Users.resx">
+      <DependentUpon>MIS Users.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayRoll\forms\frmAttAcessToDB.resx">
+      <DependentUpon>frmAttAcessToDB.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayRoll\forms\frmAttCorrection.resx">
+      <DependentUpon>frmAttCorrection.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayRoll\forms\frmAttDevice.resx">
+      <DependentUpon>frmAttDevice.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayRoll\forms\frmAutoAttendence.resx">
+      <DependentUpon>frmAutoAttendence.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayRoll\forms\frmAutoLeaves.resx">
+      <DependentUpon>frmAutoLeaves.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayRoll\forms\frmAutoOTEntry.resx">
+      <DependentUpon>frmAutoOTEntry.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Canteen\Form\frmEmpMealAtt.resx">
+      <DependentUpon>frmEmpMealAtt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayRoll\forms\frmExcelAttendanceUploading.resx">
+      <DependentUpon>frmExcelAttendanceUploading.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayRoll\forms\frmHolidays.resx">
+      <DependentUpon>frmHolidays.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayRoll\forms\frmPayrollManagment.resx">
+      <DependentUpon>frmPayrollManagment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayRoll\PayRoll Reports\frmAttCorr.resx">
+      <DependentUpon>frmAttCorr.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayRoll\PayRoll Reports\frmLeavesPR.resx">
+      <DependentUpon>frmLeavesPR.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayRoll\PayRoll Reports\frmOverTimePR.resx">
+      <DependentUpon>frmOverTimePR.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayRoll\PayRoll Reports\frmPayRollReportSelector3.resx">
+      <DependentUpon>frmPayRollReportSelector3.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayRoll\PayRoll Reports\InCentive.resx">
+      <DependentUpon>InCentive.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shop\Forms\frmCatagory.resx">
+      <DependentUpon>frmCatagory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shop\Forms\FrmIntIntems.resx">
+      <DependentUpon>FrmIntIntems.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shop\Forms\FrmShopitemssp.resx">
+      <DependentUpon>FrmShopitemssp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shop\Forms\FrmSupplier.resx">
+      <DependentUpon>FrmSupplier.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shop\Forms\frmTranSactionIN.resx">
+      <DependentUpon>frmTranSactionIN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shop\Forms\FrmTransactionOut.resx">
+      <DependentUpon>FrmTransactionOut.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shop\Forms\FrmTransout.resx">
+      <DependentUpon>FrmTransout.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shop\Reports\FrmShopReports.resx">
+      <DependentUpon>FrmShopReports.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Traning\Forms\frmTraing.resx">
+      <DependentUpon>frmTraing.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Traning\Forms\frmTraingData.resx">
+      <DependentUpon>frmTraingData.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Traning\Forms\frmTraingHead.resx">
+      <DependentUpon>frmTraingHead.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Travel\Forms\frmAutoCompleteCombo.resx">
+      <DependentUpon>frmAutoCompleteCombo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Travel\Forms\frmBillingTran.resx">
+      <DependentUpon>frmBillingTran.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Travel\Forms\FrmBusAddAmout.resx">
+      <DependentUpon>FrmBusAddAmout.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Travel\Forms\frmBusAtt.resx">
+      <DependentUpon>frmBusAtt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Travel\Forms\frmBusFine.resx">
+      <DependentUpon>frmBusFine.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Travel\Forms\frmBusInfo.resx">
+      <DependentUpon>frmBusInfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Travel\Forms\frmBusLeaveEntry.resx">
+      <DependentUpon>frmBusLeaveEntry.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Travel\Forms\frmBusOwnerInfo.resx">
+      <DependentUpon>frmBusOwnerInfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Travel\Forms\frmBusTempAdv.resx">
+      <DependentUpon>frmBusTempAdv.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Travel\Forms\frmDailyVehicleMove.resx">
+      <DependentUpon>frmDailyVehicleMove.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Travel\Forms\frmDriver.resx">
+      <DependentUpon>frmDriver.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Travel\Forms\frmRoutesInfo.resx">
+      <DependentUpon>frmRoutesInfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Travel\Forms\frmTest.resx">
+      <DependentUpon>frmTest.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Travel\Forms\frmTransDate.resx">
+      <DependentUpon>frmTransDate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Travel\Forms\frmVehicles.resx">
+      <DependentUpon>frmVehicles.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Travel\Reports\frmRptTransportInfo.resx">
+      <DependentUpon>frmRptTransportInfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Travel\Reports\frmSecReports.resx">
+      <DependentUpon>frmSecReports.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Accounts\DS\ACCDS.xsc">
+      <DependentUpon>ACCDS.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\ACCDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ACCDS.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Accounts\DS\ACCDS.xss">
+      <DependentUpon>ACCDS.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Accounts\DS\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DataSet2.xsc">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DataSet2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet2.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Accounts\DS\DataSet2.xss">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DataSet4.xsc">
+      <DependentUpon>DataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DataSet4.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet4.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Accounts\DS\DataSet4.xss">
+      <DependentUpon>DataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DataSet5.xsc">
+      <DependentUpon>DataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DataSet5.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet5.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Accounts\DS\DataSet5.xss">
+      <DependentUpon>DataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DataSet7.xsc">
+      <DependentUpon>DataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DataSet7.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet7.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Accounts\DS\DataSet7.xss">
+      <DependentUpon>DataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DSAdvance.xsc">
+      <DependentUpon>DSAdvance.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DSAdvance.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSAdvance.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Accounts\DS\DSAdvance.xss">
+      <DependentUpon>DSAdvance.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DSAnnualLeavesTransactions.xsc">
+      <DependentUpon>DSAnnualLeavesTransactions.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DSAnnualLeavesTransactions.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSAnnualLeavesTransactions.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Accounts\DS\DSAnnualLeavesTransactions.xss">
+      <DependentUpon>DSAnnualLeavesTransactions.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DSDeptsForPayrollReport.xsc">
+      <DependentUpon>DSDeptsForPayrollReport.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DSDeptsForPayrollReport.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSDeptsForPayrollReport.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Accounts\DS\DSDeptsForPayrollReport.xss">
+      <DependentUpon>DSDeptsForPayrollReport.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DSEmpTermination.xsc">
+      <DependentUpon>DSEmpTermination.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DSEmpTermination.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSEmpTermination.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Accounts\DS\DSEmpTermination.xss">
+      <DependentUpon>DSEmpTermination.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DSNewAdvance.xsc">
+      <DependentUpon>DSNewAdvance.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DSNewAdvance.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSNewAdvance.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Accounts\DS\DSNewAdvance.xss">
+      <DependentUpon>DSNewAdvance.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DSSP.xsc">
+      <DependentUpon>DSSP.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DSSP.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSSP.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Accounts\DS\DSSP.xss">
+      <DependentUpon>DSSP.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\UpGradeSalary.xsc">
+      <DependentUpon>UpGradeSalary.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\UpGradeSalary.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UpGradeSalary.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Accounts\DS\UpGradeSalary.xss">
+      <DependentUpon>UpGradeSalary.xsd</DependentUpon>
+    </None>
+    <None Include="Att2003DataSet.xsc">
+      <DependentUpon>Att2003DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Att2003DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Att2003DataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Att2003DataSet.xss">
+      <DependentUpon>Att2003DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Canteen\DS\DsAccessToDB.xsc">
+      <DependentUpon>DsAccessToDB.xsd</DependentUpon>
+    </None>
+    <None Include="Canteen\DS\DsAccessToDB.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsAccessToDB.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Canteen\DS\DsAccessToDB.xss">
+      <DependentUpon>DsAccessToDB.xsd</DependentUpon>
+    </None>
+    <None Include="Canteen\DS\DSBuffetAttendance.xsc">
+      <DependentUpon>DSBuffetAttendance.xsd</DependentUpon>
+    </None>
+    <None Include="Canteen\DS\DSBuffetAttendance.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSBuffetAttendance.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Canteen\DS\DSBuffetAttendance.xss">
+      <DependentUpon>DSBuffetAttendance.xsd</DependentUpon>
+    </None>
+    <None Include="Contractual\ConnDS\ConnDS.xsc">
+      <DependentUpon>ConnDS.xsd</DependentUpon>
+    </None>
+    <None Include="Contractual\ConnDS\ConnDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ConnDS.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Contractual\ConnDS\ConnDS.xss">
+      <DependentUpon>ConnDS.xsd</DependentUpon>
+    </None>
+    <None Include="Contractual\ConnDS\DSCont.xsc">
+      <DependentUpon>DSCont.xsd</DependentUpon>
+    </None>
+    <None Include="Contractual\ConnDS\DSCont.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSCont.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Contractual\ConnDS\DSCont.xss">
+      <DependentUpon>DSCont.xsd</DependentUpon>
+    </None>
+    <None Include="DSVisitors.xsc">
+      <DependentUpon>DSVisitors.xsd</DependentUpon>
+    </None>
+    <None Include="DSVisitors.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSVisitors.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DSVisitors.xss">
+      <DependentUpon>DSVisitors.xsd</DependentUpon>
+    </None>
+    <None Include="Evo\DS\DataSet6.xsc">
+      <DependentUpon>DataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="Evo\DS\DataSet6.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet6.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Evo\DS\DataSet6.xss">
+      <DependentUpon>DataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="Evo\DS\DSemployeeSelfAss.xsc">
+      <DependentUpon>DSemployeeSelfAss.xsd</DependentUpon>
+    </None>
+    <None Include="Evo\DS\DSemployeeSelfAss.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSemployeeSelfAss.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Evo\DS\DSemployeeSelfAss.xss">
+      <DependentUpon>DSemployeeSelfAss.xsd</DependentUpon>
+    </None>
+    <None Include="Evo\DS\DSEMS.xsc">
+      <DependentUpon>DSEMS.xsd</DependentUpon>
+    </None>
+    <None Include="Evo\DS\DSEMS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSEMS.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Evo\DS\DSEMS.xss">
+      <DependentUpon>DSEMS.xsd</DependentUpon>
+    </None>
+    <None Include="Grievance System\DS\DSEmpEval.xsc">
+      <DependentUpon>DSEmpEval.xsd</DependentUpon>
+    </None>
+    <None Include="Grievance System\DS\DSEmpEval.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSEmpEval.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Grievance System\DS\DSEmpEval.xss">
+      <DependentUpon>DSEmpEval.xsd</DependentUpon>
+    </None>
+    <None Include="Grievance System\DS\DSGrievance.xsc">
+      <DependentUpon>DSGrievance.xsd</DependentUpon>
+    </None>
+    <None Include="Grievance System\DS\DSGrievance.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSGrievance.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Grievance System\DS\DSGrievance.xss">
+      <DependentUpon>DSGrievance.xsd</DependentUpon>
+    </None>
+    <None Include="HRM\DS\BloodDoner.xsc">
+      <DependentUpon>BloodDoner.xsd</DependentUpon>
+    </None>
+    <None Include="HRM\DS\BloodDoner.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BloodDoner.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="HRM\DS\BloodDoner.xss">
+      <DependentUpon>BloodDoner.xsd</DependentUpon>
+    </None>
+    <None Include="HRM\DS\COnDS.xsc">
+      <DependentUpon>COnDS.xsd</DependentUpon>
+    </None>
+    <None Include="HRM\DS\COnDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>COnDS.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="HRM\DS\COnDS.xss">
+      <DependentUpon>COnDS.xsd</DependentUpon>
+    </None>
+    <None Include="HRM\DS\DSContractPrd.xsc">
+      <DependentUpon>DSContractPrd.xsd</DependentUpon>
+    </None>
+    <None Include="HRM\DS\DSContractPrd.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSContractPrd.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="HRM\DS\DSContractPrd.xss">
+      <DependentUpon>DSContractPrd.xsd</DependentUpon>
+    </None>
+    <None Include="HRM\DS\DSContractual.xsc">
+      <DependentUpon>DSContractual.xsd</DependentUpon>
+    </None>
+    <None Include="HRM\DS\DSContractual.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSContractual.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HRM\DS\DSContractual.xss">
+      <DependentUpon>DSContractual.xsd</DependentUpon>
+    </None>
+    <None Include="HRM\DS\DSDept.xsc">
+      <DependentUpon>DSDept.xsd</DependentUpon>
+    </None>
+    <None Include="HRM\DS\DSDept.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSDept.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="HRM\DS\DSDept.xss">
+      <DependentUpon>DSDept.xsd</DependentUpon>
+    </None>
+    <None Include="HRM\DS\DSEMP.xsc">
+      <DependentUpon>DSEMP.xsd</DependentUpon>
+    </None>
+    <None Include="HRM\DS\DSEMP.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSEMP.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="HRM\DS\DSEMP.xss">
+      <DependentUpon>DSEMP.xsd</DependentUpon>
+    </None>
+    <None Include="HRM\DS\DSEmpEvaluation.xsc">
+      <DependentUpon>DSEmpEvaluation.xsd</DependentUpon>
+    </None>
+    <None Include="HRM\DS\DSEmpEvaluation.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSEmpEvaluation.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="HRM\DS\DSEmpEvaluation.xss">
+      <DependentUpon>DSEmpEvaluation.xsd</DependentUpon>
+    </None>
+    <None Include="HRM\DS\DSLongLeaves.xsc">
+      <DependentUpon>DSLongLeaves.xsd</DependentUpon>
+    </None>
+    <None Include="HRM\DS\DSLongLeaves.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSLongLeaves.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="HRM\DS\DSLongLeaves.xss">
+      <DependentUpon>DSLongLeaves.xsd</DependentUpon>
+    </None>
+    <None Include="HRM\DS\DSPESSI.xsc">
+      <DependentUpon>DSPESSI.xsd</DependentUpon>
+    </None>
+    <None Include="HRM\DS\DSPESSI.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSPESSI.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="HRM\DS\DSPESSI.xss">
+      <DependentUpon>DSPESSI.xsd</DependentUpon>
+    </None>
+    <None Include="HRM\DS\DSReportTo.xsc">
+      <DependentUpon>DSReportTo.xsd</DependentUpon>
+    </None>
+    <None Include="HRM\DS\DSReportTo.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSReportTo.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="HRM\DS\DSReportTo.xss">
+      <DependentUpon>DSReportTo.xsd</DependentUpon>
+    </None>
+    <None Include="HRM\DS\DSRPTTO.xsc">
+      <DependentUpon>DSRPTTO.xsd</DependentUpon>
+    </None>
+    <None Include="HRM\DS\DSRPTTO.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSRPTTO.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="HRM\DS\DSRPTTO.xss">
+      <DependentUpon>DSRPTTO.xsd</DependentUpon>
+    </None>
+    <None Include="HRM\DS\EMail.xsc">
+      <DependentUpon>EMail.xsd</DependentUpon>
+    </None>
+    <None Include="HRM\DS\EMail.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EMail.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="HRM\DS\EMail.xss">
+      <DependentUpon>EMail.xsd</DependentUpon>
+    </None>
+    <None Include="HRM\DS\Termination.xsc">
+      <DependentUpon>Termination.xsd</DependentUpon>
+    </None>
+    <None Include="HRM\DS\Termination.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Termination.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="HRM\DS\Termination.xss">
+      <DependentUpon>Termination.xsd</DependentUpon>
+    </None>
+    <None Include="kaizen\DS\DSKAIZENRpt.xsc">
+      <DependentUpon>DSKAIZENRpt.xsd</DependentUpon>
+    </None>
+    <None Include="kaizen\DS\DSKAIZENRpt.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSKAIZENRpt.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="kaizen\DS\DSKAIZENRpt.xss">
+      <DependentUpon>DSKAIZENRpt.xsd</DependentUpon>
+    </None>
+    <None Include="kaizen\DS\DSTeamWork.xsc">
+      <DependentUpon>DSTeamWork.xsd</DependentUpon>
+    </None>
+    <None Include="kaizen\DS\DSTeamWork.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSTeamWork.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="kaizen\DS\DSTeamWork.xss">
+      <DependentUpon>DSTeamWork.xsd</DependentUpon>
+    </None>
+    <None Include="Login\DSUM.xsc">
+      <DependentUpon>DSUM.xsd</DependentUpon>
+    </None>
+    <None Include="Login\DSUM.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSUM.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Login\DSUM.xss">
+      <DependentUpon>DSUM.xsd</DependentUpon>
+    </None>
+    <None Include="Madication\DS\DSMedication.xsc">
+      <DependentUpon>DSMedication.xsd</DependentUpon>
+    </None>
+    <None Include="Madication\DS\DSMedication.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSMedication.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Madication\DS\DSMedication.xss">
+      <DependentUpon>DSMedication.xsd</DependentUpon>
+    </None>
+    <None Include="PayRoll\DS\att2000DataSet.xsc">
+      <DependentUpon>att2000DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PayRoll\DS\att2000DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>att2000DataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PayRoll\DS\att2000DataSet.xss">
+      <DependentUpon>att2000DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Accounts\DS\DSBonus.xsc">
+      <DependentUpon>DSBonus.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DSBonus.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSBonus.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Accounts\DS\DSBonus.xss">
+      <DependentUpon>DSBonus.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DSCalculateSalary.xsc">
+      <DependentUpon>DSCalculateSalary.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DSCalculateSalary.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSCalculateSalary.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Accounts\DS\DSCalculateSalary.xss">
+      <DependentUpon>DSCalculateSalary.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DSLogin.xsc">
+      <DependentUpon>DSLogin.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DSLogin.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSLogin.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Accounts\DS\DSLogin.xss">
+      <DependentUpon>DSLogin.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DSLongTermAdv.xsc">
+      <DependentUpon>DSLongTermAdv.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DSLongTermAdv.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSLongTermAdv.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Accounts\DS\DSLongTermAdv.xss">
+      <DependentUpon>DSLongTermAdv.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DsManageOverTime.xsc">
+      <DependentUpon>DsManageOverTime.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DsManageOverTime.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsManageOverTime.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Accounts\DS\DsManageOverTime.xss">
+      <DependentUpon>DsManageOverTime.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DSManageSalary.xsc">
+      <DependentUpon>DSManageSalary.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DSManageSalary.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSManageSalary.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Accounts\DS\DSManageSalary.xss">
+      <DependentUpon>DSManageSalary.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DSSalaryAdjustment.xsc">
+      <DependentUpon>DSSalaryAdjustment.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DSSalaryAdjustment.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSSalaryAdjustment.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Accounts\DS\DSSalaryAdjustment.xss">
+      <DependentUpon>DSSalaryAdjustment.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DSSalaryTrans.xsc">
+      <DependentUpon>DSSalaryTrans.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DSSalaryTrans.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSSalaryTrans.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Accounts\DS\DSSalaryTrans.xss">
+      <DependentUpon>DSSalaryTrans.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DsShortLeaves.xsc">
+      <DependentUpon>DsShortLeaves.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DsShortLeaves.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsShortLeaves.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Accounts\DS\DsShortLeaves.xss">
+      <DependentUpon>DsShortLeaves.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DSNewDept.xsc">
+      <DependentUpon>DSNewDept.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DSNewDept.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSNewDept.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Accounts\DS\DSNewDept.xss">
+      <DependentUpon>DSNewDept.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DSCalculateSalaryManually.xsc">
+      <DependentUpon>DSCalculateSalaryManually.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DSCalculateSalaryManually.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSCalculateSalaryManually.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Accounts\DS\DSCalculateSalaryManually.xss">
+      <DependentUpon>DSCalculateSalaryManually.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DSBusRoofInfo.xsc">
+      <DependentUpon>DSBusRoofInfo.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DSBusRoofInfo.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSBusRoofInfo.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Accounts\DS\DSBusRoofInfo.xss">
+      <DependentUpon>DSBusRoofInfo.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\HRMDBDataset1.xsc">
+      <DependentUpon>HRMDBDataset1.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\HRMDBDataset1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HRMDBDataset1.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Accounts\DS\HRMDBDataset1.xss">
+      <DependentUpon>HRMDBDataset1.xsd</DependentUpon>
+    </None>
+    <None Include="ERP_HRMS_1_TemporaryKey.pfx" />
+    <None Include="ERP_HRMS_TemporaryKey.pfx" />
+    <None Include="HRM\DS\DSHRM.xsc">
+      <DependentUpon>DSHRM.xsd</DependentUpon>
+    </None>
+    <None Include="HRM\DS\DSHRM.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSHRM.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="HRM\DS\DSHRM.xss">
+      <DependentUpon>DSHRM.xsd</DependentUpon>
+    </None>
+    <None Include="HRM\DS\DSUser.xsc">
+      <DependentUpon>DSUser.xsd</DependentUpon>
+    </None>
+    <None Include="HRM\DS\DSUser.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSUser.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="HRM\DS\DSUser.xss">
+      <DependentUpon>DSUser.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="PayRoll\DS\DSAttAdj.xsc">
+      <DependentUpon>DSAttAdj.xsd</DependentUpon>
+    </None>
+    <None Include="PayRoll\DS\DSAttAdj.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSAttAdj.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="PayRoll\DS\DSAttAdj.xss">
+      <DependentUpon>DSAttAdj.xsd</DependentUpon>
+    </None>
+    <None Include="Shop\DS\DSint.xsc">
+      <DependentUpon>DSint.xsd</DependentUpon>
+    </None>
+    <None Include="Shop\DS\DSint.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSint.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Shop\DS\DSint.xss">
+      <DependentUpon>DSint.xsd</DependentUpon>
+    </None>
+    <None Include="Shop\DS\DSNEWShop.xsc">
+      <DependentUpon>DSNEWShop.xsd</DependentUpon>
+    </None>
+    <None Include="Shop\DS\DSNEWShop.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSNEWShop.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Shop\DS\DSNEWShop.xss">
+      <DependentUpon>DSNEWShop.xsd</DependentUpon>
+    </None>
+    <None Include="Shop\DS\DSShop.xsc">
+      <DependentUpon>DSShop.xsd</DependentUpon>
+    </None>
+    <None Include="Shop\DS\DSShop.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSShop.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Shop\DS\DSShop.xss">
+      <DependentUpon>DSShop.xsd</DependentUpon>
+    </None>
+    <None Include="Traning\DS\DSTraingData.xsc">
+      <DependentUpon>DSTraingData.xsd</DependentUpon>
+    </None>
+    <None Include="Traning\DS\DSTraingData.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSTraingData.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Traning\DS\DSTraingData.xss">
+      <DependentUpon>DSTraingData.xsd</DependentUpon>
+    </None>
+    <None Include="Travel\DS\DSBusAtt.xsc">
+      <DependentUpon>DSBusAtt.xsd</DependentUpon>
+    </None>
+    <None Include="Travel\DS\DSBusAtt.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSBusAtt.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Travel\DS\DSBusAtt.xss">
+      <DependentUpon>DSBusAtt.xsd</DependentUpon>
+    </None>
+    <None Include="Travel\DS\DSBusChages.xsc">
+      <DependentUpon>DSBusChages.xsd</DependentUpon>
+    </None>
+    <None Include="Travel\DS\DSBusChages.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSBusChages.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Travel\DS\DSBusChages.xss">
+      <DependentUpon>DSBusChages.xsd</DependentUpon>
+    </None>
+    <None Include="Travel\DS\DSBusInfo.xsc">
+      <DependentUpon>DSBusInfo.xsd</DependentUpon>
+    </None>
+    <None Include="Travel\DS\DSBusInfo.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSBusInfo.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Travel\DS\DSBusInfo.xss">
+      <DependentUpon>DSBusInfo.xsd</DependentUpon>
+    </None>
+    <None Include="Travel\DS\DSMisSec.xsc">
+      <DependentUpon>DSMisSec.xsd</DependentUpon>
+    </None>
+    <None Include="Travel\DS\DSMisSec.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSMisSec.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Travel\DS\DSMisSec.xss">
+      <DependentUpon>DSMisSec.xsd</DependentUpon>
+    </None>
+    <None Include="Travel\DS\DSTranCalc.xsc">
+      <DependentUpon>DSTranCalc.xsd</DependentUpon>
+    </None>
+    <None Include="Travel\DS\DSTranCalc.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSTranCalc.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Travel\DS\DSTranCalc.xss">
+      <DependentUpon>DSTranCalc.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataSets\" />
+    <Folder Include="Transport\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PayRoll\DS\DSAttCorection.xsc">
+      <DependentUpon>DSAttCorection.xsd</DependentUpon>
+    </None>
+    <None Include="PayRoll\DS\DSAttCorection.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSAttCorection.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="PayRoll\DS\DSAttCorection.xss">
+      <DependentUpon>DSAttCorection.xsd</DependentUpon>
+    </None>
+    <None Include="PayRoll\DS\DSAutoAtt.xsc">
+      <DependentUpon>DSAutoAtt.xsd</DependentUpon>
+    </None>
+    <None Include="PayRoll\DS\DSAutoAtt.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSAutoAtt.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PayRoll\DS\DSAutoAtt.xss">
+      <DependentUpon>DSAutoAtt.xsd</DependentUpon>
+    </None>
+    <None Include="PayRoll\DS\DSDevice.xsc">
+      <DependentUpon>DSDevice.xsd</DependentUpon>
+    </None>
+    <None Include="PayRoll\DS\DSDevice.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSDevice.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="PayRoll\DS\DSDevice.xss">
+      <DependentUpon>DSDevice.xsd</DependentUpon>
+    </None>
+    <None Include="PayRoll\DS\DSDisplayEI.xsc">
+      <DependentUpon>DSDisplayEI.xsd</DependentUpon>
+    </None>
+    <None Include="PayRoll\DS\DSDisplayEI.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSDisplayEI.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="PayRoll\DS\DSDisplayEI.xss">
+      <DependentUpon>DSDisplayEI.xsd</DependentUpon>
+    </None>
+    <None Include="PayRoll\DS\DSExcelEmpData.xsc">
+      <DependentUpon>DSExcelEmpData.xsd</DependentUpon>
+    </None>
+    <None Include="PayRoll\DS\DSExcelEmpData.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSExcelEmpData.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="PayRoll\DS\DSExcelEmpData.xss">
+      <DependentUpon>DSExcelEmpData.xsd</DependentUpon>
+    </None>
+    <None Include="PayRoll\DS\DSMealAtt.xsc">
+      <DependentUpon>DSMealAtt.xsd</DependentUpon>
+    </None>
+    <None Include="PayRoll\DS\DSMealAtt.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSMealAtt.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="PayRoll\DS\DSMealAtt.xss">
+      <DependentUpon>DSMealAtt.xsd</DependentUpon>
+    </None>
+    <None Include="PayRoll\DS\DSPayRoll.xsc">
+      <DependentUpon>DSPayRoll.xsd</DependentUpon>
+    </None>
+    <None Include="PayRoll\DS\DSPayRoll.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSPayRoll.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="PayRoll\DS\DSPayRoll.xss">
+      <DependentUpon>DSPayRoll.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\images %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rotate_right-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="CrystalActiveXReportViewerLib105">
+      <Guid>{A30B2DDF-C00F-469F-A23C-D6177608A128}</Guid>
+      <VersionMajor>10</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="CrystalActiveXReportViewerLib11_5">
+      <Guid>{F62B9FA4-455F-4FE3-8A2D-205E4F0BCAFB}</Guid>
+      <VersionMajor>11</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>True</Private>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>True</Private>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HRMS.ico" />
+    <Content Include="icon_n8N_icon.ico" />
+    <None Include="Resources\download1.png" />
+    <None Include="Resources\images.jpg" />
+    <None Include="Resources\asaasas.JPG" />
+    <None Include="Resources\Untitled-1.jpg" />
+    <None Include="Resources\Untitled-3.jpg" />
+    <None Include="Resources\download.png" />
+    <None Include="Resources\Default Image.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="Microsoft.Office.Interop.Excel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.Office.Tools.Excel.v9.0">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.Office.Tools.v9.0">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,160 @@
+﻿Imports CrystalDecisions.Shared
+Imports CrystalDecisions.CrystalReports.Engine
+Public Class FrmRptViewer
+    Friend Function ViewReport(ByVal sReportName As String, Optional ByVal sSelectionFormula As String = "", Optional ByVal param As String = "") As Boolean
+        Dim objReport As New ReportDocument
+        Dim strParValPair() As String
+        Dim strVal() As String
+        Dim index As Integer
+        Dim intCounter As Integer
+
+
+        Dim crParameterFieldDefinitions As ParameterFieldDefinitions = Nothing
+        Dim crParameterFieldDefinition As ParameterFieldDefinition = Nothing
+        Dim crParameterValues As New ParameterValues
+        Dim crParameterDiscreteValue As New ParameterDiscreteValue
+
+        Try
+            objReport.Load(sReportName)
+            objReport.Refresh()
+
+            crParameterFieldDefinitions = objReport.DataDefinition.ParameterFields
+            intCounter = objReport.DataDefinition.ParameterFields.Count
+
+            If intCounter = 1 Then
+                If InStr(objReport.DataDefinition.ParameterFields(0).ParameterFieldName, ".", CompareMethod.Text) > 0 Then
+                    intCounter = 0
+                End If
+            End If
+
+            If intCounter > 0 And Trim(param) <> "" Then
+                strParValPair = param.Split("&")
+                For index = 0 To UBound(strParValPair)
+                    If InStr(strParValPair(index), "=") > 0 Then
+                        strVal = strParValPair(index).Split("=")
+                        For j As Integer = 0 To UBound(strVal)
+                            If j = 0 Then
+                                crParameterFieldDefinition = crParameterFieldDefinitions.Item(strVal(j).Trim)
+                                crParameterValues = crParameterFieldDefinition.CurrentValues
+                            ElseIf j = 1 Then
+                                If strVal(j).Contains("/") Then
+                                    If strVal(j).Split("/").Length = 3 Then
+                                        crParameterDiscreteValue.Value = CType(strVal(j), Date)
+                                    Else
+                                        crParameterDiscreteValue.Value = strVal(j)
+                                    End If
+                                ElseIf IsNumeric(strVal(j)) Then
+                                    crParameterDiscreteValue.Value = CType(strVal(j), Double)
+                                Else
+                                    crParameterDiscreteValue.Value = strVal(j)
+                                End If
+                            End If
+                        Next
+                    End If
+                    crParameterValues.Clear()
+                    crParameterValues.Add(crParameterDiscreteValue)
+                    crParameterFieldDefinition.ApplyCurrentValues(crParameterValues)
+                Next
+            End If
+
+            If sSelectionFormula.Length > 0 Then
+                objReport.RecordSelectionFormula = sSelectionFormula
+            End If
+
+            CrystalReportViewer1.ReportSource = Nothing
+            CrystalReportViewer1.ReportSource = objReport
+            If param = "" Then
+                CrystalReportViewer1.RefreshReport()
+            End If
+            CrystalReportViewer1.Show()
+            Return True
+        Catch ex As System.Exception
+            MsgBox(ex.Message)
+            Return False
+        End Try
+
+    End Function
+    Private Sub FrmRptViewer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        'Me.CrystalReportViewer1.RefreshReport()
+    End Sub
+
+    Private Sub CrystalReportViewer1_Load(sender As Object, e As EventArgs) Handles CrystalReportViewer1.Load
+
+    End Sub
+
+    Friend Function PrintReport(ByVal sReportName As String, Optional ByVal sSelectionFormula As String = "", Optional ByVal param As String = "", Optional ByVal noOfCopies As Int16 = 1) As Boolean
+        Dim objReport As New ReportDocument
+        Dim strParValPair() As String
+        Dim strVal() As String
+        Dim index As Integer
+        Dim intCounter As Integer
+
+
+        Dim crParameterFieldDefinitions As ParameterFieldDefinitions = Nothing
+        Dim crParameterFieldDefinition As ParameterFieldDefinition = Nothing
+        Dim crParameterValues As New ParameterValues
+        Dim crParameterDiscreteValue As New ParameterDiscreteValue
+
+        Try
+            objReport.Load(sReportName)
+            objReport.Refresh()
+
+            crParameterFieldDefinitions = objReport.DataDefinition.ParameterFields
+            intCounter = objReport.DataDefinition.ParameterFields.Count
+
+            If intCounter = 1 Then
+                If InStr(objReport.DataDefinition.ParameterFields(0).ParameterFieldName, ".", CompareMethod.Text) > 0 Then
+                    intCounter = 0
+                End If
+            End If
+
+            If intCounter > 0 And Trim(param) <> "" Then
+                strParValPair = param.Split("&")
+                For index = 0 To UBound(strParValPair)
+                    If InStr(strParValPair(index), "=") > 0 Then
+                        strVal = strParValPair(index).Split("=")
+                        For j As Integer = 0 To UBound(strVal)
+                            If j = 0 Then
+                                crParameterFieldDefinition = crParameterFieldDefinitions.Item(strVal(j).Trim)
+                                crParameterValues = crParameterFieldDefinition.CurrentValues
+                            ElseIf j = 1 Then
+                                If strVal(j).Contains("/") Then
+                                    If strVal(j).Split("/").Length = 3 Then
+                                        crParameterDiscreteValue.Value = CType(strVal(j), Date)
+                                    Else
+                                        crParameterDiscreteValue.Value = strVal(j)
+                                    End If
+                                ElseIf IsNumeric(strVal(j)) Then
+                                    crParameterDiscreteValue.Value = CType(strVal(j), Double)
+                                Else
+                                    crParameterDiscreteValue.Value = strVal(j)
+                                End If
+                            End If
+                        Next
+                    End If
+                    crParameterValues.Clear()
+                    crParameterValues.Add(crParameterDiscreteValue)
+                    crParameterFieldDefinition.ApplyCurrentValues(crParameterValues)
+                Next
+            End If
+
+            If sSelectionFormula.Length > 0 Then
+                objReport.RecordSelectionFormula = sSelectionFormula
+            End If
+
+            'CrystalReportViewer1.ReportSource = Nothing
+            'CrystalReportViewer1.ReportSource = objReport
+            'If param = "" Then
+            '    CrystalReportViewer1.RefreshReport()
+            'End If
+            'CrystalReportViewer1.Show()
+            objReport.PrintToPrinter(noOfCopies, True, 1, noOfCopies)
+            Return True
+        Catch ex As System.Exception
+            MsgBox(ex.Message)
+            Return False
+        End Try
+
+    End Function
+End Class

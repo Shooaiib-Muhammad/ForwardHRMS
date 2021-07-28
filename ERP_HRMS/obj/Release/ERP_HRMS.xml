@@ -1,0 +1,723 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+ERP_HRMS
+</name>
+</assembly>
+<members>
+<member name="T:ERP_HRMS.ACCDS">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.ACCDS.DataTable1DataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.ACCDS.tbl_Acc_SalaryDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.ACCDS.tbl_Acc_FinancialPeriodDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.ACCDS.DataTable1Row">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.ACCDS.tbl_Acc_SalaryRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.ACCDS.tbl_Acc_FinancialPeriodRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.ACCDS.DataTable1RowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.ACCDS.tbl_Acc_SalaryRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.ACCDS.tbl_Acc_FinancialPeriodRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.ACCDSTableAdapters.DataTable1TableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.ACCDSTableAdapters.tbl_Acc_SalaryTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.ACCDSTableAdapters.tbl_Acc_FinancialPeriodTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.ACCDSTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:ERP_HRMS.ACCDSTableAdapters.TableAdapterManager.UpdateUpdatedRows(ERP_HRMS.ACCDS,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:ERP_HRMS.ACCDSTableAdapters.TableAdapterManager.UpdateInsertedRows(ERP_HRMS.ACCDS,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:ERP_HRMS.ACCDSTableAdapters.TableAdapterManager.UpdateDeletedRows(ERP_HRMS.ACCDS,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:ERP_HRMS.ACCDSTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:ERP_HRMS.ACCDSTableAdapters.TableAdapterManager.UpdateAll(ERP_HRMS.ACCDS)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:ERP_HRMS.ACCDSTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:ERP_HRMS.ACCDSTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="M:ERP_HRMS.RptDepartRecord.Button1_Click(System.Object,System.EventArgs)">
+ <summary>
+ 
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="T:ERP_HRMS.DSUser">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSUser.tbl_MIS_User_DeptDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSUser.tbl_MIS_UserDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSUser.tbl_HRM_App_AuthorityDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSUser.tbl_Comp_InfoDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSUser.tbl_Log_ShiftDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSUser.tbl_MIS_User_DeptRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSUser.tbl_MIS_UserRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSUser.tbl_HRM_App_AuthorityRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSUser.tbl_Comp_InfoRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSUser.tbl_Log_ShiftRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSUser.tbl_MIS_User_DeptRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSUser.tbl_MIS_UserRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSUser.tbl_HRM_App_AuthorityRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSUser.tbl_Comp_InfoRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSUser.tbl_Log_ShiftRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSUserTableAdapters.tbl_MIS_User_DeptTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSUserTableAdapters.tbl_MIS_UserTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSUserTableAdapters.tbl_HRM_App_AuthorityTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSUserTableAdapters.tbl_Comp_InfoTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSUserTableAdapters.tbl_Log_ShiftTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSUserTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:ERP_HRMS.DSUserTableAdapters.TableAdapterManager.UpdateUpdatedRows(ERP_HRMS.DSUser,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:ERP_HRMS.DSUserTableAdapters.TableAdapterManager.UpdateInsertedRows(ERP_HRMS.DSUser,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:ERP_HRMS.DSUserTableAdapters.TableAdapterManager.UpdateDeletedRows(ERP_HRMS.DSUser,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:ERP_HRMS.DSUserTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:ERP_HRMS.DSUserTableAdapters.TableAdapterManager.UpdateAll(ERP_HRMS.DSUser)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSUserTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSUserTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_HRM_CardDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_HRM_BankDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_HRM_DesignationDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_Hrm_EmploymentDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_HRM_GradeDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_HRM_JobTypeDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_HRM_QualficationDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_HRM_BranchDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_HRM_DeptDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_HRM_SectionDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_HRM_Emp_InfoDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_Hrm_Emp_NoticesDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_HRM_Leave_ReasonDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_Acc_SalaryDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_Acc_FinancialPeriodDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_HRM_EmpCatagoryDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_HRM_ShiftDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.View_Rpt_HR_EmpData_ActiveNonActiveDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_HRM_Designation1DataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_HRM_CardRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_HRM_BankRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_HRM_DesignationRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_Hrm_EmploymentRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_HRM_GradeRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_HRM_JobTypeRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_HRM_QualficationRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_HRM_BranchRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_HRM_DeptRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_HRM_SectionRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_HRM_Emp_InfoRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_Hrm_Emp_NoticesRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_HRM_Leave_ReasonRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_Acc_SalaryRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_Acc_FinancialPeriodRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_HRM_EmpCatagoryRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_HRM_ShiftRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.View_Rpt_HR_EmpData_ActiveNonActiveRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_HRM_Designation1Row">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_HRM_CardRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_HRM_BankRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_HRM_DesignationRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_Hrm_EmploymentRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_HRM_GradeRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_HRM_JobTypeRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_HRM_QualficationRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_HRM_BranchRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_HRM_DeptRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_HRM_SectionRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_HRM_Emp_InfoRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_Hrm_Emp_NoticesRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_HRM_Leave_ReasonRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_Acc_SalaryRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_Acc_FinancialPeriodRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_HRM_EmpCatagoryRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_HRM_ShiftRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.View_Rpt_HR_EmpData_ActiveNonActiveRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRM.tbl_HRM_Designation1RowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRMTableAdapters.tbl_HRM_CardTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRMTableAdapters.tbl_HRM_BankTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRMTableAdapters.tbl_HRM_DesignationTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRMTableAdapters.tbl_Hrm_EmploymentTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRMTableAdapters.tbl_HRM_GradeTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRMTableAdapters.tbl_HRM_JobTypeTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRMTableAdapters.tbl_HRM_QualficationTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRMTableAdapters.tbl_HRM_BranchTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRMTableAdapters.tbl_HRM_DeptTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRMTableAdapters.tbl_HRM_SectionTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRMTableAdapters.tbl_HRM_Emp_InfoTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRMTableAdapters.tbl_Hrm_Emp_NoticesTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRMTableAdapters.tbl_HRM_Leave_ReasonTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRMTableAdapters.tbl_Acc_SalaryTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRMTableAdapters.tbl_Acc_FinancialPeriodTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRMTableAdapters.tbl_HRM_EmpCatagoryTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRMTableAdapters.tbl_HRM_ShiftTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRMTableAdapters.View_Rpt_HR_EmpData_ActiveNonActiveTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRMTableAdapters.tbl_HRM_Designation1TableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRMTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:ERP_HRMS.DSHRMTableAdapters.TableAdapterManager.UpdateUpdatedRows(ERP_HRMS.DSHRM,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:ERP_HRMS.DSHRMTableAdapters.TableAdapterManager.UpdateInsertedRows(ERP_HRMS.DSHRM,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:ERP_HRMS.DSHRMTableAdapters.TableAdapterManager.UpdateDeletedRows(ERP_HRMS.DSHRM,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:ERP_HRMS.DSHRMTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:ERP_HRMS.DSHRMTableAdapters.TableAdapterManager.UpdateAll(ERP_HRMS.DSHRM)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRMTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSHRMTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:ERP_HRMS.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:ERP_HRMS.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:ERP_HRMS.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:ERP_HRMS.My.Resources.Resources.edit_29">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ERP_HRMS.My.Resources.Resources.images__1_">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ERP_HRMS.My.Resources.Resources.rotate_right_512">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+</members>
+</doc>

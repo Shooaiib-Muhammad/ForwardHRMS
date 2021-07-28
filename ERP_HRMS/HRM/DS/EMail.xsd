@@ -1,0 +1,560 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EMail" targetNamespace="http://tempuri.org/EMail.xsd" xmlns:mstns="http://tempuri.org/EMail.xsd" xmlns="http://tempuri.org/EMail.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="HRMSCon" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HRMSCon (MySettings)" PropertyReference="ApplicationSettings.ERP_HRMS.My.MySettings.GlobalReference.Default.HRMSCon" Provider="System.Data.Odbc" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="MISCon" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="MISCon (MySettings)" PropertyReference="ApplicationSettings.ERP_HRMS.My.MySettings.GlobalReference.Default.MISCon" Provider="System.Data.Odbc" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="USersTableAdapter" GeneratorDataComponentClassName="USersTableAdapter" Name="USers" UserDataComponentName="USersTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HRMSCon (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        users.id, users.Name, users.Password, users.EmpID, users.EmpStatus, users.DirectReportingTo, users.CreationTime, users.IPAddress, users.EvoStatus, 
+                         users.EvoCount, users.DeptID, tbl_HRM_Emp_Info.EmailAddress
+FROM            users, tbl_HRM_Emp_Info
+WHERE        users.EmpID = tbl_HRM_Emp_Info.EmpID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="Password" DataSetColumn="Password" />
+              <Mapping SourceColumn="EmpID" DataSetColumn="EmpID" />
+              <Mapping SourceColumn="DeptID" DataSetColumn="DeptID" />
+              <Mapping SourceColumn="EmpStatus" DataSetColumn="EmpStatus" />
+              <Mapping SourceColumn="DirectReportingTo" DataSetColumn="DirectReportingTo" />
+              <Mapping SourceColumn="CreationTime" DataSetColumn="CreationTime" />
+              <Mapping SourceColumn="IPAddress" DataSetColumn="IPAddress" />
+              <Mapping SourceColumn="EvoStatus" DataSetColumn="EvoStatus" />
+              <Mapping SourceColumn="EvoCount" DataSetColumn="EvoCount" />
+              <Mapping SourceColumn="EmailAddress" DataSetColumn="EmailAddress" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tbl_HRM_DeptTableAdapter" GeneratorDataComponentClassName="tbl_HRM_DeptTableAdapter" Name="tbl_HRM_Dept" UserDataComponentName="tbl_HRM_DeptTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HRMSCon (MySettings)" DbObjectName="HRMS.dbo.tbl_HRM_Dept" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [tbl_HRM_Dept] WHERE (([DeptID] = ?) AND ((? = 1 AND [HODName] IS NULL) OR ([HODName] = ?)) AND ([DeptName] = ?) AND ((? = 1 AND [Status] IS NULL) OR ([Status] = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_DeptID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DeptID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_HODName" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="HODName" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_HODName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="HODName" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_DeptName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DeptName" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Status" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Status" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="Original_Status" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Status" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [tbl_HRM_Dept] ([HODName], [DeptName], [Status]) VALUES (?, ?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="HODName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="HODName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="DeptName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DeptName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="Status" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Status" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        DeptID, HODName, DeptName, Status
+FROM            tbl_HRM_Dept
+WHERE        (Status = 1)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [tbl_HRM_Dept] SET [HODName] = ?, [DeptName] = ?, [Status] = ? WHERE (([DeptID] = ?) AND ((? = 1 AND [HODName] IS NULL) OR ([HODName] = ?)) AND ([DeptName] = ?) AND ((? = 1 AND [Status] IS NULL) OR ([Status] = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="HODName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="HODName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="DeptName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DeptName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="Status" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Status" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_DeptID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DeptID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_HODName" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="HODName" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_HODName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="HODName" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_DeptName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DeptName" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Status" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Status" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="Original_Status" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Status" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="DeptID" DataSetColumn="DeptID" />
+              <Mapping SourceColumn="HODName" DataSetColumn="HODName" />
+              <Mapping SourceColumn="DeptName" DataSetColumn="DeptName" />
+              <Mapping SourceColumn="Status" DataSetColumn="Status" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tbl_PC_AMB_PrinterTableAdapter" GeneratorDataComponentClassName="tbl_PC_AMB_PrinterTableAdapter" Name="tbl_PC_AMB_Printer" UserDataComponentName="tbl_PC_AMB_PrinterTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MISCon (MySettings)" DbObjectName="MIS.dbo.tbl_PC_AMB_Printer" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [tbl_PC_AMB_Printer] WHERE (([PrinterID] = ?) AND ([PrinterName] = ?) AND ((? = 1 AND [Target] IS NULL) OR ([Target] = ?)) AND ((? = 1 AND [Status] IS NULL) OR ([Status] = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_PrinterID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PrinterID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_PrinterName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PrinterName" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Target" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Target" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Target" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Target" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Status" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Status" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="Original_Status" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Status" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [tbl_PC_AMB_Printer] ([PrinterName], [Target], [Status]) VALUES (?, ?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="PrinterName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PrinterName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Target" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Target" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="Status" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Status" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        tbl_PC_AMB_Printer.*
+FROM            tbl_PC_AMB_Printer</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [tbl_PC_AMB_Printer] SET [PrinterName] = ?, [Target] = ?, [Status] = ? WHERE (([PrinterID] = ?) AND ([PrinterName] = ?) AND ((? = 1 AND [Target] IS NULL) OR ([Target] = ?)) AND ((? = 1 AND [Status] IS NULL) OR ([Status] = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="PrinterName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PrinterName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Target" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Target" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="Status" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Status" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_PrinterID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PrinterID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_PrinterName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PrinterName" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Target" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Target" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Target" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Target" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Status" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Status" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="Original_Status" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Status" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="PrinterID" DataSetColumn="PrinterID" />
+              <Mapping SourceColumn="PrinterName" DataSetColumn="PrinterName" />
+              <Mapping SourceColumn="Target" DataSetColumn="Target" />
+              <Mapping SourceColumn="Status" DataSetColumn="Status" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="View_ArticleTableAdapter" GeneratorDataComponentClassName="View_ArticleTableAdapter" Name="View_Article" UserDataComponentName="View_ArticleTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MISCon (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        tbl_Pro_Model.ClientID, tbl_Pro_Model.ModelID, tbl_Pro_Model.ModelName, tbl_Pro_Model.FactoryCode, tbl_Pro_Article.ArtCode, tbl_Pro_Article_D.ArtSize, tbl_Pro_Article.ArtID
+FROM            tbl_Pro_Article, tbl_Pro_Article_D, tbl_Pro_Model
+WHERE        tbl_Pro_Article.ClientID = tbl_Pro_Article_D.ClientID AND tbl_Pro_Article.ModelID = tbl_Pro_Article_D.ModelID AND tbl_Pro_Article.ArtID = tbl_Pro_Article_D.ArtID AND 
+                         tbl_Pro_Article_D.ClientID = tbl_Pro_Model.ClientID AND tbl_Pro_Article_D.ModelID = tbl_Pro_Model.ModelID AND (tbl_Pro_Model.FactoryCode = 'B34006') AND (tbl_Pro_Model.ClientID = 1)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ClientID" DataSetColumn="ClientID" />
+              <Mapping SourceColumn="ModelID" DataSetColumn="ModelID" />
+              <Mapping SourceColumn="ModelName" DataSetColumn="ModelName" />
+              <Mapping SourceColumn="FactoryCode" DataSetColumn="FactoryCode" />
+              <Mapping SourceColumn="ArtCode" DataSetColumn="ArtCode" />
+              <Mapping SourceColumn="ArtSize" DataSetColumn="ArtSize" />
+              <Mapping SourceColumn="ArtID" DataSetColumn="ArtID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tbl_PC_AMB_PrintingTableAdapter" GeneratorDataComponentClassName="tbl_PC_AMB_PrintingTableAdapter" Name="tbl_PC_AMB_Printing" UserDataComponentName="tbl_PC_AMB_PrintingTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MISCon (MySettings)" DbObjectName="MIS.dbo.tbl_PC_AMB_Printing" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [tbl_PC_AMB_Printing] WHERE (([TranID] = ?) AND ((? = 1 AND [PO] IS NULL) OR ([PO] = ?)) AND ((? = 1 AND [POM] IS NULL) OR ([POM] = ?)) AND ((? = 1 AND [POD] IS NULL) OR ([POD] = ?)) AND ((? = 1 AND [TMRollNo] IS NULL) OR ([TMRollNo] = ?)) AND ((? = 1 AND [PrintDate] IS NULL) OR ([PrintDate] = ?)) AND ((? = 1 AND [PrinterID] IS NULL) OR ([PrinterID] = ?)) AND ((? = 1 AND [PassedBalls] IS NULL) OR ([PassedBalls] = ?)) AND ((? = 1 AND [FailBalls] IS NULL) OR ([FailBalls] = ?)) AND ((? = 1 AND [SettingOut] IS NULL) OR ([SettingOut] = ?)) AND ((? = 1 AND [Smearing] IS NULL) OR ([Smearing] = ?)) AND ((? = 1 AND [MaterialFault] IS NULL) OR ([MaterialFault] = ?)) AND ((? = 1 AND [Touching] IS NULL) OR ([Touching] = ?)) AND ((? = 1 AND [EntryDate] IS NULL) OR ([EntryDate] = ?)) AND ((? = 1 AND [SysIP] IS NULL) OR ([SysIP] = ?)) AND ((? = 1 AND [ClientID] IS NULL) OR ([ClientID] = ?)) AND ((? = 1 AND [ModelID] IS NULL) OR ([ModelID] = ?)) AND ((? = 1 AND [ArtID] IS NULL) OR ([ArtID] = ?)) AND ((? = 1 AND [ArtSize] IS NULL) OR ([ArtSize] = ?)) AND ((? = 1 AND [ProdQty] IS NULL) OR ([ProdQty] = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_TranID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TranID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_PO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PO" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_PO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PO" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_POM" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="POM" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_POM" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="POM" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_POD" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="POD" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_POD" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="POD" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TMRollNo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TMRollNo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_TMRollNo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TMRollNo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_PrintDate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PrintDate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_PrintDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="PrintDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_PrinterID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PrinterID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_PrinterID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PrinterID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_PassedBalls" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PassedBalls" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_PassedBalls" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PassedBalls" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_FailBalls" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="FailBalls" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_FailBalls" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="FailBalls" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_SettingOut" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SettingOut" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_SettingOut" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SettingOut" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Smearing" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Smearing" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Smearing" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Smearing" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_MaterialFault" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MaterialFault" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_MaterialFault" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MaterialFault" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Touching" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Touching" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Touching" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Touching" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_EntryDate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EntryDate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_EntryDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EntryDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_SysIP" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SysIP" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_SysIP" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SysIP" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ClientID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ClientID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ClientID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ClientID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ModelID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ModelID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ModelID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ModelID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ArtID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ArtID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ArtID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ArtID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ArtSize" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ArtSize" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_ArtSize" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ArtSize" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ProdQty" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ProdQty" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ProdQty" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ProdQty" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [tbl_PC_AMB_Printing] ([PO], [POM], [POD], [TMRollNo], [PrintDate], [PrinterID], [PassedBalls], [FailBalls], [SettingOut], [Smearing], [MaterialFault], [Touching], [EntryDate], [SysIP], [ClientID], [ModelID], [ArtID], [ArtSize], [ProdQty]) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="PO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="POM" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="POM" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="POD" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="POD" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="TMRollNo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TMRollNo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="PrintDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="PrintDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="PrinterID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PrinterID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="PassedBalls" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PassedBalls" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="FailBalls" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="FailBalls" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="SettingOut" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SettingOut" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Smearing" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Smearing" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="MaterialFault" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MaterialFault" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Touching" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Touching" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="EntryDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EntryDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="SysIP" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SysIP" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="ClientID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ClientID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="ModelID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ModelID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="ArtID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ArtID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="ArtSize" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ArtSize" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="ProdQty" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ProdQty" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        tbl_PC_AMB_Printing.*
+FROM            tbl_PC_AMB_Printing
+WHERE        (ModelID IS NOT NULL)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [tbl_PC_AMB_Printing] SET [PO] = ?, [POM] = ?, [POD] = ?, [TMRollNo] = ?, [PrintDate] = ?, [PrinterID] = ?, [PassedBalls] = ?, [FailBalls] = ?, [SettingOut] = ?, [Smearing] = ?, [MaterialFault] = ?, [Touching] = ?, [EntryDate] = ?, [SysIP] = ?, [ClientID] = ?, [ModelID] = ?, [ArtID] = ?, [ArtSize] = ?, [ProdQty] = ? WHERE (([TranID] = ?) AND ((? = 1 AND [PO] IS NULL) OR ([PO] = ?)) AND ((? = 1 AND [POM] IS NULL) OR ([POM] = ?)) AND ((? = 1 AND [POD] IS NULL) OR ([POD] = ?)) AND ((? = 1 AND [TMRollNo] IS NULL) OR ([TMRollNo] = ?)) AND ((? = 1 AND [PrintDate] IS NULL) OR ([PrintDate] = ?)) AND ((? = 1 AND [PrinterID] IS NULL) OR ([PrinterID] = ?)) AND ((? = 1 AND [PassedBalls] IS NULL) OR ([PassedBalls] = ?)) AND ((? = 1 AND [FailBalls] IS NULL) OR ([FailBalls] = ?)) AND ((? = 1 AND [SettingOut] IS NULL) OR ([SettingOut] = ?)) AND ((? = 1 AND [Smearing] IS NULL) OR ([Smearing] = ?)) AND ((? = 1 AND [MaterialFault] IS NULL) OR ([MaterialFault] = ?)) AND ((? = 1 AND [Touching] IS NULL) OR ([Touching] = ?)) AND ((? = 1 AND [EntryDate] IS NULL) OR ([EntryDate] = ?)) AND ((? = 1 AND [SysIP] IS NULL) OR ([SysIP] = ?)) AND ((? = 1 AND [ClientID] IS NULL) OR ([ClientID] = ?)) AND ((? = 1 AND [ModelID] IS NULL) OR ([ModelID] = ?)) AND ((? = 1 AND [ArtID] IS NULL) OR ([ArtID] = ?)) AND ((? = 1 AND [ArtSize] IS NULL) OR ([ArtSize] = ?)) AND ((? = 1 AND [ProdQty] IS NULL) OR ([ProdQty] = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="PO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="POM" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="POM" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="POD" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="POD" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="TMRollNo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TMRollNo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="PrintDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="PrintDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="PrinterID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PrinterID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="PassedBalls" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PassedBalls" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="FailBalls" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="FailBalls" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="SettingOut" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SettingOut" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Smearing" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Smearing" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="MaterialFault" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MaterialFault" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Touching" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Touching" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="EntryDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EntryDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="SysIP" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SysIP" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="ClientID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ClientID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="ModelID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ModelID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="ArtID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ArtID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="ArtSize" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ArtSize" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="ProdQty" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ProdQty" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_TranID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TranID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_PO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PO" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_PO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PO" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_POM" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="POM" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_POM" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="POM" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_POD" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="POD" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_POD" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="POD" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TMRollNo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TMRollNo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_TMRollNo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TMRollNo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_PrintDate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PrintDate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_PrintDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="PrintDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_PrinterID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PrinterID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_PrinterID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PrinterID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_PassedBalls" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PassedBalls" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_PassedBalls" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PassedBalls" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_FailBalls" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="FailBalls" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_FailBalls" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="FailBalls" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_SettingOut" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SettingOut" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_SettingOut" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SettingOut" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Smearing" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Smearing" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Smearing" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Smearing" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_MaterialFault" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MaterialFault" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_MaterialFault" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MaterialFault" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Touching" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Touching" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_Touching" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Touching" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_EntryDate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EntryDate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_EntryDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EntryDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_SysIP" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SysIP" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_SysIP" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SysIP" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ClientID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ClientID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ClientID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ClientID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ModelID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ModelID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ModelID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ModelID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ArtID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ArtID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ArtID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ArtID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ArtSize" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ArtSize" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_ArtSize" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ArtSize" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ProdQty" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ProdQty" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ProdQty" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ProdQty" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TranID" DataSetColumn="TranID" />
+              <Mapping SourceColumn="PO" DataSetColumn="PO" />
+              <Mapping SourceColumn="POM" DataSetColumn="POM" />
+              <Mapping SourceColumn="POD" DataSetColumn="POD" />
+              <Mapping SourceColumn="TMRollNo" DataSetColumn="TMRollNo" />
+              <Mapping SourceColumn="PrintDate" DataSetColumn="PrintDate" />
+              <Mapping SourceColumn="PrinterID" DataSetColumn="PrinterID" />
+              <Mapping SourceColumn="PassedBalls" DataSetColumn="PassedBalls" />
+              <Mapping SourceColumn="FailBalls" DataSetColumn="FailBalls" />
+              <Mapping SourceColumn="SettingOut" DataSetColumn="SettingOut" />
+              <Mapping SourceColumn="Smearing" DataSetColumn="Smearing" />
+              <Mapping SourceColumn="MaterialFault" DataSetColumn="MaterialFault" />
+              <Mapping SourceColumn="Touching" DataSetColumn="Touching" />
+              <Mapping SourceColumn="EntryDate" DataSetColumn="EntryDate" />
+              <Mapping SourceColumn="SysIP" DataSetColumn="SysIP" />
+              <Mapping SourceColumn="ClientID" DataSetColumn="ClientID" />
+              <Mapping SourceColumn="ModelID" DataSetColumn="ModelID" />
+              <Mapping SourceColumn="ArtID" DataSetColumn="ArtID" />
+              <Mapping SourceColumn="ArtSize" DataSetColumn="ArtSize" />
+              <Mapping SourceColumn="ProdQty" DataSetColumn="ProdQty" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EMail" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="EMail" msprop:Generator_UserDSName="EMail">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="USers" msprop:Generator_TableClassName="USersDataTable" msprop:Generator_TableVarName="tableUSers" msprop:Generator_TablePropName="USers" msprop:Generator_RowDeletingName="USersRowDeleting" msprop:Generator_RowChangingName="USersRowChanging" msprop:Generator_RowEvHandlerName="USersRowChangeEventHandler" msprop:Generator_RowDeletedName="USersRowDeleted" msprop:Generator_UserTableName="USers" msprop:Generator_RowChangedName="USersRowChanged" msprop:Generator_RowEvArgName="USersRowChangeEvent" msprop:Generator_RowClassName="USersRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Password" msprop:Generator_ColumnVarNameInTable="columnPassword" msprop:Generator_ColumnPropNameInRow="Password" msprop:Generator_ColumnPropNameInTable="PasswordColumn" msprop:Generator_UserColumnName="Password" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmpID" msprop:Generator_ColumnVarNameInTable="columnEmpID" msprop:Generator_ColumnPropNameInRow="EmpID" msprop:Generator_ColumnPropNameInTable="EmpIDColumn" msprop:Generator_UserColumnName="EmpID" type="xs:int" minOccurs="0" />
+              <xs:element name="DeptID" msprop:Generator_ColumnVarNameInTable="columnDeptID" msprop:Generator_ColumnPropNameInRow="DeptID" msprop:Generator_ColumnPropNameInTable="DeptIDColumn" msprop:Generator_UserColumnName="DeptID" type="xs:int" minOccurs="0" />
+              <xs:element name="EmpStatus" msprop:Generator_ColumnVarNameInTable="columnEmpStatus" msprop:Generator_ColumnPropNameInRow="EmpStatus" msprop:Generator_ColumnPropNameInTable="EmpStatusColumn" msprop:Generator_UserColumnName="EmpStatus" type="xs:boolean" minOccurs="0" />
+              <xs:element name="DirectReportingTo" msprop:Generator_ColumnVarNameInTable="columnDirectReportingTo" msprop:Generator_ColumnPropNameInRow="DirectReportingTo" msprop:Generator_ColumnPropNameInTable="DirectReportingToColumn" msprop:Generator_UserColumnName="DirectReportingTo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CreationTime" msprop:Generator_ColumnVarNameInTable="columnCreationTime" msprop:Generator_ColumnPropNameInRow="CreationTime" msprop:Generator_ColumnPropNameInTable="CreationTimeColumn" msprop:Generator_UserColumnName="CreationTime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="IPAddress" msprop:Generator_ColumnVarNameInTable="columnIPAddress" msprop:Generator_ColumnPropNameInRow="IPAddress" msprop:Generator_ColumnPropNameInTable="IPAddressColumn" msprop:Generator_UserColumnName="IPAddress" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EvoStatus" msprop:Generator_ColumnVarNameInTable="columnEvoStatus" msprop:Generator_ColumnPropNameInRow="EvoStatus" msprop:Generator_ColumnPropNameInTable="EvoStatusColumn" msprop:Generator_UserColumnName="EvoStatus" type="xs:boolean" minOccurs="0" />
+              <xs:element name="EvoCount" msprop:Generator_ColumnVarNameInTable="columnEvoCount" msprop:Generator_ColumnPropNameInRow="EvoCount" msprop:Generator_ColumnPropNameInTable="EvoCountColumn" msprop:Generator_UserColumnName="EvoCount" type="xs:int" minOccurs="0" />
+              <xs:element name="EmailAddress" msprop:Generator_ColumnVarNameInTable="columnEmailAddress" msprop:Generator_ColumnPropNameInRow="EmailAddress" msprop:Generator_ColumnPropNameInTable="EmailAddressColumn" msprop:Generator_UserColumnName="EmailAddress" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tbl_HRM_Dept" msprop:Generator_TableClassName="tbl_HRM_DeptDataTable" msprop:Generator_TableVarName="tabletbl_HRM_Dept" msprop:Generator_TablePropName="tbl_HRM_Dept" msprop:Generator_RowDeletingName="tbl_HRM_DeptRowDeleting" msprop:Generator_RowChangingName="tbl_HRM_DeptRowChanging" msprop:Generator_RowEvHandlerName="tbl_HRM_DeptRowChangeEventHandler" msprop:Generator_RowDeletedName="tbl_HRM_DeptRowDeleted" msprop:Generator_UserTableName="tbl_HRM_Dept" msprop:Generator_RowChangedName="tbl_HRM_DeptRowChanged" msprop:Generator_RowEvArgName="tbl_HRM_DeptRowChangeEvent" msprop:Generator_RowClassName="tbl_HRM_DeptRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DeptID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnDeptID" msprop:Generator_ColumnPropNameInRow="DeptID" msprop:Generator_ColumnPropNameInTable="DeptIDColumn" msprop:Generator_UserColumnName="DeptID" type="xs:int" />
+              <xs:element name="HODName" msprop:Generator_ColumnVarNameInTable="columnHODName" msprop:Generator_ColumnPropNameInRow="HODName" msprop:Generator_ColumnPropNameInTable="HODNameColumn" msprop:Generator_UserColumnName="HODName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1050" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DeptName" msprop:Generator_ColumnVarNameInTable="columnDeptName" msprop:Generator_ColumnPropNameInRow="DeptName" msprop:Generator_ColumnPropNameInTable="DeptNameColumn" msprop:Generator_UserColumnName="DeptName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="900" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_UserColumnName="Status" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tbl_PC_AMB_Printer" msprop:Generator_TableClassName="tbl_PC_AMB_PrinterDataTable" msprop:Generator_TableVarName="tabletbl_PC_AMB_Printer" msprop:Generator_TablePropName="tbl_PC_AMB_Printer" msprop:Generator_RowDeletingName="tbl_PC_AMB_PrinterRowDeleting" msprop:Generator_RowChangingName="tbl_PC_AMB_PrinterRowChanging" msprop:Generator_RowEvHandlerName="tbl_PC_AMB_PrinterRowChangeEventHandler" msprop:Generator_RowDeletedName="tbl_PC_AMB_PrinterRowDeleted" msprop:Generator_UserTableName="tbl_PC_AMB_Printer" msprop:Generator_RowChangedName="tbl_PC_AMB_PrinterRowChanged" msprop:Generator_RowEvArgName="tbl_PC_AMB_PrinterRowChangeEvent" msprop:Generator_RowClassName="tbl_PC_AMB_PrinterRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PrinterID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnPrinterID" msprop:Generator_ColumnPropNameInRow="PrinterID" msprop:Generator_ColumnPropNameInTable="PrinterIDColumn" msprop:Generator_UserColumnName="PrinterID" type="xs:int" />
+              <xs:element name="PrinterName" msprop:Generator_ColumnVarNameInTable="columnPrinterName" msprop:Generator_ColumnPropNameInRow="PrinterName" msprop:Generator_ColumnPropNameInTable="PrinterNameColumn" msprop:Generator_UserColumnName="PrinterName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1050" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Target" msprop:Generator_ColumnVarNameInTable="columnTarget" msprop:Generator_ColumnPropNameInRow="Target" msprop:Generator_ColumnPropNameInTable="TargetColumn" msprop:Generator_UserColumnName="Target" type="xs:int" minOccurs="0" />
+              <xs:element name="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_UserColumnName="Status" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="View_Article" msprop:Generator_TableClassName="View_ArticleDataTable" msprop:Generator_TableVarName="tableView_Article" msprop:Generator_TablePropName="View_Article" msprop:Generator_RowDeletingName="View_ArticleRowDeleting" msprop:Generator_RowChangingName="View_ArticleRowChanging" msprop:Generator_RowEvHandlerName="View_ArticleRowChangeEventHandler" msprop:Generator_RowDeletedName="View_ArticleRowDeleted" msprop:Generator_UserTableName="View_Article" msprop:Generator_RowChangedName="View_ArticleRowChanged" msprop:Generator_RowEvArgName="View_ArticleRowChangeEvent" msprop:Generator_RowClassName="View_ArticleRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ClientID" msprop:Generator_ColumnVarNameInTable="columnClientID" msprop:Generator_ColumnPropNameInRow="ClientID" msprop:Generator_ColumnPropNameInTable="ClientIDColumn" msprop:Generator_UserColumnName="ClientID" type="xs:int" />
+              <xs:element name="ModelID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnModelID" msprop:Generator_ColumnPropNameInRow="ModelID" msprop:Generator_ColumnPropNameInTable="ModelIDColumn" msprop:Generator_UserColumnName="ModelID" type="xs:int" />
+              <xs:element name="ModelName" msprop:Generator_ColumnVarNameInTable="columnModelName" msprop:Generator_ColumnPropNameInRow="ModelName" msprop:Generator_ColumnPropNameInTable="ModelNameColumn" msprop:Generator_UserColumnName="ModelName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FactoryCode" msprop:Generator_ColumnVarNameInTable="columnFactoryCode" msprop:Generator_ColumnPropNameInRow="FactoryCode" msprop:Generator_ColumnPropNameInTable="FactoryCodeColumn" msprop:Generator_UserColumnName="FactoryCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ArtCode" msprop:Generator_ColumnVarNameInTable="columnArtCode" msprop:Generator_ColumnPropNameInRow="ArtCode" msprop:Generator_ColumnPropNameInTable="ArtCodeColumn" msprop:Generator_UserColumnName="ArtCode">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ArtSize" msprop:Generator_ColumnVarNameInTable="columnArtSize" msprop:Generator_ColumnPropNameInRow="ArtSize" msprop:Generator_ColumnPropNameInTable="ArtSizeColumn" msprop:Generator_UserColumnName="ArtSize">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ArtID" msprop:Generator_ColumnVarNameInTable="columnArtID" msprop:Generator_ColumnPropNameInRow="ArtID" msprop:Generator_ColumnPropNameInTable="ArtIDColumn" msprop:Generator_UserColumnName="ArtID" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tbl_PC_AMB_Printing" msprop:Generator_TableClassName="tbl_PC_AMB_PrintingDataTable" msprop:Generator_TableVarName="tabletbl_PC_AMB_Printing" msprop:Generator_TablePropName="tbl_PC_AMB_Printing" msprop:Generator_RowDeletingName="tbl_PC_AMB_PrintingRowDeleting" msprop:Generator_RowChangingName="tbl_PC_AMB_PrintingRowChanging" msprop:Generator_RowEvHandlerName="tbl_PC_AMB_PrintingRowChangeEventHandler" msprop:Generator_RowDeletedName="tbl_PC_AMB_PrintingRowDeleted" msprop:Generator_UserTableName="tbl_PC_AMB_Printing" msprop:Generator_RowChangedName="tbl_PC_AMB_PrintingRowChanged" msprop:Generator_RowEvArgName="tbl_PC_AMB_PrintingRowChangeEvent" msprop:Generator_RowClassName="tbl_PC_AMB_PrintingRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TranID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnTranID" msprop:Generator_ColumnPropNameInRow="TranID" msprop:Generator_ColumnPropNameInTable="TranIDColumn" msprop:Generator_UserColumnName="TranID" type="xs:int" />
+              <xs:element name="PO" msprop:Generator_ColumnVarNameInTable="columnPO" msprop:Generator_ColumnPropNameInRow="PO" msprop:Generator_ColumnPropNameInTable="POColumn" msprop:Generator_UserColumnName="PO" type="xs:int" minOccurs="0" />
+              <xs:element name="POM" msprop:Generator_ColumnVarNameInTable="columnPOM" msprop:Generator_ColumnPropNameInRow="POM" msprop:Generator_ColumnPropNameInTable="POMColumn" msprop:Generator_UserColumnName="POM" type="xs:int" minOccurs="0" />
+              <xs:element name="POD" msprop:Generator_ColumnVarNameInTable="columnPOD" msprop:Generator_ColumnPropNameInRow="POD" msprop:Generator_ColumnPropNameInTable="PODColumn" msprop:Generator_UserColumnName="POD" type="xs:int" minOccurs="0" />
+              <xs:element name="TMRollNo" msprop:Generator_ColumnVarNameInTable="columnTMRollNo" msprop:Generator_ColumnPropNameInRow="TMRollNo" msprop:Generator_ColumnPropNameInTable="TMRollNoColumn" msprop:Generator_UserColumnName="TMRollNo" type="xs:int" minOccurs="0" />
+              <xs:element name="PrintDate" msprop:Generator_ColumnVarNameInTable="columnPrintDate" msprop:Generator_ColumnPropNameInRow="PrintDate" msprop:Generator_ColumnPropNameInTable="PrintDateColumn" msprop:Generator_UserColumnName="PrintDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="PrinterID" msprop:Generator_ColumnVarNameInTable="columnPrinterID" msprop:Generator_ColumnPropNameInRow="PrinterID" msprop:Generator_ColumnPropNameInTable="PrinterIDColumn" msprop:Generator_UserColumnName="PrinterID" type="xs:int" minOccurs="0" />
+              <xs:element name="PassedBalls" msprop:Generator_ColumnVarNameInTable="columnPassedBalls" msprop:Generator_ColumnPropNameInRow="PassedBalls" msprop:Generator_ColumnPropNameInTable="PassedBallsColumn" msprop:Generator_UserColumnName="PassedBalls" type="xs:int" minOccurs="0" />
+              <xs:element name="FailBalls" msprop:Generator_ColumnVarNameInTable="columnFailBalls" msprop:Generator_ColumnPropNameInRow="FailBalls" msprop:Generator_ColumnPropNameInTable="FailBallsColumn" msprop:Generator_UserColumnName="FailBalls" type="xs:int" minOccurs="0" />
+              <xs:element name="SettingOut" msprop:Generator_ColumnVarNameInTable="columnSettingOut" msprop:Generator_ColumnPropNameInRow="SettingOut" msprop:Generator_ColumnPropNameInTable="SettingOutColumn" msprop:Generator_UserColumnName="SettingOut" type="xs:int" minOccurs="0" />
+              <xs:element name="Smearing" msprop:Generator_ColumnVarNameInTable="columnSmearing" msprop:Generator_ColumnPropNameInRow="Smearing" msprop:Generator_ColumnPropNameInTable="SmearingColumn" msprop:Generator_UserColumnName="Smearing" type="xs:int" minOccurs="0" />
+              <xs:element name="MaterialFault" msprop:Generator_ColumnVarNameInTable="columnMaterialFault" msprop:Generator_ColumnPropNameInRow="MaterialFault" msprop:Generator_ColumnPropNameInTable="MaterialFaultColumn" msprop:Generator_UserColumnName="MaterialFault" type="xs:int" minOccurs="0" />
+              <xs:element name="Touching" msprop:Generator_ColumnVarNameInTable="columnTouching" msprop:Generator_ColumnPropNameInRow="Touching" msprop:Generator_ColumnPropNameInTable="TouchingColumn" msprop:Generator_UserColumnName="Touching" type="xs:int" minOccurs="0" />
+              <xs:element name="EntryDate" msprop:Generator_ColumnVarNameInTable="columnEntryDate" msprop:Generator_ColumnPropNameInRow="EntryDate" msprop:Generator_ColumnPropNameInTable="EntryDateColumn" msprop:Generator_UserColumnName="EntryDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="SysIP" msprop:Generator_ColumnVarNameInTable="columnSysIP" msprop:Generator_ColumnPropNameInRow="SysIP" msprop:Generator_ColumnPropNameInTable="SysIPColumn" msprop:Generator_UserColumnName="SysIP" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ClientID" msprop:Generator_ColumnVarNameInTable="columnClientID" msprop:Generator_ColumnPropNameInRow="ClientID" msprop:Generator_ColumnPropNameInTable="ClientIDColumn" msprop:Generator_UserColumnName="ClientID" type="xs:int" minOccurs="0" />
+              <xs:element name="ModelID" msprop:Generator_ColumnVarNameInTable="columnModelID" msprop:Generator_ColumnPropNameInRow="ModelID" msprop:Generator_ColumnPropNameInTable="ModelIDColumn" msprop:Generator_UserColumnName="ModelID" type="xs:int" minOccurs="0" />
+              <xs:element name="ArtID" msprop:Generator_ColumnVarNameInTable="columnArtID" msprop:Generator_ColumnPropNameInRow="ArtID" msprop:Generator_ColumnPropNameInTable="ArtIDColumn" msprop:Generator_UserColumnName="ArtID" type="xs:int" minOccurs="0" />
+              <xs:element name="ArtSize" msprop:Generator_ColumnVarNameInTable="columnArtSize" msprop:Generator_ColumnPropNameInRow="ArtSize" msprop:Generator_ColumnPropNameInTable="ArtSizeColumn" msprop:Generator_UserColumnName="ArtSize" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ProdQty" msprop:Generator_ColumnVarNameInTable="columnProdQty" msprop:Generator_ColumnPropNameInRow="ProdQty" msprop:Generator_ColumnPropNameInTable="ProdQtyColumn" msprop:Generator_UserColumnName="ProdQty" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:USers" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="tbl_HRM_Dept_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tbl_HRM_Dept" />
+      <xs:field xpath="mstns:DeptID" />
+    </xs:unique>
+    <xs:unique name="tbl_PC_AMB_Printer_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tbl_PC_AMB_Printer" />
+      <xs:field xpath="mstns:PrinterID" />
+    </xs:unique>
+    <xs:unique name="View_Article_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:View_Article" />
+      <xs:field xpath="mstns:ClientID" />
+      <xs:field xpath="mstns:ModelID" />
+      <xs:field xpath="mstns:ArtSize" />
+      <xs:field xpath="mstns:ArtID" />
+    </xs:unique>
+    <xs:unique name="tbl_PC_AMB_Printing_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tbl_PC_AMB_Printing" />
+      <xs:field xpath="mstns:TranID" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="tbl_HRM_Dept_USers" msdata:parent="tbl_HRM_Dept" msdata:child="USers" msdata:parentkey="DeptID" msdata:childkey="DeptID" msprop:Generator_UserChildTable="USers" msprop:Generator_ChildPropName="GetUSersRows" msprop:Generator_UserRelationName="tbl_HRM_Dept_USers" msprop:Generator_RelationVarName="relationtbl_HRM_Dept_USers" msprop:Generator_UserParentTable="tbl_HRM_Dept" msprop:Generator_ParentPropName="tbl_HRM_DeptRow" />
+      <msdata:Relationship name="View_Article_tbl_PC_AMB_Printing" msdata:parent="View_Article" msdata:child="tbl_PC_AMB_Printing" msdata:parentkey="ClientID ModelID ArtID ArtSize" msdata:childkey="ClientID ModelID ArtID ArtSize" msprop:Generator_UserChildTable="tbl_PC_AMB_Printing" msprop:Generator_ChildPropName="Gettbl_PC_AMB_PrintingRows" msprop:Generator_UserRelationName="View_Article_tbl_PC_AMB_Printing" msprop:Generator_ParentPropName="View_ArticleRowParent" msprop:Generator_RelationVarName="relationView_Article_tbl_PC_AMB_Printing" msprop:Generator_UserParentTable="View_Article" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

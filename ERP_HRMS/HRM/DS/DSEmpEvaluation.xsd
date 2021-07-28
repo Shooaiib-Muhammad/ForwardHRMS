@@ -1,0 +1,1012 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSEmpEvaluation" targetNamespace="http://tempuri.org/DSEmpEvaluation.xsd" xmlns:mstns="http://tempuri.org/DSEmpEvaluation.xsd" xmlns="http://tempuri.org/DSEmpEvaluation.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="HRMSCon" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HRMSCon (MySettings)" PropertyReference="ApplicationSettings.ERP_HRMS.My.MySettings.GlobalReference.Default.HRMSCon" Provider="System.Data.Odbc" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tbl_Acc_FinancialPeriodTableAdapter" GeneratorDataComponentClassName="tbl_Acc_FinancialPeriodTableAdapter" Name="tbl_Acc_FinancialPeriod" UserDataComponentName="tbl_Acc_FinancialPeriodTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HRMSCon (MySettings)" DbObjectName="HRMS.dbo.View_Fin_Year" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        FinancialPeriod
+FROM            View_Fin_Year
+WHERE        (FYear &lt;= CONVERT([varchar](20), CYear))
+ORDER BY FinancialPeriod DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="FinancialPeriod" DataSetColumn="FinancialPeriod" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tbl_Emp_DojTableAdapter" GeneratorDataComponentClassName="tbl_Emp_DojTableAdapter" Name="tbl_Emp_Doj" UserDataComponentName="tbl_Emp_DojTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HRMSCon (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        tbl_Acc_Salary.EmpID, tbl_HRM_Emp_Info.DateOfJoning AS DOJ, tbl_HRM_Emp_Info.EmpStatus, tbl_Acc_Salary.BasicSalary AS GrossSalary, tbl_HRM_Emp_Info.DateOfPermanent AS EOCDate, 
+                         tbl_HRM_Emp_Info.GradeID AS Grade
+FROM            tbl_Acc_Salary, tbl_HRM_Emp_Info
+WHERE        tbl_Acc_Salary.EmpID = tbl_HRM_Emp_Info.EmpID AND tbl_Acc_Salary.EmpID = tbl_HRM_Emp_Info.EmpID AND (tbl_HRM_Emp_Info.EmpStatus = 1) AND (tbl_HRM_Emp_Info.CardNo &lt; 10000) AND 
+                         (tbl_Acc_Salary.ActivationStatus = 1)
+ORDER BY tbl_HRM_Emp_Info.CardNo</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="EmpID" DataSetColumn="EmpID" />
+              <Mapping SourceColumn="DOJ" DataSetColumn="DOJ" />
+              <Mapping SourceColumn="EmpStatus" DataSetColumn="EmpStatus" />
+              <Mapping SourceColumn="GrossSalary" DataSetColumn="GrossSalary" />
+              <Mapping SourceColumn="EOCDate" DataSetColumn="EOCDate" />
+              <Mapping SourceColumn="Grade" DataSetColumn="Grade" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="HRMSCon (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        tbl_Acc_Salary.EmpID, tbl_HRM_Emp_Info.DateOfJoning AS DOJ, tbl_HRM_Emp_Info.EmpStatus, tbl_Acc_Salary.BasicSalary AS GrossSalary, tbl_HRM_Emp_Info.DateOfPermanent AS EOCDate, 
+                         tbl_HRM_Emp_Info.GradeID AS Grade
+FROM            tbl_Acc_Salary, tbl_HRM_Emp_Info
+WHERE        tbl_Acc_Salary.EmpID = tbl_HRM_Emp_Info.EmpID AND tbl_Acc_Salary.EmpID = tbl_HRM_Emp_Info.EmpID AND (tbl_HRM_Emp_Info.EmpStatus = 1) AND (tbl_HRM_Emp_Info.CardNo &lt; 10000) AND 
+                         (tbl_Acc_Salary.ActivationStatus = 1)
+ORDER BY tbl_HRM_Emp_Info.CardNo</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tbl_Hrm_Emp_Info_NoticesTableAdapter" GeneratorDataComponentClassName="tbl_Hrm_Emp_Info_NoticesTableAdapter" Name="tbl_Hrm_Emp_Info_Notices" UserDataComponentName="tbl_Hrm_Emp_Info_NoticesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HRMSCon (MySettings)" DbObjectName="HRMS.dbo.tbl_HRM_Emp_Info" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        EmpID, COUNT(NoticeID) AS ID
+FROM           tbl_HRM_Emp_Info
+WHERE        (EmpID = ?) AND (NoticeIssueDate BETWEEN ? AND ?)
+GROUP BY EmpID</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param1" ColumnName="EmpID" DataSourceName="HRMS.dbo.tbl_HRM_Emp_Info" DataTypeServer="int identity" DbType="Int32" Direction="Input" ParameterName="EmpID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EmpID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param2" ColumnName="NoticeIssueDate" DataSourceName="HRMS.dbo.tbl_HRM_Emp_Info" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="NoticeIssueDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="NoticeIssueDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param3" ColumnName="NoticeIssueDate" DataSourceName="HRMS.dbo.tbl_HRM_Emp_Info" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="NoticeIssueDate1" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="NoticeIssueDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="EmpID" DataSetColumn="EmpID" />
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tbl_Emp_Evaluation1TableAdapter" GeneratorDataComponentClassName="tbl_Emp_Evaluation1TableAdapter" Name="tbl_Emp_Evaluation1" UserDataComponentName="tbl_Emp_Evaluation1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HRMSCon (MySettings)" DbObjectName="HRMS.dbo.tbl_Emp_Evaluation" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [tbl_Emp_Evaluation] WHERE (([TranID] = ?) AND ([EvaluationPeriod] = ?) AND ([FinancialPeriod] = ?) AND ([EvaluationDate] = ?) AND ([EmpId] = ?) AND ([Leaves] = ?) AND ([Absents] = ?) AND ([Late] = ?) AND ([Notice] = ?) AND ((? = 1 AND [WorkProgress] IS NULL) OR ([WorkProgress] = ?)) AND ((? = 1 AND [Attitude] IS NULL) OR ([Attitude] = ?)) AND ((? = 1 AND [Knowledge] IS NULL) OR ([Knowledge] = ?)) AND ((? = 1 AND [SPIncrement] IS NULL) OR ([SPIncrement] = ?)) AND ((? = 1 AND [Remarks] IS NULL) OR ([Remarks] = ?)) AND ([EvalID] = ?))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_TranID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TranID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_EvaluationPeriod" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EvaluationPeriod" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_FinancialPeriod" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="FinancialPeriod" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_EvaluationDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EvaluationDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_EmpId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EmpId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Leaves" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Leaves" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Absents" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Absents" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Late" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Late" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Notice" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Notice" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_WorkProgress" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="WorkProgress" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_WorkProgress" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="WorkProgress" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Attitude" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Attitude" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Attitude" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Attitude" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Knowledge" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Knowledge" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Knowledge" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Knowledge" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_SPIncrement" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SPIncrement" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_SPIncrement" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SPIncrement" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Remarks" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Remarks" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Remarks" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Remarks" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_EvalID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EvalID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TranID, EvaluationPeriod, FinancialPeriod, EvaluationDate, EmpId, Leaves, Absents, Late, Notice, WorkProgress, Attitude, Knowledge, SPIncrement, Remarks, 
+                         EvalID
+FROM            tbl_Emp_Evaluation</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [tbl_Emp_Evaluation] SET [EvaluationPeriod] = ?, [FinancialPeriod] = ?, [EvaluationDate] = ?, [EmpId] = ?, [Leaves] = ?, [Absents] = ?, [Late] = ?, [Notice] = ?, [WorkProgress] = ?, [Attitude] = ?, [Knowledge] = ?, [SPIncrement] = ?, [Remarks] = ?, [EvalID] = ? WHERE (([TranID] = ?) AND ([EvaluationPeriod] = ?) AND ([FinancialPeriod] = ?) AND ([EvaluationDate] = ?) AND ([EmpId] = ?) AND ([Leaves] = ?) AND ([Absents] = ?) AND ([Late] = ?) AND ([Notice] = ?) AND ((? = 1 AND [WorkProgress] IS NULL) OR ([WorkProgress] = ?)) AND ((? = 1 AND [Attitude] IS NULL) OR ([Attitude] = ?)) AND ((? = 1 AND [Knowledge] IS NULL) OR ([Knowledge] = ?)) AND ((? = 1 AND [SPIncrement] IS NULL) OR ([SPIncrement] = ?)) AND ((? = 1 AND [Remarks] IS NULL) OR ([Remarks] = ?)) AND ([EvalID] = ?))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="EvaluationPeriod" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EvaluationPeriod" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="FinancialPeriod" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="FinancialPeriod" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="EvaluationDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EvaluationDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="EmpId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EmpId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Leaves" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Leaves" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Absents" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Absents" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Late" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Late" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Notice" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Notice" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="WorkProgress" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="WorkProgress" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Attitude" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Attitude" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Knowledge" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Knowledge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="SPIncrement" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SPIncrement" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Remarks" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Remarks" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="EvalID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EvalID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_TranID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TranID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_EvaluationPeriod" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EvaluationPeriod" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_FinancialPeriod" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="FinancialPeriod" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_EvaluationDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EvaluationDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_EmpId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EmpId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Leaves" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Leaves" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Absents" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Absents" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Late" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Late" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Notice" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Notice" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_WorkProgress" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="WorkProgress" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_WorkProgress" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="WorkProgress" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Attitude" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Attitude" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Attitude" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Attitude" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Knowledge" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Knowledge" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Knowledge" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Knowledge" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_SPIncrement" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SPIncrement" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_SPIncrement" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SPIncrement" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Remarks" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Remarks" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Remarks" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Remarks" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_EvalID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EvalID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TranID" DataSetColumn="TranID" />
+              <Mapping SourceColumn="EvaluationPeriod" DataSetColumn="EvaluationPeriod" />
+              <Mapping SourceColumn="FinancialPeriod" DataSetColumn="FinancialPeriod" />
+              <Mapping SourceColumn="EvaluationDate" DataSetColumn="EvaluationDate" />
+              <Mapping SourceColumn="EmpId" DataSetColumn="EmpId" />
+              <Mapping SourceColumn="Leaves" DataSetColumn="Leaves" />
+              <Mapping SourceColumn="Absents" DataSetColumn="Absents" />
+              <Mapping SourceColumn="Late" DataSetColumn="Late" />
+              <Mapping SourceColumn="Notice" DataSetColumn="Notice" />
+              <Mapping SourceColumn="WorkProgress" DataSetColumn="WorkProgress" />
+              <Mapping SourceColumn="Attitude" DataSetColumn="Attitude" />
+              <Mapping SourceColumn="Knowledge" DataSetColumn="Knowledge" />
+              <Mapping SourceColumn="SPIncrement" DataSetColumn="SPIncrement" />
+              <Mapping SourceColumn="Remarks" DataSetColumn="Remarks" />
+              <Mapping SourceColumn="EvalID" DataSetColumn="EvalID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tbl_Emp_Evaluation2TableAdapter" GeneratorDataComponentClassName="tbl_Emp_Evaluation2TableAdapter" Name="tbl_Emp_Evaluation2" UserDataComponentName="tbl_Emp_Evaluation2TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HRMSCon (MySettings)" DbObjectName="HRMS.dbo.tbl_Emp_Evaluation" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [tbl_Emp_Evaluation] WHERE (([TranID] = ?) AND ([EvalID] = ?) AND ([EvaluationPeriod] = ?) AND ([FinancialPeriod] = ?) AND ([EvaluationDate] = ?) AND ([EmpId] = ?) AND ([Leaves] = ?) AND ([Absents] = ?) AND ([Late] = ?) AND ([Notice] = ?) AND ((? = 1 AND [WorkProgress] IS NULL) OR ([WorkProgress] = ?)) AND ((? = 1 AND [Attitude] IS NULL) OR ([Attitude] = ?)) AND ((? = 1 AND [Knowledge] IS NULL) OR ([Knowledge] = ?)) AND ((? = 1 AND [SPIncrement] IS NULL) OR ([SPIncrement] = ?)) AND ((? = 1 AND [Remarks] IS NULL) OR ([Remarks] = ?)) AND ([DOJ] = ?) AND ([GrossSalary] = ?) AND ([DOP] = ?) AND ([Status] = ?) AND ([Grade] = ?) AND ([DeptId] = ?) AND ([UserId] = ?))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_TranID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TranID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_EvalID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EvalID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_EvaluationPeriod" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EvaluationPeriod" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_FinancialPeriod" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="FinancialPeriod" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_EvaluationDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EvaluationDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_EmpId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EmpId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Leaves" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Leaves" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Absents" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Absents" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Late" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Late" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Notice" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Notice" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_WorkProgress" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="WorkProgress" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_WorkProgress" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="WorkProgress" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Attitude" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Attitude" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Attitude" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Attitude" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Knowledge" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Knowledge" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Knowledge" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Knowledge" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_SPIncrement" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SPIncrement" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_SPIncrement" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SPIncrement" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Remarks" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Remarks" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Remarks" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Remarks" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_DOJ" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="DOJ" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_GrossSalary" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GrossSalary" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_DOP" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="DOP" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="Original_Status" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Status" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Grade" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Grade" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_DeptId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DeptId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_UserId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="UserId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [tbl_Emp_Evaluation] ([EvalID], [EvaluationPeriod], [FinancialPeriod], [EvaluationDate], [EmpId], [Leaves], [Absents], [Late], [Notice], [WorkProgress], [Attitude], [Knowledge], [SPIncrement], [Remarks], [DOJ], [GrossSalary], [DOP], [Status], [Grade], [DeptId], [UserId]) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="EvalID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EvalID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="EvaluationPeriod" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EvaluationPeriod" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="FinancialPeriod" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="FinancialPeriod" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="EvaluationDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EvaluationDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="EmpId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EmpId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Leaves" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Leaves" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Absents" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Absents" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Late" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Late" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Notice" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Notice" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="WorkProgress" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="WorkProgress" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Attitude" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Attitude" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Knowledge" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Knowledge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="SPIncrement" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SPIncrement" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Remarks" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Remarks" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="DOJ" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="DOJ" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="GrossSalary" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GrossSalary" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="DOP" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="DOP" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="Status" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Status" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Grade" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Grade" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="DeptId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DeptId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="UserId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="UserId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TranID, EvalID, EvaluationPeriod, FinancialPeriod, EvaluationDate, EmpId, Leaves, Absents, Late, Notice, WorkProgress, Attitude, Knowledge, SPIncrement, 
+                         Remarks, DOJ, GrossSalary, DOP, Status, Grade, DeptId, UserId
+FROM            tbl_Emp_Evaluation</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [tbl_Emp_Evaluation] SET [EvalID] = ?, [EvaluationPeriod] = ?, [FinancialPeriod] = ?, [EvaluationDate] = ?, [EmpId] = ?, [Leaves] = ?, [Absents] = ?, [Late] = ?, [Notice] = ?, [WorkProgress] = ?, [Attitude] = ?, [Knowledge] = ?, [SPIncrement] = ?, [Remarks] = ?, [DOJ] = ?, [GrossSalary] = ?, [DOP] = ?, [Status] = ?, [Grade] = ?, [DeptId] = ?, [UserId] = ? WHERE (([TranID] = ?) AND ([EvalID] = ?) AND ([EvaluationPeriod] = ?) AND ([FinancialPeriod] = ?) AND ([EvaluationDate] = ?) AND ([EmpId] = ?) AND ([Leaves] = ?) AND ([Absents] = ?) AND ([Late] = ?) AND ([Notice] = ?) AND ((? = 1 AND [WorkProgress] IS NULL) OR ([WorkProgress] = ?)) AND ((? = 1 AND [Attitude] IS NULL) OR ([Attitude] = ?)) AND ((? = 1 AND [Knowledge] IS NULL) OR ([Knowledge] = ?)) AND ((? = 1 AND [SPIncrement] IS NULL) OR ([SPIncrement] = ?)) AND ((? = 1 AND [Remarks] IS NULL) OR ([Remarks] = ?)) AND ([DOJ] = ?) AND ([GrossSalary] = ?) AND ([DOP] = ?) AND ([Status] = ?) AND ([Grade] = ?) AND ([DeptId] = ?) AND ([UserId] = ?))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="EvalID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EvalID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="EvaluationPeriod" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EvaluationPeriod" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="FinancialPeriod" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="FinancialPeriod" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="EvaluationDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EvaluationDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="EmpId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EmpId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Leaves" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Leaves" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Absents" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Absents" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Late" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Late" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Notice" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Notice" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="WorkProgress" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="WorkProgress" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Attitude" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Attitude" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Knowledge" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Knowledge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="SPIncrement" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SPIncrement" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Remarks" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Remarks" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="DOJ" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="DOJ" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="GrossSalary" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GrossSalary" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="DOP" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="DOP" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="Status" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Status" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Grade" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Grade" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="DeptId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DeptId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="UserId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="UserId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_TranID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TranID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_EvalID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EvalID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_EvaluationPeriod" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EvaluationPeriod" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_FinancialPeriod" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="FinancialPeriod" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_EvaluationDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EvaluationDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_EmpId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EmpId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Leaves" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Leaves" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Absents" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Absents" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Late" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Late" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Notice" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Notice" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_WorkProgress" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="WorkProgress" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_WorkProgress" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="WorkProgress" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Attitude" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Attitude" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Attitude" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Attitude" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Knowledge" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Knowledge" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Knowledge" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Knowledge" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_SPIncrement" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SPIncrement" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_SPIncrement" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SPIncrement" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Remarks" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Remarks" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Remarks" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Remarks" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_DOJ" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="DOJ" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_GrossSalary" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GrossSalary" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_DOP" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="DOP" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="Original_Status" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Status" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Grade" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Grade" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_DeptId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DeptId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_UserId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="UserId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TranID" DataSetColumn="TranID" />
+              <Mapping SourceColumn="EvalID" DataSetColumn="EvalID" />
+              <Mapping SourceColumn="EvaluationPeriod" DataSetColumn="EvaluationPeriod" />
+              <Mapping SourceColumn="FinancialPeriod" DataSetColumn="FinancialPeriod" />
+              <Mapping SourceColumn="EvaluationDate" DataSetColumn="EvaluationDate" />
+              <Mapping SourceColumn="EmpId" DataSetColumn="EmpId" />
+              <Mapping SourceColumn="Leaves" DataSetColumn="Leaves" />
+              <Mapping SourceColumn="Absents" DataSetColumn="Absents" />
+              <Mapping SourceColumn="Late" DataSetColumn="Late" />
+              <Mapping SourceColumn="Notice" DataSetColumn="Notice" />
+              <Mapping SourceColumn="WorkProgress" DataSetColumn="WorkProgress" />
+              <Mapping SourceColumn="Attitude" DataSetColumn="Attitude" />
+              <Mapping SourceColumn="Knowledge" DataSetColumn="Knowledge" />
+              <Mapping SourceColumn="SPIncrement" DataSetColumn="SPIncrement" />
+              <Mapping SourceColumn="Remarks" DataSetColumn="Remarks" />
+              <Mapping SourceColumn="DOJ" DataSetColumn="DOJ" />
+              <Mapping SourceColumn="GrossSalary" DataSetColumn="GrossSalary" />
+              <Mapping SourceColumn="DOP" DataSetColumn="DOP" />
+              <Mapping SourceColumn="Status" DataSetColumn="Status" />
+              <Mapping SourceColumn="Grade" DataSetColumn="Grade" />
+              <Mapping SourceColumn="DeptId" DataSetColumn="DeptId" />
+              <Mapping SourceColumn="UserId" DataSetColumn="UserId" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tbl_PayRoll_AbsentsTableAdapter" GeneratorDataComponentClassName="tbl_PayRoll_AbsentsTableAdapter" Name="tbl_PayRoll_Absents" UserDataComponentName="tbl_PayRoll_AbsentsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HRMSCon (MySettings)" DbObjectName="HRMS.dbo.tbl_PayRoll_LongLeaves" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        COUNT(EmpID) AS EmpCount, EmpID
+FROM            tbl_PayRoll_LongLeaves
+WHERE        (LeaveType = 'Absent') AND (leaveDate BETWEEN ? AND ?)
+GROUP BY EmpID
+HAVING        (EmpID = ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param1" ColumnName="LeaveDate" DataSourceName="HRMS.dbo.tbl_PayRoll_LongLeaves" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="LeaveDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="LeaveDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param2" ColumnName="LeaveDate" DataSourceName="HRMS.dbo.tbl_PayRoll_LongLeaves" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="LeaveDate1" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="LeaveDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param3" ColumnName="EmpID" DataSourceName="HRMS.dbo.tbl_PayRoll_LongLeaves" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="EmpID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EmpID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="EmpCount" DataSetColumn="EmpCount" />
+              <Mapping SourceColumn="EmpID" DataSetColumn="EmpID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tbl_PayRoll_LeavesTableAdapter" GeneratorDataComponentClassName="tbl_PayRoll_LeavesTableAdapter" Name="tbl_PayRoll_Leaves" UserDataComponentName="tbl_PayRoll_LeavesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HRMSCon (MySettings)" DbObjectName="HRMS.dbo.tbl_PayRoll_LongLeaves" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        SUM(Paid) AS EmpCount, EmpID
+FROM            tbl_PayRoll_LongLeaves
+WHERE        (LeaveType IN ('Casual', 'Casual 1/2', 'M1', 'Sick')) AND (leaveDate BETWEEN ? AND ?)
+GROUP BY EmpID
+HAVING        (EmpID = ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param1" ColumnName="LeaveDate" DataSourceName="HRMS.dbo.tbl_PayRoll_LongLeaves" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="LeaveDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="LeaveDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param2" ColumnName="LeaveDate" DataSourceName="HRMS.dbo.tbl_PayRoll_LongLeaves" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="LeaveDate1" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="LeaveDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param3" ColumnName="EmpID" DataSourceName="HRMS.dbo.tbl_PayRoll_LongLeaves" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="EmpID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EmpID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="EmpCount" DataSetColumn="EmpCount" />
+              <Mapping SourceColumn="EmpID" DataSetColumn="EmpID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="View_Rpt_Acc_MorningShortMinsTableAdapter" GeneratorDataComponentClassName="View_Rpt_Acc_MorningShortMinsTableAdapter" Name="View_Rpt_Acc_MorningShortMins" UserDataComponentName="View_Rpt_Acc_MorningShortMinsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HRMSCon (MySettings)" DbObjectName="HRMS.dbo.View_Rpt_Acc_MorningShortMins" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        EmpID, SUM(MyShortInMinutes) AS MorningShortMins
+FROM            View_Rpt_Acc_MorningShortMins
+WHERE        (AttDate BETWEEN ? AND ?)
+GROUP BY EmpID
+HAVING        (EmpID = ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param1" ColumnName="AttDate" DataSourceName="HRMS.dbo.View_Rpt_Acc_MorningShortMins" DataTypeServer="smalldatetime" DbType="DateTime" Direction="Input" ParameterName="AttDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="AttDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param2" ColumnName="AttDate" DataSourceName="HRMS.dbo.View_Rpt_Acc_MorningShortMins" DataTypeServer="smalldatetime" DbType="DateTime" Direction="Input" ParameterName="AttDate1" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="AttDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param3" ColumnName="EmpID" DataSourceName="HRMS.dbo.View_Rpt_Acc_MorningShortMins" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="EmpID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EmpID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="EmpID" DataSetColumn="EmpID" />
+              <Mapping SourceColumn="MorningShortMins" DataSetColumn="MorningShortMins" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tbl_Emp_Evaluation_HeadTableAdapter" GeneratorDataComponentClassName="tbl_Emp_Evaluation_HeadTableAdapter" Name="tbl_Emp_Evaluation_Head" UserDataComponentName="tbl_Emp_Evaluation_HeadTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HRMSCon (MySettings)" DbObjectName="HRMS.dbo.tbl_Emp_Evaluation_Head" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [tbl_Emp_Evaluation_Head] WHERE (([EvalID] = ?) AND ([EvaluationPeriod] = ?) AND ([FinancialPeriod] = ?) AND ([EvaluationDate] = ?) AND ((? = 1 AND [MonthNO] IS NULL) OR ([MonthNO] = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_EvalID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EvalID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_EvaluationPeriod" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EvaluationPeriod" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_FinancialPeriod" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="FinancialPeriod" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_EvaluationDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EvaluationDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_MonthNO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MonthNO" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_MonthNO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MonthNO" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [tbl_Emp_Evaluation_Head] ([EvaluationPeriod], [FinancialPeriod], [EvaluationDate], [MonthNO]) VALUES (?, ?, ?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="EvaluationPeriod" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EvaluationPeriod" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="FinancialPeriod" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="FinancialPeriod" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="EvaluationDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EvaluationDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="MonthNO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MonthNO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        EvalID, EvaluationPeriod, FinancialPeriod, EvaluationDate, MonthNO
+FROM            tbl_Emp_Evaluation_Head</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [tbl_Emp_Evaluation_Head] SET [EvaluationPeriod] = ?, [FinancialPeriod] = ?, [EvaluationDate] = ?, [MonthNO] = ? WHERE (([EvalID] = ?) AND ([EvaluationPeriod] = ?) AND ([FinancialPeriod] = ?) AND ([EvaluationDate] = ?) AND ((? = 1 AND [MonthNO] IS NULL) OR ([MonthNO] = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="EvaluationPeriod" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EvaluationPeriod" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="FinancialPeriod" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="FinancialPeriod" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="EvaluationDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EvaluationDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="MonthNO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MonthNO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_EvalID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EvalID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_EvaluationPeriod" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EvaluationPeriod" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_FinancialPeriod" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="FinancialPeriod" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_EvaluationDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EvaluationDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_MonthNO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MonthNO" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_MonthNO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MonthNO" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="EvalID" DataSetColumn="EvalID" />
+              <Mapping SourceColumn="EvaluationPeriod" DataSetColumn="EvaluationPeriod" />
+              <Mapping SourceColumn="FinancialPeriod" DataSetColumn="FinancialPeriod" />
+              <Mapping SourceColumn="EvaluationDate" DataSetColumn="EvaluationDate" />
+              <Mapping SourceColumn="MonthNO" DataSetColumn="MonthNO" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tbl_Emp_EvaluationTableAdapter" GeneratorDataComponentClassName="tbl_Emp_EvaluationTableAdapter" Name="tbl_Emp_Evaluation" UserDataComponentName="tbl_Emp_EvaluationTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HRMSCon (MySettings)" DbObjectName="HRMS.dbo.tbl_Emp_Evaluation" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [tbl_Emp_Evaluation] WHERE (([TranID] = ?) AND ([EvaluationPeriod] = ?) AND ([FinancialPeriod] = ?) AND ([EvaluationDate] = ?) AND ([EmpId] = ?) AND ([Leaves] = ?) AND ([Absents] = ?) AND ([Late] = ?) AND ([Notice] = ?) AND ((? = 1 AND [WorkProgress] IS NULL) OR ([WorkProgress] = ?)) AND ((? = 1 AND [Attitude] IS NULL) OR ([Attitude] = ?)) AND ((? = 1 AND [Knowledge] IS NULL) OR ([Knowledge] = ?)) AND ((? = 1 AND [SPIncrement] IS NULL) OR ([SPIncrement] = ?)) AND ((? = 1 AND [Remarks] IS NULL) OR ([Remarks] = ?)) AND ([EvalID] = ?) AND ([DOJ] = ?) AND ([GrossSalary] = ?) AND ([Status] = ?) AND ([Grade] = ?))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_TranID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TranID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_EvaluationPeriod" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EvaluationPeriod" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_FinancialPeriod" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="FinancialPeriod" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_EvaluationDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EvaluationDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_EmpId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EmpId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Leaves" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Leaves" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Absents" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Absents" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Late" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Late" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Notice" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Notice" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_WorkProgress" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="WorkProgress" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_WorkProgress" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="WorkProgress" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Attitude" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Attitude" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Attitude" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Attitude" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Knowledge" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Knowledge" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Knowledge" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Knowledge" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_SPIncrement" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SPIncrement" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_SPIncrement" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SPIncrement" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Remarks" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Remarks" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Remarks" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Remarks" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_EvalID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EvalID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_DOJ" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="DOJ" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_GrossSalary" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GrossSalary" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="Original_Status" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Status" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Grade" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Grade" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TranID, EvaluationPeriod, FinancialPeriod, EvaluationDate, EmpId, Leaves, Absents, Late, Notice, WorkProgress, Attitude, Knowledge, SPIncrement, Remarks, 
+                         EvalID, DOJ, GrossSalary, Status, Grade
+FROM            tbl_Emp_Evaluation
+ORDER BY TranID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [tbl_Emp_Evaluation] SET [EvaluationPeriod] = ?, [FinancialPeriod] = ?, [EvaluationDate] = ?, [EmpId] = ?, [Leaves] = ?, [Absents] = ?, [Late] = ?, [Notice] = ?, [WorkProgress] = ?, [Attitude] = ?, [Knowledge] = ?, [SPIncrement] = ?, [Remarks] = ?, [EvalID] = ?, [DOJ] = ?, [GrossSalary] = ?, [Status] = ?, [Grade] = ? WHERE (([TranID] = ?) AND ([EvaluationPeriod] = ?) AND ([FinancialPeriod] = ?) AND ([EvaluationDate] = ?) AND ([EmpId] = ?) AND ([Leaves] = ?) AND ([Absents] = ?) AND ([Late] = ?) AND ([Notice] = ?) AND ((? = 1 AND [WorkProgress] IS NULL) OR ([WorkProgress] = ?)) AND ((? = 1 AND [Attitude] IS NULL) OR ([Attitude] = ?)) AND ((? = 1 AND [Knowledge] IS NULL) OR ([Knowledge] = ?)) AND ((? = 1 AND [SPIncrement] IS NULL) OR ([SPIncrement] = ?)) AND ((? = 1 AND [Remarks] IS NULL) OR ([Remarks] = ?)) AND ([EvalID] = ?) AND ([DOJ] = ?) AND ([GrossSalary] = ?) AND ([Status] = ?) AND ([Grade] = ?))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="EvaluationPeriod" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EvaluationPeriod" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="FinancialPeriod" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="FinancialPeriod" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="EvaluationDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EvaluationDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="EmpId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EmpId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Leaves" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Leaves" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Absents" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Absents" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Late" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Late" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Notice" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Notice" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="WorkProgress" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="WorkProgress" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Attitude" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Attitude" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Knowledge" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Knowledge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="SPIncrement" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SPIncrement" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Remarks" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Remarks" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="EvalID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EvalID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="DOJ" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="DOJ" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="GrossSalary" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GrossSalary" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="Status" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Status" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Grade" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Grade" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_TranID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TranID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_EvaluationPeriod" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EvaluationPeriod" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_FinancialPeriod" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="FinancialPeriod" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_EvaluationDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EvaluationDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_EmpId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EmpId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Leaves" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Leaves" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Absents" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Absents" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Late" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Late" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Notice" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Notice" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_WorkProgress" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="WorkProgress" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_WorkProgress" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="WorkProgress" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Attitude" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Attitude" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Attitude" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Attitude" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Knowledge" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Knowledge" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Knowledge" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Knowledge" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_SPIncrement" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SPIncrement" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_SPIncrement" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SPIncrement" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Remarks" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Remarks" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Remarks" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Remarks" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_EvalID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EvalID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_DOJ" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="DOJ" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_GrossSalary" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GrossSalary" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="Original_Status" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Status" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_Grade" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Grade" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TranID" DataSetColumn="TranID" />
+              <Mapping SourceColumn="EvaluationPeriod" DataSetColumn="EvaluationPeriod" />
+              <Mapping SourceColumn="FinancialPeriod" DataSetColumn="FinancialPeriod" />
+              <Mapping SourceColumn="EvaluationDate" DataSetColumn="EvaluationDate" />
+              <Mapping SourceColumn="EmpId" DataSetColumn="EmpId" />
+              <Mapping SourceColumn="Leaves" DataSetColumn="Leaves" />
+              <Mapping SourceColumn="Absents" DataSetColumn="Absents" />
+              <Mapping SourceColumn="Late" DataSetColumn="Late" />
+              <Mapping SourceColumn="Notice" DataSetColumn="Notice" />
+              <Mapping SourceColumn="WorkProgress" DataSetColumn="WorkProgress" />
+              <Mapping SourceColumn="Attitude" DataSetColumn="Attitude" />
+              <Mapping SourceColumn="Knowledge" DataSetColumn="Knowledge" />
+              <Mapping SourceColumn="SPIncrement" DataSetColumn="SPIncrement" />
+              <Mapping SourceColumn="Remarks" DataSetColumn="Remarks" />
+              <Mapping SourceColumn="EvalID" DataSetColumn="EvalID" />
+              <Mapping SourceColumn="DOJ" DataSetColumn="DOJ" />
+              <Mapping SourceColumn="GrossSalary" DataSetColumn="GrossSalary" />
+              <Mapping SourceColumn="Status" DataSetColumn="Status" />
+              <Mapping SourceColumn="Grade" DataSetColumn="Grade" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSEmpEvaluation" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSEmpEvaluation" msprop:Generator_UserDSName="DSEmpEvaluation">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tbl_Acc_FinancialPeriod" msprop:Generator_TableClassName="tbl_Acc_FinancialPeriodDataTable" msprop:Generator_TableVarName="tabletbl_Acc_FinancialPeriod" msprop:Generator_RowChangedName="tbl_Acc_FinancialPeriodRowChanged" msprop:Generator_TablePropName="tbl_Acc_FinancialPeriod" msprop:Generator_RowDeletingName="tbl_Acc_FinancialPeriodRowDeleting" msprop:Generator_RowChangingName="tbl_Acc_FinancialPeriodRowChanging" msprop:Generator_RowEvHandlerName="tbl_Acc_FinancialPeriodRowChangeEventHandler" msprop:Generator_RowDeletedName="tbl_Acc_FinancialPeriodRowDeleted" msprop:Generator_RowClassName="tbl_Acc_FinancialPeriodRow" msprop:Generator_UserTableName="tbl_Acc_FinancialPeriod" msprop:Generator_RowEvArgName="tbl_Acc_FinancialPeriodRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FinancialPeriod" msprop:Generator_ColumnVarNameInTable="columnFinancialPeriod" msprop:Generator_ColumnPropNameInRow="FinancialPeriod" msprop:Generator_ColumnPropNameInTable="FinancialPeriodColumn" msprop:Generator_UserColumnName="FinancialPeriod">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tbl_Emp_Doj" msprop:Generator_TableClassName="tbl_Emp_DojDataTable" msprop:Generator_TableVarName="tabletbl_Emp_Doj" msprop:Generator_RowChangedName="tbl_Emp_DojRowChanged" msprop:Generator_TablePropName="tbl_Emp_Doj" msprop:Generator_RowDeletingName="tbl_Emp_DojRowDeleting" msprop:Generator_RowChangingName="tbl_Emp_DojRowChanging" msprop:Generator_RowEvHandlerName="tbl_Emp_DojRowChangeEventHandler" msprop:Generator_RowDeletedName="tbl_Emp_DojRowDeleted" msprop:Generator_RowClassName="tbl_Emp_DojRow" msprop:Generator_UserTableName="tbl_Emp_Doj" msprop:Generator_RowEvArgName="tbl_Emp_DojRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EmpID" msprop:Generator_ColumnVarNameInTable="columnEmpID" msprop:Generator_ColumnPropNameInRow="EmpID" msprop:Generator_ColumnPropNameInTable="EmpIDColumn" msprop:Generator_UserColumnName="EmpID" type="xs:int" />
+              <xs:element name="DOJ" msprop:Generator_ColumnVarNameInTable="columnDOJ" msprop:Generator_ColumnPropNameInRow="DOJ" msprop:Generator_ColumnPropNameInTable="DOJColumn" msprop:Generator_UserColumnName="DOJ" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="EmpStatus" msprop:Generator_ColumnVarNameInTable="columnEmpStatus" msprop:Generator_ColumnPropNameInRow="EmpStatus" msprop:Generator_ColumnPropNameInTable="EmpStatusColumn" msprop:Generator_UserColumnName="EmpStatus" type="xs:boolean" minOccurs="0" />
+              <xs:element name="GrossSalary" msprop:Generator_ColumnVarNameInTable="columnGrossSalary" msprop:Generator_ColumnPropNameInRow="GrossSalary" msprop:Generator_ColumnPropNameInTable="GrossSalaryColumn" msprop:Generator_UserColumnName="GrossSalary" type="xs:decimal" />
+              <xs:element name="EOCDate" msprop:Generator_ColumnVarNameInTable="columnEOCDate" msprop:Generator_ColumnPropNameInRow="EOCDate" msprop:Generator_ColumnPropNameInTable="EOCDateColumn" msprop:Generator_UserColumnName="EOCDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Grade" msprop:Generator_ColumnVarNameInTable="columnGrade" msprop:Generator_ColumnPropNameInRow="Grade" msprop:Generator_ColumnPropNameInTable="GradeColumn" msprop:Generator_UserColumnName="Grade" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tbl_Hrm_Emp_Info_Notices" msprop:Generator_TableClassName="tbl_Hrm_Emp_Info_NoticesDataTable" msprop:Generator_TableVarName="tabletbl_Hrm_Emp_Info_Notices" msprop:Generator_RowChangedName="tbl_Hrm_Emp_Info_NoticesRowChanged" msprop:Generator_TablePropName="tbl_Hrm_Emp_Info_Notices" msprop:Generator_RowDeletingName="tbl_Hrm_Emp_Info_NoticesRowDeleting" msprop:Generator_RowChangingName="tbl_Hrm_Emp_Info_NoticesRowChanging" msprop:Generator_RowEvHandlerName="tbl_Hrm_Emp_Info_NoticesRowChangeEventHandler" msprop:Generator_RowDeletedName="tbl_Hrm_Emp_Info_NoticesRowDeleted" msprop:Generator_RowClassName="tbl_Hrm_Emp_Info_NoticesRow" msprop:Generator_UserTableName="tbl_Hrm_Emp_Info_Notices" msprop:Generator_RowEvArgName="tbl_Hrm_Emp_Info_NoticesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EmpID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnEmpID" msprop:Generator_ColumnPropNameInRow="EmpID" msprop:Generator_ColumnPropNameInTable="EmpIDColumn" msprop:Generator_UserColumnName="EmpID" type="xs:int" />
+              <xs:element name="ID" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tbl_Emp_Evaluation1" msprop:Generator_TableClassName="tbl_Emp_Evaluation1DataTable" msprop:Generator_TableVarName="tabletbl_Emp_Evaluation1" msprop:Generator_RowChangedName="tbl_Emp_Evaluation1RowChanged" msprop:Generator_TablePropName="tbl_Emp_Evaluation1" msprop:Generator_RowDeletingName="tbl_Emp_Evaluation1RowDeleting" msprop:Generator_RowChangingName="tbl_Emp_Evaluation1RowChanging" msprop:Generator_RowEvHandlerName="tbl_Emp_Evaluation1RowChangeEventHandler" msprop:Generator_RowDeletedName="tbl_Emp_Evaluation1RowDeleted" msprop:Generator_RowClassName="tbl_Emp_Evaluation1Row" msprop:Generator_UserTableName="tbl_Emp_Evaluation1" msprop:Generator_RowEvArgName="tbl_Emp_Evaluation1RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TranID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnTranID" msprop:Generator_ColumnPropNameInRow="TranID" msprop:Generator_ColumnPropNameInTable="TranIDColumn" msprop:Generator_UserColumnName="TranID" type="xs:int" />
+              <xs:element name="EvaluationPeriod" msprop:Generator_ColumnVarNameInTable="columnEvaluationPeriod" msprop:Generator_ColumnPropNameInRow="EvaluationPeriod" msprop:Generator_ColumnPropNameInTable="EvaluationPeriodColumn" msprop:Generator_UserColumnName="EvaluationPeriod">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FinancialPeriod" msprop:Generator_ColumnVarNameInTable="columnFinancialPeriod" msprop:Generator_ColumnPropNameInRow="FinancialPeriod" msprop:Generator_ColumnPropNameInTable="FinancialPeriodColumn" msprop:Generator_UserColumnName="FinancialPeriod">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EvaluationDate" msprop:Generator_ColumnVarNameInTable="columnEvaluationDate" msprop:Generator_ColumnPropNameInRow="EvaluationDate" msprop:Generator_ColumnPropNameInTable="EvaluationDateColumn" msprop:Generator_UserColumnName="EvaluationDate" type="xs:dateTime" />
+              <xs:element name="EmpId" msprop:Generator_ColumnVarNameInTable="columnEmpId" msprop:Generator_ColumnPropNameInRow="EmpId" msprop:Generator_ColumnPropNameInTable="EmpIdColumn" msprop:Generator_UserColumnName="EmpId" type="xs:int" />
+              <xs:element name="Leaves" msprop:Generator_ColumnVarNameInTable="columnLeaves" msprop:Generator_ColumnPropNameInRow="Leaves" msprop:Generator_ColumnPropNameInTable="LeavesColumn" msprop:Generator_UserColumnName="Leaves">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1050" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Absents" msprop:Generator_ColumnVarNameInTable="columnAbsents" msprop:Generator_ColumnPropNameInRow="Absents" msprop:Generator_ColumnPropNameInTable="AbsentsColumn" msprop:Generator_UserColumnName="Absents">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1050" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Late" msprop:Generator_ColumnVarNameInTable="columnLate" msprop:Generator_ColumnPropNameInRow="Late" msprop:Generator_ColumnPropNameInTable="LateColumn" msprop:Generator_UserColumnName="Late">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1050" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Notice" msprop:Generator_ColumnVarNameInTable="columnNotice" msprop:Generator_ColumnPropNameInRow="Notice" msprop:Generator_ColumnPropNameInTable="NoticeColumn" msprop:Generator_UserColumnName="Notice">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1050" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="WorkProgress" msprop:Generator_ColumnVarNameInTable="columnWorkProgress" msprop:Generator_ColumnPropNameInRow="WorkProgress" msprop:Generator_ColumnPropNameInTable="WorkProgressColumn" msprop:Generator_UserColumnName="WorkProgress" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1050" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Attitude" msprop:Generator_ColumnVarNameInTable="columnAttitude" msprop:Generator_ColumnPropNameInRow="Attitude" msprop:Generator_ColumnPropNameInTable="AttitudeColumn" msprop:Generator_UserColumnName="Attitude" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1050" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Knowledge" msprop:Generator_ColumnVarNameInTable="columnKnowledge" msprop:Generator_ColumnPropNameInRow="Knowledge" msprop:Generator_ColumnPropNameInTable="KnowledgeColumn" msprop:Generator_UserColumnName="Knowledge" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1050" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SPIncrement" msprop:Generator_ColumnVarNameInTable="columnSPIncrement" msprop:Generator_ColumnPropNameInRow="SPIncrement" msprop:Generator_ColumnPropNameInTable="SPIncrementColumn" msprop:Generator_UserColumnName="SPIncrement" type="xs:int" minOccurs="0" />
+              <xs:element name="Remarks" msprop:Generator_ColumnVarNameInTable="columnRemarks" msprop:Generator_ColumnPropNameInRow="Remarks" msprop:Generator_ColumnPropNameInTable="RemarksColumn" msprop:Generator_UserColumnName="Remarks" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2550" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EvalID" msprop:Generator_ColumnVarNameInTable="columnEvalID" msprop:Generator_ColumnPropNameInRow="EvalID" msprop:Generator_ColumnPropNameInTable="EvalIDColumn" msprop:Generator_UserColumnName="EvalID" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tbl_Emp_Evaluation2" msprop:Generator_TableClassName="tbl_Emp_Evaluation2DataTable" msprop:Generator_TableVarName="tabletbl_Emp_Evaluation2" msprop:Generator_RowChangedName="tbl_Emp_Evaluation2RowChanged" msprop:Generator_TablePropName="tbl_Emp_Evaluation2" msprop:Generator_RowDeletingName="tbl_Emp_Evaluation2RowDeleting" msprop:Generator_RowChangingName="tbl_Emp_Evaluation2RowChanging" msprop:Generator_RowEvHandlerName="tbl_Emp_Evaluation2RowChangeEventHandler" msprop:Generator_RowDeletedName="tbl_Emp_Evaluation2RowDeleted" msprop:Generator_RowClassName="tbl_Emp_Evaluation2Row" msprop:Generator_UserTableName="tbl_Emp_Evaluation2" msprop:Generator_RowEvArgName="tbl_Emp_Evaluation2RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TranID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnTranID" msprop:Generator_ColumnPropNameInRow="TranID" msprop:Generator_ColumnPropNameInTable="TranIDColumn" msprop:Generator_UserColumnName="TranID" type="xs:int" />
+              <xs:element name="EvalID" msprop:Generator_ColumnVarNameInTable="columnEvalID" msprop:Generator_ColumnPropNameInRow="EvalID" msprop:Generator_ColumnPropNameInTable="EvalIDColumn" msprop:Generator_UserColumnName="EvalID" type="xs:int" />
+              <xs:element name="EvaluationPeriod" msprop:Generator_ColumnVarNameInTable="columnEvaluationPeriod" msprop:Generator_ColumnPropNameInRow="EvaluationPeriod" msprop:Generator_ColumnPropNameInTable="EvaluationPeriodColumn" msprop:Generator_UserColumnName="EvaluationPeriod">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FinancialPeriod" msprop:Generator_ColumnVarNameInTable="columnFinancialPeriod" msprop:Generator_ColumnPropNameInRow="FinancialPeriod" msprop:Generator_ColumnPropNameInTable="FinancialPeriodColumn" msprop:Generator_UserColumnName="FinancialPeriod">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EvaluationDate" msprop:Generator_ColumnVarNameInTable="columnEvaluationDate" msprop:Generator_ColumnPropNameInRow="EvaluationDate" msprop:Generator_ColumnPropNameInTable="EvaluationDateColumn" msprop:Generator_UserColumnName="EvaluationDate" type="xs:dateTime" />
+              <xs:element name="EmpId" msprop:Generator_ColumnVarNameInTable="columnEmpId" msprop:Generator_ColumnPropNameInRow="EmpId" msprop:Generator_ColumnPropNameInTable="EmpIdColumn" msprop:Generator_UserColumnName="EmpId" type="xs:int" />
+              <xs:element name="Leaves" msprop:Generator_ColumnVarNameInTable="columnLeaves" msprop:Generator_ColumnPropNameInRow="Leaves" msprop:Generator_ColumnPropNameInTable="LeavesColumn" msprop:Generator_UserColumnName="Leaves">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1050" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Absents" msprop:Generator_ColumnVarNameInTable="columnAbsents" msprop:Generator_ColumnPropNameInRow="Absents" msprop:Generator_ColumnPropNameInTable="AbsentsColumn" msprop:Generator_UserColumnName="Absents">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1050" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Late" msprop:Generator_ColumnVarNameInTable="columnLate" msprop:Generator_ColumnPropNameInRow="Late" msprop:Generator_ColumnPropNameInTable="LateColumn" msprop:Generator_UserColumnName="Late">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1050" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Notice" msprop:Generator_ColumnVarNameInTable="columnNotice" msprop:Generator_ColumnPropNameInRow="Notice" msprop:Generator_ColumnPropNameInTable="NoticeColumn" msprop:Generator_UserColumnName="Notice">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1050" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="WorkProgress" msprop:Generator_ColumnVarNameInTable="columnWorkProgress" msprop:Generator_ColumnPropNameInRow="WorkProgress" msprop:Generator_ColumnPropNameInTable="WorkProgressColumn" msprop:Generator_UserColumnName="WorkProgress" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1050" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Attitude" msprop:Generator_ColumnVarNameInTable="columnAttitude" msprop:Generator_ColumnPropNameInRow="Attitude" msprop:Generator_ColumnPropNameInTable="AttitudeColumn" msprop:Generator_UserColumnName="Attitude" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1050" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Knowledge" msprop:Generator_ColumnVarNameInTable="columnKnowledge" msprop:Generator_ColumnPropNameInRow="Knowledge" msprop:Generator_ColumnPropNameInTable="KnowledgeColumn" msprop:Generator_UserColumnName="Knowledge" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1050" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SPIncrement" msprop:Generator_ColumnVarNameInTable="columnSPIncrement" msprop:Generator_ColumnPropNameInRow="SPIncrement" msprop:Generator_ColumnPropNameInTable="SPIncrementColumn" msprop:Generator_UserColumnName="SPIncrement" type="xs:int" minOccurs="0" />
+              <xs:element name="Remarks" msprop:Generator_ColumnVarNameInTable="columnRemarks" msprop:Generator_ColumnPropNameInRow="Remarks" msprop:Generator_ColumnPropNameInTable="RemarksColumn" msprop:Generator_UserColumnName="Remarks" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2550" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DOJ" msprop:Generator_ColumnVarNameInTable="columnDOJ" msprop:Generator_ColumnPropNameInRow="DOJ" msprop:Generator_ColumnPropNameInTable="DOJColumn" msprop:Generator_UserColumnName="DOJ" type="xs:dateTime" />
+              <xs:element name="GrossSalary" msprop:Generator_ColumnVarNameInTable="columnGrossSalary" msprop:Generator_ColumnPropNameInRow="GrossSalary" msprop:Generator_ColumnPropNameInTable="GrossSalaryColumn" msprop:Generator_UserColumnName="GrossSalary" type="xs:int" />
+              <xs:element name="DOP" msprop:Generator_ColumnVarNameInTable="columnDOP" msprop:Generator_ColumnPropNameInRow="DOP" msprop:Generator_ColumnPropNameInTable="DOPColumn" msprop:Generator_UserColumnName="DOP" type="xs:dateTime" />
+              <xs:element name="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_UserColumnName="Status" type="xs:boolean" />
+              <xs:element name="Grade" msprop:Generator_ColumnVarNameInTable="columnGrade" msprop:Generator_ColumnPropNameInRow="Grade" msprop:Generator_ColumnPropNameInTable="GradeColumn" msprop:Generator_UserColumnName="Grade">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DeptId" msprop:Generator_ColumnVarNameInTable="columnDeptId" msprop:Generator_ColumnPropNameInRow="DeptId" msprop:Generator_ColumnPropNameInTable="DeptIdColumn" msprop:Generator_UserColumnName="DeptId" type="xs:int" />
+              <xs:element name="UserId" msprop:Generator_ColumnVarNameInTable="columnUserId" msprop:Generator_ColumnPropNameInRow="UserId" msprop:Generator_ColumnPropNameInTable="UserIdColumn" msprop:Generator_UserColumnName="UserId" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tbl_PayRoll_Absents" msprop:Generator_TableClassName="tbl_PayRoll_AbsentsDataTable" msprop:Generator_TableVarName="tabletbl_PayRoll_Absents" msprop:Generator_RowChangedName="tbl_PayRoll_AbsentsRowChanged" msprop:Generator_TablePropName="tbl_PayRoll_Absents" msprop:Generator_RowDeletingName="tbl_PayRoll_AbsentsRowDeleting" msprop:Generator_RowChangingName="tbl_PayRoll_AbsentsRowChanging" msprop:Generator_RowEvHandlerName="tbl_PayRoll_AbsentsRowChangeEventHandler" msprop:Generator_RowDeletedName="tbl_PayRoll_AbsentsRowDeleted" msprop:Generator_RowClassName="tbl_PayRoll_AbsentsRow" msprop:Generator_UserTableName="tbl_PayRoll_Absents" msprop:Generator_RowEvArgName="tbl_PayRoll_AbsentsRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EmpCount" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnEmpCount" msprop:Generator_ColumnPropNameInRow="EmpCount" msprop:Generator_ColumnPropNameInTable="EmpCountColumn" msprop:Generator_UserColumnName="EmpCount" type="xs:int" minOccurs="0" />
+              <xs:element name="EmpID" msprop:Generator_ColumnVarNameInTable="columnEmpID" msprop:Generator_ColumnPropNameInRow="EmpID" msprop:Generator_ColumnPropNameInTable="EmpIDColumn" msprop:Generator_UserColumnName="EmpID" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tbl_PayRoll_Leaves" msprop:Generator_TableClassName="tbl_PayRoll_LeavesDataTable" msprop:Generator_TableVarName="tabletbl_PayRoll_Leaves" msprop:Generator_RowChangedName="tbl_PayRoll_LeavesRowChanged" msprop:Generator_TablePropName="tbl_PayRoll_Leaves" msprop:Generator_RowDeletingName="tbl_PayRoll_LeavesRowDeleting" msprop:Generator_RowChangingName="tbl_PayRoll_LeavesRowChanging" msprop:Generator_RowEvHandlerName="tbl_PayRoll_LeavesRowChangeEventHandler" msprop:Generator_RowDeletedName="tbl_PayRoll_LeavesRowDeleted" msprop:Generator_RowClassName="tbl_PayRoll_LeavesRow" msprop:Generator_UserTableName="tbl_PayRoll_Leaves" msprop:Generator_RowEvArgName="tbl_PayRoll_LeavesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EmpCount" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnEmpCount" msprop:Generator_ColumnPropNameInRow="EmpCount" msprop:Generator_ColumnPropNameInTable="EmpCountColumn" msprop:Generator_UserColumnName="EmpCount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="EmpID" msprop:Generator_ColumnVarNameInTable="columnEmpID" msprop:Generator_ColumnPropNameInRow="EmpID" msprop:Generator_ColumnPropNameInTable="EmpIDColumn" msprop:Generator_UserColumnName="EmpID" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="View_Rpt_Acc_MorningShortMins" msprop:Generator_TableClassName="View_Rpt_Acc_MorningShortMinsDataTable" msprop:Generator_TableVarName="tableView_Rpt_Acc_MorningShortMins" msprop:Generator_RowChangedName="View_Rpt_Acc_MorningShortMinsRowChanged" msprop:Generator_TablePropName="View_Rpt_Acc_MorningShortMins" msprop:Generator_RowDeletingName="View_Rpt_Acc_MorningShortMinsRowDeleting" msprop:Generator_RowChangingName="View_Rpt_Acc_MorningShortMinsRowChanging" msprop:Generator_RowEvHandlerName="View_Rpt_Acc_MorningShortMinsRowChangeEventHandler" msprop:Generator_RowDeletedName="View_Rpt_Acc_MorningShortMinsRowDeleted" msprop:Generator_RowClassName="View_Rpt_Acc_MorningShortMinsRow" msprop:Generator_UserTableName="View_Rpt_Acc_MorningShortMins" msprop:Generator_RowEvArgName="View_Rpt_Acc_MorningShortMinsRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EmpID" msprop:Generator_ColumnVarNameInTable="columnEmpID" msprop:Generator_ColumnPropNameInRow="EmpID" msprop:Generator_ColumnPropNameInTable="EmpIDColumn" msprop:Generator_UserColumnName="EmpID" type="xs:int" />
+              <xs:element name="MorningShortMins" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMorningShortMins" msprop:Generator_ColumnPropNameInRow="MorningShortMins" msprop:Generator_ColumnPropNameInTable="MorningShortMinsColumn" msprop:Generator_UserColumnName="MorningShortMins" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tbl_Emp_Evaluation_Head" msprop:Generator_TableClassName="tbl_Emp_Evaluation_HeadDataTable" msprop:Generator_TableVarName="tabletbl_Emp_Evaluation_Head" msprop:Generator_RowChangedName="tbl_Emp_Evaluation_HeadRowChanged" msprop:Generator_TablePropName="tbl_Emp_Evaluation_Head" msprop:Generator_RowDeletingName="tbl_Emp_Evaluation_HeadRowDeleting" msprop:Generator_RowChangingName="tbl_Emp_Evaluation_HeadRowChanging" msprop:Generator_RowEvHandlerName="tbl_Emp_Evaluation_HeadRowChangeEventHandler" msprop:Generator_RowDeletedName="tbl_Emp_Evaluation_HeadRowDeleted" msprop:Generator_RowClassName="tbl_Emp_Evaluation_HeadRow" msprop:Generator_UserTableName="tbl_Emp_Evaluation_Head" msprop:Generator_RowEvArgName="tbl_Emp_Evaluation_HeadRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EvalID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnEvalID" msprop:Generator_ColumnPropNameInRow="EvalID" msprop:Generator_ColumnPropNameInTable="EvalIDColumn" msprop:Generator_UserColumnName="EvalID" type="xs:int" />
+              <xs:element name="EvaluationPeriod" msprop:Generator_ColumnVarNameInTable="columnEvaluationPeriod" msprop:Generator_ColumnPropNameInRow="EvaluationPeriod" msprop:Generator_ColumnPropNameInTable="EvaluationPeriodColumn" msprop:Generator_UserColumnName="EvaluationPeriod">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FinancialPeriod" msprop:Generator_ColumnVarNameInTable="columnFinancialPeriod" msprop:Generator_ColumnPropNameInRow="FinancialPeriod" msprop:Generator_ColumnPropNameInTable="FinancialPeriodColumn" msprop:Generator_UserColumnName="FinancialPeriod">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EvaluationDate" msprop:Generator_ColumnVarNameInTable="columnEvaluationDate" msprop:Generator_ColumnPropNameInRow="EvaluationDate" msprop:Generator_ColumnPropNameInTable="EvaluationDateColumn" msprop:Generator_UserColumnName="EvaluationDate" type="xs:dateTime" />
+              <xs:element name="MonthNO" msprop:Generator_ColumnVarNameInTable="columnMonthNO" msprop:Generator_ColumnPropNameInRow="MonthNO" msprop:Generator_ColumnPropNameInTable="MonthNOColumn" msprop:Generator_UserColumnName="MonthNO" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tbl_Emp_Evaluation" msprop:Generator_TableClassName="tbl_Emp_EvaluationDataTable" msprop:Generator_TableVarName="tabletbl_Emp_Evaluation" msprop:Generator_RowChangedName="tbl_Emp_EvaluationRowChanged" msprop:Generator_TablePropName="tbl_Emp_Evaluation" msprop:Generator_RowDeletingName="tbl_Emp_EvaluationRowDeleting" msprop:Generator_RowChangingName="tbl_Emp_EvaluationRowChanging" msprop:Generator_RowEvHandlerName="tbl_Emp_EvaluationRowChangeEventHandler" msprop:Generator_RowDeletedName="tbl_Emp_EvaluationRowDeleted" msprop:Generator_RowClassName="tbl_Emp_EvaluationRow" msprop:Generator_UserTableName="tbl_Emp_Evaluation" msprop:Generator_RowEvArgName="tbl_Emp_EvaluationRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TranID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnTranID" msprop:Generator_ColumnPropNameInRow="TranID" msprop:Generator_ColumnPropNameInTable="TranIDColumn" msprop:Generator_UserColumnName="TranID" type="xs:int" />
+              <xs:element name="EvaluationPeriod" msprop:Generator_ColumnVarNameInTable="columnEvaluationPeriod" msprop:Generator_ColumnPropNameInRow="EvaluationPeriod" msprop:Generator_ColumnPropNameInTable="EvaluationPeriodColumn" msprop:Generator_UserColumnName="EvaluationPeriod">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FinancialPeriod" msprop:Generator_ColumnVarNameInTable="columnFinancialPeriod" msprop:Generator_ColumnPropNameInRow="FinancialPeriod" msprop:Generator_ColumnPropNameInTable="FinancialPeriodColumn" msprop:Generator_UserColumnName="FinancialPeriod">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EvaluationDate" msprop:Generator_ColumnVarNameInTable="columnEvaluationDate" msprop:Generator_ColumnPropNameInRow="EvaluationDate" msprop:Generator_ColumnPropNameInTable="EvaluationDateColumn" msprop:Generator_UserColumnName="EvaluationDate" type="xs:dateTime" />
+              <xs:element name="EmpId" msprop:Generator_ColumnVarNameInTable="columnEmpId" msprop:Generator_ColumnPropNameInRow="EmpId" msprop:Generator_ColumnPropNameInTable="EmpIdColumn" msprop:Generator_UserColumnName="EmpId" type="xs:int" />
+              <xs:element name="Leaves" msprop:Generator_ColumnVarNameInTable="columnLeaves" msprop:Generator_ColumnPropNameInRow="Leaves" msprop:Generator_ColumnPropNameInTable="LeavesColumn" msprop:Generator_UserColumnName="Leaves">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1050" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Absents" msprop:Generator_ColumnVarNameInTable="columnAbsents" msprop:Generator_ColumnPropNameInRow="Absents" msprop:Generator_ColumnPropNameInTable="AbsentsColumn" msprop:Generator_UserColumnName="Absents">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1050" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Late" msprop:Generator_ColumnVarNameInTable="columnLate" msprop:Generator_ColumnPropNameInRow="Late" msprop:Generator_ColumnPropNameInTable="LateColumn" msprop:Generator_UserColumnName="Late">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1050" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Notice" msprop:Generator_ColumnVarNameInTable="columnNotice" msprop:Generator_ColumnPropNameInRow="Notice" msprop:Generator_ColumnPropNameInTable="NoticeColumn" msprop:Generator_UserColumnName="Notice">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1050" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="WorkProgress" msprop:Generator_ColumnVarNameInTable="columnWorkProgress" msprop:Generator_ColumnPropNameInRow="WorkProgress" msprop:Generator_ColumnPropNameInTable="WorkProgressColumn" msprop:Generator_UserColumnName="WorkProgress" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1050" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Attitude" msprop:Generator_ColumnVarNameInTable="columnAttitude" msprop:Generator_ColumnPropNameInRow="Attitude" msprop:Generator_ColumnPropNameInTable="AttitudeColumn" msprop:Generator_UserColumnName="Attitude" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1050" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Knowledge" msprop:Generator_ColumnVarNameInTable="columnKnowledge" msprop:Generator_ColumnPropNameInRow="Knowledge" msprop:Generator_ColumnPropNameInTable="KnowledgeColumn" msprop:Generator_UserColumnName="Knowledge" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1050" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SPIncrement" msprop:Generator_ColumnVarNameInTable="columnSPIncrement" msprop:Generator_ColumnPropNameInRow="SPIncrement" msprop:Generator_ColumnPropNameInTable="SPIncrementColumn" msprop:Generator_UserColumnName="SPIncrement" type="xs:int" minOccurs="0" />
+              <xs:element name="Remarks" msprop:Generator_ColumnVarNameInTable="columnRemarks" msprop:Generator_ColumnPropNameInRow="Remarks" msprop:Generator_ColumnPropNameInTable="RemarksColumn" msprop:Generator_UserColumnName="Remarks" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2550" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EvalID" msprop:Generator_ColumnVarNameInTable="columnEvalID" msprop:Generator_ColumnPropNameInRow="EvalID" msprop:Generator_ColumnPropNameInTable="EvalIDColumn" msprop:Generator_UserColumnName="EvalID" type="xs:int" />
+              <xs:element name="DOJ" msprop:Generator_ColumnVarNameInTable="columnDOJ" msprop:Generator_ColumnPropNameInRow="DOJ" msprop:Generator_ColumnPropNameInTable="DOJColumn" msprop:Generator_UserColumnName="DOJ" type="xs:dateTime" />
+              <xs:element name="GrossSalary" msprop:Generator_ColumnVarNameInTable="columnGrossSalary" msprop:Generator_ColumnPropNameInRow="GrossSalary" msprop:Generator_ColumnPropNameInTable="GrossSalaryColumn" msprop:Generator_UserColumnName="GrossSalary" type="xs:int" />
+              <xs:element name="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_UserColumnName="Status" type="xs:boolean" />
+              <xs:element name="Grade" msprop:Generator_ColumnVarNameInTable="columnGrade" msprop:Generator_ColumnPropNameInRow="Grade" msprop:Generator_ColumnPropNameInTable="GradeColumn" msprop:Generator_UserColumnName="Grade">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tbl_Acc_FinancialPeriod" />
+      <xs:field xpath="mstns:FinancialPeriod" />
+    </xs:unique>
+    <xs:unique name="tbl_Emp_Doj_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tbl_Emp_Doj" />
+      <xs:field xpath="mstns:EmpID" />
+    </xs:unique>
+    <xs:unique name="tbl_Hrm_Emp_Info_Notices_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tbl_Hrm_Emp_Info_Notices" />
+      <xs:field xpath="mstns:EmpID" />
+    </xs:unique>
+    <xs:unique name="tbl_Emp_Evaluation1_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tbl_Emp_Evaluation1" />
+      <xs:field xpath="mstns:EvaluationPeriod" />
+      <xs:field xpath="mstns:FinancialPeriod" />
+      <xs:field xpath="mstns:EvaluationDate" />
+      <xs:field xpath="mstns:EmpId" />
+      <xs:field xpath="mstns:EvalID" />
+    </xs:unique>
+    <xs:unique name="tbl_Emp_Evaluation2_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tbl_Emp_Evaluation2" />
+      <xs:field xpath="mstns:EvalID" />
+      <xs:field xpath="mstns:EvaluationPeriod" />
+      <xs:field xpath="mstns:FinancialPeriod" />
+      <xs:field xpath="mstns:EvaluationDate" />
+      <xs:field xpath="mstns:EmpId" />
+    </xs:unique>
+    <xs:unique name="View_Rpt_Acc_MorningShortMins_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:View_Rpt_Acc_MorningShortMins" />
+      <xs:field xpath="mstns:EmpID" />
+    </xs:unique>
+    <xs:unique name="tbl_Emp_Evaluation_Head_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tbl_Emp_Evaluation_Head" />
+      <xs:field xpath="mstns:EvalID" />
+      <xs:field xpath="mstns:EvaluationPeriod" />
+      <xs:field xpath="mstns:FinancialPeriod" />
+      <xs:field xpath="mstns:EvaluationDate" />
+    </xs:unique>
+    <xs:unique name="tbl_Emp_Evaluation_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tbl_Emp_Evaluation" />
+      <xs:field xpath="mstns:EvaluationPeriod" />
+      <xs:field xpath="mstns:FinancialPeriod" />
+      <xs:field xpath="mstns:EvaluationDate" />
+      <xs:field xpath="mstns:EmpId" />
+      <xs:field xpath="mstns:EvalID" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="tbl_Emp_Evaluation_Head_tbl_Emp_Evaluation" msdata:parent="tbl_Emp_Evaluation_Head" msdata:child="tbl_Emp_Evaluation" msdata:parentkey="EvaluationPeriod FinancialPeriod EvaluationDate EvalID" msdata:childkey="EvaluationPeriod FinancialPeriod EvaluationDate EvalID" msprop:Generator_UserChildTable="tbl_Emp_Evaluation" msprop:Generator_ChildPropName="Gettbl_Emp_EvaluationRows" msprop:Generator_UserRelationName="tbl_Emp_Evaluation_Head_tbl_Emp_Evaluation" msprop:Generator_RelationVarName="relationtbl_Emp_Evaluation_Head_tbl_Emp_Evaluation" msprop:Generator_UserParentTable="tbl_Emp_Evaluation_Head" msprop:Generator_ParentPropName="tbl_Emp_Evaluation_HeadRowParent" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

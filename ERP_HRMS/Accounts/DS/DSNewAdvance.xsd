@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSNewAdvance" targetNamespace="http://tempuri.org/DSNewAdvance.xsd" xmlns:mstns="http://tempuri.org/DSNewAdvance.xsd" xmlns="http://tempuri.org/DSNewAdvance.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="HRMSCon" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HRMSCon (MySettings)" PropertyReference="ApplicationSettings.ERP_HRMS.My.MySettings.GlobalReference.Default.HRMSCon" Provider="System.Data.Odbc" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tbl_HRM_Card_AdvanceTableAdapter" GeneratorDataComponentClassName="tbl_HRM_Card_AdvanceTableAdapter" Name="tbl_HRM_Card_Advance" UserDataComponentName="tbl_HRM_Card_AdvanceTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HRMSCon (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        tbl_HRM_Card.CardNo, tbl_HRM_Card.CardStatus, tbl_HRM_Card.CreationTime, tbl_HRM_Emp_Info.EmpID
+FROM            tbl_HRM_Card, tbl_HRM_Emp_Info
+WHERE        tbl_HRM_Card.CardNo = tbl_HRM_Emp_Info.CardNo
+ORDER BY tbl_HRM_Card.CardNo</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CardNo" DataSetColumn="CardNo" />
+              <Mapping SourceColumn="CardStatus" DataSetColumn="CardStatus" />
+              <Mapping SourceColumn="CreationTime" DataSetColumn="CreationTime" />
+              <Mapping SourceColumn="EmpID" DataSetColumn="EmpID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSNewAdvance" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSNewAdvance" msprop:Generator_UserDSName="DSNewAdvance">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tbl_HRM_Card_Advance" msprop:Generator_TableClassName="tbl_HRM_Card_AdvanceDataTable" msprop:Generator_TableVarName="tabletbl_HRM_Card_Advance" msprop:Generator_TablePropName="tbl_HRM_Card_Advance" msprop:Generator_RowDeletingName="tbl_HRM_Card_AdvanceRowDeleting" msprop:Generator_RowChangingName="tbl_HRM_Card_AdvanceRowChanging" msprop:Generator_RowEvHandlerName="tbl_HRM_Card_AdvanceRowChangeEventHandler" msprop:Generator_RowDeletedName="tbl_HRM_Card_AdvanceRowDeleted" msprop:Generator_UserTableName="tbl_HRM_Card_Advance" msprop:Generator_RowChangedName="tbl_HRM_Card_AdvanceRowChanged" msprop:Generator_RowEvArgName="tbl_HRM_Card_AdvanceRowChangeEvent" msprop:Generator_RowClassName="tbl_HRM_Card_AdvanceRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CardNo" msprop:Generator_ColumnVarNameInTable="columnCardNo" msprop:Generator_ColumnPropNameInRow="CardNo" msprop:Generator_ColumnPropNameInTable="CardNoColumn" msprop:Generator_UserColumnName="CardNo" type="xs:int" />
+              <xs:element name="CardStatus" msprop:Generator_ColumnVarNameInTable="columnCardStatus" msprop:Generator_ColumnPropNameInRow="CardStatus" msprop:Generator_ColumnPropNameInTable="CardStatusColumn" msprop:Generator_UserColumnName="CardStatus" type="xs:boolean" />
+              <xs:element name="CreationTime" msprop:Generator_ColumnVarNameInTable="columnCreationTime" msprop:Generator_ColumnPropNameInRow="CreationTime" msprop:Generator_ColumnPropNameInTable="CreationTimeColumn" msprop:Generator_UserColumnName="CreationTime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="EmpID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnEmpID" msprop:Generator_ColumnPropNameInRow="EmpID" msprop:Generator_ColumnPropNameInTable="EmpIDColumn" msprop:Generator_UserColumnName="EmpID" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tbl_HRM_Card_Advance" />
+      <xs:field xpath="mstns:CardNo" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

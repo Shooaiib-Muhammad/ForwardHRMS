@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="BloodDoner" targetNamespace="http://tempuri.org/BloodDoner.xsd" xmlns:mstns="http://tempuri.org/BloodDoner.xsd" xmlns="http://tempuri.org/BloodDoner.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="HRMSCon" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HRMSCon (MySettings)" PropertyReference="ApplicationSettings.ERP_HRMS.My.MySettings.GlobalReference.Default.HRMSCon" Provider="System.Data.Odbc" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="View_Blood_DonerTableAdapter" GeneratorDataComponentClassName="View_Blood_DonerTableAdapter" Name="View_Blood_Doner" UserDataComponentName="View_Blood_DonerTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HRMSCon (MySettings)" DbObjectName="HRMS.dbo.View_Rpt_Acc_AllEmployees" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        EmpID, CardNo, Name, SectionName, DesigName, DateOfBirth, DeptName, Gender, EmpPic, DateOFJoining, BloodGroup
+FROM            View_Rpt_Acc_AllEmployees
+WHERE        (CardNo &lt;= 50000)
+ORDER BY CardNo</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="EmpID" DataSetColumn="EmpID" />
+              <Mapping SourceColumn="CardNo" DataSetColumn="CardNo" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="SectionName" DataSetColumn="SectionName" />
+              <Mapping SourceColumn="DesigName" DataSetColumn="DesigName" />
+              <Mapping SourceColumn="DateOfBirth" DataSetColumn="DateOfBirth" />
+              <Mapping SourceColumn="DeptName" DataSetColumn="DeptName" />
+              <Mapping SourceColumn="Gender" DataSetColumn="Gender" />
+              <Mapping SourceColumn="EmpPic" DataSetColumn="EmpPic" />
+              <Mapping SourceColumn="DateOFJoining" DataSetColumn="DateOFJoining" />
+              <Mapping SourceColumn="BloodGroup" DataSetColumn="BloodGroup" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="View_Blood_ReceiverTableAdapter" GeneratorDataComponentClassName="View_Blood_ReceiverTableAdapter" Name="View_Blood_Receiver" UserDataComponentName="View_Blood_ReceiverTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HRMSCon (MySettings)" DbObjectName="HRMS.dbo.View_Rpt_Acc_AllEmployees" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        EmpID, CardNo, Name, SectionName, DesigName, DateOfBirth, DeptName, Gender, EmpPic, DateOFJoining, BloodGroup
+FROM            View_Rpt_Acc_AllEmployees
+WHERE        (CardNo &lt;= 50000)
+ORDER BY CardNo</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="EmpID" DataSetColumn="EmpID" />
+              <Mapping SourceColumn="CardNo" DataSetColumn="CardNo" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="SectionName" DataSetColumn="SectionName" />
+              <Mapping SourceColumn="DesigName" DataSetColumn="DesigName" />
+              <Mapping SourceColumn="DateOfBirth" DataSetColumn="DateOfBirth" />
+              <Mapping SourceColumn="DeptName" DataSetColumn="DeptName" />
+              <Mapping SourceColumn="Gender" DataSetColumn="Gender" />
+              <Mapping SourceColumn="EmpPic" DataSetColumn="EmpPic" />
+              <Mapping SourceColumn="DateOFJoining" DataSetColumn="DateOFJoining" />
+              <Mapping SourceColumn="BloodGroup" DataSetColumn="BloodGroup" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tbl_HRMS_Blood_DonerTableAdapter" GeneratorDataComponentClassName="tbl_HRMS_Blood_DonerTableAdapter" Name="tbl_HRMS_Blood_Doner" UserDataComponentName="tbl_HRMS_Blood_DonerTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HRMSCon (MySettings)" DbObjectName="HRMS.dbo.tbl_HRMS_Blood_Doner" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [tbl_HRMS_Blood_Doner] WHERE (([TID] = ?) AND ((? = 1 AND [EmpID] IS NULL) OR ([EmpID] = ?)) AND ((? = 1 AND [DonerDate] IS NULL) OR ([DonerDate] = ?)) AND ((? = 1 AND [BloodGroup] IS NULL) OR ([BloodGroup] = ?)) AND ((? = 1 AND [EntryDate] IS NULL) OR ([EntryDate] = ?)) AND ((? = 1 AND [IP] IS NULL) OR ([IP] = ?)) AND ((? = 1 AND [ReceiverEmpID] IS NULL) OR ([ReceiverEmpID] = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_TID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_EmpID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EmpID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_EmpID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EmpID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_DonerDate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DonerDate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_DonerDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="DonerDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_BloodGroup" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BloodGroup" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_BloodGroup" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BloodGroup" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_EntryDate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EntryDate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_EntryDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EntryDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_IP" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IP" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_IP" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="IP" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ReceiverEmpID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ReceiverEmpID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ReceiverEmpID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ReceiverEmpID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [tbl_HRMS_Blood_Doner] ([EmpID], [DonerDate], [BloodGroup], [EntryDate], [IP], [ReceiverEmpID]) VALUES (?, ?, ?, ?, ?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="EmpID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EmpID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="DonerDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="DonerDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="BloodGroup" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BloodGroup" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="EntryDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EntryDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="IP" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="IP" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="ReceiverEmpID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ReceiverEmpID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TID, EmpID, DonerDate, BloodGroup, EntryDate, IP, ReceiverEmpID
+FROM            tbl_HRMS_Blood_Doner</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [tbl_HRMS_Blood_Doner] SET [EmpID] = ?, [DonerDate] = ?, [BloodGroup] = ?, [EntryDate] = ?, [IP] = ?, [ReceiverEmpID] = ? WHERE (([TID] = ?) AND ((? = 1 AND [EmpID] IS NULL) OR ([EmpID] = ?)) AND ((? = 1 AND [DonerDate] IS NULL) OR ([DonerDate] = ?)) AND ((? = 1 AND [BloodGroup] IS NULL) OR ([BloodGroup] = ?)) AND ((? = 1 AND [EntryDate] IS NULL) OR ([EntryDate] = ?)) AND ((? = 1 AND [IP] IS NULL) OR ([IP] = ?)) AND ((? = 1 AND [ReceiverEmpID] IS NULL) OR ([ReceiverEmpID] = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="EmpID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EmpID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="DonerDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="DonerDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="BloodGroup" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BloodGroup" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="EntryDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EntryDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="IP" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="IP" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="ReceiverEmpID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ReceiverEmpID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_TID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_EmpID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EmpID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_EmpID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EmpID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_DonerDate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DonerDate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_DonerDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="DonerDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_BloodGroup" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BloodGroup" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="Original_BloodGroup" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BloodGroup" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_EntryDate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EntryDate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_EntryDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EntryDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_IP" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IP" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_IP" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="IP" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ReceiverEmpID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ReceiverEmpID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ReceiverEmpID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ReceiverEmpID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TID" DataSetColumn="TID" />
+              <Mapping SourceColumn="EmpID" DataSetColumn="EmpID" />
+              <Mapping SourceColumn="DonerDate" DataSetColumn="DonerDate" />
+              <Mapping SourceColumn="EntryDate" DataSetColumn="EntryDate" />
+              <Mapping SourceColumn="IP" DataSetColumn="IP" />
+              <Mapping SourceColumn="ReceiverEmpID" DataSetColumn="ReceiverEmpID" />
+              <Mapping SourceColumn="BloodGroup" DataSetColumn="BloodGroup1" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="HRMSCon (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>DELETE FROM tbl_HRMS_Blood_Doner
+WHERE        (TID = ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param1" ColumnName="TID" DataSourceName="HRMS.dbo.tbl_HRMS_Blood_Doner" DataTypeServer="int identity" DbType="Int32" Direction="Input" ParameterName="TID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="View_HRMS_Blood_DonerTableAdapter" GeneratorDataComponentClassName="View_HRMS_Blood_DonerTableAdapter" Name="View_HRMS_Blood_Doner" UserDataComponentName="View_HRMS_Blood_DonerTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HRMSCon (MySettings)" DbObjectName="HRMS.dbo.View_HRMS_Blood_Doner" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        DonerCardNo, DonerName, ReceiverCardNo, receiverName, DonerDate, BloodGroup, EmpID, TID, EmpID AS EmPID
+FROM            View_HRMS_Blood_Doner
+WHERE        (EmpID = ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param1" ColumnName="EmpID" DataSourceName="HRMS.dbo.View_HRMS_Blood_Doner" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="EmpID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EmpID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="DonerCardNo" DataSetColumn="DonerCardNo" />
+              <Mapping SourceColumn="DonerName" DataSetColumn="DonerName" />
+              <Mapping SourceColumn="ReceiverCardNo" DataSetColumn="ReceiverCardNo" />
+              <Mapping SourceColumn="receiverName" DataSetColumn="receiverName" />
+              <Mapping SourceColumn="DonerDate" DataSetColumn="DonerDate" />
+              <Mapping SourceColumn="BloodGroup" DataSetColumn="BloodGroup" />
+              <Mapping SourceColumn="EmpID" DataSetColumn="EmpID" />
+              <Mapping SourceColumn="EmPID1" DataSetColumn="EmPID1" />
+              <Mapping SourceColumn="TID" DataSetColumn="TID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="BloodDoner" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="BloodDoner" msprop:Generator_UserDSName="BloodDoner">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="View_Blood_Doner" msprop:Generator_TableClassName="View_Blood_DonerDataTable" msprop:Generator_TableVarName="tableView_Blood_Doner" msprop:Generator_TablePropName="View_Blood_Doner" msprop:Generator_RowDeletingName="View_Blood_DonerRowDeleting" msprop:Generator_RowChangingName="View_Blood_DonerRowChanging" msprop:Generator_RowEvHandlerName="View_Blood_DonerRowChangeEventHandler" msprop:Generator_RowDeletedName="View_Blood_DonerRowDeleted" msprop:Generator_UserTableName="View_Blood_Doner" msprop:Generator_RowChangedName="View_Blood_DonerRowChanged" msprop:Generator_RowEvArgName="View_Blood_DonerRowChangeEvent" msprop:Generator_RowClassName="View_Blood_DonerRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EmpID" msprop:Generator_ColumnVarNameInTable="columnEmpID" msprop:Generator_ColumnPropNameInRow="EmpID" msprop:Generator_ColumnPropNameInTable="EmpIDColumn" msprop:Generator_UserColumnName="EmpID" type="xs:int" />
+              <xs:element name="CardNo" msprop:Generator_ColumnVarNameInTable="columnCardNo" msprop:Generator_ColumnPropNameInRow="CardNo" msprop:Generator_ColumnPropNameInTable="CardNoColumn" msprop:Generator_UserColumnName="CardNo" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SectionName" msprop:Generator_ColumnVarNameInTable="columnSectionName" msprop:Generator_ColumnPropNameInRow="SectionName" msprop:Generator_ColumnPropNameInTable="SectionNameColumn" msprop:Generator_UserColumnName="SectionName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="900" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DesigName" msprop:Generator_ColumnVarNameInTable="columnDesigName" msprop:Generator_ColumnPropNameInRow="DesigName" msprop:Generator_ColumnPropNameInTable="DesigNameColumn" msprop:Generator_UserColumnName="DesigName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="900" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DateOfBirth" msprop:Generator_ColumnVarNameInTable="columnDateOfBirth" msprop:Generator_ColumnPropNameInRow="DateOfBirth" msprop:Generator_ColumnPropNameInTable="DateOfBirthColumn" msprop:Generator_UserColumnName="DateOfBirth" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DeptName" msprop:Generator_ColumnVarNameInTable="columnDeptName" msprop:Generator_ColumnPropNameInRow="DeptName" msprop:Generator_ColumnPropNameInTable="DeptNameColumn" msprop:Generator_UserColumnName="DeptName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="900" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Gender" msprop:Generator_ColumnVarNameInTable="columnGender" msprop:Generator_ColumnPropNameInRow="Gender" msprop:Generator_ColumnPropNameInTable="GenderColumn" msprop:Generator_UserColumnName="Gender" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmpPic" msprop:Generator_ColumnVarNameInTable="columnEmpPic" msprop:Generator_ColumnPropNameInRow="EmpPic" msprop:Generator_ColumnPropNameInTable="EmpPicColumn" msprop:Generator_UserColumnName="EmpPic" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="DateOFJoining" msprop:Generator_ColumnVarNameInTable="columnDateOFJoining" msprop:Generator_ColumnPropNameInRow="DateOFJoining" msprop:Generator_ColumnPropNameInTable="DateOFJoiningColumn" msprop:Generator_UserColumnName="DateOFJoining" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="BloodGroup" msprop:Generator_ColumnVarNameInTable="columnBloodGroup" msprop:Generator_ColumnPropNameInRow="BloodGroup" msprop:Generator_ColumnPropNameInTable="BloodGroupColumn" msprop:Generator_UserColumnName="BloodGroup" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="View_Blood_Receiver" msprop:Generator_TableClassName="View_Blood_ReceiverDataTable" msprop:Generator_TableVarName="tableView_Blood_Receiver" msprop:Generator_TablePropName="View_Blood_Receiver" msprop:Generator_RowDeletingName="View_Blood_ReceiverRowDeleting" msprop:Generator_RowChangingName="View_Blood_ReceiverRowChanging" msprop:Generator_RowEvHandlerName="View_Blood_ReceiverRowChangeEventHandler" msprop:Generator_RowDeletedName="View_Blood_ReceiverRowDeleted" msprop:Generator_UserTableName="View_Blood_Receiver" msprop:Generator_RowChangedName="View_Blood_ReceiverRowChanged" msprop:Generator_RowEvArgName="View_Blood_ReceiverRowChangeEvent" msprop:Generator_RowClassName="View_Blood_ReceiverRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EmpID" msprop:Generator_ColumnVarNameInTable="columnEmpID" msprop:Generator_ColumnPropNameInRow="EmpID" msprop:Generator_ColumnPropNameInTable="EmpIDColumn" msprop:Generator_UserColumnName="EmpID" type="xs:int" />
+              <xs:element name="CardNo" msprop:Generator_ColumnVarNameInTable="columnCardNo" msprop:Generator_ColumnPropNameInRow="CardNo" msprop:Generator_ColumnPropNameInTable="CardNoColumn" msprop:Generator_UserColumnName="CardNo" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SectionName" msprop:Generator_ColumnVarNameInTable="columnSectionName" msprop:Generator_ColumnPropNameInRow="SectionName" msprop:Generator_ColumnPropNameInTable="SectionNameColumn" msprop:Generator_UserColumnName="SectionName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="900" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DesigName" msprop:Generator_ColumnVarNameInTable="columnDesigName" msprop:Generator_ColumnPropNameInRow="DesigName" msprop:Generator_ColumnPropNameInTable="DesigNameColumn" msprop:Generator_UserColumnName="DesigName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="900" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DateOfBirth" msprop:Generator_ColumnVarNameInTable="columnDateOfBirth" msprop:Generator_ColumnPropNameInRow="DateOfBirth" msprop:Generator_ColumnPropNameInTable="DateOfBirthColumn" msprop:Generator_UserColumnName="DateOfBirth" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DeptName" msprop:Generator_ColumnVarNameInTable="columnDeptName" msprop:Generator_ColumnPropNameInRow="DeptName" msprop:Generator_ColumnPropNameInTable="DeptNameColumn" msprop:Generator_UserColumnName="DeptName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="900" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Gender" msprop:Generator_ColumnVarNameInTable="columnGender" msprop:Generator_ColumnPropNameInRow="Gender" msprop:Generator_ColumnPropNameInTable="GenderColumn" msprop:Generator_UserColumnName="Gender" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmpPic" msprop:Generator_ColumnVarNameInTable="columnEmpPic" msprop:Generator_ColumnPropNameInRow="EmpPic" msprop:Generator_ColumnPropNameInTable="EmpPicColumn" msprop:Generator_UserColumnName="EmpPic" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="DateOFJoining" msprop:Generator_ColumnVarNameInTable="columnDateOFJoining" msprop:Generator_ColumnPropNameInRow="DateOFJoining" msprop:Generator_ColumnPropNameInTable="DateOFJoiningColumn" msprop:Generator_UserColumnName="DateOFJoining" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="BloodGroup" msprop:Generator_ColumnVarNameInTable="columnBloodGroup" msprop:Generator_ColumnPropNameInRow="BloodGroup" msprop:Generator_ColumnPropNameInTable="BloodGroupColumn" msprop:Generator_UserColumnName="BloodGroup" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tbl_HRMS_Blood_Doner" msprop:Generator_TableClassName="tbl_HRMS_Blood_DonerDataTable" msprop:Generator_TableVarName="tabletbl_HRMS_Blood_Doner" msprop:Generator_TablePropName="tbl_HRMS_Blood_Doner" msprop:Generator_RowDeletingName="tbl_HRMS_Blood_DonerRowDeleting" msprop:Generator_RowChangingName="tbl_HRMS_Blood_DonerRowChanging" msprop:Generator_RowEvHandlerName="tbl_HRMS_Blood_DonerRowChangeEventHandler" msprop:Generator_RowDeletedName="tbl_HRMS_Blood_DonerRowDeleted" msprop:Generator_UserTableName="tbl_HRMS_Blood_Doner" msprop:Generator_RowChangedName="tbl_HRMS_Blood_DonerRowChanged" msprop:Generator_RowEvArgName="tbl_HRMS_Blood_DonerRowChangeEvent" msprop:Generator_RowClassName="tbl_HRMS_Blood_DonerRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnTID" msprop:Generator_ColumnPropNameInRow="TID" msprop:Generator_ColumnPropNameInTable="TIDColumn" msprop:Generator_UserColumnName="TID" type="xs:int" />
+              <xs:element name="EmpID" msprop:Generator_ColumnVarNameInTable="columnEmpID" msprop:Generator_ColumnPropNameInRow="EmpID" msprop:Generator_ColumnPropNameInTable="EmpIDColumn" msprop:Generator_UserColumnName="EmpID" type="xs:int" minOccurs="0" />
+              <xs:element name="DonerDate" msprop:Generator_ColumnVarNameInTable="columnDonerDate" msprop:Generator_ColumnPropNameInRow="DonerDate" msprop:Generator_ColumnPropNameInTable="DonerDateColumn" msprop:Generator_UserColumnName="DonerDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="BloodGroup" msprop:Generator_ColumnVarNameInTable="columnBloodGroup" msprop:Generator_ColumnPropNameInRow="BloodGroup" msprop:Generator_ColumnPropNameInTable="BloodGroupColumn" msprop:Generator_UserColumnName="BloodGroup" type="xs:int" minOccurs="0" />
+              <xs:element name="EntryDate" msprop:Generator_ColumnVarNameInTable="columnEntryDate" msprop:Generator_ColumnPropNameInRow="EntryDate" msprop:Generator_ColumnPropNameInTable="EntryDateColumn" msprop:Generator_UserColumnName="EntryDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="IP" msprop:Generator_ColumnVarNameInTable="columnIP" msprop:Generator_ColumnPropNameInRow="IP" msprop:Generator_ColumnPropNameInTable="IPColumn" msprop:Generator_UserColumnName="IP" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ReceiverEmpID" msprop:Generator_ColumnVarNameInTable="columnReceiverEmpID" msprop:Generator_ColumnPropNameInRow="ReceiverEmpID" msprop:Generator_ColumnPropNameInTable="ReceiverEmpIDColumn" msprop:Generator_UserColumnName="ReceiverEmpID" type="xs:int" minOccurs="0" />
+              <xs:element name="BloodGroup1" msdata:Caption="BloodGroup" msprop:Generator_ColumnVarNameInTable="columnBloodGroup1" msprop:Generator_ColumnPropNameInRow="BloodGroup1" msprop:Generator_ColumnPropNameInTable="BloodGroup1Column" msprop:Generator_UserColumnName="BloodGroup1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="View_HRMS_Blood_Doner" msprop:Generator_TableClassName="View_HRMS_Blood_DonerDataTable" msprop:Generator_TableVarName="tableView_HRMS_Blood_Doner" msprop:Generator_TablePropName="View_HRMS_Blood_Doner" msprop:Generator_RowDeletingName="View_HRMS_Blood_DonerRowDeleting" msprop:Generator_RowChangingName="View_HRMS_Blood_DonerRowChanging" msprop:Generator_RowEvHandlerName="View_HRMS_Blood_DonerRowChangeEventHandler" msprop:Generator_RowDeletedName="View_HRMS_Blood_DonerRowDeleted" msprop:Generator_UserTableName="View_HRMS_Blood_Doner" msprop:Generator_RowChangedName="View_HRMS_Blood_DonerRowChanged" msprop:Generator_RowEvArgName="View_HRMS_Blood_DonerRowChangeEvent" msprop:Generator_RowClassName="View_HRMS_Blood_DonerRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DonerCardNo" msprop:Generator_ColumnVarNameInTable="columnDonerCardNo" msprop:Generator_ColumnPropNameInRow="DonerCardNo" msprop:Generator_ColumnPropNameInTable="DonerCardNoColumn" msprop:Generator_UserColumnName="DonerCardNo" type="xs:int" />
+              <xs:element name="DonerName" msprop:Generator_ColumnVarNameInTable="columnDonerName" msprop:Generator_ColumnPropNameInRow="DonerName" msprop:Generator_ColumnPropNameInTable="DonerNameColumn" msprop:Generator_UserColumnName="DonerName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ReceiverCardNo" msprop:Generator_ColumnVarNameInTable="columnReceiverCardNo" msprop:Generator_ColumnPropNameInRow="ReceiverCardNo" msprop:Generator_ColumnPropNameInTable="ReceiverCardNoColumn" msprop:Generator_UserColumnName="ReceiverCardNo" type="xs:int" />
+              <xs:element name="receiverName" msprop:Generator_ColumnVarNameInTable="columnreceiverName" msprop:Generator_ColumnPropNameInRow="receiverName" msprop:Generator_ColumnPropNameInTable="receiverNameColumn" msprop:Generator_UserColumnName="receiverName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DonerDate" msprop:Generator_ColumnVarNameInTable="columnDonerDate" msprop:Generator_ColumnPropNameInRow="DonerDate" msprop:Generator_ColumnPropNameInTable="DonerDateColumn" msprop:Generator_UserColumnName="DonerDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="BloodGroup" msprop:Generator_ColumnVarNameInTable="columnBloodGroup" msprop:Generator_ColumnPropNameInRow="BloodGroup" msprop:Generator_ColumnPropNameInTable="BloodGroupColumn" msprop:Generator_UserColumnName="BloodGroup" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmpID" msprop:Generator_ColumnVarNameInTable="columnEmpID" msprop:Generator_ColumnPropNameInRow="EmpID" msprop:Generator_ColumnPropNameInTable="EmpIDColumn" msprop:Generator_UserColumnName="EmpID" type="xs:int" />
+              <xs:element name="EmPID1" msprop:Generator_ColumnVarNameInTable="columnEmPID1" msprop:Generator_ColumnPropNameInRow="EmPID1" msprop:Generator_ColumnPropNameInTable="EmPID1Column" msprop:Generator_UserColumnName="EmPID1" type="xs:int" />
+              <xs:element name="TID" msprop:Generator_ColumnVarNameInTable="columnTID" msprop:Generator_ColumnPropNameInRow="TID" msprop:Generator_ColumnPropNameInTable="TIDColumn" msprop:Generator_UserColumnName="TID" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tbl_HRMS_Blood_Doner" />
+      <xs:field xpath="mstns:TID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

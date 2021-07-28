@@ -1,0 +1,140 @@
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\bin\Release\ERP_HRMS.exe.config
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\bin\Release\ERP_HRMS.exe.manifest
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\bin\Release\ERP_HRMS.application
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\bin\Release\ERP_HRMS.exe
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\bin\Release\ERP_HRMS.pdb
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\bin\Release\ERP_HRMS.xml
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.App_Authourity.resources
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.Emp_dept_Info.resources
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.frmEmpManagment.resources
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.change_Password.resources
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.CompanyInfo.resources
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.Employee_catagory.resources
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.Employee_Notice.resources
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.Emp_Bank_info.resources
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.Emp_Branch_Info.resources
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.emp_card_info.resources
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.Emp_Designation_Info.resources
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.Emp_Employment_Info.resources
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.Emp_Grade_Info.resources
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.Emp_JobType_Info.resources
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.Emp_Leaving_Reason.resources
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.Emp_Qualfication_Info.resources
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.Emp_Shift_Info.resources
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.frmLogin.resources
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.frmMain.resources
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.MIS_User_Dept.resources
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.MIS_Users.resources
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.Resources.resources
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.vbproj.GenerateResource.Cache
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.TrustInfo.xml
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.exe.manifest
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.application
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.exe
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.xml
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.pdb
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.vbprojResolveAssemblyReference.cache
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\bin\Release\Interop.CrystalActiveXReportViewerLib105.dll
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\bin\Release\Interop.CrystalActiveXReportViewerLib11_5.dll
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\bin\Release\AxInterop.CrystalActiveXReportViewerLib105.dll
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\bin\Release\AxInterop.CrystalActiveXReportViewerLib11_5.dll
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\obj\Release\Interop.CrystalActiveXReportViewerLib105.dll
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\obj\Release\Interop.CrystalActiveXReportViewerLib11_5.dll
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\obj\Release\AxInterop.CrystalActiveXReportViewerLib105.dll
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\obj\Release\AxInterop.CrystalActiveXReportViewerLib11_5.dll
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.vbproj.ResolveComReference.cache
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\bin\Release\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\bin\Release\CrystalDecisions.ReportSource.dll
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\bin\Release\CrystalDecisions.Shared.dll
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\bin\Release\CrystalDecisions.Windows.Forms.dll
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\bin\Release\stdole.dll
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\bin\Release\CrystalDecisions.CrystalReports.Engine.xml
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\bin\Release\CrystalDecisions.ReportSource.xml
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\bin\Release\CrystalDecisions.Shared.xml
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\bin\Release\CrystalDecisions.Windows.Forms.xml
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.SalaryManagnment.resources
+D:\Sports Software\ERP_HRMS\ERP_HRMS\bin\Release\ERP_HRMS.exe.config
+D:\Sports Software\ERP_HRMS\ERP_HRMS\obj\Release\Interop.CrystalActiveXReportViewerLib105.dll
+D:\Sports Software\ERP_HRMS\ERP_HRMS\obj\Release\Interop.CrystalActiveXReportViewerLib11_5.dll
+D:\Sports Software\ERP_HRMS\ERP_HRMS\obj\Release\AxInterop.CrystalActiveXReportViewerLib105.dll
+D:\Sports Software\ERP_HRMS\ERP_HRMS\obj\Release\AxInterop.CrystalActiveXReportViewerLib11_5.dll
+D:\Sports Software\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.vbproj.ResolveComReference.cache
+D:\Sports Software\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.exe
+D:\Sports Software\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.xml
+D:\Sports Software\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.pdb
+D:\Sports Software\ERP_HRMS\ERP_HRMS\bin\Release\ERP_HRMS.exe.manifest
+D:\Sports Software\ERP_HRMS\ERP_HRMS\bin\Release\ERP_HRMS.application
+D:\Sports Software\ERP_HRMS\ERP_HRMS\bin\Release\ERP_HRMS.exe
+D:\Sports Software\ERP_HRMS\ERP_HRMS\bin\Release\ERP_HRMS.pdb
+D:\Sports Software\ERP_HRMS\ERP_HRMS\bin\Release\ERP_HRMS.xml
+D:\Sports Software\ERP_HRMS\ERP_HRMS\bin\Release\CrystalDecisions.CrystalReports.Engine.dll
+D:\Sports Software\ERP_HRMS\ERP_HRMS\bin\Release\CrystalDecisions.ReportSource.dll
+D:\Sports Software\ERP_HRMS\ERP_HRMS\bin\Release\CrystalDecisions.Shared.dll
+D:\Sports Software\ERP_HRMS\ERP_HRMS\bin\Release\CrystalDecisions.Windows.Forms.dll
+D:\Sports Software\ERP_HRMS\ERP_HRMS\bin\Release\stdole.dll
+D:\Sports Software\ERP_HRMS\ERP_HRMS\bin\Release\CrystalDecisions.CrystalReports.Engine.xml
+D:\Sports Software\ERP_HRMS\ERP_HRMS\bin\Release\CrystalDecisions.ReportSource.xml
+D:\Sports Software\ERP_HRMS\ERP_HRMS\bin\Release\CrystalDecisions.Shared.xml
+D:\Sports Software\ERP_HRMS\ERP_HRMS\bin\Release\CrystalDecisions.Windows.Forms.xml
+D:\Sports Software\ERP_HRMS\ERP_HRMS\bin\Release\Interop.CrystalActiveXReportViewerLib105.dll
+D:\Sports Software\ERP_HRMS\ERP_HRMS\bin\Release\Interop.CrystalActiveXReportViewerLib11_5.dll
+D:\Sports Software\ERP_HRMS\ERP_HRMS\bin\Release\AxInterop.CrystalActiveXReportViewerLib105.dll
+D:\Sports Software\ERP_HRMS\ERP_HRMS\bin\Release\AxInterop.CrystalActiveXReportViewerLib11_5.dll
+D:\Sports Software\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.vbprojResolveAssemblyReference.cache
+D:\Sports Software\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.SalaryManagnment.resources
+D:\Sports Software\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.App_Authourity.resources
+D:\Sports Software\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.Emp_dept_Info.resources
+D:\Sports Software\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.frmEmpManagment.resources
+D:\Sports Software\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.EmpProfileReport.resources
+D:\Sports Software\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.change_Password.resources
+D:\Sports Software\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.CompanyInfo.resources
+D:\Sports Software\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.Employee_catagory.resources
+D:\Sports Software\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.Employee_Notice.resources
+D:\Sports Software\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.Emp_Bank_info.resources
+D:\Sports Software\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.Emp_Branch_Info.resources
+D:\Sports Software\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.emp_card_info.resources
+D:\Sports Software\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.Emp_Designation_Info.resources
+D:\Sports Software\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.Emp_Employment_Info.resources
+D:\Sports Software\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.Emp_Grade_Info.resources
+D:\Sports Software\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.Emp_JobType_Info.resources
+D:\Sports Software\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.Emp_Leaving_Reason.resources
+D:\Sports Software\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.Emp_Qualfication_Info.resources
+D:\Sports Software\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.Emp_Shift_Info.resources
+D:\Sports Software\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.frmLogin.resources
+D:\Sports Software\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.frmMain.resources
+D:\Sports Software\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.MIS_User_Dept.resources
+D:\Sports Software\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.MIS_Users.resources
+D:\Sports Software\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.Resources.resources
+D:\Sports Software\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.vbproj.GenerateResource.Cache
+D:\Sports Software\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.TrustInfo.xml
+D:\Sports Software\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.exe.manifest
+D:\Sports Software\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.application
+D:\Sports Software\ERP_HRMS\ERP_HRMS\bin\Release\Microsoft.ReportViewer.WinForms.dll
+D:\Sports Software\ERP_HRMS\ERP_HRMS\bin\Release\Microsoft.SqlServer.Types.dll
+D:\Sports Software\ERP_HRMS\ERP_HRMS\bin\Release\de\Microsoft.SqlServer.Types.resources.dll
+D:\Sports Software\ERP_HRMS\ERP_HRMS\bin\Release\es\Microsoft.SqlServer.Types.resources.dll
+D:\Sports Software\ERP_HRMS\ERP_HRMS\bin\Release\fr\Microsoft.SqlServer.Types.resources.dll
+D:\Sports Software\ERP_HRMS\ERP_HRMS\bin\Release\it\Microsoft.SqlServer.Types.resources.dll
+D:\Sports Software\ERP_HRMS\ERP_HRMS\bin\Release\ja\Microsoft.SqlServer.Types.resources.dll
+D:\Sports Software\ERP_HRMS\ERP_HRMS\bin\Release\ko\Microsoft.SqlServer.Types.resources.dll
+D:\Sports Software\ERP_HRMS\ERP_HRMS\bin\Release\pt\Microsoft.SqlServer.Types.resources.dll
+D:\Sports Software\ERP_HRMS\ERP_HRMS\bin\Release\ru\Microsoft.SqlServer.Types.resources.dll
+D:\Sports Software\ERP_HRMS\ERP_HRMS\bin\Release\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+D:\Sports Software\ERP_HRMS\ERP_HRMS\bin\Release\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+D:\Sports Software\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.FrmRptViewer.resources
+D:\Sports Software\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.RptEmployeeRecord.resources
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.FrmRptViewer.resources
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.RptemployeeRecord.resources
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.FrmDeptWiseViewer.resources
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.RptDepartRecord.resources
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.DateWiseRptViewer.resources
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.FrmDateWiseRpt.resources
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\waqas\ERP_HRMS\ERP_HRMS\bin\Release\ERP_HRMS.exe.config
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\waqas\ERP_HRMS\ERP_HRMS\obj\Release\Interop.CrystalActiveXReportViewerLib105.dll
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\waqas\ERP_HRMS\ERP_HRMS\obj\Release\Interop.CrystalActiveXReportViewerLib11_5.dll
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\waqas\ERP_HRMS\ERP_HRMS\obj\Release\AxInterop.CrystalActiveXReportViewerLib105.dll
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\waqas\ERP_HRMS\ERP_HRMS\obj\Release\AxInterop.CrystalActiveXReportViewerLib11_5.dll
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\waqas\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.vbproj.ResolveComReference.cache
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\waqas\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.exe
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\waqas\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.xml
+C:\Users\its-4\Documents\Visual Studio 2015\Projects\waqas\ERP_HRMS\ERP_HRMS\obj\Release\ERP_HRMS.pdb

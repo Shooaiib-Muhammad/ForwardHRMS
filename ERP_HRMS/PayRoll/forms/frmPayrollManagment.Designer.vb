@@ -533,6 +533,7 @@ Partial Class frmPayrollManagment
         '
         Me.BindingNavigatorPositionItem.AccessibleName = "Position"
         Me.BindingNavigatorPositionItem.AutoSize = False
+        Me.BindingNavigatorPositionItem.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem"
         Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(50, 23)
         Me.BindingNavigatorPositionItem.Text = "0"
@@ -913,6 +914,7 @@ Partial Class frmPayrollManagment
         '
         Me.ToolStripTextBox1.AccessibleName = "Position"
         Me.ToolStripTextBox1.AutoSize = False
+        Me.ToolStripTextBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.ToolStripTextBox1.Name = "ToolStripTextBox1"
         Me.ToolStripTextBox1.Size = New System.Drawing.Size(50, 23)
         Me.ToolStripTextBox1.Text = "0"
@@ -1193,6 +1195,7 @@ Partial Class frmPayrollManagment
         '
         Me.ToolStripTextBox2.AccessibleName = "Position"
         Me.ToolStripTextBox2.AutoSize = False
+        Me.ToolStripTextBox2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.ToolStripTextBox2.Name = "ToolStripTextBox2"
         Me.ToolStripTextBox2.Size = New System.Drawing.Size(50, 23)
         Me.ToolStripTextBox2.Text = "0"
@@ -1513,6 +1516,7 @@ Partial Class frmPayrollManagment
         '
         Me.ToolStripTextBox3.AccessibleName = "Position"
         Me.ToolStripTextBox3.AutoSize = False
+        Me.ToolStripTextBox3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.ToolStripTextBox3.Name = "ToolStripTextBox3"
         Me.ToolStripTextBox3.Size = New System.Drawing.Size(50, 23)
         Me.ToolStripTextBox3.Text = "0"

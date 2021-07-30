@@ -263,6 +263,7 @@ Partial Class frmMonthlySalary
         Me.View_Bonus_SalaryTableAdapter = New ERP_HRMS.DataSet5TableAdapters.View_Bonus_SalaryTableAdapter()
         Me.DataSet5 = New ERP_HRMS.DataSet5()
         Me.View_Bonus_SalaryBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Label45 = New System.Windows.Forms.Label()
         NameLabel = New System.Windows.Forms.Label()
         FatherNameLabel = New System.Windows.Forms.Label()
         GrossSalaryLabel = New System.Windows.Forms.Label()
@@ -677,7 +678,7 @@ Partial Class frmMonthlySalary
         Label14.Name = "Label14"
         Label14.Size = New System.Drawing.Size(107, 20)
         Label14.TabIndex = 65
-        Label14.Text = "Union Fund"
+        Label14.Text = "Fair Price Amount :"
         Label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label41
@@ -843,9 +844,9 @@ Partial Class frmMonthlySalary
         '
         Me.Panel3.BackColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel3.Controls.Add(Me.Label45)
         Me.Panel3.Controls.Add(Me.Label42)
         Me.Panel3.Controls.Add(Label44)
-        Me.Panel3.Controls.Add(Me.Label3)
         Me.Panel3.Controls.Add(Label14)
         Me.Panel3.Controls.Add(Me.CanteenLabel)
         Me.Panel3.Controls.Add(Me.AccommodationLabel2)
@@ -919,11 +920,12 @@ Partial Class frmMonthlySalary
         Me.Label3.BackColor = System.Drawing.SystemColors.Window
         Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label3.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tbl_PayRoll_LongLeaves7BindingSource, "OTAL", True))
-        Me.Label3.Location = New System.Drawing.Point(600, 129)
+        Me.Label3.Location = New System.Drawing.Point(997, 319)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(137, 20)
         Me.Label3.TabIndex = 66
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Label3.Visible = False
         '
         'Tbl_PayRoll_LongLeaves7BindingSource
         '
@@ -2586,6 +2588,18 @@ Partial Class frmMonthlySalary
         Me.View_Bonus_SalaryBindingSource.DataMember = "View_Bonus_Salary"
         Me.View_Bonus_SalaryBindingSource.DataSource = Me.DataSet5
         '
+        'Label45
+        '
+        Me.Label45.BackColor = System.Drawing.Color.White
+        Me.Label45.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label45.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.View_Acc_FairShopBindingSource, "Amount", True))
+        Me.Label45.Location = New System.Drawing.Point(600, 128)
+        Me.Label45.Name = "Label45"
+        Me.Label45.Size = New System.Drawing.Size(137, 20)
+        Me.Label45.TabIndex = 25
+        Me.Label45.Text = "Label45"
+        Me.Label45.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
         'frmMonthlySalary
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2595,6 +2609,7 @@ Partial Class frmMonthlySalary
         Me.ClientSize = New System.Drawing.Size(1199, 714)
         Me.Controls.Add(Me.DailyTA)
         Me.Controls.Add(Me.PaymentModeLabel2)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.PerDTA)
         Me.Controls.Add(Me.FairAmountLabel3)
         Me.Controls.Add(Me.SPLabel1)
@@ -2885,4 +2900,5 @@ Partial Class frmMonthlySalary
     Friend WithEvents View_Bonus_SalaryTableAdapter As DataSet5TableAdapters.View_Bonus_SalaryTableAdapter
     Friend WithEvents DataSet5 As DataSet5
     Friend WithEvents View_Bonus_SalaryBindingSource As BindingSource
+    Friend WithEvents Label45 As Label
 End Class

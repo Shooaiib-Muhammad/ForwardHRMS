@@ -217,7 +217,7 @@ Public Class frmMonthlySalary
         'This is navigation function, which is called on navigation of each record.
         Dim TransCount As Integer
         Dim PaidCount As Integer
-
+        Label45.Text = Format(Val(Label45.Text), "0")
         LoadData()
         AssignZeros()
         CalculateAllRecords()

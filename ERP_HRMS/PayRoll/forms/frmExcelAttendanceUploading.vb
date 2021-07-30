@@ -82,9 +82,9 @@ Public Class CanteenAttendanceUploading
                                 If WeekdayName(Weekday(AttDate)) = "Friday" Then
                                     If Day = True Then '''' For All SHif
                                         SHiftST = DateAdd(DateInterval.Minute, 0, Me.DSDisplayEI.View_Display_EmpInfo.Rows(0).Item("SStartTime"))
-                                        ShiftET = DateAdd(DateInterval.Minute, 30, Me.DSDisplayEI.View_Display_EmpInfo.Rows(0).Item("SEndTime"))
-                                        BreakST = DateAdd(DateInterval.Minute, 30, Me.DSDisplayEI.View_Display_EmpInfo.Rows(0).Item("SBreakStartTime"))
-                                        BreakET = DateAdd(DateInterval.Minute, 60, Me.DSDisplayEI.View_Display_EmpInfo.Rows(0).Item("SBreakEndTime"))
+                                        ShiftET = DateAdd(DateInterval.Minute, 15, Me.DSDisplayEI.View_Display_EmpInfo.Rows(0).Item("SEndTime"))
+                                        BreakST = DateAdd(DateInterval.Minute, 0, Me.DSDisplayEI.View_Display_EmpInfo.Rows(0).Item("SBreakStartTime"))
+                                        BreakET = DateAdd(DateInterval.Minute, 15, Me.DSDisplayEI.View_Display_EmpInfo.Rows(0).Item("SBreakEndTime"))
                                     ElseIf Night = True Then  '' For Night Shift
                                         SHiftST = DateAdd(DateInterval.Minute, 30, Me.DSDisplayEI.View_Display_EmpInfo.Rows(0).Item("SStartTime"))
                                         ShiftET = DateAdd(DateInterval.Minute, 30, Me.DSDisplayEI.View_Display_EmpInfo.Rows(0).Item("SEndTime"))

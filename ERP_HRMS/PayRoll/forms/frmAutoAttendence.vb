@@ -36,10 +36,10 @@ Public Class frmAutoAttendence
 
             If WeekdayName(Weekday(Dt)) = "Friday" And FridayShift = 1 Then 'for Day
                 Me.ShiftST = SSTime
-                Me.ShiftET = DateAdd(DateInterval.Minute, 30, SETime)
-                Me.ShiftBreakST = DateAdd(DateInterval.Minute, 30, SBSTime)
-                Me.ShiftBreakET = DateAdd(DateInterval.Minute, 60, SBETime)
-            ElseIf WeekdayName(Weekday(Dt)) = "Friday" And FridayShift = 2 'for Night
+                Me.ShiftET = DateAdd(DateInterval.Minute, 15, SETime)
+                Me.ShiftBreakST = DateAdd(DateInterval.Minute, 0, SBSTime)
+                Me.ShiftBreakET = DateAdd(DateInterval.Minute, 15, SBETime)
+            ElseIf WeekdayName(Weekday(Dt)) = "Friday" And FridayShift = 2 Then 'for Night
                 Me.ShiftST = DateAdd(DateInterval.Minute, 30, SSTime)
                 Me.ShiftET = DateAdd(DateInterval.Minute, 30, SETime)
                 Me.ShiftBreakST = DateAdd(DateInterval.Minute, 30, SBSTime)

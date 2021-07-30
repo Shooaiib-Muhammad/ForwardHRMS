@@ -265,9 +265,9 @@
                     ''Me.DSPayRoll.View_All_Employees(0).Item("FridayBreakStatus")
                     If WeekdayName(Weekday(selecteddate)) = "Friday" Then
                         If CType(Me.DSPayRoll.tbl_HRM_Shift(0).Item("FridayBreakStatus"), Boolean) = True Then '''' For All SHif
-                            ShiftET = DateAdd(DateInterval.Minute, 30, ShiftET)
-                            ShiftBST = DateAdd(DateInterval.Minute, 30, ShiftBST)
-                            ShiftBET = DateAdd(DateInterval.Minute, 60, ShiftBET)
+                            ShiftET = DateAdd(DateInterval.Minute, 15, ShiftET)
+                            ShiftBST = DateAdd(DateInterval.Minute, 0, ShiftBST)
+                            ShiftBET = DateAdd(DateInterval.Minute, 15, ShiftBET)
                         ElseIf CType(Me.DSPayRoll.tbl_HRM_Shift(0).Item("NightAndFriday"), Boolean) = True Then  '' For Night Shift
                             ShiftST = DateAdd(DateInterval.Minute, 30, ShiftST)
                             ShiftET = DateAdd(DateInterval.Minute, 30, ShiftET)

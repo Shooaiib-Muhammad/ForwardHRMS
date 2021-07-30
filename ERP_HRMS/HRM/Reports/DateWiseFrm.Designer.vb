@@ -51,6 +51,7 @@ Partial Class DateWiseFrm
         Me.EndTime = New System.Windows.Forms.DateTimePicker()
         Me.BtnRptShower = New System.Windows.Forms.Button()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
         Me.pendEOBICrd = New System.Windows.Forms.RadioButton()
         Me.RadioButton3 = New System.Windows.Forms.RadioButton()
         Me.RadioButton18 = New System.Windows.Forms.RadioButton()
@@ -101,7 +102,7 @@ Partial Class DateWiseFrm
         Me.Tbl_Comp_InfoTableAdapter = New ERP_HRMS.DSUserTableAdapters.tbl_Comp_InfoTableAdapter()
         Me.Tbl_Comp_InfoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DSUser = New ERP_HRMS.DSUser()
-        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton5 = New System.Windows.Forms.RadioButton()
         DeptNameLabel = New System.Windows.Forms.Label()
         SectionNameLabel = New System.Windows.Forms.Label()
         DesigNameLabel = New System.Windows.Forms.Label()
@@ -231,7 +232,7 @@ Partial Class DateWiseFrm
         Me.GroupBox6.Controls.Add(Me.All)
         Me.GroupBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox6.ForeColor = System.Drawing.Color.Blue
-        Me.GroupBox6.Location = New System.Drawing.Point(16, 392)
+        Me.GroupBox6.Location = New System.Drawing.Point(18, 421)
         Me.GroupBox6.Name = "GroupBox6"
         Me.GroupBox6.Size = New System.Drawing.Size(318, 202)
         Me.GroupBox6.TabIndex = 5
@@ -418,7 +419,7 @@ Partial Class DateWiseFrm
         Me.BtnRptShower.BackColor = System.Drawing.Color.Green
         Me.BtnRptShower.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnRptShower.ForeColor = System.Drawing.Color.White
-        Me.BtnRptShower.Location = New System.Drawing.Point(340, 552)
+        Me.BtnRptShower.Location = New System.Drawing.Point(616, 513)
         Me.BtnRptShower.Name = "BtnRptShower"
         Me.BtnRptShower.Size = New System.Drawing.Size(127, 47)
         Me.BtnRptShower.TabIndex = 4
@@ -427,6 +428,7 @@ Partial Class DateWiseFrm
         '
         'GroupBox5
         '
+        Me.GroupBox5.Controls.Add(Me.RadioButton5)
         Me.GroupBox5.Controls.Add(Me.RadioButton4)
         Me.GroupBox5.Controls.Add(Me.pendEOBICrd)
         Me.GroupBox5.Controls.Add(Me.RadioButton3)
@@ -444,10 +446,22 @@ Partial Class DateWiseFrm
         Me.GroupBox5.ForeColor = System.Drawing.Color.Blue
         Me.GroupBox5.Location = New System.Drawing.Point(12, 44)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(322, 344)
+        Me.GroupBox5.Size = New System.Drawing.Size(322, 371)
         Me.GroupBox5.TabIndex = 4
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Report Selector"
+        '
+        'RadioButton4
+        '
+        Me.RadioButton4.AutoSize = True
+        Me.RadioButton4.ForeColor = System.Drawing.Color.Black
+        Me.RadioButton4.Location = New System.Drawing.Point(18, 318)
+        Me.RadioButton4.Name = "RadioButton4"
+        Me.RadioButton4.Size = New System.Drawing.Size(169, 21)
+        Me.RadioButton4.TabIndex = 45
+        Me.RadioButton4.TabStop = True
+        Me.RadioButton4.Text = "Salary Analysis Report"
+        Me.RadioButton4.UseVisualStyleBackColor = True
         '
         'pendEOBICrd
         '
@@ -621,7 +635,7 @@ Partial Class DateWiseFrm
         Me.GroupBox8.ForeColor = System.Drawing.Color.Blue
         Me.GroupBox8.Location = New System.Drawing.Point(340, 115)
         Me.GroupBox8.Name = "GroupBox8"
-        Me.GroupBox8.Size = New System.Drawing.Size(403, 225)
+        Me.GroupBox8.Size = New System.Drawing.Size(403, 193)
         Me.GroupBox8.TabIndex = 7
         Me.GroupBox8.TabStop = False
         Me.GroupBox8.Text = "Option Selector"
@@ -817,6 +831,7 @@ Partial Class DateWiseFrm
         Me.TableAdapterManager.tbl_Acc_Salary1TableAdapter = Nothing
         Me.TableAdapterManager.tbl_Acc_Salary2TableAdapter = Nothing
         Me.TableAdapterManager.tbl_Acc_SalaryTableAdapter = Nothing
+        Me.TableAdapterManager.tbl_disability_descptionTableAdapter = Nothing
         Me.TableAdapterManager.tbl_HRM_App_AuthorityTableAdapter = Nothing
         Me.TableAdapterManager.tbl_HRM_BankTableAdapter = Nothing
         Me.TableAdapterManager.tbl_HRM_BranchTableAdapter = Me.Tbl_HRM_BranchTableAdapter
@@ -825,6 +840,7 @@ Partial Class DateWiseFrm
         Me.TableAdapterManager.tbl_HRM_DeptTableAdapter = Me.Tbl_HRM_DeptTableAdapter
         Me.TableAdapterManager.tbl_HRM_Designation1TableAdapter = Nothing
         Me.TableAdapterManager.tbl_HRM_DesignationTableAdapter = Me.Tbl_HRM_DesignationTableAdapter
+        Me.TableAdapterManager.tbl_HRM_Emp_Info1TableAdapter = Nothing
         Me.TableAdapterManager.tbl_HRM_Emp_InfoTableAdapter = Nothing
         Me.TableAdapterManager.tbl_Hrm_Emp_NoticesTableAdapter = Nothing
         Me.TableAdapterManager.tbl_HRM_EmpCatagoryTableAdapter = Nothing
@@ -886,7 +902,7 @@ Partial Class DateWiseFrm
         Me.Deptpanel.Controls.Add(SectionNameLabel)
         Me.Deptpanel.Controls.Add(Me.DesigNameComboBox)
         Me.Deptpanel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Deptpanel.Location = New System.Drawing.Point(342, 353)
+        Me.Deptpanel.Location = New System.Drawing.Point(340, 311)
         Me.Deptpanel.Name = "Deptpanel"
         Me.Deptpanel.Size = New System.Drawing.Size(401, 196)
         Me.Deptpanel.TabIndex = 9
@@ -937,17 +953,17 @@ Partial Class DateWiseFrm
         Me.DSUser.DataSetName = "DSUser"
         Me.DSUser.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'RadioButton4
+        'RadioButton5
         '
-        Me.RadioButton4.AutoSize = True
-        Me.RadioButton4.ForeColor = System.Drawing.Color.Black
-        Me.RadioButton4.Location = New System.Drawing.Point(18, 318)
-        Me.RadioButton4.Name = "RadioButton4"
-        Me.RadioButton4.Size = New System.Drawing.Size(169, 21)
-        Me.RadioButton4.TabIndex = 45
-        Me.RadioButton4.TabStop = True
-        Me.RadioButton4.Text = "Salary Analysis Report"
-        Me.RadioButton4.UseVisualStyleBackColor = True
+        Me.RadioButton5.AutoSize = True
+        Me.RadioButton5.ForeColor = System.Drawing.Color.Black
+        Me.RadioButton5.Location = New System.Drawing.Point(18, 344)
+        Me.RadioButton5.Name = "RadioButton5"
+        Me.RadioButton5.Size = New System.Drawing.Size(188, 21)
+        Me.RadioButton5.TabIndex = 46
+        Me.RadioButton5.TabStop = True
+        Me.RadioButton5.Text = "Employee Monthly Report"
+        Me.RadioButton5.UseVisualStyleBackColor = True
         '
         'DateWiseFrm
         '
@@ -1061,4 +1077,5 @@ Partial Class DateWiseFrm
     Friend WithEvents DSUser As DSUser
     Friend WithEvents pendEOBICrd As RadioButton
     Friend WithEvents RadioButton4 As RadioButton
+    Friend WithEvents RadioButton5 As RadioButton
 End Class

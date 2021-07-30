@@ -706,7 +706,10 @@
             Path = "" & frmLogin.ReportsPath & "\Accounts\SalaryAnalysis.rpt"
             Param = "@FromDate=" & starttime.Value.Date & "&@ToDate=" & EndTime.Value.Date & ""
         End If
-
+        If RadioButton5.Checked Then
+            Path = "" & frmLogin.ReportsPath & "\HR\hrmonthlyreport.rpt"
+            Filter = "{View_HR_Monthly_Data.SalaryMonth} = #" & Format(Me.starttime.Value, "MM/dd/yyyy") & "#"
+        End If
         Obj.LoadDateWiseReports(Path, Filter, Param)
     End Sub
 
@@ -961,6 +964,23 @@
             JBtn.Enabled = True
             HirCritBtn.Enabled = True
             RadioButton1.Enabled = True
+        End If
+    End Sub
+
+    Private Sub RadioButton5_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton5.CheckedChanged
+
+        If RadioButton5.Checked = True Then
+            Label5.Text = "Selected Month"
+            starttime.CustomFormat = "MMM, yyyy"
+            Label6.Visible = False
+            EndTime.Visible = False
+
+        Else
+            Label5.Text = "From Date"
+            starttime.CustomFormat = "dd/MM/yyyy"
+            Label6.Visible = True
+            EndTime.Visible = True
+
         End If
     End Sub
 End Class

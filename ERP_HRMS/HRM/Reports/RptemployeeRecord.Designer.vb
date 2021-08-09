@@ -111,6 +111,7 @@ Partial Class RptemployeeRecord
         Me.Tbl_HRM_GradeTableAdapter = New ERP_HRMS.DSHRMTableAdapters.tbl_HRM_GradeTableAdapter()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.Label12 = New System.Windows.Forms.Label()
+        Me.RadioButton17 = New System.Windows.Forms.RadioButton()
         Label7 = New System.Windows.Forms.Label()
         Label8 = New System.Windows.Forms.Label()
         Label9 = New System.Windows.Forms.Label()
@@ -183,6 +184,7 @@ Partial Class RptemployeeRecord
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.RadioButton17)
         Me.GroupBox1.Controls.Add(Me.RadioButton15)
         Me.GroupBox1.Controls.Add(Me.RadioButton14)
         Me.GroupBox1.Controls.Add(Me.RadioButton13)
@@ -574,7 +576,7 @@ Partial Class RptemployeeRecord
         Me.btnRptShow.ForeColor = System.Drawing.Color.White
         Me.btnRptShow.Location = New System.Drawing.Point(816, 327)
         Me.btnRptShow.Name = "btnRptShow"
-        Me.btnRptShow.Size = New System.Drawing.Size(164, 62)
+        Me.btnRptShow.Size = New System.Drawing.Size(147, 62)
         Me.btnRptShow.TabIndex = 14
         Me.btnRptShow.Text = "Show Report"
         Me.btnRptShow.UseVisualStyleBackColor = False
@@ -1113,6 +1115,17 @@ Partial Class RptemployeeRecord
         Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Label12.Visible = False
         '
+        'RadioButton17
+        '
+        Me.RadioButton17.AutoSize = True
+        Me.RadioButton17.ForeColor = System.Drawing.Color.Black
+        Me.RadioButton17.Location = New System.Drawing.Point(240, 266)
+        Me.RadioButton17.Name = "RadioButton17"
+        Me.RadioButton17.Size = New System.Drawing.Size(158, 21)
+        Me.RadioButton17.TabIndex = 57
+        Me.RadioButton17.Text = "Marriage Grant Case"
+        Me.RadioButton17.UseVisualStyleBackColor = True
+        '
         'RptemployeeRecord
         '
         Me.AcceptButton = Me.btnRptShow
@@ -1261,4 +1274,5 @@ Partial Class RptemployeeRecord
     Friend WithEvents RadioButton15 As RadioButton
     Friend WithEvents DateTimePicker2 As DateTimePicker
     Friend WithEvents Label12 As Label
+    Friend WithEvents RadioButton17 As RadioButton
 End Class

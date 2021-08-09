@@ -84,9 +84,9 @@ Public Class frmAutoAttConnEntry
                                     If WeekdayName(Weekday(MyAttTime)) = "Friday" Then
                                         If Day = True Then '''' For All SHif
                                             ShiftST = DateAdd(DateInterval.Minute, 0, Me.DSPayRoll.View_All_Employees(0).Item("ShiftST"))
-                                            ShiftET = DateAdd(DateInterval.Minute, 30, Me.DSPayRoll.View_All_Employees(0).Item("ShiftET"))
-                                            BreakST = DateAdd(DateInterval.Minute, 30, Me.DSPayRoll.View_All_Employees(0).Item("BreakST"))
-                                            BreakET = DateAdd(DateInterval.Minute, 60, Me.DSPayRoll.View_All_Employees(0).Item("BreakET"))
+                                            ShiftET = DateAdd(DateInterval.Minute, 15, Me.DSPayRoll.View_All_Employees(0).Item("ShiftET"))
+                                            BreakST = DateAdd(DateInterval.Minute, 0, Me.DSPayRoll.View_All_Employees(0).Item("BreakST"))
+                                            BreakET = DateAdd(DateInterval.Minute, 15, Me.DSPayRoll.View_All_Employees(0).Item("BreakET"))
                                         ElseIf Night = True Then  '' For Night Shift
                                             ShiftST = DateAdd(DateInterval.Minute, 30, Me.DSPayRoll.View_All_Employees(0).Item("ShiftST"))
                                             ShiftET = DateAdd(DateInterval.Minute, 30, Me.DSPayRoll.View_All_Employees(0).Item("ShiftET"))

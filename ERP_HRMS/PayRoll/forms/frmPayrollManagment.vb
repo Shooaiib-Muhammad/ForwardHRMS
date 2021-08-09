@@ -364,9 +364,9 @@
 
                             If WeekdayName(Weekday(SelectedDate)) = "Friday" Then
                                 If Day = True Then '''' For All SHif
-                                    ShiftET = DateAdd(DateInterval.Minute, 30, ShiftET)
-                                    ShiftBST = DateAdd(DateInterval.Minute, 30, ShiftBST)
-                                    ShiftBET = DateAdd(DateInterval.Minute, 60, ShiftBET)
+                                    ShiftET = DateAdd(DateInterval.Minute, 15, ShiftET)
+                                    ShiftBST = DateAdd(DateInterval.Minute, 0, ShiftBST)
+                                    ShiftBET = DateAdd(DateInterval.Minute, 15, ShiftBET)
                                 ElseIf Night = True Then  '' For Night Shift
                                     ShiftST = DateAdd(DateInterval.Minute, 30, ShiftST)
                                     ShiftET = DateAdd(DateInterval.Minute, 30, ShiftET)

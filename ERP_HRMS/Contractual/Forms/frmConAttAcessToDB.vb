@@ -73,9 +73,9 @@ Public Class frmConAttAcessToDB
 
                 If WeekdayName(Weekday(AttDate1)) = "Friday" Then
                     If Day = True Then '''' For All SHif
-                        ShiftET = DateAdd(DateInterval.Minute, 30, ShiftET)
-                        BreakST = DateAdd(DateInterval.Minute, 30, BreakST)
-                        BreakET = DateAdd(DateInterval.Minute, 60, BreakET)
+                        ShiftET = DateAdd(DateInterval.Minute, 15, ShiftET)
+                        BreakST = DateAdd(DateInterval.Minute, 0, BreakST)
+                        BreakET = DateAdd(DateInterval.Minute, 15, BreakET)
                     ElseIf Night = True Then  '' For Night Shift
                         ShiftST = DateAdd(DateInterval.Minute, 30, ShiftST)
                         ShiftET = DateAdd(DateInterval.Minute, 30, ShiftET)
@@ -172,9 +172,9 @@ Public Class frmConAttAcessToDB
 
                 If WeekdayName(Weekday(AttDate1)) = "Friday" Then
                     If Day = True Then '''' For All SHif
-                        ShiftET = DateAdd(DateInterval.Minute, 30, ShiftET)
-                        BreakST = DateAdd(DateInterval.Minute, 30, BreakST)
-                        BreakET = DateAdd(DateInterval.Minute, 60, BreakET)
+                        ShiftET = DateAdd(DateInterval.Minute, 15, ShiftET)
+                        BreakST = DateAdd(DateInterval.Minute, 0, BreakST)
+                        BreakET = DateAdd(DateInterval.Minute, 15, BreakET)
                     ElseIf Night = True Then  '' For Night Shift
                         ShiftST = DateAdd(DateInterval.Minute, 30, ShiftST)
                         ShiftET = DateAdd(DateInterval.Minute, 30, ShiftET)

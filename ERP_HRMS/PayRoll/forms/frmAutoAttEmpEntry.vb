@@ -97,10 +97,10 @@ Public Class frmAutoAttEmpEntry
 
                                                     If Day = True Then '''' For All SHif
                                                         ShiftST = DateAdd(DateInterval.Minute, 0, Me.DSPayRoll.View_All_Employees(0).Item("ShiftST"))
-                                                        ShiftET = DateAdd(DateInterval.Minute, 30, Me.DSPayRoll.View_All_Employees(0).Item("ShiftET"))
-                                                        BreakST = DateAdd(DateInterval.Minute, 30, Me.DSPayRoll.View_All_Employees(0).Item("BreakST"))
-                                                        BreakET = DateAdd(DateInterval.Minute, 60, Me.DSPayRoll.View_All_Employees(0).Item("BreakET"))
-                                                        MyEndAttTime = MyEndAttTime.AddMinutes(30)
+                                                    ShiftET = DateAdd(DateInterval.Minute, 15, Me.DSPayRoll.View_All_Employees(0).Item("ShiftET"))
+                                                    BreakST = DateAdd(DateInterval.Minute, 0, Me.DSPayRoll.View_All_Employees(0).Item("BreakST"))
+                                                    BreakET = DateAdd(DateInterval.Minute, 15, Me.DSPayRoll.View_All_Employees(0).Item("BreakET"))
+                                                    MyEndAttTime = MyEndAttTime.AddMinutes(30)
                                                         flag = True
                                                     ElseIf Night = True Then  '' For Night Shift
                                                         ShiftST = DateAdd(DateInterval.Minute, 30, Me.DSPayRoll.View_All_Employees(0).Item("ShiftST"))

@@ -49,7 +49,11 @@ Public Class frmAttAcessToDB
             End Try
             If Me.View_All_EmployeesBindingSource.Count > 0 Then
 
-                Me.Tbl_Hrm_Emp_Att_VisitTableAdapter.Insert(Me.DSPayRoll.View_All_Employees(0).Item("CardNo"), Me.DSPayRoll.View_All_Employees(0).Item("EmpID"), AttDate1, AttendTime, DecviceNo, Nothing, Nothing)
+                Try
+                    Me.Tbl_Hrm_Emp_Att_VisitTableAdapter.Insert(Me.DSPayRoll.View_All_Employees(0).Item("CardNo"), Me.DSPayRoll.View_All_Employees(0).Item("EmpID"), AttDate1, AttendTime, DecviceNo, Nothing, Nothing)
+                Catch ex As Exception
+
+                End Try
                 Me.DataGridView1(4, i).Value = "Successfully Mark Attendence"
                 'Else
                 '    Me.DataGridView1(4, i).Value = "Already Attendence Mark"
@@ -85,7 +89,11 @@ Public Class frmAttAcessToDB
             End Try
             If Me.View_All_EmployeesBindingSource.Count > 0 Then
 
-                Me.Tbl_Hrm_Emp_Att_VisitTableAdapter.Insert(Me.DSPayRoll.View_All_Employees(0).Item("CardNo"), Me.DSPayRoll.View_All_Employees(0).Item("EmpID"), AttDate1, AttendTime, DecviceNo, Nothing, Nothing)
+                Try
+                    Me.Tbl_Hrm_Emp_Att_VisitTableAdapter.Insert(Me.DSPayRoll.View_All_Employees(0).Item("CardNo"), Me.DSPayRoll.View_All_Employees(0).Item("EmpID"), AttDate1, AttendTime, DecviceNo, Nothing, Nothing)
+                Catch ex As Exception
+
+                End Try
                 Me.CHECKINOUTDataGridView(4, i).Value = "Successfully Mark Visit Attendence"
 
 

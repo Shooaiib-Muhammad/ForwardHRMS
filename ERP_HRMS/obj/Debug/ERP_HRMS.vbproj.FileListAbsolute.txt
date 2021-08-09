@@ -4460,8 +4460,6 @@ E:\FS Prod\HRMS Code All factory\HRMS\ERP_HRMS\bin\Debug\ERP_HRMS.application
 E:\FS Prod\HRMS Code All factory\HRMS\ERP_HRMS\bin\Debug\ERP_HRMS.exe
 E:\FS Prod\HRMS Code All factory\HRMS\ERP_HRMS\bin\Debug\ERP_HRMS.pdb
 E:\FS Prod\HRMS Code All factory\HRMS\ERP_HRMS\bin\Debug\ERP_HRMS.xml
-E:\FS Prod\HRMS Code All factory\HRMS\ERP_HRMS\bin\Debug\Microsoft.Office.Interop.SmartTag.dll
-E:\FS Prod\HRMS Code All factory\HRMS\ERP_HRMS\bin\Debug\Microsoft.Vbe.Interop.dll
 E:\FS Prod\HRMS Code All factory\HRMS\ERP_HRMS\bin\Debug\stdole.dll
 E:\FS Prod\HRMS Code All factory\HRMS\ERP_HRMS\bin\Debug\Microsoft.SqlServer.Types.dll
 E:\FS Prod\HRMS Code All factory\HRMS\ERP_HRMS\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
@@ -4476,7 +4474,6 @@ E:\FS Prod\HRMS Code All factory\HRMS\ERP_HRMS\bin\Debug\zh-Hans\Microsoft.SqlSe
 E:\FS Prod\HRMS Code All factory\HRMS\ERP_HRMS\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
 E:\FS Prod\HRMS Code All factory\HRMS\ERP_HRMS\bin\Debug\Office.dll
 E:\FS Prod\HRMS Code All factory\HRMS\ERP_HRMS\bin\Debug\Microsoft.Office.Interop.Excel.dll
-E:\FS Prod\HRMS Code All factory\HRMS\ERP_HRMS\obj\Debug\ERP_HRMS.vbprojAssemblyReference.cache
 E:\FS Prod\HRMS Code All factory\HRMS\ERP_HRMS\obj\Debug\Interop.CrystalActiveXReportViewerLib11_5.dll
 E:\FS Prod\HRMS Code All factory\HRMS\ERP_HRMS\obj\Debug\ERP_HRMS.vbproj.ResolveComReference.cache
 E:\FS Prod\HRMS Code All factory\HRMS\ERP_HRMS\obj\Debug\ERP_HRMS.frmAccAnnualLeaveTransactions.resources
@@ -5043,3 +5040,4 @@ E:\Fs SOftware\HRMS\ERP_HRMS\obj\Debug\ERP_HRMS.frmPayRollShortLeave.resources
 E:\Fs SOftware\new HR Working\HRMS\ERP_HRMS\obj\Debug\ERP_HRMS.frmPayRollShortLeave.resources
 E:\Fs SOftware\new HR Working\HRMS\ERP_HRMS\obj\Debug\ERP_HRMS.Form1.resources
 E:\FS Prod\HRMS Code All factory\HRMS\ERP_HRMS\obj\Debug\ERP_HRMS.Form1.resources
+E:\FS Prod\HRMS Code All factory\HRMS\ERP_HRMS\obj\Debug\ERP_HRMS.vbprojAssemblyReference.cache

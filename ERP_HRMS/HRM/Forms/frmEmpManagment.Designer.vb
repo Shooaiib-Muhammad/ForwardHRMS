@@ -122,6 +122,7 @@ Partial Class frmEmpManagment
         Dim Label17 As System.Windows.Forms.Label
         Dim Label19 As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmEmpManagment))
+        Dim Label31 As System.Windows.Forms.Label
         Me.Label1 = New System.Windows.Forms.Label()
         Me.CardNoComboBox = New System.Windows.Forms.ComboBox()
         Me.Tbl_HRM_CardBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -212,6 +213,8 @@ Partial Class frmEmpManagment
         Me.Button6 = New System.Windows.Forms.Button()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
         Me.ComboBox5 = New System.Windows.Forms.ComboBox()
+        Me.View_Emp_Report_TO_NEWBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DSRPTTO = New ERP_HRMS.DSRPTTO()
         Me.ComboBox4 = New System.Windows.Forms.ComboBox()
         Me.RefrenceTextBox = New System.Windows.Forms.TextBox()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
@@ -445,10 +448,9 @@ Partial Class frmEmpManagment
         Me.Tbl_HRM_Emp_Info_SAVE_NEWTableAdapter = New ERP_HRMS.DSEMPTableAdapters.tbl_HRM_Emp_Info_SAVE_NEWTableAdapter()
         Me.View_Emp_Report_TOTableAdapter = New ERP_HRMS.DSReportToTableAdapters.View_Emp_Report_TOTableAdapter()
         Me.TableAdapterManager5 = New ERP_HRMS.DSReportToTableAdapters.TableAdapterManager()
-        Me.DSRPTTO = New ERP_HRMS.DSRPTTO()
-        Me.View_Emp_Report_TO_NEWBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.View_Emp_Report_TO_NEWTableAdapter = New ERP_HRMS.DSRPTTOTableAdapters.View_Emp_Report_TO_NEWTableAdapter()
         Me.TableAdapterManager6 = New ERP_HRMS.DSRPTTOTableAdapters.TableAdapterManager()
+        Me.TextBox6 = New System.Windows.Forms.TextBox()
         CardNoLabel = New System.Windows.Forms.Label()
         BankNameLabel = New System.Windows.Forms.Label()
         BankAccountNOLabel = New System.Windows.Forms.Label()
@@ -547,6 +549,7 @@ Partial Class frmEmpManagment
         Label14 = New System.Windows.Forms.Label()
         Label17 = New System.Windows.Forms.Label()
         Label19 = New System.Windows.Forms.Label()
+        Label31 = New System.Windows.Forms.Label()
         CType(Me.Tbl_HRM_CardBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DSHRM, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -565,6 +568,8 @@ Partial Class frmEmpManagment
         Me.Panel5.SuspendLayout()
         Me.GroupBox10.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
+        CType(Me.View_Emp_Report_TO_NEWBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DSRPTTO, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.View_Emp_Report_TOBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DSReportTo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Tbl_HRM_EmpCatagoryBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -623,8 +628,6 @@ Partial Class frmEmpManagment
         CType(Me.DSEMP, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Tbl_HRM_Emp_Info_SAVEBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Tbl_HRM_Emp_Info_SAVE_NEWBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DSRPTTO, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.View_Emp_Report_TO_NEWBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'CardNoLabel
@@ -2332,7 +2335,7 @@ Partial Class frmEmpManagment
         Me.GroupBox14.Controls.Add(Me.CopyNoTextBox)
         Me.GroupBox14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox14.ForeColor = System.Drawing.Color.Black
-        Me.GroupBox14.Location = New System.Drawing.Point(639, 287)
+        Me.GroupBox14.Location = New System.Drawing.Point(645, 293)
         Me.GroupBox14.Name = "GroupBox14"
         Me.GroupBox14.Size = New System.Drawing.Size(323, 167)
         Me.GroupBox14.TabIndex = 8
@@ -2503,7 +2506,9 @@ Partial Class frmEmpManagment
         '
         'GroupBox10
         '
+        Me.GroupBox10.Controls.Add(Label31)
         Me.GroupBox10.Controls.Add(HiringDescLabel)
+        Me.GroupBox10.Controls.Add(Me.TextBox6)
         Me.GroupBox10.Controls.Add(Me.HiringDescTextBox)
         Me.GroupBox10.Controls.Add(HiringCriteriaLabel)
         Me.GroupBox10.Controls.Add(Me.DateTimePicker12)
@@ -2555,7 +2560,7 @@ Partial Class frmEmpManagment
         Me.HiringCriteriaComboBox.Items.AddRange(New Object() {"New Hiring", "Replacement "})
         Me.HiringCriteriaComboBox.Location = New System.Drawing.Point(106, 89)
         Me.HiringCriteriaComboBox.Name = "HiringCriteriaComboBox"
-        Me.HiringCriteriaComboBox.Size = New System.Drawing.Size(182, 21)
+        Me.HiringCriteriaComboBox.Size = New System.Drawing.Size(86, 21)
         Me.HiringCriteriaComboBox.TabIndex = 3
         '
         'DateTimePicker11
@@ -2616,7 +2621,7 @@ Partial Class frmEmpManagment
         Me.Button6.BackColor = System.Drawing.Color.White
         Me.Button6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button6.ForeColor = System.Drawing.Color.Black
-        Me.Button6.Location = New System.Drawing.Point(733, 463)
+        Me.Button6.Location = New System.Drawing.Point(747, 487)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(112, 32)
         Me.Button6.TabIndex = 38
@@ -2664,6 +2669,16 @@ Partial Class frmEmpManagment
         Me.ComboBox5.Size = New System.Drawing.Size(182, 21)
         Me.ComboBox5.TabIndex = 1212127
         Me.ComboBox5.ValueMember = "CardNo"
+        '
+        'View_Emp_Report_TO_NEWBindingSource
+        '
+        Me.View_Emp_Report_TO_NEWBindingSource.DataMember = "View_Emp_Report_TO_NEW"
+        Me.View_Emp_Report_TO_NEWBindingSource.DataSource = Me.DSRPTTO
+        '
+        'DSRPTTO
+        '
+        Me.DSRPTTO.DataSetName = "DSRPTTO"
+        Me.DSRPTTO.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ComboBox4
         '
@@ -2796,7 +2811,7 @@ Partial Class frmEmpManagment
         Me.Save.BackColor = System.Drawing.Color.White
         Me.Save.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Save.ForeColor = System.Drawing.Color.Black
-        Me.Save.Location = New System.Drawing.Point(851, 463)
+        Me.Save.Location = New System.Drawing.Point(865, 487)
         Me.Save.Name = "Save"
         Me.Save.Size = New System.Drawing.Size(112, 32)
         Me.Save.TabIndex = 9
@@ -2935,7 +2950,7 @@ Partial Class frmEmpManagment
         Me.GroupBox4.Controls.Add(Me.LeaveDateMaskedTextBox)
         Me.GroupBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox4.ForeColor = System.Drawing.Color.Black
-        Me.GroupBox4.Location = New System.Drawing.Point(639, 188)
+        Me.GroupBox4.Location = New System.Drawing.Point(639, 192)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(323, 95)
         Me.GroupBox4.TabIndex = 10
@@ -4957,16 +4972,6 @@ Partial Class frmEmpManagment
         Me.TableAdapterManager5.Connection = Nothing
         Me.TableAdapterManager5.UpdateOrder = ERP_HRMS.DSReportToTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
-        'DSRPTTO
-        '
-        Me.DSRPTTO.DataSetName = "DSRPTTO"
-        Me.DSRPTTO.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'View_Emp_Report_TO_NEWBindingSource
-        '
-        Me.View_Emp_Report_TO_NEWBindingSource.DataMember = "View_Emp_Report_TO_NEW"
-        Me.View_Emp_Report_TO_NEWBindingSource.DataSource = Me.DSRPTTO
-        '
         'View_Emp_Report_TO_NEWTableAdapter
         '
         Me.View_Emp_Report_TO_NEWTableAdapter.ClearBeforeFill = True
@@ -4976,6 +4981,26 @@ Partial Class frmEmpManagment
         Me.TableAdapterManager6.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager6.Connection = Nothing
         Me.TableAdapterManager6.UpdateOrder = ERP_HRMS.DSRPTTOTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'Label31
+        '
+        Label31.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label31.ForeColor = System.Drawing.Color.Black
+        Label31.Location = New System.Drawing.Point(195, 90)
+        Label31.Name = "Label31"
+        Label31.Size = New System.Drawing.Size(51, 20)
+        Label31.TabIndex = 121212123
+        Label31.Text = "Req No.:"
+        Label31.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'TextBox6
+        '
+        Me.TextBox6.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tbl_HRM_Emp_InfoBindingSource, "ReqNO", True))
+        Me.TextBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox6.Location = New System.Drawing.Point(246, 91)
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.Size = New System.Drawing.Size(43, 20)
+        Me.TextBox6.TabIndex = 121212122
         '
         'frmEmpManagment
         '
@@ -5030,6 +5055,8 @@ Partial Class frmEmpManagment
         Me.GroupBox10.PerformLayout()
         Me.GroupBox7.ResumeLayout(False)
         Me.GroupBox7.PerformLayout()
+        CType(Me.View_Emp_Report_TO_NEWBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DSRPTTO, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.View_Emp_Report_TOBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DSReportTo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Tbl_HRM_EmpCatagoryBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -5105,8 +5132,6 @@ Partial Class frmEmpManagment
         CType(Me.DSEMP, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Tbl_HRM_Emp_Info_SAVEBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Tbl_HRM_Emp_Info_SAVE_NEWBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DSRPTTO, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.View_Emp_Report_TO_NEWBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -5439,4 +5464,5 @@ Partial Class frmEmpManagment
     Friend WithEvents View_Emp_Report_TO_NEWBindingSource As BindingSource
     Friend WithEvents View_Emp_Report_TO_NEWTableAdapter As DSRPTTOTableAdapters.View_Emp_Report_TO_NEWTableAdapter
     Friend WithEvents TableAdapterManager6 As DSRPTTOTableAdapters.TableAdapterManager
+    Friend WithEvents TextBox6 As TextBox
 End Class

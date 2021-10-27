@@ -1,9 +1,9 @@
-<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmMonthlySalary
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         If disposing AndAlso components IsNot Nothing Then
             components.Dispose()
@@ -17,7 +17,7 @@ Partial Class frmMonthlySalary
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim NameLabel As System.Windows.Forms.Label
@@ -73,11 +73,11 @@ Partial Class frmMonthlySalary
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label45 = New System.Windows.Forms.Label()
+        Me.View_Acc_FairShopBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Tbl_Hrm_Emp_InfoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Label42 = New System.Windows.Forms.Label()
         Me.Tbl_Acc_SalaryBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Tbl_Hrm_Emp_InfoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Tbl_PayRoll_LongLeaves7BindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CanteenLabel = New System.Windows.Forms.Label()
         Me.AccommodationLabel2 = New System.Windows.Forms.Label()
         Me.GradeLabel1 = New System.Windows.Forms.Label()
@@ -87,6 +87,7 @@ Partial Class frmMonthlySalary
         Me.SubDept1Label1 = New System.Windows.Forms.Label()
         Me.MainDeptLabel1 = New System.Windows.Forms.Label()
         Me.OTALLabel1 = New System.Windows.Forms.Label()
+        Me.Tbl_PayRoll_LongLeaves7BindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.RentDeductionLabel1 = New System.Windows.Forms.Label()
         Me.MealAllowanceLabel2 = New System.Windows.Forms.Label()
         Me.SpecialAllowanceLabel2 = New System.Windows.Forms.Label()
@@ -100,6 +101,7 @@ Partial Class frmMonthlySalary
         Me.NameLabel2 = New System.Windows.Forms.Label()
         Me.EmpIDLabel2 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.PerDTA = New System.Windows.Forms.Label()
         Me.Label33 = New System.Windows.Forms.Label()
         Me.EndOfProbationDateLabel1 = New System.Windows.Forms.Label()
@@ -254,7 +256,6 @@ Partial Class frmMonthlySalary
         Me.View_SP_OTTableAdapter = New ERP_HRMS.DSSPTableAdapters.View_SP_OTTableAdapter()
         Me.TableAdapterManager2 = New ERP_HRMS.DSSPTableAdapters.TableAdapterManager()
         Me.SPLabel1 = New System.Windows.Forms.Label()
-        Me.View_Acc_FairShopBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.View_Acc_FairShopTableAdapter = New ERP_HRMS.DSCalculateSalaryTableAdapters.View_Acc_FairShopTableAdapter()
         Me.FairAmountLabel3 = New System.Windows.Forms.Label()
         Me.DailyTA = New System.Windows.Forms.Label()
@@ -263,7 +264,9 @@ Partial Class frmMonthlySalary
         Me.View_Bonus_SalaryTableAdapter = New ERP_HRMS.DataSet5TableAdapters.View_Bonus_SalaryTableAdapter()
         Me.DataSet5 = New ERP_HRMS.DataSet5()
         Me.View_Bonus_SalaryBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Label45 = New System.Windows.Forms.Label()
+        Me.Tbl_Acc_INCBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Tbl_Acc_INCTableAdapter = New ERP_HRMS.DSCalculateSalaryTableAdapters.tbl_Acc_INCTableAdapter()
+        Me.LabelSenAllowance = New System.Windows.Forms.Label()
         NameLabel = New System.Windows.Forms.Label()
         FatherNameLabel = New System.Windows.Forms.Label()
         GrossSalaryLabel = New System.Windows.Forms.Label()
@@ -309,10 +312,11 @@ Partial Class frmMonthlySalary
         CType(Me.Tbl_Acc_FinancialPeriodBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HRMDBDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
-        CType(Me.Tbl_Acc_SalaryBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.View_Acc_FairShopBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Tbl_Hrm_Emp_InfoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Tbl_PayRoll_LongLeaves7BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Tbl_Acc_SalaryBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.View_Acc_EmpDeptsAndJoiningsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Tbl_PayRoll_LongLeaves7BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmpPicPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Tbl_Acc_ShortTermAdvancesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel6.SuspendLayout()
@@ -349,9 +353,9 @@ Partial Class frmMonthlySalary
         CType(Me.View_Emp_Month_Zero_LeaveBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DSSP, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.View_SP_OTBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.View_Acc_FairShopBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSet5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.View_Bonus_SalaryBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Tbl_Acc_INCBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'NameLabel
@@ -893,6 +897,28 @@ Partial Class frmMonthlySalary
         Me.Panel3.Size = New System.Drawing.Size(918, 203)
         Me.Panel3.TabIndex = 11
         '
+        'Label45
+        '
+        Me.Label45.BackColor = System.Drawing.Color.White
+        Me.Label45.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label45.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.View_Acc_FairShopBindingSource, "Amount", True))
+        Me.Label45.Location = New System.Drawing.Point(600, 128)
+        Me.Label45.Name = "Label45"
+        Me.Label45.Size = New System.Drawing.Size(137, 20)
+        Me.Label45.TabIndex = 25
+        Me.Label45.Text = "Label45"
+        Me.Label45.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'View_Acc_FairShopBindingSource
+        '
+        Me.View_Acc_FairShopBindingSource.DataMember = "tbl_Hrm_Emp_Info_View_Acc_FairShop"
+        Me.View_Acc_FairShopBindingSource.DataSource = Me.Tbl_Hrm_Emp_InfoBindingSource
+        '
+        'Tbl_Hrm_Emp_InfoBindingSource
+        '
+        Me.Tbl_Hrm_Emp_InfoBindingSource.DataMember = "tbl_Hrm_Emp_Info_H_tbl_Hrm_Emp_Info"
+        Me.Tbl_Hrm_Emp_InfoBindingSource.DataSource = Me.Tbl_Hrm_Emp_Info_HBindingSource
+        '
         'Label42
         '
         Me.Label42.BackColor = System.Drawing.Color.White
@@ -909,28 +935,6 @@ Partial Class frmMonthlySalary
         '
         Me.Tbl_Acc_SalaryBindingSource.DataMember = "tbl_Hrm_Emp_Info_tbl_Acc_Salary"
         Me.Tbl_Acc_SalaryBindingSource.DataSource = Me.Tbl_Hrm_Emp_InfoBindingSource
-        '
-        'Tbl_Hrm_Emp_InfoBindingSource
-        '
-        Me.Tbl_Hrm_Emp_InfoBindingSource.DataMember = "tbl_Hrm_Emp_Info_H_tbl_Hrm_Emp_Info"
-        Me.Tbl_Hrm_Emp_InfoBindingSource.DataSource = Me.Tbl_Hrm_Emp_Info_HBindingSource
-        '
-        'Label3
-        '
-        Me.Label3.BackColor = System.Drawing.SystemColors.Window
-        Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label3.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tbl_PayRoll_LongLeaves7BindingSource, "OTAL", True))
-        Me.Label3.Location = New System.Drawing.Point(997, 319)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(137, 20)
-        Me.Label3.TabIndex = 66
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Label3.Visible = False
-        '
-        'Tbl_PayRoll_LongLeaves7BindingSource
-        '
-        Me.Tbl_PayRoll_LongLeaves7BindingSource.DataMember = "tbl_Hrm_Emp_Info_tbl_PayRoll_LongLeaves7"
-        Me.Tbl_PayRoll_LongLeaves7BindingSource.DataSource = Me.Tbl_Hrm_Emp_InfoBindingSource
         '
         'CanteenLabel
         '
@@ -1024,6 +1028,11 @@ Partial Class frmMonthlySalary
         Me.OTALLabel1.Size = New System.Drawing.Size(137, 20)
         Me.OTALLabel1.TabIndex = 53
         Me.OTALLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Tbl_PayRoll_LongLeaves7BindingSource
+        '
+        Me.Tbl_PayRoll_LongLeaves7BindingSource.DataMember = "tbl_Hrm_Emp_Info_tbl_PayRoll_LongLeaves7"
+        Me.Tbl_PayRoll_LongLeaves7BindingSource.DataSource = Me.Tbl_Hrm_Emp_InfoBindingSource
         '
         'RentDeductionLabel1
         '
@@ -1170,6 +1179,18 @@ Partial Class frmMonthlySalary
         Me.Label12.TabIndex = 24
         Me.Label12.Text = "Employees BioData And Salary Record"
         Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label3
+        '
+        Me.Label3.BackColor = System.Drawing.SystemColors.Window
+        Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label3.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tbl_PayRoll_LongLeaves7BindingSource, "OTAL", True))
+        Me.Label3.Location = New System.Drawing.Point(997, 319)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(137, 20)
+        Me.Label3.TabIndex = 66
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Label3.Visible = False
         '
         'PerDTA
         '
@@ -2463,6 +2484,7 @@ Partial Class frmMonthlySalary
         '
         Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager1.Connection = Nothing
+        Me.TableAdapterManager1.tbl_Acc_INCTableAdapter = Nothing
         Me.TableAdapterManager1.tbl_Acc_Salary_TransactionsTableAdapter = Nothing
         Me.TableAdapterManager1.tbl_Emp_Salary_Calculation_AdjTableAdapter = Nothing
         Me.TableAdapterManager1.tbl_Hrm_Emp_Info_Cards_InfoTableAdapter = Nothing
@@ -2530,11 +2552,6 @@ Partial Class frmMonthlySalary
         Me.SPLabel1.TabIndex = 113
         Me.SPLabel1.Text = "Label40"
         '
-        'View_Acc_FairShopBindingSource
-        '
-        Me.View_Acc_FairShopBindingSource.DataMember = "tbl_Hrm_Emp_Info_View_Acc_FairShop"
-        Me.View_Acc_FairShopBindingSource.DataSource = Me.Tbl_Hrm_Emp_InfoBindingSource
-        '
         'View_Acc_FairShopTableAdapter
         '
         Me.View_Acc_FairShopTableAdapter.ClearBeforeFill = True
@@ -2588,17 +2605,24 @@ Partial Class frmMonthlySalary
         Me.View_Bonus_SalaryBindingSource.DataMember = "View_Bonus_Salary"
         Me.View_Bonus_SalaryBindingSource.DataSource = Me.DataSet5
         '
-        'Label45
+        'Tbl_Acc_INCBindingSource
         '
-        Me.Label45.BackColor = System.Drawing.Color.White
-        Me.Label45.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label45.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.View_Acc_FairShopBindingSource, "Amount", True))
-        Me.Label45.Location = New System.Drawing.Point(600, 128)
-        Me.Label45.Name = "Label45"
-        Me.Label45.Size = New System.Drawing.Size(137, 20)
-        Me.Label45.TabIndex = 25
-        Me.Label45.Text = "Label45"
-        Me.Label45.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Tbl_Acc_INCBindingSource.DataMember = "tbl_Acc_INC"
+        Me.Tbl_Acc_INCBindingSource.DataSource = Me.DSCalculateSalary
+        '
+        'Tbl_Acc_INCTableAdapter
+        '
+        Me.Tbl_Acc_INCTableAdapter.ClearBeforeFill = True
+        '
+        'LabelSenAllowance
+        '
+        Me.LabelSenAllowance.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.LabelSenAllowance.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tbl_Acc_SalaryBindingSource, "SenAllownace", True))
+        Me.LabelSenAllowance.ForeColor = System.Drawing.SystemColors.ControlLight
+        Me.LabelSenAllowance.Location = New System.Drawing.Point(934, 319)
+        Me.LabelSenAllowance.Name = "LabelSenAllowance"
+        Me.LabelSenAllowance.Size = New System.Drawing.Size(51, 20)
+        Me.LabelSenAllowance.TabIndex = 119
         '
         'frmMonthlySalary
         '
@@ -2606,7 +2630,8 @@ Partial Class frmMonthlySalary
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.ClientSize = New System.Drawing.Size(1199, 714)
+        Me.ClientSize = New System.Drawing.Size(1199, 715)
+        Me.Controls.Add(Me.LabelSenAllowance)
         Me.Controls.Add(Me.DailyTA)
         Me.Controls.Add(Me.PaymentModeLabel2)
         Me.Controls.Add(Me.Label3)
@@ -2647,10 +2672,11 @@ Partial Class frmMonthlySalary
         CType(Me.Tbl_Acc_FinancialPeriodBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.HRMDBDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
-        CType(Me.Tbl_Acc_SalaryBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.View_Acc_FairShopBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Tbl_Hrm_Emp_InfoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Tbl_PayRoll_LongLeaves7BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Tbl_Acc_SalaryBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.View_Acc_EmpDeptsAndJoiningsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Tbl_PayRoll_LongLeaves7BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmpPicPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Tbl_Acc_ShortTermAdvancesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel6.ResumeLayout(False)
@@ -2689,9 +2715,9 @@ Partial Class frmMonthlySalary
         CType(Me.View_Emp_Month_Zero_LeaveBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DSSP, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.View_SP_OTBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.View_Acc_FairShopBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSet5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.View_Bonus_SalaryBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Tbl_Acc_INCBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -2901,4 +2927,7 @@ Partial Class frmMonthlySalary
     Friend WithEvents DataSet5 As DataSet5
     Friend WithEvents View_Bonus_SalaryBindingSource As BindingSource
     Friend WithEvents Label45 As Label
+    Friend WithEvents Tbl_Acc_INCBindingSource As BindingSource
+    Friend WithEvents Tbl_Acc_INCTableAdapter As DSCalculateSalaryTableAdapters.tbl_Acc_INCTableAdapter
+    Friend WithEvents LabelSenAllowance As Label
 End Class

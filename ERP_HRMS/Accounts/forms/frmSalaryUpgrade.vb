@@ -90,7 +90,7 @@ Public Class frmSalaryUpgrade
                     Catch ex As Exception
                     End Try
                     If Returns = 1 Then
-                        Dim SalId As Int16 = Me.UpGradeSalary.Salary_Upgrade.Rows(0).Item("SalID")
+                        Dim SalId As Integer = Me.UpGradeSalary.Salary_Upgrade.Rows(0).Item("SalID")
 
                         Me.Tbl_Acc_SalaryTableAdapter.Insert(Me.UpGradeSalary.Salary_Upgrade.Rows(0).Item("EmpID"), ExcelAmt, Me.UpGradeSalary.Salary_Upgrade.Rows(0).Item("MealAllowance"), Me.UpGradeSalary.Salary_Upgrade.Rows(0).Item("TravelAllowance"), Me.UpGradeSalary.Salary_Upgrade.Rows(0).Item("EducationAllowance"), Me.UpGradeSalary.Salary_Upgrade.Rows(0).Item("SpecialAllowance"), Me.UpGradeSalary.Salary_Upgrade.Rows(0).Item("EOBI"), Me.UpGradeSalary.Salary_Upgrade.Rows(0).Item("TaxDeduction"), Me.UpGradeSalary.Salary_Upgrade.Rows(0).Item("RentDeduction"), Me.UpGradeSalary.Salary_Upgrade.Rows(0).Item("ConteenDeduct"), Me.UpGradeSalary.Salary_Upgrade.Rows(0).Item("UnionFund"), 0, Me.UpGradeSalary.Salary_Upgrade.Rows(0).Item("PaymentMode"), Me.UpGradeSalary.Salary_Upgrade.Rows(0).Item("PESSICont"), 3, "Annual", FP, Effecteddate, Nothing, Now.Date, True, Nothing, Nothing, Me.UpGradeSalary.Salary_Upgrade.Rows(0).Item("Accommodation"), 0)
                         Me.Salary_UpgradeTableAdapter.UpdateQuery(SalId)

@@ -69,6 +69,8 @@ Partial Class frmPayRollReportSelector3
         Me.RadioButton31 = New System.Windows.Forms.RadioButton()
         Me.RadioButton30 = New System.Windows.Forms.RadioButton()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.RadioButton20 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton19 = New System.Windows.Forms.RadioButton()
         Me.RadioButton18 = New System.Windows.Forms.RadioButton()
         Me.RadioButton16 = New System.Windows.Forms.RadioButton()
         Me.RadioButton15 = New System.Windows.Forms.RadioButton()
@@ -119,7 +121,7 @@ Partial Class frmPayRollReportSelector3
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.RadioButton19 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton22 = New System.Windows.Forms.RadioButton()
         DesigNameLabel = New System.Windows.Forms.Label()
         SectionNameLabel = New System.Windows.Forms.Label()
         BranchNameLabel = New System.Windows.Forms.Label()
@@ -232,7 +234,7 @@ Partial Class frmPayRollReportSelector3
         Me.Button1.BackColor = System.Drawing.Color.Green
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(296, 541)
+        Me.Button1.Location = New System.Drawing.Point(368, 541)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(127, 47)
         Me.Button1.TabIndex = 14
@@ -471,7 +473,7 @@ Partial Class frmPayRollReportSelector3
         Me.Panel3.Controls.Add(Me.Label10)
         Me.Panel3.Controls.Add(Me.DeptNameComboBox)
         Me.Panel3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel3.Location = New System.Drawing.Point(296, 337)
+        Me.Panel3.Location = New System.Drawing.Point(368, 337)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(438, 198)
         Me.Panel3.TabIndex = 16
@@ -559,9 +561,9 @@ Partial Class frmPayRollReportSelector3
         Me.GroupBox1.Controls.Add(Me.RadioButton30)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.Blue
-        Me.GroupBox1.Location = New System.Drawing.Point(10, 624)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 676)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(261, 187)
+        Me.GroupBox1.Size = New System.Drawing.Size(380, 124)
         Me.GroupBox1.TabIndex = 17
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Option Selector"
@@ -570,7 +572,7 @@ Partial Class frmPayRollReportSelector3
         '
         Me.RadioButton17.AutoSize = True
         Me.RadioButton17.ForeColor = System.Drawing.Color.Black
-        Me.RadioButton17.Location = New System.Drawing.Point(13, 160)
+        Me.RadioButton17.Location = New System.Drawing.Point(162, 64)
         Me.RadioButton17.Name = "RadioButton17"
         Me.RadioButton17.Size = New System.Drawing.Size(115, 21)
         Me.RadioButton17.TabIndex = 5
@@ -582,7 +584,7 @@ Partial Class frmPayRollReportSelector3
         '
         Me.RadioButton9.AutoSize = True
         Me.RadioButton9.ForeColor = System.Drawing.Color.Black
-        Me.RadioButton9.Location = New System.Drawing.Point(13, 139)
+        Me.RadioButton9.Location = New System.Drawing.Point(162, 43)
         Me.RadioButton9.Name = "RadioButton9"
         Me.RadioButton9.Size = New System.Drawing.Size(103, 21)
         Me.RadioButton9.TabIndex = 4
@@ -594,7 +596,7 @@ Partial Class frmPayRollReportSelector3
         '
         Me.RadioButton3.AutoSize = True
         Me.RadioButton3.ForeColor = System.Drawing.Color.Black
-        Me.RadioButton3.Location = New System.Drawing.Point(13, 115)
+        Me.RadioButton3.Location = New System.Drawing.Point(162, 19)
         Me.RadioButton3.Name = "RadioButton3"
         Me.RadioButton3.Size = New System.Drawing.Size(156, 21)
         Me.RadioButton3.TabIndex = 3
@@ -651,6 +653,8 @@ Partial Class frmPayRollReportSelector3
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.RadioButton22)
+        Me.GroupBox2.Controls.Add(Me.RadioButton20)
         Me.GroupBox2.Controls.Add(Me.RadioButton19)
         Me.GroupBox2.Controls.Add(Me.RadioButton18)
         Me.GroupBox2.Controls.Add(Me.RadioButton16)
@@ -675,10 +679,34 @@ Partial Class frmPayRollReportSelector3
         Me.GroupBox2.ForeColor = System.Drawing.Color.Blue
         Me.GroupBox2.Location = New System.Drawing.Point(12, 113)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(278, 505)
+        Me.GroupBox2.Size = New System.Drawing.Size(318, 557)
         Me.GroupBox2.TabIndex = 17
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Report Selector"
+        '
+        'RadioButton20
+        '
+        Me.RadioButton20.AutoSize = True
+        Me.RadioButton20.ForeColor = System.Drawing.Color.Black
+        Me.RadioButton20.Location = New System.Drawing.Point(17, 502)
+        Me.RadioButton20.Name = "RadioButton20"
+        Me.RadioButton20.Size = New System.Drawing.Size(204, 21)
+        Me.RadioButton20.TabIndex = 59
+        Me.RadioButton20.TabStop = True
+        Me.RadioButton20.Text = "Entry Access Control Report"
+        Me.RadioButton20.UseVisualStyleBackColor = True
+        '
+        'RadioButton19
+        '
+        Me.RadioButton19.AutoSize = True
+        Me.RadioButton19.ForeColor = System.Drawing.Color.Black
+        Me.RadioButton19.Location = New System.Drawing.Point(17, 478)
+        Me.RadioButton19.Name = "RadioButton19"
+        Me.RadioButton19.Size = New System.Drawing.Size(219, 21)
+        Me.RadioButton19.TabIndex = 58
+        Me.RadioButton19.TabStop = True
+        Me.RadioButton19.Text = "Employee Short Leave Record"
+        Me.RadioButton19.UseVisualStyleBackColor = True
         '
         'RadioButton18
         '
@@ -983,7 +1011,7 @@ Partial Class frmPayRollReportSelector3
         Me.GroupBox3.Controls.Add(Me.ShiftNameComboBox)
         Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.ForeColor = System.Drawing.Color.Blue
-        Me.GroupBox3.Location = New System.Drawing.Point(294, 113)
+        Me.GroupBox3.Location = New System.Drawing.Point(366, 113)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(438, 218)
         Me.GroupBox3.TabIndex = 17
@@ -1180,22 +1208,22 @@ Partial Class frmPayRollReportSelector3
         Me.Panel1.Controls.Add(Me.EmploymentNameComboBox)
         Me.Panel1.Controls.Add(Me.ComboBox1)
         Me.Panel1.Controls.Add(Me.Label11)
-        Me.Panel1.Location = New System.Drawing.Point(294, 55)
+        Me.Panel1.Location = New System.Drawing.Point(366, 55)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(546, 51)
         Me.Panel1.TabIndex = 51
         '
-        'RadioButton19
+        'RadioButton22
         '
-        Me.RadioButton19.AutoSize = True
-        Me.RadioButton19.ForeColor = System.Drawing.Color.Black
-        Me.RadioButton19.Location = New System.Drawing.Point(17, 478)
-        Me.RadioButton19.Name = "RadioButton19"
-        Me.RadioButton19.Size = New System.Drawing.Size(219, 21)
-        Me.RadioButton19.TabIndex = 58
-        Me.RadioButton19.TabStop = True
-        Me.RadioButton19.Text = "Employee Short Leave Record"
-        Me.RadioButton19.UseVisualStyleBackColor = True
+        Me.RadioButton22.AutoSize = True
+        Me.RadioButton22.ForeColor = System.Drawing.Color.Black
+        Me.RadioButton22.Location = New System.Drawing.Point(17, 529)
+        Me.RadioButton22.Name = "RadioButton22"
+        Me.RadioButton22.Size = New System.Drawing.Size(135, 21)
+        Me.RadioButton22.TabIndex = 60
+        Me.RadioButton22.TabStop = True
+        Me.RadioButton22.Text = "OverTime Report"
+        Me.RadioButton22.UseVisualStyleBackColor = True
         '
         'frmPayRollReportSelector3
         '
@@ -1342,4 +1370,6 @@ Partial Class frmPayRollReportSelector3
     Friend WithEvents RadioButton17 As RadioButton
     Friend WithEvents RadioButton18 As RadioButton
     Friend WithEvents RadioButton19 As RadioButton
+    Friend WithEvents RadioButton20 As RadioButton
+    Friend WithEvents RadioButton22 As RadioButton
 End Class

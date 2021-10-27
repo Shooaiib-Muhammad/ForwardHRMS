@@ -112,19 +112,19 @@
                 End If
 
 
-            ElseIf RadioButton6.Checked = True '' By device and Shift
+            ElseIf RadioButton6.Checked = True Then '' By device and Shift
                 Flag = False
                 If AllDept.Checked = True Then ' All Dept
-                Filter = "{@Shift} = '" & ShiftNameComboBox.Text & "' And  {View_Att_DayGroup.DeviceNo} = '" & TextBox3.Text & "'  And {View_Att_DayGroup.AttDate} in DateTime(" & starttime.Value.Year & ", " & starttime.Value.Month & ", " & starttime.Value.Day & ") to DateTime(" & EndTime.Value.Year & ", " & EndTime.Value.Month & ", " & EndTime.Value.Day & ") "
-            ElseIf MainDept.Checked = True Then ' Main Dept
-                Filter = "{@Shift} = '" & ShiftNameComboBox.Text & "' And  {View_Att_DayGroup.DeviceNo} = '" & TextBox3.Text & "' And {View_Rpt_HR_Info.DeptID} = " & DeptNameComboBox.SelectedValue & " And {View_Att_DayGroup.AttDate} in DateTime(" & starttime.Value.Year & ", " & starttime.Value.Month & ", " & starttime.Value.Day & ") to DateTime(" & EndTime.Value.Year & ", " & EndTime.Value.Month & ", " & EndTime.Value.Day & ")"
-            ElseIf MainDeptandSection.Checked = True Then ' MAni Secttion
-                Filter = "{@Shift} = '" & ShiftNameComboBox.Text & "' And  {View_Att_DayGroup.DeviceNo} = '" & TextBox3.Text & "' And {View_Rpt_HR_Info.DeptID} = " & DeptNameComboBox.SelectedValue & " And {View_Rpt_HR_Info.SectionID} = " & SectionNameComboBox.SelectedValue & " And {View_Att_DayGroup.AttDate} in DateTime(" & starttime.Value.Year & ", " & starttime.Value.Month & ", " & starttime.Value.Day & ") to DateTime(" & EndTime.Value.Year & ", " & EndTime.Value.Month & ", " & EndTime.Value.Day & ")"
-            ElseIf Deigantionbtn.Checked = True Then ' ' Designation
-                Filter = "{@Shift} = '" & ShiftNameComboBox.Text & "' And  {View_Att_DayGroup.DeviceNo} = '" & TextBox3.Text & "'  And {View_Rpt_HR_Info.DesigID} = " & DesigNameComboBox.SelectedValue & " And {View_Att_DayGroup.AttDate} in DateTime(" & starttime.Value.Year & ", " & starttime.Value.Month & ", " & starttime.Value.Day & ") to DateTime(" & EndTime.Value.Year & ", " & EndTime.Value.Month & ", " & EndTime.Value.Day & ")"
-            End If
+                    Filter = "{@Shift} = '" & ShiftNameComboBox.Text & "' And  {View_Att_DayGroup.DeviceNo} = '" & TextBox3.Text & "'  And {View_Att_DayGroup.AttDate} in DateTime(" & starttime.Value.Year & ", " & starttime.Value.Month & ", " & starttime.Value.Day & ") to DateTime(" & EndTime.Value.Year & ", " & EndTime.Value.Month & ", " & EndTime.Value.Day & ") "
+                ElseIf MainDept.Checked = True Then ' Main Dept
+                    Filter = "{@Shift} = '" & ShiftNameComboBox.Text & "' And  {View_Att_DayGroup.DeviceNo} = '" & TextBox3.Text & "' And {View_Rpt_HR_Info.DeptID} = " & DeptNameComboBox.SelectedValue & " And {View_Att_DayGroup.AttDate} in DateTime(" & starttime.Value.Year & ", " & starttime.Value.Month & ", " & starttime.Value.Day & ") to DateTime(" & EndTime.Value.Year & ", " & EndTime.Value.Month & ", " & EndTime.Value.Day & ")"
+                ElseIf MainDeptandSection.Checked = True Then ' MAni Secttion
+                    Filter = "{@Shift} = '" & ShiftNameComboBox.Text & "' And  {View_Att_DayGroup.DeviceNo} = '" & TextBox3.Text & "' And {View_Rpt_HR_Info.DeptID} = " & DeptNameComboBox.SelectedValue & " And {View_Rpt_HR_Info.SectionID} = " & SectionNameComboBox.SelectedValue & " And {View_Att_DayGroup.AttDate} in DateTime(" & starttime.Value.Year & ", " & starttime.Value.Month & ", " & starttime.Value.Day & ") to DateTime(" & EndTime.Value.Year & ", " & EndTime.Value.Month & ", " & EndTime.Value.Day & ")"
+                ElseIf Deigantionbtn.Checked = True Then ' ' Designation
+                    Filter = "{@Shift} = '" & ShiftNameComboBox.Text & "' And  {View_Att_DayGroup.DeviceNo} = '" & TextBox3.Text & "'  And {View_Rpt_HR_Info.DesigID} = " & DesigNameComboBox.SelectedValue & " And {View_Att_DayGroup.AttDate} in DateTime(" & starttime.Value.Year & ", " & starttime.Value.Month & ", " & starttime.Value.Day & ") to DateTime(" & EndTime.Value.Year & ", " & EndTime.Value.Month & ", " & EndTime.Value.Day & ")"
+                End If
 
-        End If
+            End If
 
         End If
 
@@ -508,13 +508,13 @@
             If AllButton.Checked = True Then ' All 
                 Flag = False
                 If AllDept.Checked = True Then ' All Dept
-                    Filter = " {@CanteenDed} > 0 And {tbl_Acc_Salary_Transactions.TransactionState} = 'Normal' And (Month({tbl_Acc_Salary_Transactions.SalaryMonth}) = " & starttime.Value.Month & " And Year({tbl_Acc_Salary_Transactions.SalaryMonth}) = " & starttime.Value.Year & ")"
+                    Filter = " (Month({view_CanteenDed.SalaryMonth}) = " & starttime.Value.Month & " And Year({view_CanteenDed.SalaryMonth}) = " & starttime.Value.Year & ")"
                 ElseIf MainDept.Checked = True Then ' Main Dept 
-                    Filter = " {@CanteenDed} > 0 And {tbl_Acc_Salary_Transactions.TransactionState} = 'Normal' And {View_Rpt_Acc_PreSalary.DeptID} = " & DeptNameComboBox.SelectedValue & " And (Month({tbl_Acc_Salary_Transactions.SalaryMonth}) = " & starttime.Value.Month & " And Year({tbl_Acc_Salary_Transactions.SalaryMonth}) = " & starttime.Value.Year & ")"
+                    Filter = " {view_CanteenDed.DeptID} = " & DeptNameComboBox.SelectedValue & " And (Month({view_CanteenDed.SalaryMonth}) = " & starttime.Value.Month & " And Year({view_CanteenDed.SalaryMonth}) = " & starttime.Value.Year & ")"
                 ElseIf MainDeptandSection.Checked = True Then ' Section 
-                    Filter = " {@CanteenDed} > 0 And {tbl_Acc_Salary_Transactions.TransactionState} = 'Normal' And {View_Rpt_Acc_PreSalary.DeptID} = " & DeptNameComboBox.SelectedValue & "  And {View_Rpt_Acc_PreSalary.SubDept1ID} = " & SectionNameComboBox.SelectedValue & "  And (Month({tbl_Acc_Salary_Transactions.SalaryMonth}) = " & starttime.Value.Month & " And Year({tbl_Acc_Salary_Transactions.SalaryMonth}) = " & starttime.Value.Year & ")"
+                    Filter = "{view_CanteenDed.DeptID} = " & DeptNameComboBox.SelectedValue & "  And {view_CanteenDed.SectionID} = " & SectionNameComboBox.SelectedValue & "  And (Month({view_CanteenDed.SalaryMonth}) = " & starttime.Value.Month & " And Year({view_CanteenDed.SalaryMonth}) = " & starttime.Value.Year & ")"
                 ElseIf Deigantionbtn.Checked = True Then ' Desig
-                    Filter = " {@CanteenDed} > 0 And {tbl_Acc_Salary_Transactions.TransactionState} = 'Normal' And {View_Rpt_Acc_PreSalary.DesignationID} = " & DesigNameComboBox.SelectedValue & "  And (Month({tbl_Acc_Salary_Transactions.SalaryMonth}) = " & starttime.Value.Month & " And Year({tbl_Acc_Salary_Transactions.SalaryMonth}) = " & starttime.Value.Year & ")"
+                    Filter = "{view_CanteenDed.DesigID} = " & DesigNameComboBox.SelectedValue & "  And (Month({view_CanteenDed.SalaryMonth}) = " & starttime.Value.Month & " And Year({view_CanteenDed.SalaryMonth}) = " & starttime.Value.Year & ")"
                 End If
 
             ElseIf CardRange.Checked = True Then ' By card range 

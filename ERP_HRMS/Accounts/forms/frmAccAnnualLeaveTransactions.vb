@@ -40,10 +40,10 @@
                                     If DateTimePicker1.Value.Month = DateOfPermanent.Month Then
                                         PayDays = 14
                                         Amt = Math.Round((Me.DSAnnualLeavesTransactions.View_Rpt_Acc_PreSalary.Rows(i).Item("GrossSalary") / 26) * 14)
-                                        If GradeID <= 6 Then
-                                            PayDays = 7
-                                            Amt = Amt / 2
-                                        End If
+                                        'If GradeID <= 6 Then
+                                        '    PayDays = 7
+                                        '    Amt = Amt / 2
+                                        'End If
                                         LTAReturns = Me.View_Rpt_Acc_PAdvLedgerTableAdapter.Fill(Me.DSLongTermAdv.View_Rpt_Acc_PAdvLedger, EmpID)
                                         If LTAReturns > 0 Then
                                             LTABalance = Me.DSLongTermAdv.View_Rpt_Acc_PAdvLedger.Rows(0).Item(4)

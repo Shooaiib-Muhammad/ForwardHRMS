@@ -46,7 +46,6 @@ Partial Class frmCanteenAttendanceUploadingBarCode
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         Me.DSDisplayEI = New ERP_HRMS.DSDisplayEI()
         Me.View_Display_EmpInfoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -67,6 +66,7 @@ Partial Class frmCanteenAttendanceUploadingBarCode
         Me.Tbl_HRM_Emp_Att_MealBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.Tbl_HRM_Emp_Att_MealTableAdapter1 = New ERP_HRMS.DSBuffetAttendanceTableAdapters.tbl_HRM_Emp_Att_MealTableAdapter()
         Me.TableAdapterManager1 = New ERP_HRMS.DSBuffetAttendanceTableAdapters.TableAdapterManager()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
@@ -301,21 +301,6 @@ Partial Class frmCanteenAttendanceUploadingBarCode
         Me.Label13.Size = New System.Drawing.Size(24, 20)
         Me.Label13.TabIndex = 69
         '
-        'RadioButton1
-        '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.BackColor = System.Drawing.Color.Maroon
-        Me.RadioButton1.Checked = True
-        Me.RadioButton1.ForeColor = System.Drawing.Color.White
-        Me.RadioButton1.Location = New System.Drawing.Point(853, 286)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(92, 17)
-        Me.RadioButton1.TabIndex = 71
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "Attendance In"
-        Me.RadioButton1.UseVisualStyleBackColor = False
-        Me.RadioButton1.Visible = False
-        '
         'RadioButton2
         '
         Me.RadioButton2.AutoSize = True
@@ -424,6 +409,21 @@ Partial Class frmCanteenAttendanceUploadingBarCode
         Me.TableAdapterManager1.tbl_HRM_Emp_Att_MealTableAdapter = Me.Tbl_HRM_Emp_Att_MealTableAdapter1
         Me.TableAdapterManager1.UpdateOrder = ERP_HRMS.DSBuffetAttendanceTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
+        'RadioButton1
+        '
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.BackColor = System.Drawing.Color.Maroon
+        Me.RadioButton1.Checked = True
+        Me.RadioButton1.ForeColor = System.Drawing.Color.White
+        Me.RadioButton1.Location = New System.Drawing.Point(853, 286)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(92, 17)
+        Me.RadioButton1.TabIndex = 71
+        Me.RadioButton1.TabStop = True
+        Me.RadioButton1.Text = "Attendance In"
+        Me.RadioButton1.UseVisualStyleBackColor = False
+        Me.RadioButton1.Visible = False
+        '
         'frmCanteenAttendanceUploadingBarCode
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -492,7 +492,6 @@ Partial Class frmCanteenAttendanceUploadingBarCode
     Friend WithEvents Tbl_Hrm_Emp_AttBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents Label13 As System.Windows.Forms.Label
-    Friend WithEvents RadioButton1 As System.Windows.Forms.RadioButton
     Friend WithEvents RadioButton2 As System.Windows.Forms.RadioButton
     Friend WithEvents View_Att_EmpVerifyBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents View_Att_EmpVerifyTableAdapter As ERP_HRMS.DSDisplayEITableAdapters.View_Att_EmpVerifyTableAdapter
@@ -507,4 +506,5 @@ Partial Class frmCanteenAttendanceUploadingBarCode
     Friend WithEvents TableAdapterManager1 As DSBuffetAttendanceTableAdapters.TableAdapterManager
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents Label5 As Label
+    Friend WithEvents RadioButton1 As RadioButton
 End Class

@@ -4857,4 +4857,13 @@
             AnalysisRecordObj.Show()
         End If
     End Sub
+
+    Private Sub AutoAbsentGenerationToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AutoAbsentGenerationToolStripMenuItem.Click
+        If ChildWindowOpen("frmAutoAbsent") = False Then
+            Dim AnalysisRecordObj As New frmAutoAbsent
+            AnalysisRecordObj.MdiParent = Me
+            AnalysisRecordObj.WindowState = FormWindowState.Maximized
+            AnalysisRecordObj.Show()
+        End If
+    End Sub
 End Class

@@ -85,6 +85,8 @@ Partial Public Class DSCalculateSalary
     
     Private tabletbl_Acc_RFD_Pay As tbl_Acc_RFD_PayDataTable
     
+    Private tabletbl_Acc_INC As tbl_Acc_INCDataTable
+    
     Private relationtbl_Hrm_Emp_Info_H_tbl_Hrm_Emp_Info As Global.System.Data.DataRelation
     
     Private relationtbl_Hrm_Emp_Info_tbl_Acc_ShortTermAdvances As Global.System.Data.DataRelation
@@ -245,6 +247,9 @@ Partial Public Class DSCalculateSalary
             End If
             If (Not (ds.Tables("tbl_Acc_RFD_Pay")) Is Nothing) Then
                 MyBase.Tables.Add(New tbl_Acc_RFD_PayDataTable(ds.Tables("tbl_Acc_RFD_Pay")))
+            End If
+            If (Not (ds.Tables("tbl_Acc_INC")) Is Nothing) Then
+                MyBase.Tables.Add(New tbl_Acc_INCDataTable(ds.Tables("tbl_Acc_INC")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -565,6 +570,16 @@ Partial Public Class DSCalculateSalary
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property tbl_Acc_INC() As tbl_Acc_INCDataTable
+        Get
+            Return Me.tabletbl_Acc_INC
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
      Global.System.ComponentModel.BrowsableAttribute(true),  _
      Global.System.ComponentModel.DesignerSerializationVisibilityAttribute(Global.System.ComponentModel.DesignerSerializationVisibility.Visible)>  _
     Public Overrides Property SchemaSerializationMode() As Global.System.Data.SchemaSerializationMode
@@ -719,6 +734,9 @@ Partial Public Class DSCalculateSalary
             End If
             If (Not (ds.Tables("tbl_Acc_RFD_Pay")) Is Nothing) Then
                 MyBase.Tables.Add(New tbl_Acc_RFD_PayDataTable(ds.Tables("tbl_Acc_RFD_Pay")))
+            End If
+            If (Not (ds.Tables("tbl_Acc_INC")) Is Nothing) Then
+                MyBase.Tables.Add(New tbl_Acc_INCDataTable(ds.Tables("tbl_Acc_INC")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -932,6 +950,12 @@ Partial Public Class DSCalculateSalary
                 Me.tabletbl_Acc_RFD_Pay.InitVars
             End If
         End If
+        Me.tabletbl_Acc_INC = CType(MyBase.Tables("tbl_Acc_INC"),tbl_Acc_INCDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tabletbl_Acc_INC) Is Nothing) Then
+                Me.tabletbl_Acc_INC.InitVars
+            End If
+        End If
         Me.relationtbl_Hrm_Emp_Info_H_tbl_Hrm_Emp_Info = Me.Relations("tbl_Hrm_Emp_Info_H_tbl_Hrm_Emp_Info")
         Me.relationtbl_Hrm_Emp_Info_tbl_Acc_ShortTermAdvances = Me.Relations("tbl_Hrm_Emp_Info_tbl_Acc_ShortTermAdvances")
         Me.relationtbl_Hrm_Emp_Info_tbl_PayRoll_LongLeaves = Me.Relations("tbl_Hrm_Emp_Info_tbl_PayRoll_LongLeaves")
@@ -1023,6 +1047,8 @@ Partial Public Class DSCalculateSalary
         MyBase.Tables.Add(Me.tabletbl_PayRoll_LongLeaves8)
         Me.tabletbl_Acc_RFD_Pay = New tbl_Acc_RFD_PayDataTable()
         MyBase.Tables.Add(Me.tabletbl_Acc_RFD_Pay)
+        Me.tabletbl_Acc_INC = New tbl_Acc_INCDataTable()
+        MyBase.Tables.Add(Me.tabletbl_Acc_INC)
         Me.relationtbl_Hrm_Emp_Info_H_tbl_Hrm_Emp_Info = New Global.System.Data.DataRelation("tbl_Hrm_Emp_Info_H_tbl_Hrm_Emp_Info", New Global.System.Data.DataColumn() {Me.tabletbl_Hrm_Emp_Info_H.CardNoColumn}, New Global.System.Data.DataColumn() {Me.tabletbl_Hrm_Emp_Info.CardNoColumn}, false)
         Me.Relations.Add(Me.relationtbl_Hrm_Emp_Info_H_tbl_Hrm_Emp_Info)
         Me.relationtbl_Hrm_Emp_Info_tbl_Acc_ShortTermAdvances = New Global.System.Data.DataRelation("tbl_Hrm_Emp_Info_tbl_Acc_ShortTermAdvances", New Global.System.Data.DataColumn() {Me.tabletbl_Hrm_Emp_Info.EmpIDColumn}, New Global.System.Data.DataColumn() {Me.tabletbl_Acc_ShortTermAdvances.EmpIDColumn}, false)
@@ -1249,6 +1275,12 @@ Partial Public Class DSCalculateSalary
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+    Private Function ShouldSerializetbl_Acc_INC() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
     Private Sub SchemaChanged(ByVal sender As Object, ByVal e As Global.System.ComponentModel.CollectionChangeEventArgs)
         If (e.Action = Global.System.ComponentModel.CollectionChangeAction.Remove) Then
             Me.InitVars
@@ -1394,6 +1426,9 @@ Partial Public Class DSCalculateSalary
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
     Public Delegate Sub tbl_Acc_RFD_PayRowChangeEventHandler(ByVal sender As Object, ByVal e As tbl_Acc_RFD_PayRowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+    Public Delegate Sub tbl_Acc_INCRowChangeEventHandler(ByVal sender As Object, ByVal e As tbl_Acc_INCRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
@@ -6953,6 +6988,8 @@ Partial Public Class DSCalculateSalary
         
         Private columnDailyTravelAllowance As Global.System.Data.DataColumn
         
+        Private columnSenAllownace As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -7141,6 +7178,14 @@ Partial Public Class DSCalculateSalary
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property SenAllownaceColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSenAllownace
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -7195,9 +7240,10 @@ Partial Public Class DSCalculateSalary
                     ByVal Accommodation As Decimal,  _
                     ByVal ConteenDeduct As Integer,  _
                     ByVal UnionFund As Decimal,  _
-                    ByVal DailyTravelAllowance As Decimal) As tbl_Acc_SalaryRow
+                    ByVal DailyTravelAllowance As Decimal,  _
+                    ByVal SenAllownace As Decimal) As tbl_Acc_SalaryRow
             Dim rowtbl_Acc_SalaryRow As tbl_Acc_SalaryRow = CType(Me.NewRow,tbl_Acc_SalaryRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Nothing, GrossSalary, TaxDeduction, RentDeduction, EOBI, TravelAllowance, EducationAllowance, SpecialAllowance, MealAllowance, PaymentMode, FinancialPeriod, ActivationDate, PESSICont, PAdvDedRate, Accommodation, ConteenDeduct, UnionFund, DailyTravelAllowance}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Nothing, GrossSalary, TaxDeduction, RentDeduction, EOBI, TravelAllowance, EducationAllowance, SpecialAllowance, MealAllowance, PaymentMode, FinancialPeriod, ActivationDate, PESSICont, PAdvDedRate, Accommodation, ConteenDeduct, UnionFund, DailyTravelAllowance, SenAllownace}
             If (Not (parenttbl_Hrm_Emp_InfoRowBytbl_Hrm_Emp_Info_tbl_Acc_Salary) Is Nothing) Then
                 columnValuesArray(0) = parenttbl_Hrm_Emp_InfoRowBytbl_Hrm_Emp_Info_tbl_Acc_Salary(1)
             End If
@@ -7242,6 +7288,7 @@ Partial Public Class DSCalculateSalary
             Me.columnConteenDeduct = MyBase.Columns("ConteenDeduct")
             Me.columnUnionFund = MyBase.Columns("UnionFund")
             Me.columnDailyTravelAllowance = MyBase.Columns("DailyTravelAllowance")
+            Me.columnSenAllownace = MyBase.Columns("SenAllownace")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -7285,6 +7332,8 @@ Partial Public Class DSCalculateSalary
             MyBase.Columns.Add(Me.columnUnionFund)
             Me.columnDailyTravelAllowance = New Global.System.Data.DataColumn("DailyTravelAllowance", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnDailyTravelAllowance)
+            Me.columnSenAllownace = New Global.System.Data.DataColumn("SenAllownace", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSenAllownace)
             Me.columnEmpID.AllowDBNull = false
             Me.columnSalID.AutoIncrement = true
             Me.columnSalID.AutoIncrementSeed = -1
@@ -11540,6 +11589,297 @@ Partial Public Class DSCalculateSalary
     End Class
     
     '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class tbl_Acc_INCDataTable
+        Inherits Global.System.Data.TypedTableBase(Of tbl_Acc_INCRow)
+        
+        Private columnID As Global.System.Data.DataColumn
+        
+        Private columnCardNo As Global.System.Data.DataColumn
+        
+        Private columnAmt As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "tbl_Acc_INC"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property IDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnID
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property CardNoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCardNo
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property AmtColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnAmt
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As tbl_Acc_INCRow
+            Get
+                Return CType(Me.Rows(index),tbl_Acc_INCRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Event tbl_Acc_INCRowChanging As tbl_Acc_INCRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Event tbl_Acc_INCRowChanged As tbl_Acc_INCRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Event tbl_Acc_INCRowDeleting As tbl_Acc_INCRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Event tbl_Acc_INCRowDeleted As tbl_Acc_INCRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Overloads Sub Addtbl_Acc_INCRow(ByVal row As tbl_Acc_INCRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Overloads Function Addtbl_Acc_INCRow(ByVal CardNo As Integer, ByVal Amt As Decimal) As tbl_Acc_INCRow
+            Dim rowtbl_Acc_INCRow As tbl_Acc_INCRow = CType(Me.NewRow,tbl_Acc_INCRow)
+            Dim columnValuesArray() As Object = New Object() {Nothing, CardNo, Amt}
+            rowtbl_Acc_INCRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowtbl_Acc_INCRow)
+            Return rowtbl_Acc_INCRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function FindByID(ByVal ID As Integer) As tbl_Acc_INCRow
+            Return CType(Me.Rows.Find(New Object() {ID}),tbl_Acc_INCRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As tbl_Acc_INCDataTable = CType(MyBase.Clone,tbl_Acc_INCDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New tbl_Acc_INCDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnID = MyBase.Columns("ID")
+            Me.columnCardNo = MyBase.Columns("CardNo")
+            Me.columnAmt = MyBase.Columns("Amt")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnID = New Global.System.Data.DataColumn("ID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnID)
+            Me.columnCardNo = New Global.System.Data.DataColumn("CardNo", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCardNo)
+            Me.columnAmt = New Global.System.Data.DataColumn("Amt", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnAmt)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnID}, true))
+            Me.columnID.AutoIncrement = true
+            Me.columnID.AutoIncrementSeed = -1
+            Me.columnID.AutoIncrementStep = -1
+            Me.columnID.AllowDBNull = false
+            Me.columnID.ReadOnly = true
+            Me.columnID.Unique = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Newtbl_Acc_INCRow() As tbl_Acc_INCRow
+            Return CType(Me.NewRow,tbl_Acc_INCRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New tbl_Acc_INCRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(tbl_Acc_INCRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.tbl_Acc_INCRowChangedEvent) Is Nothing) Then
+                RaiseEvent tbl_Acc_INCRowChanged(Me, New tbl_Acc_INCRowChangeEvent(CType(e.Row,tbl_Acc_INCRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.tbl_Acc_INCRowChangingEvent) Is Nothing) Then
+                RaiseEvent tbl_Acc_INCRowChanging(Me, New tbl_Acc_INCRowChangeEvent(CType(e.Row,tbl_Acc_INCRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.tbl_Acc_INCRowDeletedEvent) Is Nothing) Then
+                RaiseEvent tbl_Acc_INCRowDeleted(Me, New tbl_Acc_INCRowChangeEvent(CType(e.Row,tbl_Acc_INCRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.tbl_Acc_INCRowDeletingEvent) Is Nothing) Then
+                RaiseEvent tbl_Acc_INCRowDeleting(Me, New tbl_Acc_INCRowChangeEvent(CType(e.Row,tbl_Acc_INCRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Removetbl_Acc_INCRow(ByVal row As tbl_Acc_INCRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As DSCalculateSalary = New DSCalculateSalary()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "tbl_Acc_INCDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
     Partial Public Class tbl_PayRoll_ShortLeavesRow
@@ -15546,6 +15886,21 @@ Partial Public Class DSCalculateSalary
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property SenAllownace() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tabletbl_Acc_Salary.SenAllownaceColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'SenAllownace' in table 'tbl_Acc_Salary' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabletbl_Acc_Salary.SenAllownaceColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property tbl_Hrm_Emp_InfoRow() As tbl_Hrm_Emp_InfoRow
             Get
                 Return CType(Me.GetParentRow(Me.Table.ParentRelations("tbl_Hrm_Emp_Info_tbl_Acc_Salary")),tbl_Hrm_Emp_InfoRow)
@@ -15709,6 +16064,18 @@ Partial Public Class DSCalculateSalary
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetDailyTravelAllowanceNull()
             Me(Me.tabletbl_Acc_Salary.DailyTravelAllowanceColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsSenAllownaceNull() As Boolean
+            Return Me.IsNull(Me.tabletbl_Acc_Salary.SenAllownaceColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetSenAllownaceNull()
+            Me(Me.tabletbl_Acc_Salary.SenAllownaceColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -17201,6 +17568,87 @@ Partial Public Class DSCalculateSalary
     End Class
     
     '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class tbl_Acc_INCRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tabletbl_Acc_INC As tbl_Acc_INCDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tabletbl_Acc_INC = CType(Me.Table,tbl_Acc_INCDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property ID() As Integer
+            Get
+                Return CType(Me(Me.tabletbl_Acc_INC.IDColumn),Integer)
+            End Get
+            Set
+                Me(Me.tabletbl_Acc_INC.IDColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property CardNo() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tabletbl_Acc_INC.CardNoColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'CardNo' in table 'tbl_Acc_INC' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabletbl_Acc_INC.CardNoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property Amt() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tabletbl_Acc_INC.AmtColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Amt' in table 'tbl_Acc_INC' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabletbl_Acc_INC.AmtColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsCardNoNull() As Boolean
+            Return Me.IsNull(Me.tabletbl_Acc_INC.CardNoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetCardNoNull()
+            Me(Me.tabletbl_Acc_INC.CardNoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsAmtNull() As Boolean
+            Return Me.IsNull(Me.tabletbl_Acc_INC.AmtColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetAmtNull()
+            Me(Me.tabletbl_Acc_INC.AmtColumn) = Global.System.Convert.DBNull
+        End Sub
+    End Class
+    
+    '''<summary>
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
@@ -18266,6 +18714,42 @@ Partial Public Class DSCalculateSalary
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public ReadOnly Property Row() As tbl_Acc_RFD_PayRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+    Public Class tbl_Acc_INCRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As tbl_Acc_INCRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub New(ByVal row As tbl_Acc_INCRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property Row() As tbl_Acc_INCRow
             Get
                 Return Me.eventRow
             End Get
@@ -21453,10 +21937,10 @@ Namespace DSCalculateSalaryTableAdapters
                 "on, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         PessiSalary, PessiGrossSalary, DedDays, Seniority"& _ 
                 "Allowance, MealAtt, MealDeduction, AccomAllow, ManualDays, HalfDay, ManualOT, Gr"& _ 
                 "ade, Desig, Dept, [Section], SPHRS, SPAmt, FairShopAmt, RFDAdvDed, RFDAdvPay, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)& _ 
-                "                         Bonus, BPAdv)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES        (?, ?, ?, ?, ?, ?, ?, ?, ?"& _ 
-                ", ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, "& _ 
+                "                         Bonus, BPAdv, IncentiveAmount1, TType)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES        ("& _ 
                 "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"& _ 
-                " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+                " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?"& _ 
+                ", ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("EmpID", Global.System.Data.Odbc.OdbcType.Int, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "EmpID", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("GrossSalary", Global.System.Data.Odbc.OdbcType.Numeric, 0, Global.System.Data.ParameterDirection.Input, CType(18,Byte), CType(0,Byte), "GrossSalary", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -21532,6 +22016,8 @@ Namespace DSCalculateSalaryTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("RFDAdvPay", Global.System.Data.Odbc.OdbcType.Numeric, 0, Global.System.Data.ParameterDirection.Input, CType(18,Byte), CType(0,Byte), "RFDAdvPay", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("Bonus", Global.System.Data.Odbc.OdbcType.Numeric, 0, Global.System.Data.ParameterDirection.Input, CType(18,Byte), CType(2,Byte), "Bonus", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("BPAdv", Global.System.Data.Odbc.OdbcType.Numeric, 0, Global.System.Data.ParameterDirection.Input, CType(18,Byte), CType(0,Byte), "BPAdv", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("IncentiveAmount1", Global.System.Data.Odbc.OdbcType.Numeric, 0, Global.System.Data.ParameterDirection.Input, CType(18,Byte), CType(0,Byte), "IncentiveAmount1", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("TType", Global.System.Data.Odbc.OdbcType.VarChar, 1024, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "TType", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.Odbc.OdbcCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE [tbl_Acc_Salary_Transactions] SET [EmpID] = ?, [GrossSalary] = ?, [TaxDedu"& _ 
@@ -22758,7 +23244,9 @@ Namespace DSCalculateSalaryTableAdapters
                     ByVal RFDAdvDed As Global.System.Nullable(Of Decimal),  _
                     ByVal RFDAdvPay As Global.System.Nullable(Of Decimal),  _
                     ByVal Bonus As Global.System.Nullable(Of Decimal),  _
-                    ByVal BPAdv As Global.System.Nullable(Of Decimal)) As Integer
+                    ByVal BPAdv As Global.System.Nullable(Of Decimal),  _
+                    ByVal IncentiveAmount1 As Global.System.Nullable(Of Decimal),  _
+                    ByVal TType As String) As Integer
             Me.Adapter.InsertCommand.Parameters(0).Value = CType(EmpID,Integer)
             Me.Adapter.InsertCommand.Parameters(1).Value = CType(GrossSalary,Decimal)
             If (TaxDeductions.HasValue = true) Then
@@ -23120,6 +23608,16 @@ Namespace DSCalculateSalaryTableAdapters
                 Me.Adapter.InsertCommand.Parameters(73).Value = CType(BPAdv.Value,Decimal)
             Else
                 Me.Adapter.InsertCommand.Parameters(73).Value = Global.System.DBNull.Value
+            End If
+            If (IncentiveAmount1.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(74).Value = CType(IncentiveAmount1.Value,Decimal)
+            Else
+                Me.Adapter.InsertCommand.Parameters(74).Value = Global.System.DBNull.Value
+            End If
+            If (TType Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(75).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(75).Value = CType(TType,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -24680,6 +25178,7 @@ Namespace DSCalculateSalaryTableAdapters
             tableMapping.ColumnMappings.Add("ConteenDeduct", "ConteenDeduct")
             tableMapping.ColumnMappings.Add("UnionFund", "UnionFund")
             tableMapping.ColumnMappings.Add("DailyTravelAllowance", "DailyTravelAllowance")
+            tableMapping.ColumnMappings.Add("SenAllownace", "SenAllownace")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -24697,17 +25196,18 @@ Namespace DSCalculateSalaryTableAdapters
             Me._commandCollection(0) = New Global.System.Data.Odbc.OdbcCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        tbl_Acc_Salary.EmpID, tbl_Acc_Salary.SalID, tbl_Acc_Salary.BasicSal"& _ 
-                "ary AS GrossSalary, tbl_Acc_Salary.TaxDeduction, tbl_Acc_Salary.RentDeduction, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tbl_Acc_Salary.EOBI, tbl_Acc_Salary.TravelAllowance, t"& _ 
+                "ary AS GrossSalary, tbl_Acc_Salary.TaxDeduction, tbl_Acc_Salary.RentDeduction, t"& _ 
+                "bl_Acc_Salary.EOBI, tbl_Acc_Salary.TravelAllowance, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         t"& _ 
                 "bl_Acc_Salary.EducationAllowance, tbl_Acc_Salary.SpecialAllowance, tbl_Acc_Salar"& _ 
-                "y.MealAllowance, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tbl_Acc_Salary.PaymentMode, tbl_Acc_"& _ 
-                "Salary.FinancialPeriod, tbl_Acc_Salary.ActivationDate, isnull(tbl_Acc_Salary.PES"& _ 
-                "SICont, 0) AS PESSICont, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         isnull(View_Acc_Emp_MaxAdvan"& _ 
-                "ce_DedRate.DedRate, 0) AS PAdvDedRate, tbl_Acc_Salary.Accommodation, tbl_Acc_Sal"& _ 
-                "ary.ConteenDeduct, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tbl_Acc_Salary.UnionFund, tbl_Acc_"& _ 
-                "Salary.DailyTravelAllowance"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            { oj tbl_Acc_Salary LEFT OUTER JOIN"& _ 
-                ""&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         View_Acc_Emp_MaxAdvance_DedRate ON tbl_Acc_Salary.Emp"& _ 
-                "ID = View_Acc_Emp_MaxAdvance_DedRate.EmpID }"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (tbl_Acc_Salary.EmpID"& _ 
-                " = ?) AND (tbl_Acc_Salary.ActivationStatus = 1)"
+                "y.MealAllowance, tbl_Acc_Salary.PaymentMode, tbl_Acc_Salary.FinancialPeriod, tbl"& _ 
+                "_Acc_Salary.ActivationDate, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         isnull(tbl_Acc_Salary.PES"& _ 
+                "SICont, 0) AS PESSICont, isnull(View_Acc_Emp_MaxAdvance_DedRate.DedRate, 0) AS P"& _ 
+                "AdvDedRate, tbl_Acc_Salary.Accommodation, tbl_Acc_Salary.ConteenDeduct, tbl_Acc_"& _ 
+                "Salary.UnionFund, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tbl_Acc_Salary.DailyTravelAllowance"& _ 
+                ", tbl_Acc_Salary.SenAllownace"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            { oj tbl_Acc_Salary LEFT OUTER JO"& _ 
+                "IN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         View_Acc_Emp_MaxAdvance_DedRate ON tbl_Acc_Salary.E"& _ 
+                "mpID = View_Acc_Emp_MaxAdvance_DedRate.EmpID }"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (tbl_Acc_Salary.Emp"& _ 
+                "ID = ?) AND (tbl_Acc_Salary.ActivationStatus = 1)"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("EmpID", Global.System.Data.Odbc.OdbcType.Int, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "EmpID", Global.System.Data.DataRowVersion.Current, false, Nothing))
         End Sub
@@ -28048,6 +28548,366 @@ Namespace DSCalculateSalaryTableAdapters
     End Class
     
     '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class tbl_Acc_INCTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.Odbc.OdbcDataAdapter
+        
+        Private _connection As Global.System.Data.Odbc.OdbcConnection
+        
+        Private _transaction As Global.System.Data.Odbc.OdbcTransaction
+        
+        Private _commandCollection() As Global.System.Data.Odbc.OdbcCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.Odbc.OdbcDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Friend Property Connection() As Global.System.Data.Odbc.OdbcConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.Odbc.OdbcCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Friend Property Transaction() As Global.System.Data.Odbc.OdbcTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.Odbc.OdbcCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.Odbc.OdbcDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "tbl_Acc_INC"
+            tableMapping.ColumnMappings.Add("ID", "ID")
+            tableMapping.ColumnMappings.Add("CardNo", "CardNo")
+            tableMapping.ColumnMappings.Add("Amt", "Amt")
+            Me._adapter.TableMappings.Add(tableMapping)
+            Me._adapter.DeleteCommand = New Global.System.Data.Odbc.OdbcCommand()
+            Me._adapter.DeleteCommand.Connection = Me.Connection
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [tbl_Acc_INC] WHERE (([ID] = ?) AND ((? = 1 AND [CardNo] IS NULL) OR "& _ 
+                "([CardNo] = ?)) AND ((? = 1 AND [Amt] IS NULL) OR ([Amt] = ?)))"
+            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("Original_ID", Global.System.Data.Odbc.OdbcType.Int, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ID", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("IsNull_CardNo", Global.System.Data.Odbc.OdbcType.Int, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CardNo", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("Original_CardNo", Global.System.Data.Odbc.OdbcType.Int, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CardNo", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("IsNull_Amt", Global.System.Data.Odbc.OdbcType.Int, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Amt", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("Original_Amt", Global.System.Data.Odbc.OdbcType.Numeric, 0, Global.System.Data.ParameterDirection.Input, CType(18,Byte), CType(0,Byte), "Amt", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.InsertCommand = New Global.System.Data.Odbc.OdbcCommand()
+            Me._adapter.InsertCommand.Connection = Me.Connection
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [tbl_Acc_INC] ([CardNo], [Amt]) VALUES (?, ?)"
+            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("CardNo", Global.System.Data.Odbc.OdbcType.Int, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CardNo", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("Amt", Global.System.Data.Odbc.OdbcType.Numeric, 0, Global.System.Data.ParameterDirection.Input, CType(18,Byte), CType(0,Byte), "Amt", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand = New Global.System.Data.Odbc.OdbcCommand()
+            Me._adapter.UpdateCommand.Connection = Me.Connection
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [tbl_Acc_INC] SET [CardNo] = ?, [Amt] = ? WHERE (([ID] = ?) AND ((? = 1 AN"& _ 
+                "D [CardNo] IS NULL) OR ([CardNo] = ?)) AND ((? = 1 AND [Amt] IS NULL) OR ([Amt] "& _ 
+                "= ?)))"
+            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("CardNo", Global.System.Data.Odbc.OdbcType.Int, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CardNo", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("Amt", Global.System.Data.Odbc.OdbcType.Numeric, 0, Global.System.Data.ParameterDirection.Input, CType(18,Byte), CType(0,Byte), "Amt", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("Original_ID", Global.System.Data.Odbc.OdbcType.Int, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ID", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("IsNull_CardNo", Global.System.Data.Odbc.OdbcType.Int, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CardNo", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("Original_CardNo", Global.System.Data.Odbc.OdbcType.Int, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CardNo", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("IsNull_Amt", Global.System.Data.Odbc.OdbcType.Int, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Amt", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("Original_Amt", Global.System.Data.Odbc.OdbcType.Numeric, 0, Global.System.Data.ParameterDirection.Input, CType(18,Byte), CType(0,Byte), "Amt", Global.System.Data.DataRowVersion.Original, false, Nothing))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.Odbc.OdbcConnection()
+            Me._connection.ConnectionString = Global.ERP_HRMS.My.MySettings.Default.HRMSCon
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.Odbc.OdbcCommand(0) {}
+            Me._commandCollection(0) = New Global.System.Data.Odbc.OdbcCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "SELECT        ID, CardNo, Amt"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            tbl_Acc_INC"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (CardNo "& _ 
+                "= ?) AND (MONTH(EntryDate) = ?) AND (YEAR(EntryDate) = ?)"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("CardNo", Global.System.Data.Odbc.OdbcType.Int, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CardNo", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("Param2", Global.System.Data.Odbc.OdbcType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("Param3", Global.System.Data.Odbc.OdbcType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "", Global.System.Data.DataRowVersion.Current, false, Nothing))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As DSCalculateSalary.tbl_Acc_INCDataTable, ByVal CardNo As Global.System.Nullable(Of Integer), ByVal Param2 As Decimal, ByVal Param3 As Decimal) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (CardNo.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(CardNo.Value,Integer)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.SelectCommand.Parameters(1).Value = CType(Param2,Decimal)
+            Me.Adapter.SelectCommand.Parameters(2).Value = CType(Param3,Decimal)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData(ByVal CardNo As Global.System.Nullable(Of Integer), ByVal Param2 As Decimal, ByVal Param3 As Decimal) As DSCalculateSalary.tbl_Acc_INCDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (CardNo.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(CardNo.Value,Integer)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.SelectCommand.Parameters(1).Value = CType(Param2,Decimal)
+            Me.Adapter.SelectCommand.Parameters(2).Value = CType(Param3,Decimal)
+            Dim dataTable As DSCalculateSalary.tbl_Acc_INCDataTable = New DSCalculateSalary.tbl_Acc_INCDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataTable As DSCalculateSalary.tbl_Acc_INCDataTable) As Integer
+            Return Me.Adapter.Update(dataTable)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataSet As DSCalculateSalary) As Integer
+            Return Me.Adapter.Update(dataSet, "tbl_Acc_INC")
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(dataRows)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
+        Public Overloads Overridable Function Delete(ByVal Original_ID As Integer, ByVal Original_CardNo As Global.System.Nullable(Of Integer), ByVal Original_Amt As Global.System.Nullable(Of Decimal)) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_ID,Integer)
+            If (Original_CardNo.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_CardNo.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            If (Original_Amt.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_Amt.Value,Decimal)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
+            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.DeleteCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.DeleteCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
+        Public Overloads Overridable Function Insert(ByVal CardNo As Global.System.Nullable(Of Integer), ByVal Amt As Global.System.Nullable(Of Decimal)) As Integer
+            If (CardNo.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(CardNo.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (Amt.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(Amt.Value,Decimal)
+            Else
+                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
+            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.InsertCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.InsertCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update(ByVal CardNo As Global.System.Nullable(Of Integer), ByVal Amt As Global.System.Nullable(Of Decimal), ByVal Original_ID As Integer, ByVal Original_CardNo As Global.System.Nullable(Of Integer), ByVal Original_Amt As Global.System.Nullable(Of Decimal)) As Integer
+            If (CardNo.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(CardNo.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (Amt.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Amt.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Original_ID,Integer)
+            If (Original_CardNo.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_CardNo.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
+            End If
+            If (Original_Amt.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_Amt.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
+            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.UpdateCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.UpdateCommand.Connection.Close
+                End If
+            End Try
+        End Function
+    End Class
+    
+    '''<summary>
     '''TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     '''</summary>
     <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
@@ -28067,6 +28927,8 @@ Namespace DSCalculateSalaryTableAdapters
         Private _tbl_Hrm_Emp_Info_Cards_InfoTableAdapter As tbl_Hrm_Emp_Info_Cards_InfoTableAdapter
         
         Private _tbl_Emp_Salary_Calculation_AdjTableAdapter As tbl_Emp_Salary_Calculation_AdjTableAdapter
+        
+        Private _tbl_Acc_INCTableAdapter As tbl_Acc_INCTableAdapter
         
         Private _backupDataSetBeforeUpdate As Boolean
         
@@ -28140,6 +29002,20 @@ Namespace DSCalculateSalaryTableAdapters
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
+            "a", "System.Drawing.Design.UITypeEditor")>  _
+        Public Property tbl_Acc_INCTableAdapter() As tbl_Acc_INCTableAdapter
+            Get
+                Return Me._tbl_Acc_INCTableAdapter
+            End Get
+            Set
+                Me._tbl_Acc_INCTableAdapter = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property BackupDataSetBeforeUpdate() As Boolean
             Get
@@ -28174,6 +29050,10 @@ Namespace DSCalculateSalaryTableAdapters
                             AndAlso (Not (Me._tbl_Emp_Salary_Calculation_AdjTableAdapter.Connection) Is Nothing)) Then
                     Return Me._tbl_Emp_Salary_Calculation_AdjTableAdapter.Connection
                 End If
+                If ((Not (Me._tbl_Acc_INCTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._tbl_Acc_INCTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._tbl_Acc_INCTableAdapter.Connection
+                End If
                 Return Nothing
             End Get
             Set
@@ -28197,6 +29077,9 @@ Namespace DSCalculateSalaryTableAdapters
                     count = (count + 1)
                 End If
                 If (Not (Me._tbl_Emp_Salary_Calculation_AdjTableAdapter) Is Nothing) Then
+                    count = (count + 1)
+                End If
+                If (Not (Me._tbl_Acc_INCTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
                 Return count
@@ -28246,6 +29129,15 @@ Namespace DSCalculateSalaryTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
+            If (Not (Me._tbl_Acc_INCTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.tbl_Acc_INC.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._tbl_Acc_INCTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
             Return result
         End Function
         
@@ -28288,6 +29180,14 @@ Namespace DSCalculateSalaryTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
+            If (Not (Me._tbl_Acc_INCTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.tbl_Acc_INC.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._tbl_Acc_INCTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
             Return result
         End Function
         
@@ -28298,6 +29198,14 @@ Namespace DSCalculateSalaryTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Function UpdateDeletedRows(ByVal dataSet As DSCalculateSalary, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
+            If (Not (Me._tbl_Acc_INCTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.tbl_Acc_INC.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._tbl_Acc_INCTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
             If (Not (Me._tbl_Acc_Salary_TransactionsTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.tbl_Acc_Salary_Transactions.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
@@ -28391,6 +29299,11 @@ Namespace DSCalculateSalaryTableAdapters
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
+            If ((Not (Me._tbl_Acc_INCTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._tbl_Acc_INCTableAdapter.Connection) = false)) Then
+                Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
+                        "tring.")
+            End If
             Dim workConnection As Global.System.Data.IDbConnection = Me.Connection
             If (workConnection Is Nothing) Then
                 Throw New Global.System.ApplicationException("TableAdapterManager contains no connection information. Set each TableAdapterMana"& _ 
@@ -28457,6 +29370,15 @@ Namespace DSCalculateSalaryTableAdapters
                     If Me._tbl_Emp_Salary_Calculation_AdjTableAdapter.Adapter.AcceptChangesDuringUpdate Then
                         Me._tbl_Emp_Salary_Calculation_AdjTableAdapter.Adapter.AcceptChangesDuringUpdate = false
                         adaptersWithAcceptChangesDuringUpdate.Add(Me._tbl_Emp_Salary_Calculation_AdjTableAdapter.Adapter)
+                    End If
+                End If
+                If (Not (Me._tbl_Acc_INCTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._tbl_Acc_INCTableAdapter, Me._tbl_Acc_INCTableAdapter.Connection)
+                    Me._tbl_Acc_INCTableAdapter.Connection = CType(workConnection,Global.System.Data.Odbc.OdbcConnection)
+                    Me._tbl_Acc_INCTableAdapter.Transaction = CType(workTransaction,Global.System.Data.Odbc.OdbcTransaction)
+                    If Me._tbl_Acc_INCTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._tbl_Acc_INCTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._tbl_Acc_INCTableAdapter.Adapter)
                     End If
                 End If
                 '
@@ -28534,6 +29456,10 @@ Namespace DSCalculateSalaryTableAdapters
                 If (Not (Me._tbl_Emp_Salary_Calculation_AdjTableAdapter) Is Nothing) Then
                     Me._tbl_Emp_Salary_Calculation_AdjTableAdapter.Connection = CType(revertConnections(Me._tbl_Emp_Salary_Calculation_AdjTableAdapter),Global.System.Data.Odbc.OdbcConnection)
                     Me._tbl_Emp_Salary_Calculation_AdjTableAdapter.Transaction = Nothing
+                End If
+                If (Not (Me._tbl_Acc_INCTableAdapter) Is Nothing) Then
+                    Me._tbl_Acc_INCTableAdapter.Connection = CType(revertConnections(Me._tbl_Acc_INCTableAdapter),Global.System.Data.Odbc.OdbcConnection)
+                    Me._tbl_Acc_INCTableAdapter.Transaction = Nothing
                 End If
                 If (0 < adaptersWithAcceptChangesDuringUpdate.Count) Then
                     Dim adapters((adaptersWithAcceptChangesDuringUpdate.Count) - 1) As Global.System.Data.Common.DataAdapter

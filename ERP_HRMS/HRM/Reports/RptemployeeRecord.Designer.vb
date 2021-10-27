@@ -29,6 +29,8 @@ Partial Class RptemployeeRecord
         Dim BranchNameLabel As System.Windows.Forms.Label
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.RadioButton16 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton17 = New System.Windows.Forms.RadioButton()
         Me.RadioButton15 = New System.Windows.Forms.RadioButton()
         Me.RadioButton14 = New System.Windows.Forms.RadioButton()
         Me.RadioButton13 = New System.Windows.Forms.RadioButton()
@@ -111,7 +113,6 @@ Partial Class RptemployeeRecord
         Me.Tbl_HRM_GradeTableAdapter = New ERP_HRMS.DSHRMTableAdapters.tbl_HRM_GradeTableAdapter()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.RadioButton17 = New System.Windows.Forms.RadioButton()
         Label7 = New System.Windows.Forms.Label()
         Label8 = New System.Windows.Forms.Label()
         Label9 = New System.Windows.Forms.Label()
@@ -184,6 +185,7 @@ Partial Class RptemployeeRecord
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.RadioButton16)
         Me.GroupBox1.Controls.Add(Me.RadioButton17)
         Me.GroupBox1.Controls.Add(Me.RadioButton15)
         Me.GroupBox1.Controls.Add(Me.RadioButton14)
@@ -212,10 +214,32 @@ Partial Class RptemployeeRecord
         Me.GroupBox1.ForeColor = System.Drawing.Color.Blue
         Me.GroupBox1.Location = New System.Drawing.Point(58, 112)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(499, 306)
+        Me.GroupBox1.Size = New System.Drawing.Size(499, 315)
         Me.GroupBox1.TabIndex = 12
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Report Selector :"
+        '
+        'RadioButton16
+        '
+        Me.RadioButton16.AutoSize = True
+        Me.RadioButton16.ForeColor = System.Drawing.Color.Black
+        Me.RadioButton16.Location = New System.Drawing.Point(240, 286)
+        Me.RadioButton16.Name = "RadioButton16"
+        Me.RadioButton16.Size = New System.Drawing.Size(232, 21)
+        Me.RadioButton16.TabIndex = 58
+        Me.RadioButton16.Text = "Service Certificate (Death Grant)"
+        Me.RadioButton16.UseVisualStyleBackColor = True
+        '
+        'RadioButton17
+        '
+        Me.RadioButton17.AutoSize = True
+        Me.RadioButton17.ForeColor = System.Drawing.Color.Black
+        Me.RadioButton17.Location = New System.Drawing.Point(240, 266)
+        Me.RadioButton17.Name = "RadioButton17"
+        Me.RadioButton17.Size = New System.Drawing.Size(140, 21)
+        Me.RadioButton17.TabIndex = 57
+        Me.RadioButton17.Text = "Death Grant Case"
+        Me.RadioButton17.UseVisualStyleBackColor = True
         '
         'RadioButton15
         '
@@ -590,7 +614,7 @@ Partial Class RptemployeeRecord
         Me.GroupBox3.Controls.Add(Me.CardRange)
         Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.ForeColor = System.Drawing.Color.Blue
-        Me.GroupBox3.Location = New System.Drawing.Point(58, 424)
+        Me.GroupBox3.Location = New System.Drawing.Point(58, 433)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(275, 174)
         Me.GroupBox3.TabIndex = 18
@@ -1098,7 +1122,7 @@ Partial Class RptemployeeRecord
         '
         Me.DateTimePicker2.CustomFormat = "dd/MM/yyyy"
         Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker2.Location = New System.Drawing.Point(447, 435)
+        Me.DateTimePicker2.Location = New System.Drawing.Point(419, 449)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(115, 20)
         Me.DateTimePicker2.TabIndex = 54
@@ -1107,24 +1131,13 @@ Partial Class RptemployeeRecord
         'Label12
         '
         Me.Label12.ForeColor = System.Drawing.Color.Black
-        Me.Label12.Location = New System.Drawing.Point(372, 435)
+        Me.Label12.Location = New System.Drawing.Point(344, 449)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(69, 20)
         Me.Label12.TabIndex = 55
         Me.Label12.Text = "Select Date:"
         Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Label12.Visible = False
-        '
-        'RadioButton17
-        '
-        Me.RadioButton17.AutoSize = True
-        Me.RadioButton17.ForeColor = System.Drawing.Color.Black
-        Me.RadioButton17.Location = New System.Drawing.Point(240, 266)
-        Me.RadioButton17.Name = "RadioButton17"
-        Me.RadioButton17.Size = New System.Drawing.Size(158, 21)
-        Me.RadioButton17.TabIndex = 57
-        Me.RadioButton17.Text = "Marriage Grant Case"
-        Me.RadioButton17.UseVisualStyleBackColor = True
         '
         'RptemployeeRecord
         '
@@ -1275,4 +1288,5 @@ Partial Class RptemployeeRecord
     Friend WithEvents DateTimePicker2 As DateTimePicker
     Friend WithEvents Label12 As Label
     Friend WithEvents RadioButton17 As RadioButton
+    Friend WithEvents RadioButton16 As RadioButton
 End Class

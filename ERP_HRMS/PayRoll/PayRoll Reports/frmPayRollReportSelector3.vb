@@ -469,14 +469,14 @@ Public Class frmPayRollReportSelector3
                 If RadioButton13.Checked = True Then ' All EMp
 
                     Filter = Empstatus & "  And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton6.Checked = True 'mani Dept
+                ElseIf RadioButton6.Checked = True Then 'mani Dept
                     Filter = Empstatus & "  And  {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     Filter = Empstatus & " And  {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.SectionName} = '" & SectionNameComboBox.Text & "' And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton2.Checked = True '  Deig Wise 
+                ElseIf RadioButton2.Checked = True Then '  Deig Wise 
                     Filter = Empstatus & "   And  {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DesigName} = '" & DesigNameComboBox.Text & "' And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
                 End If
-            ElseIf RadioButton31.Checked = True 'by card 
+            ElseIf RadioButton31.Checked = True Then 'by card 
                 If RadioButton13.Checked = True Then ' ALl Emp
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
@@ -488,7 +488,7 @@ Public Class frmPayRollReportSelector3
                     Else
                         Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & " And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
                     End If
-                ElseIf RadioButton6.Checked = True ' Main Dept
+                ElseIf RadioButton6.Checked = True Then ' Main Dept
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
                     Else
@@ -499,7 +499,7 @@ Public Class frmPayRollReportSelector3
                     Else
                         Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & " And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
                     End If
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
                     Else
@@ -510,7 +510,7 @@ Public Class frmPayRollReportSelector3
                     Else
                         Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.SectionName} = '" & SectionNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & " And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
                     End If
-                ElseIf RadioButton2.Checked = True ' Desig Wise
+                ElseIf RadioButton2.Checked = True Then ' Desig Wise
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
                     Else
@@ -522,17 +522,17 @@ Public Class frmPayRollReportSelector3
                         Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DesigName} = '" & DesigNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & " And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
                     End If
                 End If
-            ElseIf RadioButton32.Checked = True ' by Shift
+            ElseIf RadioButton32.Checked = True Then ' by Shift
                 Flag = False
                 'Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & ""
                 If RadioButton13.Checked = True Then ' All Emp
 
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton6.Checked = True ' Main Dept
+                ElseIf RadioButton6.Checked = True Then ' Main Dept
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     Filter = Empstatus & " And  {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.SectionName} = '" & SectionNameComboBox.Text & "' And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton2.Checked = True ' Desig Wise
+                ElseIf RadioButton2.Checked = True Then ' Desig Wise
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DesigName} = '" & DesigNameComboBox.Text & "' And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
 
                 End If
@@ -541,11 +541,11 @@ Public Class frmPayRollReportSelector3
                 If RadioButton13.Checked = True Then ' All Emp
 
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & " And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton6.Checked = True ' Main Dept
+                ElseIf RadioButton6.Checked = True Then ' Main Dept
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     Filter = Empstatus & " And  {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.SectionName} = '" & SectionNameComboBox.Text & "' And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton2.Checked = True ' Desig Wise
+                ElseIf RadioButton2.Checked = True Then ' Desig Wise
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & BranchNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.BranchID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DesigName} = '" & DesigNameComboBox.Text & "' And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
 
                 End If
@@ -554,11 +554,11 @@ Public Class frmPayRollReportSelector3
                 If RadioButton13.Checked = True Then ' All Emp
 
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & " And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & "  And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton6.Checked = True ' Main Dept
+                ElseIf RadioButton6.Checked = True Then ' Main Dept
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & " And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     Filter = Empstatus & " And  {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & "And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & "  And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.SectionName} = '" & SectionNameComboBox.Text & "' And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton2.Checked = True ' Desig Wise
+                ElseIf RadioButton2.Checked = True Then ' Desig Wise
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & BranchNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.BranchID} = " & ShiftNameComboBox.SelectedValue & " And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DesigName} = '" & DesigNameComboBox.Text & "' And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
 
                 End If
@@ -567,11 +567,11 @@ Public Class frmPayRollReportSelector3
                 If RadioButton13.Checked = True Then ' All EMp
 
                     Filter = Empstatus & " And  {View_Rpt_Acc_PreSalary.EmpcatagoryID}  = " & CatagoryNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton6.Checked = True 'mani Dept
+                ElseIf RadioButton6.Checked = True Then 'mani Dept
                     Filter = Empstatus & " And  {View_Rpt_Acc_PreSalary.EmpcatagoryID}  = " & CatagoryNameComboBox.SelectedValue & " And  {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.EmpcatagoryID}  = " & CatagoryNameComboBox.SelectedValue & " And  {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.SectionName} = '" & SectionNameComboBox.Text & "' And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton2.Checked = True '  Deig Wise 
+                ElseIf RadioButton2.Checked = True Then '  Deig Wise 
                     Filter = Empstatus & " And  {View_Rpt_Acc_PreSalary.EmpcatagoryID}  = " & CatagoryNameComboBox.SelectedValue & " And  {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DesigName} = '" & DesigNameComboBox.Text & "' And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
                 End If
             End If
@@ -584,14 +584,14 @@ Public Class frmPayRollReportSelector3
                 If RadioButton13.Checked = True Then ' All EMp
 
                     Filter = Empstatus & "  And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton6.Checked = True 'mani Dept
+                ElseIf RadioButton6.Checked = True Then 'mani Dept
                     Filter = Empstatus & "  And  {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     Filter = Empstatus & " And  {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.SectionName} = '" & SectionNameComboBox.Text & "' And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton2.Checked = True '  Deig Wise 
+                ElseIf RadioButton2.Checked = True Then '  Deig Wise 
                     Filter = Empstatus & "   And  {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DesigName} = '" & DesigNameComboBox.Text & "' And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
                 End If
-            ElseIf RadioButton31.Checked = True 'by card 
+            ElseIf RadioButton31.Checked = True Then 'by card 
                 If RadioButton13.Checked = True Then ' ALl Emp
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
@@ -603,7 +603,7 @@ Public Class frmPayRollReportSelector3
                     Else
                         Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & " And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
                     End If
-                ElseIf RadioButton6.Checked = True ' Main Dept
+                ElseIf RadioButton6.Checked = True Then ' Main Dept
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
                     Else
@@ -614,7 +614,7 @@ Public Class frmPayRollReportSelector3
                     Else
                         Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & " And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
                     End If
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
                     Else
@@ -625,7 +625,7 @@ Public Class frmPayRollReportSelector3
                     Else
                         Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.SectionName} = '" & SectionNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & " And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
                     End If
-                ElseIf RadioButton2.Checked = True ' Desig Wise
+                ElseIf RadioButton2.Checked = True Then ' Desig Wise
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
                     Else
@@ -637,17 +637,17 @@ Public Class frmPayRollReportSelector3
                         Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DesigName} = '" & DesigNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & " And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
                     End If
                 End If
-            ElseIf RadioButton32.Checked = True ' by Shift
+            ElseIf RadioButton32.Checked = True Then ' by Shift
                 Flag = False
                 'Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & ""
                 If RadioButton13.Checked = True Then ' All Emp
 
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton6.Checked = True ' Main Dept
+                ElseIf RadioButton6.Checked = True Then ' Main Dept
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     Filter = Empstatus & " And  {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.SectionName} = '" & SectionNameComboBox.Text & "' And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton2.Checked = True ' Desig Wise
+                ElseIf RadioButton2.Checked = True Then ' Desig Wise
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DesigName} = '" & DesigNameComboBox.Text & "' And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
 
                 End If
@@ -656,11 +656,11 @@ Public Class frmPayRollReportSelector3
                 If RadioButton13.Checked = True Then ' All Emp
 
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & " And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton6.Checked = True ' Main Dept
+                ElseIf RadioButton6.Checked = True Then ' Main Dept
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     Filter = Empstatus & " And  {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.SectionName} = '" & SectionNameComboBox.Text & "' And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton2.Checked = True ' Desig Wise
+                ElseIf RadioButton2.Checked = True Then ' Desig Wise
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & BranchNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.BranchID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DesigName} = '" & DesigNameComboBox.Text & "' And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
 
                 End If
@@ -669,11 +669,11 @@ Public Class frmPayRollReportSelector3
                 If RadioButton13.Checked = True Then ' All Emp
 
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & " And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & "  And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton6.Checked = True ' Main Dept
+                ElseIf RadioButton6.Checked = True Then ' Main Dept
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & " And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     Filter = Empstatus & " And  {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & "And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & "  And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.SectionName} = '" & SectionNameComboBox.Text & "' And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton2.Checked = True ' Desig Wise
+                ElseIf RadioButton2.Checked = True Then ' Desig Wise
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & BranchNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.BranchID} = " & ShiftNameComboBox.SelectedValue & " And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DesigName} = '" & DesigNameComboBox.Text & "' And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
 
                 End If
@@ -682,11 +682,11 @@ Public Class frmPayRollReportSelector3
                 If RadioButton13.Checked = True Then ' All EMp
 
                     Filter = Empstatus & " And  {View_Rpt_Acc_PreSalary.EmpcatagoryID}  = " & CatagoryNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton6.Checked = True 'mani Dept
+                ElseIf RadioButton6.Checked = True Then 'mani Dept
                     Filter = Empstatus & " And  {View_Rpt_Acc_PreSalary.EmpcatagoryID}  = " & CatagoryNameComboBox.SelectedValue & " And  {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.EmpcatagoryID}  = " & CatagoryNameComboBox.SelectedValue & " And  {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.SectionName} = '" & SectionNameComboBox.Text & "' And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton2.Checked = True '  Deig Wise 
+                ElseIf RadioButton2.Checked = True Then '  Deig Wise 
                     Filter = Empstatus & " And  {View_Rpt_Acc_PreSalary.EmpcatagoryID}  = " & CatagoryNameComboBox.SelectedValue & " And  {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DesigName} = '" & DesigNameComboBox.Text & "' And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
                 End If
             End If
@@ -704,16 +704,16 @@ Public Class frmPayRollReportSelector3
                 If RadioButton13.Checked = True Then ' All EMp
 
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " and ({View_Working_Day.AttDate} in {?FromDate} to {?ToDate})"
-                ElseIf RadioButton6.Checked = True 'mani Dept
+                ElseIf RadioButton6.Checked = True Then 'mani Dept
                     Filter = Empstatus & " And  {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' and ({View_Working_Day.AttDate} in {?FromDate} to {?ToDate})"
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.SubDept1} = '" & SectionNameComboBox.Text & "' and ({View_Working_Day.AttDate} in {?FromDate} to {?ToDate})"
-                ElseIf RadioButton2.Checked = True '  Deig Wise 
+                ElseIf RadioButton2.Checked = True Then '  Deig Wise 
 
 
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DesigName} = '" & DesigNameComboBox.Text & "' and ({View_Working_Day.AttDate} in {?FromDate} to {?ToDate})"
                 End If
-            ElseIf RadioButton31.Checked = True 'by card 
+            ElseIf RadioButton31.Checked = True Then 'by card 
                 If RadioButton13.Checked = True Then ' ALl Emp
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
@@ -727,7 +727,7 @@ Public Class frmPayRollReportSelector3
 
                         Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & "and ({View_Working_Day.AttDate} in {?FromDate} to {?ToDate})"
                     End If
-                ElseIf RadioButton6.Checked = True ' Main Dept
+                ElseIf RadioButton6.Checked = True Then ' Main Dept
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
                     Else
@@ -738,7 +738,7 @@ Public Class frmPayRollReportSelector3
                     Else
                         Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & "and ({View_Working_Day.AttDate} in {?FromDate} to {?ToDate})"
                     End If
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
                     Else
@@ -749,7 +749,7 @@ Public Class frmPayRollReportSelector3
                     Else
                         Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.SubDept1} = '" & SectionNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & "and ({View_Working_Day.AttDate} in {?FromDate} to {?ToDate})"
                     End If
-                ElseIf RadioButton2.Checked = True ' Desig Wise
+                ElseIf RadioButton2.Checked = True Then ' Desig Wise
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
                     Else
@@ -761,17 +761,17 @@ Public Class frmPayRollReportSelector3
                         Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DesigName} = '" & DesigNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & "and ({View_Working_Day.AttDate} in {?FromDate} to {?ToDate})"
                     End If
                 End If
-            ElseIf RadioButton32.Checked = True ' by Shift
+            ElseIf RadioButton32.Checked = True Then ' by Shift
                 Flag = False
                 'Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & ""
                 If RadioButton13.Checked = True Then ' All Emp
                     Flag = False
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & " and ({View_Working_Day.AttDate} in {?FromDate} to {?ToDate})"
-                ElseIf RadioButton6.Checked = True ' Main Dept
+                ElseIf RadioButton6.Checked = True Then ' Main Dept
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & " and ({View_Working_Day.AttDate} in {?FromDate} to {?ToDate})"
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     Filter = Empstatus & " And  {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.SubDept1} = '" & SectionNameComboBox.Text & "' and ({View_Working_Day.AttDate} in {?FromDate} to {?ToDate})"
-                ElseIf RadioButton2.Checked = True ' Desig Wise
+                ElseIf RadioButton2.Checked = True Then ' Desig Wise
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DesigName} = '" & DesigNameComboBox.Text & "' and ({View_Working_Day.AttDate} in {?FromDate} to {?ToDate})"
 
                 End If
@@ -780,11 +780,11 @@ Public Class frmPayRollReportSelector3
                 If RadioButton13.Checked = True Then ' All Emp
 
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & "and ({View_Working_Day.AttDate} in {?FromDate} to {?ToDate})"
-                ElseIf RadioButton6.Checked = True ' Main Dept
+                ElseIf RadioButton6.Checked = True Then ' Main Dept
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "'and ({View_Working_Day.AttDate} in {?FromDate} to {?ToDate})"
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     Filter = Empstatus & " And  {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' and {View_Rpt_Acc_PreSalary.SubDept1} = '" & SectionNameComboBox.Text & "' and ({View_Working_Day.AttDate} in {?FromDate} to {?ToDate})"
-                ElseIf RadioButton2.Checked = True ' Desig Wise
+                ElseIf RadioButton2.Checked = True Then ' Desig Wise
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & BranchNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.BranchID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DesigName} = '" & DesigNameComboBox.Text & "' and ({View_Working_Day.AttDate} in {?FromDate} to {?ToDate})"
 
                 End If
@@ -793,11 +793,11 @@ Public Class frmPayRollReportSelector3
                 If RadioButton13.Checked = True Then ' All Emp
 
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & "   And {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & "and ({View_Working_Day.AttDate} in {?FromDate} to {?ToDate})"
-                ElseIf RadioButton6.Checked = True ' Main Dept
+                ElseIf RadioButton6.Checked = True Then ' Main Dept
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & "And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & "   And {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "'and ({View_Working_Day.AttDate} in {?FromDate} to {?ToDate})"
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     Filter = Empstatus & " And  {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & "And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & "   And {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' and {View_Rpt_Acc_PreSalary.SubDept1} = '" & SectionNameComboBox.Text & "' and ({View_Working_Day.AttDate} in {?FromDate} to {?ToDate})"
-                ElseIf RadioButton2.Checked = True ' Desig Wise
+                ElseIf RadioButton2.Checked = True Then ' Desig Wise
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & BranchNameComboBox.SelectedValue & " And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & "  And {View_Rpt_Acc_PreSalary.BranchID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DesigName} = '" & DesigNameComboBox.Text & "' and ({View_Working_Day.AttDate} in {?FromDate} to {?ToDate})"
 
                 End If
@@ -806,11 +806,11 @@ Public Class frmPayRollReportSelector3
                 If RadioButton13.Checked = True Then ' All EMp
 
                     Filter = Empstatus & " And  {View_Rpt_Acc_PreSalary.EmpcatagoryID}  = " & CatagoryNameComboBox.SelectedValue & " And  {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " and ({View_Working_Day.AttDate} in {?FromDate} to {?ToDate})"
-                ElseIf RadioButton6.Checked = True 'mani Dept
+                ElseIf RadioButton6.Checked = True Then 'mani Dept
                     Filter = Empstatus & " And   {View_Rpt_Acc_PreSalary.EmpcatagoryID}  = " & CatagoryNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' and ({View_Working_Day.AttDate} in {?FromDate} to {?ToDate})"
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     Filter = Empstatus & " And  {View_Rpt_Acc_PreSalary.EmpcatagoryID}  = " & CatagoryNameComboBox.SelectedValue & " And  {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.SubDept1} = '" & SectionNameComboBox.Text & "' and ({View_Working_Day.AttDate} in {?FromDate} to {?ToDate})"
-                ElseIf RadioButton2.Checked = True '  Deig Wise 
+                ElseIf RadioButton2.Checked = True Then '  Deig Wise 
                     Filter = Empstatus & " And  {View_Rpt_Acc_PreSalary.EmpcatagoryID}  = " & CatagoryNameComboBox.SelectedValue & " And  {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DesigName} = '" & DesigNameComboBox.Text & "' and ({View_Working_Day.AttDate} in {?FromDate} to {?ToDate})"
                 End If
             End If
@@ -829,17 +829,17 @@ Public Class frmPayRollReportSelector3
                 If RadioButton13.Checked = True Then ' Alii Emp
                     Flag = False
                     Filter = Empstatus & " And   {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_PayRoll_InOutDifference.AttDate} In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton6.Checked = True ' MAin Dept Wise
+                ElseIf RadioButton6.Checked = True Then ' MAin Dept Wise
                     Filter = Empstatus & " And   {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName}  = '" & DeptNameComboBox.Text & "' And {View_Rpt_PayRoll_InOutDifference.AttDate} In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton7.Checked = True 'Section Wise
+                ElseIf RadioButton7.Checked = True Then 'Section Wise
 
                     Filter = Empstatus & "  And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName}  = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.SectionName} = '" & SectionNameComboBox.Text & "' And{View_Rpt_PayRoll_InOutDifference.AttDate} In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton2.Checked = True ' Desig Wise 
+                ElseIf RadioButton2.Checked = True Then ' Desig Wise 
 
                     Filter = Empstatus & "  And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DesigName} = '" & DesigNameComboBox.Text & "' And  {View_Rpt_PayRoll_InOutDifference.AttDate} In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "yyyy/MM/dd") & "#"
 
                 End If
-            ElseIf RadioButton31.Checked = True 'By card 
+            ElseIf RadioButton31.Checked = True Then 'By card 
                 If RadioButton13.Checked = True Then ' All Emp
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
@@ -851,7 +851,7 @@ Public Class frmPayRollReportSelector3
                     Else
                         Filter = Empstatus & "  And   {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & " And  {View_Rpt_PayRoll_InOutDifference.AttDate} In #" & Format(Me.DateTimePicker1.Value, "yyyy/MM/dd") & "# To #" & Format(Me.DateTimePicker2.Value, "yyyy/MM/dd") & "#"
                     End If
-                ElseIf RadioButton6.Checked = True ' Main Dept
+                ElseIf RadioButton6.Checked = True Then ' Main Dept
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
                     Else
@@ -862,7 +862,7 @@ Public Class frmPayRollReportSelector3
                     Else
                         Filter = Empstatus & " And   {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & " And   {View_Rpt_PayRoll_InOutDifference.AttDate}  In #" & Format(Me.DateTimePicker1.Value, "yyyy/MM/dd") & "# To #" & Format(Me.DateTimePicker2.Value, "yyyy/MM/dd") & "#"
                     End If
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
                     Else
@@ -873,7 +873,7 @@ Public Class frmPayRollReportSelector3
                     Else
                         Filter = Empstatus & " And  {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.SectionName} = '" & SectionNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & " And  {View_Rpt_PayRoll_InOutDifference.AttDate} In #" & Format(Me.DateTimePicker1.Value, "yyyy/MM/dd") & "# To #" & Format(Me.DateTimePicker2.Value, "yyyy/MM/dd") & "#"
                     End If
-                ElseIf RadioButton2.Checked = True ' Desig Wise
+                ElseIf RadioButton2.Checked = True Then ' Desig Wise
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
                     Else
@@ -885,16 +885,16 @@ Public Class frmPayRollReportSelector3
                         Filter = Empstatus & "  And  {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DesigName} = '" & DesigNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & " And  {View_Rpt_PayRoll_InOutDifference.AttDate} In #" & Format(Me.DateTimePicker1.Value, "yyyy/MM/dd") & "# To #" & Format(Me.DateTimePicker2.Value, "yyyy/MM/dd") & "#"
                     End If
                 End If
-            ElseIf RadioButton32.Checked = True 'by Shift
+            ElseIf RadioButton32.Checked = True Then 'by Shift
                 Flag = False
                 If RadioButton13.Checked = True Then ' All  Emp
 
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_PayRoll_InOutDifference.AttDate} In #" & Format(Me.DateTimePicker1.Value, "yyyy/MM/dd") & "# To #" & Format(Me.DateTimePicker2.Value, "yyyy/MM/dd") & "#"
-                ElseIf RadioButton6.Checked = True ' MAin Dept
+                ElseIf RadioButton6.Checked = True Then ' MAin Dept
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And  {View_Rpt_PayRoll_InOutDifference.AttDate} In #" & Format(Me.DateTimePicker1.Value, "yyyy/MM/dd") & "# To #" & Format(Me.DateTimePicker2.Value, "yyyy/MM/dd") & "#"
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     Filter = Empstatus & "  And  {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.SectionName}= '" & SectionNameComboBox.Text & "' And  {View_Rpt_PayRoll_InOutDifference.AttDate}  In #" & Format(Me.DateTimePicker1.Value, "yyyy/MM/dd") & "# To #" & Format(Me.DateTimePicker2.Value, "yyyy/MM/dd") & "#"
-                ElseIf RadioButton2.Checked = True ' Desig Wise
+                ElseIf RadioButton2.Checked = True Then ' Desig Wise
                     Filter = Empstatus & "  And  {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DesigName} = '" & DesigNameComboBox.Text & "' And  {View_Rpt_PayRoll_InOutDifference.AttDate}  In #" & Format(Me.DateTimePicker1.Value, "yyyy/MM/dd") & "# To #" & Format(Me.DateTimePicker2.Value, "yyyy/MM/dd") & "#"
 
                 End If
@@ -907,9 +907,9 @@ Public Class frmPayRollReportSelector3
 
                 ElseIf RadioButton6.Checked = True Then ' MAin Dept
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & "  And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & "  And {View_Rpt_Acc_PreSalary.DeptName}  = '" & DeptNameComboBox.Text & "' And {View_Rpt_PayRoll_InOutDifference.AttDate}  In #" & Format(Me.DateTimePicker1.Value, "yyyy/MM/dd") & "# To #" & Format(Me.DateTimePicker2.Value, "yyyy/MM/dd") & "# "
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & "   And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & "  And {View_Rpt_Acc_PreSalary.DeptName}  = '" & DeptNameComboBox.Text & "'   And {View_Rpt_Acc_PreSalary.SectionName}  = '" & SectionNameComboBox.Text & "' And {View_Rpt_PayRoll_InOutDifference.AttDate}  In #" & Format(Me.DateTimePicker1.Value, "yyyy/MM/dd") & "# To #" & Format(Me.DateTimePicker2.Value, "yyyy/MM/dd") & "# "
-                ElseIf RadioButton2.Checked = True ' Desig Wise
+                ElseIf RadioButton2.Checked = True Then ' Desig Wise
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & "   And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & "  And {View_Rpt_Acc_PreSalary.Designame}  = '" & DesigNameComboBox.Text & "' And  {View_Rpt_PayRoll_InOutDifference.AttDate}  In #" & Format(Me.DateTimePicker1.Value, "yyyy/MM/dd") & "# To #" & Format(Me.DateTimePicker2.Value, "yyyy/MM/dd") & "# "
 
                 End If
@@ -922,9 +922,9 @@ Public Class frmPayRollReportSelector3
 
                 ElseIf RadioButton6.Checked = True Then ' MAin Dept
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.ShiftID} = " & ShiftNameComboBox.SelectedValue & "   And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & "  And {View_Rpt_Acc_PreSalary.DeptName}  = '" & DeptNameComboBox.Text & "' And {View_Rpt_PayRoll_InOutDifference.AttDate}  In #" & Format(Me.DateTimePicker1.Value, "yyyy/MM/dd") & "# To #" & Format(Me.DateTimePicker2.Value, "yyyy/MM/dd") & "# "
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.ShiftID} = " & ShiftNameComboBox.SelectedValue & "   And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & "  And {View_Rpt_Acc_PreSalary.DeptName}  = '" & DeptNameComboBox.Text & "'   And {View_Rpt_Acc_PreSalary.SectionName}  = '" & SectionNameComboBox.Text & "' And {View_Rpt_PayRoll_InOutDifference.AttDate}  In #" & Format(Me.DateTimePicker1.Value, "yyyy/MM/dd") & "# To #" & Format(Me.DateTimePicker2.Value, "yyyy/MM/dd") & "# "
-                ElseIf RadioButton2.Checked = True ' Desig Wise
+                ElseIf RadioButton2.Checked = True Then ' Desig Wise
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.ShiftID} = " & ShiftNameComboBox.SelectedValue & "   And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & "  And {View_Rpt_Acc_PreSalary.Designame}  = '" & DesigNameComboBox.Text & "' And  {View_Rpt_PayRoll_InOutDifference.AttDate}  In #" & Format(Me.DateTimePicker1.Value, "yyyy/MM/dd") & "# To #" & Format(Me.DateTimePicker2.Value, "yyyy/MM/dd") & "# "
 
                 End If
@@ -932,12 +932,12 @@ Public Class frmPayRollReportSelector3
                 If RadioButton13.Checked = True Then ' Alii Emp
                     Flag = False
                     Filter = Empstatus & " And  {View_Rpt_Acc_PreSalary.EmpcatagoryID}  = " & CatagoryNameComboBox.SelectedValue & " And    {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_PayRoll_InOutDifference.AttDate} In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton6.Checked = True ' MAin Dept Wise
+                ElseIf RadioButton6.Checked = True Then ' MAin Dept Wise
                     Filter = Empstatus & " And   {View_Rpt_Acc_PreSalary.EmpcatagoryID}  = " & CatagoryNameComboBox.SelectedValue & " And   {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName}  = '" & DeptNameComboBox.Text & "' And {View_Rpt_PayRoll_InOutDifference.AttDate} In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton7.Checked = True 'Section Wise
+                ElseIf RadioButton7.Checked = True Then 'Section Wise
 
                     Filter = Empstatus & "  And  {View_Rpt_Acc_PreSalary.EmpcatagoryID}  = " & CatagoryNameComboBox.SelectedValue & " And  {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName}  = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.SectionName} = '" & SectionNameComboBox.Text & "' And{View_Rpt_PayRoll_InOutDifference.AttDate} In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton2.Checked = True ' Desig Wise 
+                ElseIf RadioButton2.Checked = True Then ' Desig Wise 
 
                     Filter = Empstatus & "  And  {View_Rpt_Acc_PreSalary.EmpcatagoryID}  = " & CatagoryNameComboBox.SelectedValue & " And   {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DesigName} = '" & DesigNameComboBox.Text & "' And  {View_Rpt_PayRoll_InOutDifference.AttDate} In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "yyyy/MM/dd") & "#"
 
@@ -955,17 +955,17 @@ Public Class frmPayRollReportSelector3
                 If RadioButton13.Checked = True Then ' Alii Emp
                     Flag = False
                     Filter = Empstatus & " And   {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_PayRoll_InOutDifference.AttDate} In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton6.Checked = True ' MAin Dept Wise
+                ElseIf RadioButton6.Checked = True Then ' MAin Dept Wise
                     Filter = Empstatus & " And   {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName}  = '" & DeptNameComboBox.Text & "' And {View_Rpt_PayRoll_InOutDifference.AttDate} In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton7.Checked = True 'Section Wise
+                ElseIf RadioButton7.Checked = True Then 'Section Wise
 
                     Filter = Empstatus & "  And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName}  = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.SectionName} = '" & SectionNameComboBox.Text & "' And{View_Rpt_PayRoll_InOutDifference.AttDate} In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton2.Checked = True ' Desig Wise 
+                ElseIf RadioButton2.Checked = True Then ' Desig Wise 
 
                     Filter = Empstatus & "  And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DesigName} = '" & DesigNameComboBox.Text & "' And  {View_Rpt_PayRoll_InOutDifference.AttDate} In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "yyyy/MM/dd") & "#"
 
                 End If
-            ElseIf RadioButton31.Checked = True 'By card 
+            ElseIf RadioButton31.Checked = True Then 'By card 
                 If RadioButton13.Checked = True Then ' All Emp
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
@@ -977,7 +977,7 @@ Public Class frmPayRollReportSelector3
                     Else
                         Filter = Empstatus & "  And   {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & " And  {View_Rpt_PayRoll_InOutDifference.AttDate} In #" & Format(Me.DateTimePicker1.Value, "yyyy/MM/dd") & "# To #" & Format(Me.DateTimePicker2.Value, "yyyy/MM/dd") & "#"
                     End If
-                ElseIf RadioButton6.Checked = True ' Main Dept
+                ElseIf RadioButton6.Checked = True Then ' Main Dept
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
                     Else
@@ -988,7 +988,7 @@ Public Class frmPayRollReportSelector3
                     Else
                         Filter = Empstatus & " And   {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & " And   {View_Rpt_PayRoll_InOutDifference.AttDate}  In #" & Format(Me.DateTimePicker1.Value, "yyyy/MM/dd") & "# To #" & Format(Me.DateTimePicker2.Value, "yyyy/MM/dd") & "#"
                     End If
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
                     Else
@@ -999,7 +999,7 @@ Public Class frmPayRollReportSelector3
                     Else
                         Filter = Empstatus & " And  {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.SectionName} = '" & SectionNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & " And  {View_Rpt_PayRoll_InOutDifference.AttDate} In #" & Format(Me.DateTimePicker1.Value, "yyyy/MM/dd") & "# To #" & Format(Me.DateTimePicker2.Value, "yyyy/MM/dd") & "#"
                     End If
-                ElseIf RadioButton2.Checked = True ' Desig Wise
+                ElseIf RadioButton2.Checked = True Then ' Desig Wise
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
                     Else
@@ -1011,16 +1011,16 @@ Public Class frmPayRollReportSelector3
                         Filter = Empstatus & "  And  {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DesigName} = '" & DesigNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & " And  {View_Rpt_PayRoll_InOutDifference.AttDate} In #" & Format(Me.DateTimePicker1.Value, "yyyy/MM/dd") & "# To #" & Format(Me.DateTimePicker2.Value, "yyyy/MM/dd") & "#"
                     End If
                 End If
-            ElseIf RadioButton32.Checked = True 'by Shift
+            ElseIf RadioButton32.Checked = True Then 'by Shift
                 Flag = False
                 If RadioButton13.Checked = True Then ' All  Emp
 
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_PayRoll_InOutDifference.AttDate} In #" & Format(Me.DateTimePicker1.Value, "yyyy/MM/dd") & "# To #" & Format(Me.DateTimePicker2.Value, "yyyy/MM/dd") & "#"
-                ElseIf RadioButton6.Checked = True ' MAin Dept
+                ElseIf RadioButton6.Checked = True Then ' MAin Dept
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And  {View_Rpt_PayRoll_InOutDifference.AttDate} In #" & Format(Me.DateTimePicker1.Value, "yyyy/MM/dd") & "# To #" & Format(Me.DateTimePicker2.Value, "yyyy/MM/dd") & "#"
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     Filter = Empstatus & "  And  {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.SectionName}= '" & SectionNameComboBox.Text & "' And  {View_Rpt_PayRoll_InOutDifference.AttDate}  In #" & Format(Me.DateTimePicker1.Value, "yyyy/MM/dd") & "# To #" & Format(Me.DateTimePicker2.Value, "yyyy/MM/dd") & "#"
-                ElseIf RadioButton2.Checked = True ' Desig Wise
+                ElseIf RadioButton2.Checked = True Then ' Desig Wise
                     Filter = Empstatus & "  And  {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DesigName} = '" & DesigNameComboBox.Text & "' And  {View_Rpt_PayRoll_InOutDifference.AttDate}  In #" & Format(Me.DateTimePicker1.Value, "yyyy/MM/dd") & "# To #" & Format(Me.DateTimePicker2.Value, "yyyy/MM/dd") & "#"
 
                 End If
@@ -1033,9 +1033,9 @@ Public Class frmPayRollReportSelector3
 
                 ElseIf RadioButton6.Checked = True Then ' MAin Dept
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & "  And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & "  And {View_Rpt_Acc_PreSalary.DeptName}  = '" & DeptNameComboBox.Text & "' And {View_Rpt_PayRoll_InOutDifference.AttDate}  In #" & Format(Me.DateTimePicker1.Value, "yyyy/MM/dd") & "# To #" & Format(Me.DateTimePicker2.Value, "yyyy/MM/dd") & "# "
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & "   And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & "  And {View_Rpt_Acc_PreSalary.DeptName}  = '" & DeptNameComboBox.Text & "'   And {View_Rpt_Acc_PreSalary.SectionName}  = '" & SectionNameComboBox.Text & "' And {View_Rpt_PayRoll_InOutDifference.AttDate}  In #" & Format(Me.DateTimePicker1.Value, "yyyy/MM/dd") & "# To #" & Format(Me.DateTimePicker2.Value, "yyyy/MM/dd") & "# "
-                ElseIf RadioButton2.Checked = True ' Desig Wise
+                ElseIf RadioButton2.Checked = True Then ' Desig Wise
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & "   And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & "  And {View_Rpt_Acc_PreSalary.Designame}  = '" & DesigNameComboBox.Text & "' And  {View_Rpt_PayRoll_InOutDifference.AttDate}  In #" & Format(Me.DateTimePicker1.Value, "yyyy/MM/dd") & "# To #" & Format(Me.DateTimePicker2.Value, "yyyy/MM/dd") & "# "
 
                 End If
@@ -1048,9 +1048,9 @@ Public Class frmPayRollReportSelector3
 
                 ElseIf RadioButton6.Checked = True Then ' MAin Dept
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.ShiftID} = " & ShiftNameComboBox.SelectedValue & "   And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & "  And {View_Rpt_Acc_PreSalary.DeptName}  = '" & DeptNameComboBox.Text & "' And {View_Rpt_PayRoll_InOutDifference.AttDate}  In #" & Format(Me.DateTimePicker1.Value, "yyyy/MM/dd") & "# To #" & Format(Me.DateTimePicker2.Value, "yyyy/MM/dd") & "# "
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.ShiftID} = " & ShiftNameComboBox.SelectedValue & "   And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & "  And {View_Rpt_Acc_PreSalary.DeptName}  = '" & DeptNameComboBox.Text & "'   And {View_Rpt_Acc_PreSalary.SectionName}  = '" & SectionNameComboBox.Text & "' And {View_Rpt_PayRoll_InOutDifference.AttDate}  In #" & Format(Me.DateTimePicker1.Value, "yyyy/MM/dd") & "# To #" & Format(Me.DateTimePicker2.Value, "yyyy/MM/dd") & "# "
-                ElseIf RadioButton2.Checked = True ' Desig Wise
+                ElseIf RadioButton2.Checked = True Then ' Desig Wise
                     Filter = Empstatus & " And {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.ShiftID} = " & ShiftNameComboBox.SelectedValue & "   And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & "  And {View_Rpt_Acc_PreSalary.Designame}  = '" & DesigNameComboBox.Text & "' And  {View_Rpt_PayRoll_InOutDifference.AttDate}  In #" & Format(Me.DateTimePicker1.Value, "yyyy/MM/dd") & "# To #" & Format(Me.DateTimePicker2.Value, "yyyy/MM/dd") & "# "
 
                 End If
@@ -1058,12 +1058,12 @@ Public Class frmPayRollReportSelector3
                 If RadioButton13.Checked = True Then ' Alii Emp
                     Flag = False
                     Filter = Empstatus & " And  {View_Rpt_Acc_PreSalary.EmpcatagoryID}  = " & CatagoryNameComboBox.SelectedValue & " And    {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_PayRoll_InOutDifference.AttDate} In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton6.Checked = True ' MAin Dept Wise
+                ElseIf RadioButton6.Checked = True Then ' MAin Dept Wise
                     Filter = Empstatus & " And   {View_Rpt_Acc_PreSalary.EmpcatagoryID}  = " & CatagoryNameComboBox.SelectedValue & " And   {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName}  = '" & DeptNameComboBox.Text & "' And {View_Rpt_PayRoll_InOutDifference.AttDate} In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton7.Checked = True 'Section Wise
+                ElseIf RadioButton7.Checked = True Then 'Section Wise
 
                     Filter = Empstatus & "  And  {View_Rpt_Acc_PreSalary.EmpcatagoryID}  = " & CatagoryNameComboBox.SelectedValue & " And  {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName}  = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.SectionName} = '" & SectionNameComboBox.Text & "' And{View_Rpt_PayRoll_InOutDifference.AttDate} In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton2.Checked = True ' Desig Wise 
+                ElseIf RadioButton2.Checked = True Then ' Desig Wise 
 
                     Filter = Empstatus & "  And  {View_Rpt_Acc_PreSalary.EmpcatagoryID}  = " & CatagoryNameComboBox.SelectedValue & " And   {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DesigName} = '" & DesigNameComboBox.Text & "' And  {View_Rpt_PayRoll_InOutDifference.AttDate} In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "yyyy/MM/dd") & "#"
 
@@ -1084,12 +1084,12 @@ Public Class frmPayRollReportSelector3
                 ElseIf RadioButton6.Checked = True Then 'By Dept
 
                     Filter = Empstatus & " And ({View_Rpt_PayRoll_AttList.AttDate}  in {?FromDate} to {?ToDate}) And {View_Rpt_Acc_AllEmployees.EmploymentID} = " & EmploymentNameComboBox.SelectedValue & "  And {View_Rpt_Acc_AllEmployees.DeptName}  = '" & DeptNameComboBox.Text & "'"
-                ElseIf RadioButton7.Checked = True ' Section wise
+                ElseIf RadioButton7.Checked = True Then ' Section wise
                     Filter = Empstatus & " And ({View_Rpt_PayRoll_AttList.AttDate}  in {?FromDate} to {?ToDate}) And {View_Rpt_Acc_AllEmployees.EmploymentID} = " & EmploymentNameComboBox.SelectedValue & "  And {View_Rpt_Acc_AllEmployees.DeptName}  = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_AllEmployees.SubDept1}  = '" & SectionNameComboBox.Text & "' "
-                ElseIf RadioButton2.Checked = True ' Desigtion Wise
+                ElseIf RadioButton2.Checked = True Then ' Desigtion Wise
                     Filter = Empstatus & " And ({View_Rpt_PayRoll_AttList.AttDate}  in {?FromDate} to {?ToDate}) And {View_Rpt_Acc_AllEmployees.EmploymentID} = " & EmploymentNameComboBox.SelectedValue & "  And {View_Rpt_Acc_AllEmployees.DesigName}  = '" & DesigNameComboBox.Text & "'"
                 End If
-            ElseIf RadioButton31.Checked = True 'By card 
+            ElseIf RadioButton31.Checked = True Then 'By card 
                 If RadioButton13.Checked = True Then ' All Emp
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
@@ -1113,7 +1113,7 @@ Public Class frmPayRollReportSelector3
                     Else
                         Filter = Empstatus & " And {View_Rpt_Acc_AllEmployees.CardNo} in " & Me.TextBox3.Text & " to " & Me.TextBox4.Text & "  And ({View_Rpt_PayRoll_AttList.AttDate}  in {?FromDate} to {?ToDate}) And {View_Rpt_Acc_AllEmployees.EmploymentID} = " & EmploymentNameComboBox.SelectedValue & "  And {View_Rpt_Acc_AllEmployees.DeptName}  = '" & DeptNameComboBox.Text & "'"
                     End If
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
                     Else
@@ -1124,7 +1124,7 @@ Public Class frmPayRollReportSelector3
                     Else
                         Filter = Empstatus & " And {View_Rpt_Acc_AllEmployees.CardNo} in " & Me.TextBox3.Text & " to " & Me.TextBox4.Text & "  And ({View_Rpt_PayRoll_AttList.AttDate}  in {?FromDate} to {?ToDate}) And {View_Rpt_Acc_AllEmployees.EmploymentID} = " & EmploymentNameComboBox.SelectedValue & "  And {View_Rpt_Acc_AllEmployees.DeptName}  = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_AllEmployees.subdept1}  = '" & SectionNameComboBox.Text & "' "
                     End If
-                ElseIf RadioButton2.Checked = True ' Desig Wise
+                ElseIf RadioButton2.Checked = True Then ' Desig Wise
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
                     Else
@@ -1136,7 +1136,7 @@ Public Class frmPayRollReportSelector3
                         Filter = Empstatus & "And {View_Rpt_Acc_AllEmployees.CardNo} in " & Me.TextBox3.Text & " to " & Me.TextBox4.Text & "   And ({View_Rpt_PayRoll_AttList.AttDate}  in {?FromDate} to {?ToDate}) And {View_Rpt_Acc_AllEmployees.EmploymentID} = " & EmploymentNameComboBox.SelectedValue & "  And {View_Rpt_Acc_AllEmployees.DesigName}  = '" & DesigNameComboBox.Text & "'"
                     End If
                 End If
-            ElseIf RadioButton32.Checked = True 'by Shift
+            ElseIf RadioButton32.Checked = True Then 'by Shift
                 Flag = False
                 If RadioButton13.Checked = True Then ' All Emp
 
@@ -1144,9 +1144,9 @@ Public Class frmPayRollReportSelector3
 
                 ElseIf RadioButton6.Checked = True Then ' MAin Dept
                     Filter = Empstatus & " And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & "  And ({View_Rpt_PayRoll_AttList.AttDate}  in {?FromDate} to {?ToDate}) And {View_Rpt_Acc_AllEmployees.EmploymentID} = " & EmploymentNameComboBox.SelectedValue & "  And {View_Rpt_Acc_AllEmployees.DeptName}  = '" & DeptNameComboBox.Text & "'"
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     Filter = Empstatus & " And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & "  And ({View_Rpt_PayRoll_AttList.AttDate}  in {?FromDate} to {?ToDate}) And {View_Rpt_Acc_AllEmployees.EmploymentID} = " & EmploymentNameComboBox.SelectedValue & "  And {View_Rpt_Acc_AllEmployees.DeptName}  = '" & DeptNameComboBox.Text & "'   And {View_Rpt_Acc_AllEmployees.SubDept1}  = '" & SectionNameComboBox.Text & "'"
-                ElseIf RadioButton2.Checked = True ' Desig Wise
+                ElseIf RadioButton2.Checked = True Then ' Desig Wise
                     Filter = Empstatus & " And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & "  And ({View_Rpt_PayRoll_AttList.AttDate}  in {?FromDate} to {?ToDate}) And {View_Rpt_Acc_AllEmployees.EmploymentID} = " & EmploymentNameComboBox.SelectedValue & "  And {View_Rpt_Acc_AllEmployees.Designame}  = '" & DesigNameComboBox.Text & "'"
 
                 End If
@@ -1159,9 +1159,9 @@ Public Class frmPayRollReportSelector3
 
                 ElseIf RadioButton6.Checked = True Then ' MAin Dept
                     Filter = Empstatus & " And {View_Rpt_Acc_AllEmployees.BranchID} = " & BranchNameComboBox.SelectedValue & "  And ({View_Rpt_PayRoll_AttList.AttDate}  in {?FromDate} to {?ToDate}) And {View_Rpt_Acc_AllEmployees.EmploymentID} = " & EmploymentNameComboBox.SelectedValue & "  And {View_Rpt_Acc_AllEmployees.DeptName}  = '" & DeptNameComboBox.Text & "'"
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     Filter = Empstatus & " And {View_Rpt_Acc_AllEmployees.BranchID} = " & BranchNameComboBox.SelectedValue & "  And ({View_Rpt_PayRoll_AttList.AttDate}  in {?FromDate} to {?ToDate}) And {View_Rpt_Acc_AllEmployees.EmploymentID} = " & EmploymentNameComboBox.SelectedValue & "  And {View_Rpt_Acc_AllEmployees.DeptName}  = '" & DeptNameComboBox.Text & "'   And {View_Rpt_Acc_AllEmployees.SubDept1}  = '" & SectionNameComboBox.Text & "'"
-                ElseIf RadioButton2.Checked = True ' Desig Wise
+                ElseIf RadioButton2.Checked = True Then ' Desig Wise
                     Filter = Empstatus & " And {View_Rpt_Acc_AllEmployees.BranchID} = " & BranchNameComboBox.SelectedValue & "  And ({View_Rpt_PayRoll_AttList.AttDate}  in {?FromDate} to {?ToDate}) And {View_Rpt_Acc_AllEmployees.EmploymentID} = " & EmploymentNameComboBox.SelectedValue & "  And {View_Rpt_Acc_AllEmployees.Designame}  = '" & DesigNameComboBox.Text & "'"
 
                 End If
@@ -1174,9 +1174,9 @@ Public Class frmPayRollReportSelector3
 
                 ElseIf RadioButton6.Checked = True Then ' MAin Dept
                     Filter = Empstatus & "And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & "   And {View_Rpt_Acc_AllEmployees.BranchID} = " & BranchNameComboBox.SelectedValue & "  And ({View_Rpt_PayRoll_AttList.AttDate}  in {?FromDate} to {?ToDate}) And {View_Rpt_Acc_AllEmployees.EmploymentID} = " & EmploymentNameComboBox.SelectedValue & "  And {View_Rpt_Acc_AllEmployees.DeptName}  = '" & DeptNameComboBox.Text & "'"
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     Filter = Empstatus & " And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & "  And {View_Rpt_Acc_AllEmployees.BranchID} = " & BranchNameComboBox.SelectedValue & "  And ({View_Rpt_PayRoll_AttList.AttDate}  in {?FromDate} to {?ToDate}) And {View_Rpt_Acc_AllEmployees.EmploymentID} = " & EmploymentNameComboBox.SelectedValue & "  And {View_Rpt_Acc_AllEmployees.DeptName}  = '" & DeptNameComboBox.Text & "'   And {View_Rpt_Acc_AllEmployees.SubDept1}  = '" & SectionNameComboBox.Text & "'"
-                ElseIf RadioButton2.Checked = True ' Desig Wise
+                ElseIf RadioButton2.Checked = True Then ' Desig Wise
                     Filter = Empstatus & " And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & "  And {View_Rpt_Acc_AllEmployees.BranchID} = " & BranchNameComboBox.SelectedValue & "  And ({View_Rpt_PayRoll_AttList.AttDate}  in {?FromDate} to {?ToDate}) And {View_Rpt_Acc_AllEmployees.EmploymentID} = " & EmploymentNameComboBox.SelectedValue & "  And {View_Rpt_Acc_AllEmployees.Designame}  = '" & DesigNameComboBox.Text & "'"
 
                 End If
@@ -1188,14 +1188,14 @@ Public Class frmPayRollReportSelector3
                 ElseIf RadioButton6.Checked = True Then 'By Dept
 
                     Filter = Empstatus & " And  {View_Rpt_Acc_AllEmployees.EmpcatagoryID}=" & CatagoryNameComboBox.SelectedValue & " And({View_Rpt_PayRoll_AttList.AttDate}  in {?FromDate} to {?ToDate}) And {View_Rpt_Acc_AllEmployees.EmploymentID} = " & EmploymentNameComboBox.SelectedValue & "  And {View_Rpt_Acc_AllEmployees.DeptName}  = '" & DeptNameComboBox.Text & "'"
-                ElseIf RadioButton7.Checked = True ' Section wise
+                ElseIf RadioButton7.Checked = True Then ' Section wise
                     Filter = Empstatus & " And {View_Rpt_Acc_AllEmployees.EmpcatagoryID}=" & CatagoryNameComboBox.SelectedValue & " And ({View_Rpt_PayRoll_AttList.AttDate}  in {?FromDate} to {?ToDate}) And {View_Rpt_Acc_AllEmployees.EmploymentID} = " & EmploymentNameComboBox.SelectedValue & "  And {View_Rpt_Acc_AllEmployees.DeptName}  = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_AllEmployees.SubDept1}  = '" & SectionNameComboBox.Text & "' "
-                ElseIf RadioButton2.Checked = True ' Desigtion Wise
+                ElseIf RadioButton2.Checked = True Then ' Desigtion Wise
                     Filter = Empstatus & " And {View_Rpt_Acc_AllEmployees.EmpcatagoryID}=" & CatagoryNameComboBox.SelectedValue & " And  ({View_Rpt_PayRoll_AttList.AttDate}  in {?FromDate} to {?ToDate}) And {View_Rpt_Acc_AllEmployees.EmploymentID} = " & EmploymentNameComboBox.SelectedValue & "  And {View_Rpt_Acc_AllEmployees.DesigName}  = '" & DesigNameComboBox.Text & "'"
                 End If
 
             End If
-            End If
+        End If
 
 
 
@@ -1212,14 +1212,14 @@ Public Class frmPayRollReportSelector3
                 If RadioButton13.Checked = True Then ' All 
 
                     Filter = "{View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_PayRoll_LateCommers.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton6.Checked = True ' Dept
+                ElseIf RadioButton6.Checked = True Then ' Dept
                     Filter = "{View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_PayRoll_LateCommers.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton7.Checked = True ' Section
+                ElseIf RadioButton7.Checked = True Then ' Section
                     Filter = " {View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_PayRoll_LateCommers.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.SubDept1} = '" & SectionNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.AttDate} In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton2.Checked = True ' Desig
+                ElseIf RadioButton2.Checked = True Then ' Desig
                     Filter = " {View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And  {View_Rpt_PayRoll_LateCommers.DesigName} = '" & DesigNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
                 End If
-            ElseIf RadioButton31.Checked = True ' card + late Commers 
+            ElseIf RadioButton31.Checked = True Then ' card + late Commers 
 
                 If RadioButton13.Checked = True Then
                     If TextBox3.Text.Length = 0 Then
@@ -1232,7 +1232,7 @@ Public Class frmPayRollReportSelector3
                     Else
                         Filter = "{View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_PayRoll_LateCommers.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & " And {View_Rpt_PayRoll_LateCommers.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
                     End If
-                ElseIf RadioButton6.Checked = True ' Dept+ CardNo+latecommers 
+                ElseIf RadioButton6.Checked = True Then ' Dept+ CardNo+latecommers 
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
                     Else
@@ -1243,7 +1243,7 @@ Public Class frmPayRollReportSelector3
                     Else
                         Filter = "{View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_PayRoll_LateCommers.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.CardNo} In " & TextBox3.Text & " To " & TextBox3.Text & " And {View_Rpt_PayRoll_LateCommers.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
                     End If
-                ElseIf RadioButton7.Checked = True ' Section+ CardNo+latecommers 
+                ElseIf RadioButton7.Checked = True Then ' Section+ CardNo+latecommers 
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
                     Else
@@ -1254,7 +1254,7 @@ Public Class frmPayRollReportSelector3
                     Else
                         Filter = "{View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And  {View_Rpt_PayRoll_LateCommers.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.SubDept1} = '" & SectionNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & " And {View_Rpt_PayRoll_LateCommers.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
                     End If
-                ElseIf RadioButton2.Checked = True ' Desig+ CardNo+latecommers 
+                ElseIf RadioButton2.Checked = True Then ' Desig+ CardNo+latecommers 
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
                     Else
@@ -1266,16 +1266,16 @@ Public Class frmPayRollReportSelector3
                         Filter = "{View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And  {View_Rpt_PayRoll_LateCommers.DesigName} = '" & DesigNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & " And {View_Rpt_PayRoll_LateCommers.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
                     End If
                 End If
-            ElseIf RadioButton32.Checked = True ' by Shift
+            ElseIf RadioButton32.Checked = True Then ' by Shift
                 Flag = False
                 If RadioButton13.Checked = True Then
                     ' Shift + late Commers 
                     Filter = "{View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And  {View_Rpt_PayRoll_LateCommers.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_PayRoll_LateCommers.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton6.Checked = True ' Shift + Dept
+                ElseIf RadioButton6.Checked = True Then ' Shift + Dept
                     Filter = "{View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And  {View_Rpt_PayRoll_LateCommers.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_PayRoll_LateCommers.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton7.Checked = True ' Shift + Section
+                ElseIf RadioButton7.Checked = True Then ' Shift + Section
                     Filter = "{View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And  {View_Rpt_PayRoll_LateCommers.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_PayRoll_LateCommers.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.SubDept1} = '" & SectionNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton2.Checked = True ' shift+ Desig
+                ElseIf RadioButton2.Checked = True Then ' shift+ Desig
                     Filter = "{View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And  {View_Rpt_PayRoll_LateCommers.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_PayRoll_LateCommers.DesigName} = '" & DesigNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
 
                 End If
@@ -1284,11 +1284,11 @@ Public Class frmPayRollReportSelector3
                 If RadioButton13.Checked = True Then ' All 
 
                     Filter = "{View_Rpt_PayRoll_LateCommers.BranchID} = " & BranchNameComboBox.SelectedValue & " And {View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_PayRoll_LateCommers.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton6.Checked = True ' Dept
+                ElseIf RadioButton6.Checked = True Then ' Dept
                     Filter = "{View_Rpt_PayRoll_LateCommers.BranchID} = " & BranchNameComboBox.SelectedValue & " And{View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_PayRoll_LateCommers.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton7.Checked = True ' Section
+                ElseIf RadioButton7.Checked = True Then ' Section
                     Filter = " {View_Rpt_PayRoll_LateCommers.BranchID} = " & BranchNameComboBox.SelectedValue & " And{View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_PayRoll_LateCommers.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.SubDept1} = '" & SectionNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.AttDate} In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton2.Checked = True ' Desig
+                ElseIf RadioButton2.Checked = True Then ' Desig
                     Filter = " {View_Rpt_PayRoll_LateCommers.BranchID} = " & BranchNameComboBox.SelectedValue & " And {View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And  {View_Rpt_PayRoll_LateCommers.DesigName} = '" & DesigNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
                 End If
             ElseIf RadioButton3.Checked = True Then
@@ -1296,11 +1296,11 @@ Public Class frmPayRollReportSelector3
                 If RadioButton13.Checked = True Then ' All 
 
                     Filter = "{View_Rpt_PayRoll_LateCommers.BranchID} = " & BranchNameComboBox.SelectedValue & "   And  {View_Rpt_PayRoll_LateCommers.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And  {View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_PayRoll_LateCommers.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton6.Checked = True ' Dept
+                ElseIf RadioButton6.Checked = True Then ' Dept
                     Filter = "{View_Rpt_PayRoll_LateCommers.BranchID} = " & BranchNameComboBox.SelectedValue & "  And  {View_Rpt_PayRoll_LateCommers.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_PayRoll_LateCommers.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton7.Checked = True ' Section
+                ElseIf RadioButton7.Checked = True Then ' Section
                     Filter = " {View_Rpt_PayRoll_LateCommers.BranchID} = " & BranchNameComboBox.SelectedValue & "  And  {View_Rpt_PayRoll_LateCommers.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_PayRoll_LateCommers.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.SubDept1} = '" & SectionNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.AttDate} In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton2.Checked = True ' Desig
+                ElseIf RadioButton2.Checked = True Then ' Desig
                     Filter = " {View_Rpt_PayRoll_LateCommers.BranchID} = " & BranchNameComboBox.SelectedValue & "  And  {View_Rpt_PayRoll_LateCommers.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And  {View_Rpt_PayRoll_LateCommers.DesigName} = '" & DesigNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
                 End If
             ElseIf RadioButton9.Checked = True Then ' by category
@@ -1308,11 +1308,11 @@ Public Class frmPayRollReportSelector3
                 If RadioButton13.Checked = True Then ' All 
 
                     Filter = "{View_Rpt_PayRoll_LateCommers.EmpCatagoryID} = " & CatagoryNameComboBox.SelectedValue & " And  {View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And  {View_Rpt_PayRoll_LateCommers.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton6.Checked = True ' Dept
+                ElseIf RadioButton6.Checked = True Then ' Dept
                     Filter = "{View_Rpt_PayRoll_LateCommers.EmpCatagoryID} = " & CatagoryNameComboBox.SelectedValue & " And  {View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And  {View_Rpt_PayRoll_LateCommers.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton7.Checked = True ' Section
+                ElseIf RadioButton7.Checked = True Then ' Section
                     Filter = "{View_Rpt_PayRoll_LateCommers.EmpCatagoryID} = " & CatagoryNameComboBox.SelectedValue & " And  {View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And   {View_Rpt_PayRoll_LateCommers.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.SubDept1} = '" & SectionNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.AttDate} In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton2.Checked = True ' Desig
+                ElseIf RadioButton2.Checked = True Then ' Desig
                     Filter = " {View_Rpt_PayRoll_LateCommers.EmpCatagoryID} = " & CatagoryNameComboBox.SelectedValue & " And  {View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And  {View_Rpt_PayRoll_LateCommers.DesigName} = '" & DesigNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
                 End If
             End If
@@ -1323,20 +1323,20 @@ Public Class frmPayRollReportSelector3
 
 
         If RadioButton5.Checked = True Then 'IN Time attendence rpt
-                Path = "" & frmLogin.ReportsPath & "\PayRoll\RptDailyAttendence.rpt"
+            Path = "" & frmLogin.ReportsPath & "\PayRoll\RptDailyAttendence.rpt"
             If RadioButton30.Checked = True Then ' By date
                 Flag = False
                 If RadioButton13.Checked = True Then ' All EMp
 
                     Filter = "{View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Att_DayGroup.AttDate} = #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy") & "# And {View_Att_DayGroup.InTime} >=  #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy hh:mm tt") & "#"
-                ElseIf RadioButton6.Checked = True ' DepWise
+                ElseIf RadioButton6.Checked = True Then ' DepWise
                     Filter = "{View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptID} = " & DeptNameComboBox.SelectedValue & " And {View_Att_DayGroup.AttDate} = #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy") & "# And {View_Att_DayGroup.InTime} >=  #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy hh:mm tt") & "#"
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     Filter = "{View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptID} = " & DeptNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.SectionName} = '" & SectionNameComboBox.Text & "'And {View_Att_DayGroup.AttDate} = #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy") & "# And {View_Att_DayGroup.InTime} >=  #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy hh:mm tt") & "#"
-                ElseIf RadioButton2.Checked = True ' Desig Wise
+                ElseIf RadioButton2.Checked = True Then ' Desig Wise
                     Filter = "{View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DesignationID} = " & DesigNameComboBox.SelectedValue & " And {View_Att_DayGroup.AttDate} = #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy") & "# And {View_Att_DayGroup.InTime} >=  #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy hh:mm tt") & "#"
                 End If
-            ElseIf RadioButton31.Checked = True ' By card
+            ElseIf RadioButton31.Checked = True Then ' By card
                 If RadioButton13.Checked = True Then ' All EMp
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
@@ -1348,7 +1348,7 @@ Public Class frmPayRollReportSelector3
                     Else
                         Filter = "{View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & " And {View_Att_DayGroup.AttDate} = #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy") & "# And {View_Att_DayGroup.InTime} >=  #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy hh:mm tt") & "#"
                     End If
-                ElseIf RadioButton6.Checked = True ' Dept Wise
+                ElseIf RadioButton6.Checked = True Then ' Dept Wise
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
                     Else
@@ -1359,7 +1359,7 @@ Public Class frmPayRollReportSelector3
                     Else
                         Filter = "{View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptID} = " & DeptNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & " And {View_Att_DayGroup.AttDate} = #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy") & "# And {View_Att_DayGroup.InTime} >=  #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy hh:mm tt") & "#"
                     End If
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
                     Else
@@ -1370,7 +1370,7 @@ Public Class frmPayRollReportSelector3
                     Else
                         Filter = "{View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And{View_Rpt_Acc_PreSalary.DeptID} = " & DeptNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.SectionName} = '" & SectionNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & " And {View_Att_DayGroup.AttDate} = #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy") & "# And {View_Att_DayGroup.InTime} >=  #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy hh:mm tt") & "#"
                     End If
-                ElseIf RadioButton2.Checked = True ' Desig Wise
+                ElseIf RadioButton2.Checked = True Then ' Desig Wise
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
                     Else
@@ -1382,16 +1382,16 @@ Public Class frmPayRollReportSelector3
                         Filter = "{View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And{View_Rpt_Acc_PreSalary.DesignationID} = " & DesigNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & " And {View_Att_DayGroup.AttDate} = #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy") & "# And {View_Att_DayGroup.InTime} >=  #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy hh:mm tt") & "#"
                     End If
                 End If
-            ElseIf RadioButton32.Checked = True ' by SHift
+            ElseIf RadioButton32.Checked = True Then ' by SHift
                 Flag = False
                 If RadioButton13.Checked = True Then ' All EMp
 
                     Filter = "{View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & "  And {View_Att_DayGroup.AttDate} = #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy") & "# And {View_Att_DayGroup.InTime} >=  #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy hh:mm tt") & "#"
-                ElseIf RadioButton6.Checked = True ' Dept Wise
+                ElseIf RadioButton6.Checked = True Then ' Dept Wise
                     Filter = "{View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptID} = " & DeptNameComboBox.SelectedValue & "And {View_Att_DayGroup.AttDate} = #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy") & "# And {View_Att_DayGroup.InTime} >=  #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy hh:mm tt") & "#"
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     Filter = "{View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptID} = " & DeptNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.SectionName} = '" & SectionNameComboBox.Text & "' And {View_Att_DayGroup.AttDate} = #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy") & "# And {View_Att_DayGroup.InTime} >=  #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy hh:mm tt") & "#"
-                ElseIf RadioButton2.Checked = True ' Desig Wise
+                ElseIf RadioButton2.Checked = True Then ' Desig Wise
                     Filter = "{View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DesignationID} = " & DesigNameComboBox.SelectedValue & " And {View_Att_DayGroup.AttDate} = #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy") & "# And {View_Att_DayGroup.InTime} >=  #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy hh:mm tt") & "#"
 
                 End If
@@ -1400,11 +1400,11 @@ Public Class frmPayRollReportSelector3
                 If RadioButton13.Checked = True Then ' All EMp
 
                     Filter = " {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Att_DayGroup.AttDate} = #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy") & "# And {View_Att_DayGroup.InTime} >=  #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy hh:mm tt") & "#"
-                ElseIf RadioButton6.Checked = True ' DepWise
+                ElseIf RadioButton6.Checked = True Then ' DepWise
                     Filter = " {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptID} = " & DeptNameComboBox.SelectedValue & " And {View_Att_DayGroup.AttDate} = #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy") & "# And {View_Att_DayGroup.InTime} >=  #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy hh:mm tt") & "#"
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     Filter = " {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptID} = " & DeptNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.SectionName} = '" & SectionNameComboBox.Text & "'And {View_Att_DayGroup.AttDate} = #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy") & "# And {View_Att_DayGroup.InTime} >=  #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy hh:mm tt") & "#"
-                ElseIf RadioButton2.Checked = True ' Desig Wise
+                ElseIf RadioButton2.Checked = True Then ' Desig Wise
                     Filter = " {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DesignationID} = " & DesigNameComboBox.SelectedValue & " And {View_Att_DayGroup.AttDate} = #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy") & "# And {View_Att_DayGroup.InTime} >=  #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy hh:mm tt") & "#"
                 End If
             ElseIf RadioButton3.Checked = True Then ' By shift And Branch 
@@ -1412,11 +1412,11 @@ Public Class frmPayRollReportSelector3
                 If RadioButton13.Checked = True Then ' All EMp
 
                     Filter = " {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & "  And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Att_DayGroup.AttDate} = #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy") & "# And {View_Att_DayGroup.InTime} >=  #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy hh:mm tt") & "#"
-                ElseIf RadioButton6.Checked = True ' DepWise
+                ElseIf RadioButton6.Checked = True Then ' DepWise
                     Filter = " {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & " And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & "  And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptID} = " & DeptNameComboBox.SelectedValue & " And {View_Att_DayGroup.AttDate} = #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy") & "# And {View_Att_DayGroup.InTime} >=  #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy hh:mm tt") & "#"
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     Filter = " {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & " And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & "  And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptID} = " & DeptNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.SectionName} = '" & SectionNameComboBox.Text & "'And {View_Att_DayGroup.AttDate} = #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy") & "# And {View_Att_DayGroup.InTime} >=  #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy hh:mm tt") & "#"
-                ElseIf RadioButton2.Checked = True ' Desig Wise
+                ElseIf RadioButton2.Checked = True Then ' Desig Wise
                     Filter = " {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & " And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & "  And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DesignationID} = " & DesigNameComboBox.SelectedValue & " And {View_Att_DayGroup.AttDate} = #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy") & "# And {View_Att_DayGroup.InTime} >=  #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy hh:mm tt") & "#"
                 End If
             ElseIf RadioButton9.Checked = True Then ' By category
@@ -1424,11 +1424,11 @@ Public Class frmPayRollReportSelector3
                 If RadioButton13.Checked = True Then ' All EMp
 
                     Filter = " {View_Rpt_Acc_PreSalary.EmpcatagoryID}  = " & CatagoryNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton6.Checked = True 'mani Dept
+                ElseIf RadioButton6.Checked = True Then 'mani Dept
                     Filter = " {View_Rpt_Acc_PreSalary.EmpcatagoryID}  = " & CatagoryNameComboBox.SelectedValue & " And  {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     Filter = "{View_Rpt_Acc_PreSalary.EmpcatagoryID}  = " & CatagoryNameComboBox.SelectedValue & " And  {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.SectionName} = '" & SectionNameComboBox.Text & "' And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton2.Checked = True '  Deig Wise 
+                ElseIf RadioButton2.Checked = True Then '  Deig Wise 
                     Filter = "{View_Rpt_Acc_PreSalary.EmpcatagoryID}  = " & CatagoryNameComboBox.SelectedValue & " And  {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DesigName} = '" & DesigNameComboBox.Text & "' And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
                 End If
             End If
@@ -1444,14 +1444,14 @@ Public Class frmPayRollReportSelector3
                 If RadioButton13.Checked = True Then ' All Emp
 
                     Filter = "{View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Att_DayGroup.AttDate} = #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy") & "# And {View_Att_DayGroup.OutTime} <=  #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy hh:mm tt") & "#"
-                ElseIf RadioButton6.Checked = True ' DepWise
+                ElseIf RadioButton6.Checked = True Then ' DepWise
                     Filter = "{View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Att_DayGroup.AttDate} = #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy") & "# And {View_Att_DayGroup.OutTime} <=  #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy hh:mm tt") & "#"
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     Filter = "{View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.SectionName} = '" & SectionNameComboBox.Text & "'And {View_Att_DayGroup.AttDate} = #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy") & "# And {View_Att_DayGroup.OutTime} <=  #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy hh:mm tt") & "#"
-                ElseIf RadioButton2.Checked = True ' Desig Wise
+                ElseIf RadioButton2.Checked = True Then ' Desig Wise
                     Filter = "{View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DesignationID} = " & DesigNameComboBox.SelectedValue & " And {View_Att_DayGroup.AttDate} = #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy") & "# And {View_Att_DayGroup.OutTime} <=  #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy hh:mm tt") & "#"
                 End If
-            ElseIf RadioButton31.Checked = True ' by Card
+            ElseIf RadioButton31.Checked = True Then ' by Card
                 If RadioButton13.Checked = True Then '  All Emp
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
@@ -1463,7 +1463,7 @@ Public Class frmPayRollReportSelector3
                     Else
                         Filter = "{View_Rpt_Acc_PreSalary.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & " And {View_Att_DayGroup.AttDate} = #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy") & "# And {View_Att_DayGroup.OutTime} <=  #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy hh:mm tt") & "#"
                     End If
-                ElseIf RadioButton6.Checked = True ' MAin DEpt
+                ElseIf RadioButton6.Checked = True Then ' MAin DEpt
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
                     Else
@@ -1474,7 +1474,7 @@ Public Class frmPayRollReportSelector3
                     Else
                         Filter = "{View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & " And {View_Att_DayGroup.AttDate} = #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy") & "# And {View_Att_DayGroup.OutTime} <=  #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy hh:mm tt") & "#"
                     End If
-                ElseIf RadioButton7.Checked = True ' Section Wise 
+                ElseIf RadioButton7.Checked = True Then ' Section Wise 
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
                     Else
@@ -1485,7 +1485,7 @@ Public Class frmPayRollReportSelector3
                     Else
                         Filter = "{View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.SectionName} = '" & SectionNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & " And {View_Att_DayGroup.AttDate} = #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy") & "# And {View_Att_DayGroup.OutTime} <=  #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy hh:mm tt") & "#"
                     End If
-                ElseIf RadioButton2.Checked = True ' Desig Wise
+                ElseIf RadioButton2.Checked = True Then ' Desig Wise
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
                     Else
@@ -1497,16 +1497,16 @@ Public Class frmPayRollReportSelector3
                         Filter = "{View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And{View_Rpt_Acc_PreSalary.DesignationID} = " & DesigNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & " And {View_Att_DayGroup.AttDate} = #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy") & "# And {View_Att_DayGroup.OutTime} <=  #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy hh:mm tt") & "#"
                     End If
                 End If
-            ElseIf RadioButton32.Checked = True ' by shift
+            ElseIf RadioButton32.Checked = True Then ' by shift
                 Flag = False
                 If RadioButton13.Checked = True Then ' All EMp
 
                     Filter = "{View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & "  And {View_Att_DayGroup.AttDate} = #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy") & "# And {View_Att_DayGroup.OutTime} <=  #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy hh:mm tt") & "#"
-                ElseIf RadioButton6.Checked = True ' Main Dept
+                ElseIf RadioButton6.Checked = True Then ' Main Dept
                     Filter = "{View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "'And {View_Att_DayGroup.AttDate} = #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy") & "# And {View_Att_DayGroup.OutTime} <=  #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy hh:mm tt") & "#"
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     Filter = "{View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.SectionName} = '" & SectionNameComboBox.Text & "' And {View_Att_DayGroup.AttDate} = #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy") & "# And {View_Att_DayGroup.OutTime} <=  #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy hh:mm tt") & "#"
-                ElseIf RadioButton2.Checked = True ' Desig Wise
+                ElseIf RadioButton2.Checked = True Then ' Desig Wise
                     Filter = "{View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DesignationID} = " & DesigNameComboBox.SelectedValue & " And {View_Att_DayGroup.AttDate} = #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy") & "# And {View_Att_DayGroup.OutTime} <=  #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy hh:mm tt") & "#"
 
                 End If
@@ -1515,11 +1515,11 @@ Public Class frmPayRollReportSelector3
                 If RadioButton13.Checked = True Then ' All EMp
 
                     Filter = " {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Att_DayGroup.AttDate} = #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy") & "# And {View_Att_DayGroup.InTime} >=  #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy hh:mm tt") & "#"
-                ElseIf RadioButton6.Checked = True ' DepWise
+                ElseIf RadioButton6.Checked = True Then ' DepWise
                     Filter = " {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Att_DayGroup.AttDate} = #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy") & "# And {View_Att_DayGroup.InTime} >=  #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy hh:mm tt") & "#"
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     Filter = " {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.SectionName} = '" & SectionNameComboBox.Text & "'And {View_Att_DayGroup.AttDate} = #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy") & "# And {View_Att_DayGroup.InTime} >=  #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy hh:mm tt") & "#"
-                ElseIf RadioButton2.Checked = True ' Desig Wise
+                ElseIf RadioButton2.Checked = True Then ' Desig Wise
                     Filter = " {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DesignationID} = " & DesigNameComboBox.SelectedValue & " And {View_Att_DayGroup.AttDate} = #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy") & "# And {View_Att_DayGroup.InTime} >=  #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy hh:mm tt") & "#"
                 End If
             ElseIf RadioButton3.Checked = True Then
@@ -1527,11 +1527,11 @@ Public Class frmPayRollReportSelector3
                 If RadioButton13.Checked = True Then ' All EMp
 
                     Filter = " {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & "And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & "  And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Att_DayGroup.AttDate} = #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy") & "# And {View_Att_DayGroup.InTime} >=  #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy hh:mm tt") & "#"
-                ElseIf RadioButton6.Checked = True ' DepWise
+                ElseIf RadioButton6.Checked = True Then ' DepWise
                     Filter = " {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & "And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & "  And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Att_DayGroup.AttDate} = #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy") & "# And {View_Att_DayGroup.InTime} >=  #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy hh:mm tt") & "#"
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     Filter = " {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & "And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & "  And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.SectionName} = '" & SectionNameComboBox.Text & "'And {View_Att_DayGroup.AttDate} = #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy") & "# And {View_Att_DayGroup.InTime} >=  #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy hh:mm tt") & "#"
-                ElseIf RadioButton2.Checked = True ' Desig Wise
+                ElseIf RadioButton2.Checked = True Then ' Desig Wise
                     Filter = " {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & "And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & "  And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DesignationID} = " & DesigNameComboBox.SelectedValue & " And {View_Att_DayGroup.AttDate} = #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy") & "# And {View_Att_DayGroup.InTime} >=  #" & Format(Me.DateTimePicker4.Value, "MM/dd/yyyy hh:mm tt") & "#"
                 End If
             ElseIf RadioButton9.Checked = True Then ' By category
@@ -1539,11 +1539,11 @@ Public Class frmPayRollReportSelector3
                 If RadioButton13.Checked = True Then ' All EMp
 
                     Filter = "{View_Rpt_Acc_PreSalary.EmpcatagoryID}  = " & CatagoryNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton6.Checked = True 'mani Dept
+                ElseIf RadioButton6.Checked = True Then 'mani Dept
                     Filter = " {View_Rpt_Acc_PreSalary.EmpcatagoryID}  = " & CatagoryNameComboBox.SelectedValue & " And  {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     Filter = "{View_Rpt_Acc_PreSalary.EmpcatagoryID}  = " & CatagoryNameComboBox.SelectedValue & " And  {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.SectionName} = '" & SectionNameComboBox.Text & "' And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton2.Checked = True '  Deig Wise 
+                ElseIf RadioButton2.Checked = True Then '  Deig Wise 
                     Filter = " {View_Rpt_Acc_PreSalary.EmpcatagoryID}  = " & CatagoryNameComboBox.SelectedValue & " And  {View_Rpt_Acc_PreSalary.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DesigName} = '" & DesigNameComboBox.Text & "' And {View_Att_DayGroup.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
                 End If
             End If
@@ -1559,14 +1559,14 @@ Public Class frmPayRollReportSelector3
                 Flag = False
                 If RadioButton13.Checked = True Then 'All Emp
                     Filter = "({View_Rpt_PayRoll_InOutDifference.AttDate} in {?FromDate} to {?ToDate})"
-                ElseIf RadioButton6.Checked = True ' MAin Dept
+                ElseIf RadioButton6.Checked = True Then ' MAin Dept
                     Filter = "{View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And ({View_Rpt_PayRoll_InOutDifference.AttDate} in {?FromDate} to {?ToDate})"
-                ElseIf RadioButton7.Checked = True ' Section
+                ElseIf RadioButton7.Checked = True Then ' Section
                     Filter = "{View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.SectionName} = '" & SectionNameComboBox.Text & "'And  ({View_Rpt_PayRoll_InOutDifference.AttDate} in {?FromDate} to {?ToDate})"
-                ElseIf RadioButton2.Checked = True ' Desig
+                ElseIf RadioButton2.Checked = True Then ' Desig
                     Filter = "{View_Rpt_Acc_PreSalary.DesigName} = '" & DesigNameComboBox.Text & "' And ({View_Rpt_PayRoll_InOutDifference.AttDate} in {?FromDate} to {?ToDate})"
                 End If
-            ElseIf RadioButton31.Checked = True ' By card No
+            ElseIf RadioButton31.Checked = True Then ' By card No
                 Filter = "({View_Rpt_PayRoll_InOutDifference.AttDate} in {?FromDate} to {?ToDate})"
                 If RadioButton13.Checked = True Then ' All Emp
                     If TextBox3.Text.Length = 0 Then
@@ -1581,7 +1581,7 @@ Public Class frmPayRollReportSelector3
                         Filter = "{View_Rpt_Acc_PreSalary.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & "  And ({View_Rpt_PayRoll_InOutDifference.AttDate} in {?FromDate} to {?ToDate})"
 
                     End If
-                ElseIf RadioButton6.Checked = True ' Main Dept
+                ElseIf RadioButton6.Checked = True Then ' Main Dept
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
                     Else
@@ -1594,7 +1594,7 @@ Public Class frmPayRollReportSelector3
                         Filter = "{View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & " And ({View_Rpt_PayRoll_InOutDifference.AttDate} in {?FromDate} to {?ToDate})"
 
                     End If
-                ElseIf RadioButton7.Checked = True ' Section Wiese
+                ElseIf RadioButton7.Checked = True Then ' Section Wiese
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
                     Else
@@ -1607,7 +1607,7 @@ Public Class frmPayRollReportSelector3
                         Filter = "{View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.SectionName} = '" & SectionNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & "  And ({View_Rpt_PayRoll_InOutDifference.AttDate} in {?FromDate} to {?ToDate})"
 
                     End If
-                ElseIf RadioButton2.Checked = True ' Desig Wise
+                ElseIf RadioButton2.Checked = True Then ' Desig Wise
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
                     Else
@@ -1621,7 +1621,7 @@ Public Class frmPayRollReportSelector3
 
                     End If
                 End If
-            ElseIf RadioButton32.Checked = True ' BY shift
+            ElseIf RadioButton32.Checked = True Then ' BY shift
 
                 Flag = False
 
@@ -1629,13 +1629,13 @@ Public Class frmPayRollReportSelector3
 
                     Filter = "{View_Rpt_Acc_PreSalary.ShiftID} = " & ShiftNameComboBox.SelectedValue & "   And ({View_Rpt_PayRoll_InOutDifference.AttDate} in {?FromDate} to {?ToDate})"
 
-                ElseIf RadioButton6.Checked = True ' Main Dept
+                ElseIf RadioButton6.Checked = True Then ' Main Dept
                     Filter = "{View_Rpt_Acc_PreSalary.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And ({View_Rpt_PayRoll_InOutDifference.AttDate} in {?FromDate} to {?ToDate})"
 
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     Filter = "{View_Rpt_Acc_PreSalary.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.SectionName} = '" & SectionNameComboBox.Text & "' And ({View_Rpt_PayRoll_InOutDifference.AttDate} in {?FromDate} to {?ToDate})"
 
-                ElseIf RadioButton2.Checked = True ' Desig Wise
+                ElseIf RadioButton2.Checked = True Then ' Desig Wise
                     Filter = "{View_Rpt_Acc_PreSalary.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DesigName} = '" & DesigNameComboBox.Text & "' And ({View_Rpt_PayRoll_InOutDifference.AttDate} in {?FromDate} to {?ToDate})"
 
                 End If
@@ -1643,37 +1643,37 @@ Public Class frmPayRollReportSelector3
                 Flag = False
                 If RadioButton13.Checked = True Then 'All Emp
                     Filter = "{View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & " And ({View_Rpt_PayRoll_InOutDifference.AttDate} in {?FromDate} to {?ToDate})"
-                ElseIf RadioButton6.Checked = True ' MAin Dept
+                ElseIf RadioButton6.Checked = True Then ' MAin Dept
                     Filter = "{View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & " And  {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And ({View_Rpt_PayRoll_InOutDifference.AttDate} in {?FromDate} to {?ToDate})"
-                ElseIf RadioButton7.Checked = True ' Section
+                ElseIf RadioButton7.Checked = True Then ' Section
                     Filter = "{View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & " And  {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.SectionName} = '" & SectionNameComboBox.Text & "'And  ({View_Rpt_PayRoll_InOutDifference.AttDate} in {?FromDate} to {?ToDate})"
-                ElseIf RadioButton2.Checked = True ' Desig
+                ElseIf RadioButton2.Checked = True Then ' Desig
                     Filter = "{View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & " And  {View_Rpt_Acc_PreSalary.DesigName} = '" & DesigNameComboBox.Text & "' And ({View_Rpt_PayRoll_InOutDifference.AttDate} in {?FromDate} to {?ToDate})"
                 End If
             ElseIf RadioButton3.Checked = True Then ' By SHift And Branch
                 Flag = False
                 If RadioButton13.Checked = True Then 'All Emp
                     Filter = "{View_Rpt_Acc_PreSalary.ShiftID} = " & ShiftNameComboBox.SelectedValue & "   And  {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & " And ({View_Rpt_PayRoll_InOutDifference.AttDate} in {?FromDate} to {?ToDate})"
-                ElseIf RadioButton6.Checked = True ' MAin Dept
+                ElseIf RadioButton6.Checked = True Then ' MAin Dept
                     Filter = "{View_Rpt_Acc_PreSalary.ShiftID} = " & ShiftNameComboBox.SelectedValue & "   And  {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & " And  {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And ({View_Rpt_PayRoll_InOutDifference.AttDate} in {?FromDate} to {?ToDate})"
-                ElseIf RadioButton7.Checked = True ' Section
+                ElseIf RadioButton7.Checked = True Then ' Section
                     Filter = "{View_Rpt_Acc_PreSalary.ShiftID} = " & ShiftNameComboBox.SelectedValue & "   And  {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & " And  {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.SectionName} = '" & SectionNameComboBox.Text & "'And  ({View_Rpt_PayRoll_InOutDifference.AttDate} in {?FromDate} to {?ToDate})"
-                ElseIf RadioButton2.Checked = True ' Desig
+                ElseIf RadioButton2.Checked = True Then ' Desig
                     Filter = "{View_Rpt_Acc_PreSalary.ShiftID} = " & ShiftNameComboBox.SelectedValue & "   And  {View_Rpt_Acc_PreSalary.BranchID} = " & BranchNameComboBox.SelectedValue & " And  {View_Rpt_Acc_PreSalary.DesigName} = '" & DesigNameComboBox.Text & "' And ({View_Rpt_PayRoll_InOutDifference.AttDate} in {?FromDate} to {?ToDate})"
                 End If
             ElseIf RadioButton9.Checked = True Then ' By category
                 Flag = False
                 If RadioButton13.Checked = True Then 'All Emp
                     Filter = " {View_Rpt_Acc_PreSalary.EmpcatagoryID}  = " & CatagoryNameComboBox.SelectedValue & " And  ({View_Rpt_PayRoll_InOutDifference.AttDate} in {?FromDate} to {?ToDate})"
-                ElseIf RadioButton6.Checked = True ' MAin Dept
+                ElseIf RadioButton6.Checked = True Then ' MAin Dept
                     Filter = " {View_Rpt_Acc_PreSalary.EmpcatagoryID}  = " & CatagoryNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And ({View_Rpt_PayRoll_InOutDifference.AttDate} in {?FromDate} to {?ToDate})"
-                ElseIf RadioButton7.Checked = True ' Section
+                ElseIf RadioButton7.Checked = True Then ' Section
                     Filter = " {View_Rpt_Acc_PreSalary.EmpcatagoryID}  = " & CatagoryNameComboBox.SelectedValue & " And {View_Rpt_Acc_PreSalary.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_PreSalary.SectionName} = '" & SectionNameComboBox.Text & "'And  ({View_Rpt_PayRoll_InOutDifference.AttDate} in {?FromDate} to {?ToDate})"
-                ElseIf RadioButton2.Checked = True ' Desig
+                ElseIf RadioButton2.Checked = True Then ' Desig
                     Filter = " {View_Rpt_Acc_PreSalary.EmpcatagoryID}  = " & CatagoryNameComboBox.SelectedValue & " And  {View_Rpt_Acc_PreSalary.DesigName} = '" & DesigNameComboBox.Text & "' And ({View_Rpt_PayRoll_InOutDifference.AttDate} in {?FromDate} to {?ToDate})"
                 End If
             End If
-            End If
+        End If
 
 
 
@@ -1686,14 +1686,14 @@ Public Class frmPayRollReportSelector3
                 If RadioButton13.Checked = True Then ' All 
 
                     Filter = "{View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And  {View_Rpt_PayRoll_LateCommers.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton6.Checked = True ' Dept
+                ElseIf RadioButton6.Checked = True Then ' Dept
                     Filter = "{View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And  {View_Rpt_PayRoll_LateCommers.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton7.Checked = True ' Section
+                ElseIf RadioButton7.Checked = True Then ' Section
                     Filter = "{View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And   {View_Rpt_PayRoll_LateCommers.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.SubDept1} = '" & SectionNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.AttDate} In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton2.Checked = True ' Desig
+                ElseIf RadioButton2.Checked = True Then ' Desig
                     Filter = " {View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And  {View_Rpt_PayRoll_LateCommers.DesigName} = '" & DesigNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
                 End If
-            ElseIf RadioButton31.Checked = True ' card + late Commers 
+            ElseIf RadioButton31.Checked = True Then ' card + late Commers 
 
                 If RadioButton13.Checked = True Then
                     If TextBox3.Text.Length = 0 Then
@@ -1706,7 +1706,7 @@ Public Class frmPayRollReportSelector3
                     Else
                         Filter = "{View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And  {View_Rpt_PayRoll_LateCommers.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & " And {View_Rpt_PayRoll_LateCommers.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
                     End If
-                ElseIf RadioButton6.Checked = True ' Dept+ CardNo+latecommers 
+                ElseIf RadioButton6.Checked = True Then ' Dept+ CardNo+latecommers 
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
                     Else
@@ -1717,7 +1717,7 @@ Public Class frmPayRollReportSelector3
                     Else
                         Filter = "{View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And  {View_Rpt_PayRoll_LateCommers.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.CardNo} In " & TextBox3.Text & " To " & TextBox3.Text & " And {View_Rpt_PayRoll_LateCommers.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
                     End If
-                ElseIf RadioButton7.Checked = True ' Section+ CardNo+latecommers 
+                ElseIf RadioButton7.Checked = True Then ' Section+ CardNo+latecommers 
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
                     Else
@@ -1728,7 +1728,7 @@ Public Class frmPayRollReportSelector3
                     Else
                         Filter = "{View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And  {View_Rpt_PayRoll_LateCommers.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.SubDept1} = '" & SectionNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & " And {View_Rpt_PayRoll_LateCommers.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
                     End If
-                ElseIf RadioButton2.Checked = True ' Desig+ CardNo+latecommers 
+                ElseIf RadioButton2.Checked = True Then ' Desig+ CardNo+latecommers 
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
                     Else
@@ -1740,16 +1740,16 @@ Public Class frmPayRollReportSelector3
                         Filter = "{View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And  {View_Rpt_PayRoll_LateCommers.DesigName} = '" & DesigNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & " And {View_Rpt_PayRoll_LateCommers.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
                     End If
                 End If
-            ElseIf RadioButton32.Checked = True ' By Shift
+            ElseIf RadioButton32.Checked = True Then ' By Shift
                 Flag = False
                 If RadioButton13.Checked = True Then
 
                     Filter = "{View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And  {View_Rpt_PayRoll_LateCommers.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_PayRoll_LateCommers.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton6.Checked = True ' Shift + Dept
+                ElseIf RadioButton6.Checked = True Then ' Shift + Dept
                     Filter = "{View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And  {View_Rpt_PayRoll_LateCommers.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_PayRoll_LateCommers.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton7.Checked = True ' Shift + Section
+                ElseIf RadioButton7.Checked = True Then ' Shift + Section
                     Filter = "{View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And  {View_Rpt_PayRoll_LateCommers.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_PayRoll_LateCommers.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.SubDept1} = '" & SectionNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton2.Checked = True ' shift+ Desig
+                ElseIf RadioButton2.Checked = True Then ' shift+ Desig
                     Filter = "{View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And  {View_Rpt_PayRoll_LateCommers.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_PayRoll_LateCommers.DesigName} = '" & DesigNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
 
                 End If
@@ -1758,11 +1758,11 @@ Public Class frmPayRollReportSelector3
                 If RadioButton13.Checked = True Then ' All 
 
                     Filter = "{View_Rpt_PayRoll_LateCommers.BranchID} = " & BranchNameComboBox.SelectedValue & " And {View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And  {View_Rpt_PayRoll_LateCommers.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton6.Checked = True ' Dept
+                ElseIf RadioButton6.Checked = True Then ' Dept
                     Filter = "{View_Rpt_PayRoll_LateCommers.BranchID} = " & BranchNameComboBox.SelectedValue & " And {View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And  {View_Rpt_PayRoll_LateCommers.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton7.Checked = True ' Section
+                ElseIf RadioButton7.Checked = True Then ' Section
                     Filter = "{View_Rpt_PayRoll_LateCommers.BranchID} = " & BranchNameComboBox.SelectedValue & " And {View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And   {View_Rpt_PayRoll_LateCommers.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.SubDept1} = '" & SectionNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.AttDate} In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton2.Checked = True ' Desig
+                ElseIf RadioButton2.Checked = True Then ' Desig
                     Filter = " {View_Rpt_PayRoll_LateCommers.BranchID} = " & BranchNameComboBox.SelectedValue & " And {View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And  {View_Rpt_PayRoll_LateCommers.DesigName} = '" & DesigNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
                 End If
             ElseIf RadioButton3.Checked = True Then  ' By shift And Branch 
@@ -1770,11 +1770,11 @@ Public Class frmPayRollReportSelector3
                 If RadioButton13.Checked = True Then ' All 
 
                     Filter = "{View_Rpt_PayRoll_LateCommers.BranchID} = " & BranchNameComboBox.SelectedValue & " And  {View_Rpt_PayRoll_LateCommers.ShiftID} = " & ShiftNameComboBox.SelectedValue & "  And {View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And  {View_Rpt_PayRoll_LateCommers.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton6.Checked = True ' Dept
+                ElseIf RadioButton6.Checked = True Then ' Dept
                     Filter = "{View_Rpt_PayRoll_LateCommers.BranchID} = " & BranchNameComboBox.SelectedValue & " And  {View_Rpt_PayRoll_LateCommers.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And  {View_Rpt_PayRoll_LateCommers.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton7.Checked = True ' Section
+                ElseIf RadioButton7.Checked = True Then ' Section
                     Filter = "{View_Rpt_PayRoll_LateCommers.BranchID} = " & BranchNameComboBox.SelectedValue & "And  {View_Rpt_PayRoll_LateCommers.ShiftID} = " & ShiftNameComboBox.SelectedValue & "  And {View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And   {View_Rpt_PayRoll_LateCommers.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.SubDept1} = '" & SectionNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.AttDate} In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton2.Checked = True ' Desig
+                ElseIf RadioButton2.Checked = True Then ' Desig
                     Filter = " {View_Rpt_PayRoll_LateCommers.BranchID} = " & BranchNameComboBox.SelectedValue & "And  {View_Rpt_PayRoll_LateCommers.ShiftID} = " & ShiftNameComboBox.SelectedValue & "  And {View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And  {View_Rpt_PayRoll_LateCommers.DesigName} = '" & DesigNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
                 End If
             ElseIf RadioButton9.Checked = True Then ' by category
@@ -1782,11 +1782,11 @@ Public Class frmPayRollReportSelector3
                 If RadioButton13.Checked = True Then ' All 
 
                     Filter = "{View_Rpt_PayRoll_LateCommers.EmpCatagoryID} = " & CatagoryNameComboBox.SelectedValue & " And  {View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And  {View_Rpt_PayRoll_LateCommers.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton6.Checked = True ' Dept
+                ElseIf RadioButton6.Checked = True Then ' Dept
                     Filter = "{View_Rpt_PayRoll_LateCommers.EmpCatagoryID} = " & CatagoryNameComboBox.SelectedValue & " And  {View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And  {View_Rpt_PayRoll_LateCommers.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton7.Checked = True ' Section
+                ElseIf RadioButton7.Checked = True Then ' Section
                     Filter = "{View_Rpt_PayRoll_LateCommers.EmpCatagoryID} = " & CatagoryNameComboBox.SelectedValue & " And  {View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And   {View_Rpt_PayRoll_LateCommers.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.SubDept1} = '" & SectionNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.AttDate} In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
-                ElseIf RadioButton2.Checked = True ' Desig
+                ElseIf RadioButton2.Checked = True Then ' Desig
                     Filter = " {View_Rpt_PayRoll_LateCommers.EmpCatagoryID} = " & CatagoryNameComboBox.SelectedValue & " And  {View_Rpt_PayRoll_LateCommers.ETID} = " & EmploymentNameComboBox.SelectedValue & " And  {View_Rpt_PayRoll_LateCommers.DesigName} = '" & DesigNameComboBox.Text & "' And {View_Rpt_PayRoll_LateCommers.AttDate}In #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
                 End If
             End If
@@ -1957,7 +1957,7 @@ Public Class frmPayRollReportSelector3
                     Filter = " {View_Emp_Snaps_Info.EmploymentID} = " & EmploymentNameComboBox.SelectedValue & " And  {MissingAttendence1;1.Designame}= '" & DesigNameComboBox.Text & "'"
                 End If
 
-            ElseIf RadioButton31.Checked = True ' By card 
+            ElseIf RadioButton31.Checked = True Then ' By card 
                 If RadioButton13.Checked = True Then
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
@@ -1970,7 +1970,7 @@ Public Class frmPayRollReportSelector3
 
                         Filter = "{View_Emp_Snaps_Info.EmploymentID} = " & EmploymentNameComboBox.SelectedValue & " And  {MissingAttendence1;1.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & ""
                     End If
-                ElseIf RadioButton6.Checked = True ' Dept 
+                ElseIf RadioButton6.Checked = True Then ' Dept 
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
                     Else
@@ -1983,7 +1983,7 @@ Public Class frmPayRollReportSelector3
 
                         Filter = "{View_Emp_Snaps_Info.EmploymentID} = " & EmploymentNameComboBox.SelectedValue & " And  {MissingAttendence1;1.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & " And  {MissingAttendence1;1.DeptName} = '" & DeptNameComboBox.Text & "' "
                     End If
-                ElseIf RadioButton7.Checked = True ' Section 
+                ElseIf RadioButton7.Checked = True Then ' Section 
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
                     Else
@@ -1996,7 +1996,7 @@ Public Class frmPayRollReportSelector3
 
                         Filter = "{View_Emp_Snaps_Info.EmploymentID} = " & EmploymentNameComboBox.SelectedValue & " And  {MissingAttendence1;1.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & " And   {MissingAttendence1;1.DeptName} = '" & DeptNameComboBox.Text & "' And {MissingAttendence1;1.SubDept1} = '" & SectionNameComboBox.Text & "' "
                     End If
-                ElseIf RadioButton2.Checked = True ' Desig 
+                ElseIf RadioButton2.Checked = True Then ' Desig 
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
                     Else
@@ -2010,20 +2010,20 @@ Public Class frmPayRollReportSelector3
                         Filter = "{View_Emp_Snaps_Info.EmploymentID} = " & EmploymentNameComboBox.SelectedValue & " And  {MissingAttendence1;1.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & " And   {MissingAttendence1;1.DesigName} = '" & DesigNameComboBox.Text & "' "
                     End If
                 End If
-            ElseIf RadioButton32.Checked = True ' By Shift
+            ElseIf RadioButton32.Checked = True Then ' By Shift
                 Flag = False ' 
                 If RadioButton13.Checked = True Then
 
                     Filter = "{View_Emp_Snaps_Info.EmploymentID} = " & EmploymentNameComboBox.SelectedValue & " And  {View_Emp_Snaps_Info.ShiftID} = " & ShiftNameComboBox.SelectedValue & " "
-                ElseIf RadioButton6.Checked = True ' Shift + Dept
+                ElseIf RadioButton6.Checked = True Then ' Shift + Dept
 
                     Filter = "{View_Emp_Snaps_Info.EmploymentID} = " & EmploymentNameComboBox.SelectedValue & " And  {View_Emp_Snaps_Info.ShiftID} = " & ShiftNameComboBox.SelectedValue & "  And   {MissingAttendence1;1.DeptName} = '" & DeptNameComboBox.Text & "'"
 
-                ElseIf RadioButton7.Checked = True ' Shift + Section
+                ElseIf RadioButton7.Checked = True Then ' Shift + Section
 
                     Filter = "{View_Emp_Snaps_Info.EmploymentID} = " & EmploymentNameComboBox.SelectedValue & " And  {View_Emp_Snaps_Info.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And   {MissingAttendence1;1.DeptName} = '" & DeptNameComboBox.Text & "' And {MissingAttendence1;1.SubDept1} = '" & SectionNameComboBox.Text & "'  "
 
-                ElseIf RadioButton2.Checked = True ' shift+ Desig
+                ElseIf RadioButton2.Checked = True Then ' shift+ Desig
                     Filter = "{View_Emp_Snaps_Info.EmploymentID} = " & EmploymentNameComboBox.SelectedValue & " And  {View_Emp_Snaps_Info.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And   {MissingAttendence1;1.DesigName} = '" & DesigNameComboBox.Text & "' "
 
                 End If
@@ -2075,14 +2075,14 @@ Public Class frmPayRollReportSelector3
                 If RadioButton13.Checked = True Then ' All EMp
 
                     Filter = "{View_Mian_OT_Late_Report.ETID} = " & EmploymentNameComboBox.SelectedValue & " And  {View_Mian_OT_Late_Report.Month} = " & Me.DateTimePicker1.Value.Month & " and {View_Mian_OT_Late_Report.Year} = " & Me.DateTimePicker1.Value.Year & ""
-                ElseIf RadioButton6.Checked = True 'mani Dept
+                ElseIf RadioButton6.Checked = True Then 'mani Dept
                     Filter = "{View_Mian_OT_Late_Report.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Mian_OT_Late_Report.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Mian_OT_Late_Report.Month} = " & Me.DateTimePicker1.Value.Month & " and {View_Mian_OT_Late_Report.Year} = " & Me.DateTimePicker1.Value.Year & ""
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     Filter = "{View_Mian_OT_Late_Report.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Mian_OT_Late_Report.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Mian_OT_Late_Report.SubDept1} = '" & SectionNameComboBox.Text & "' And {View_Mian_OT_Late_Report.Month} = " & Me.DateTimePicker1.Value.Month & " and {View_Mian_OT_Late_Report.Year} = " & Me.DateTimePicker1.Value.Year & ""
-                ElseIf RadioButton2.Checked = True '  Deig Wise 
+                ElseIf RadioButton2.Checked = True Then '  Deig Wise 
                     Filter = " {View_Mian_OT_Late_Report.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Mian_OT_Late_Report.DesigName} = '" & DesigNameComboBox.Text & "' And {View_Mian_OT_Late_Report.Month} = " & Me.DateTimePicker1.Value.Month & " and {View_Mian_OT_Late_Report.Year} = " & Me.DateTimePicker1.Value.Year & ""
                 End If
-            ElseIf RadioButton31.Checked = True 'by card 
+            ElseIf RadioButton31.Checked = True Then 'by card 
                 If RadioButton13.Checked = True Then ' ALl Emp
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
@@ -2094,7 +2094,7 @@ Public Class frmPayRollReportSelector3
                     Else
                         Filter = "{View_Mian_OT_Late_Report.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Mian_OT_Late_Report.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & " And {View_Mian_OT_Late_Report.Month} = " & Me.DateTimePicker1.Value.Month & " and {View_Mian_OT_Late_Report.Year} = " & Me.DateTimePicker1.Value.Year & ""
                     End If
-                ElseIf RadioButton6.Checked = True ' Main Dept
+                ElseIf RadioButton6.Checked = True Then ' Main Dept
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
                     Else
@@ -2105,7 +2105,7 @@ Public Class frmPayRollReportSelector3
                     Else
                         Filter = "{View_Mian_OT_Late_Report.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Mian_OT_Late_Report.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Mian_OT_Late_Report.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & " And {View_Mian_OT_Late_Report.Month} = " & Me.DateTimePicker1.Value.Month & " and {View_Mian_OT_Late_Report.Year} = " & Me.DateTimePicker1.Value.Year & ""
                     End If
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
                     Else
@@ -2116,7 +2116,7 @@ Public Class frmPayRollReportSelector3
                     Else
                         Filter = "{View_Mian_OT_Late_Report.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Mian_OT_Late_Report.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Mian_OT_Late_Report.SubDept1} = '" & SectionNameComboBox.Text & "' And {View_Mian_OT_Late_Report.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & " And {View_Mian_OT_Late_Report.Month} = " & Me.DateTimePicker1.Value.Month & " and {View_Mian_OT_Late_Report.Year} = " & Me.DateTimePicker1.Value.Year & ""
                     End If
-                ElseIf RadioButton2.Checked = True ' Desig Wise
+                ElseIf RadioButton2.Checked = True Then ' Desig Wise
                     If TextBox3.Text.Length = 0 Then
                         Flag = True
                     Else
@@ -2128,17 +2128,17 @@ Public Class frmPayRollReportSelector3
                         Filter = "{View_Mian_OT_Late_Report.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Mian_OT_Late_Report.DesigName} = '" & DesigNameComboBox.Text & "' And {View_Mian_OT_Late_Report.CardNo} In " & TextBox3.Text & " To " & TextBox4.Text & " And {View_Mian_OT_Late_Report.Month} = " & Me.DateTimePicker1.Value.Month & " and {View_Mian_OT_Late_Report.Year} = " & Me.DateTimePicker1.Value.Year & ""
                     End If
                 End If
-            ElseIf RadioButton32.Checked = True ' by Shift
+            ElseIf RadioButton32.Checked = True Then ' by Shift
                 Flag = False
                 'Filter = Empstatus & " And {View_Mian_OT_Late_Report.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Att_DayGroup.ShiftID} = " & ShiftNameComboBox.SelectedValue & ""
                 If RadioButton13.Checked = True Then ' All Emp
 
                     Filter = "{View_Mian_OT_Late_Report.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Mian_OT_Late_Report.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Mian_OT_Late_Report.Month} = " & Me.DateTimePicker1.Value.Month & " and {View_Mian_OT_Late_Report.Year} = " & Me.DateTimePicker1.Value.Year & ""
-                ElseIf RadioButton6.Checked = True ' Main Dept
+                ElseIf RadioButton6.Checked = True Then ' Main Dept
                     Filter = "{View_Mian_OT_Late_Report.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Mian_OT_Late_Report.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Mian_OT_Late_Report.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Mian_OT_Late_Report.Month} = " & Me.DateTimePicker1.Value.Month & " and {View_Mian_OT_Late_Report.Year} = " & Me.DateTimePicker1.Value.Year & ""
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     Filter = "{View_Mian_OT_Late_Report.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Mian_OT_Late_Report.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Mian_OT_Late_Report.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Mian_OT_Late_Report.SubDept1} = '" & SectionNameComboBox.Text & "' And {View_Mian_OT_Late_Report.Month} = " & Me.DateTimePicker1.Value.Month & " and {View_Mian_OT_Late_Report.Year} = " & Me.DateTimePicker1.Value.Year & ""
-                ElseIf RadioButton2.Checked = True ' Desig Wise
+                ElseIf RadioButton2.Checked = True Then ' Desig Wise
                     Filter = "{View_Mian_OT_Late_Report.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Mian_OT_Late_Report.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Mian_OT_Late_Report.DesigName} = '" & DesigNameComboBox.Text & "' And {View_Mian_OT_Late_Report.Month} = " & Me.DateTimePicker1.Value.Month & " and {View_Mian_OT_Late_Report.Year} = " & Me.DateTimePicker1.Value.Year & ""
 
                 End If
@@ -2147,11 +2147,11 @@ Public Class frmPayRollReportSelector3
                 If RadioButton13.Checked = True Then ' All Emp
 
                     Filter = " {View_Mian_OT_Late_Report.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Mian_OT_Late_Report.BranchID} = " & BranchNameComboBox.SelectedValue & " And {View_Mian_OT_Late_Report.Month} = " & Me.DateTimePicker1.Value.Month & " and {View_Mian_OT_Late_Report.Year} = " & Me.DateTimePicker1.Value.Year & ""
-                ElseIf RadioButton6.Checked = True ' Main Dept
+                ElseIf RadioButton6.Checked = True Then ' Main Dept
                     Filter = " {View_Mian_OT_Late_Report.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Mian_OT_Late_Report.BranchID} = " & BranchNameComboBox.SelectedValue & " And {View_Mian_OT_Late_Report.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Mian_OT_Late_Report.Month} = " & Me.DateTimePicker1.Value.Month & " and {View_Mian_OT_Late_Report.Year} = " & Me.DateTimePicker1.Value.Year & ""
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     Filter = "{View_Mian_OT_Late_Report.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Mian_OT_Late_Report.BranchID} = " & BranchNameComboBox.SelectedValue & " And {View_Mian_OT_Late_Report.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Mian_OT_Late_Report.SubDept1} = '" & SectionNameComboBox.Text & "' And {View_Mian_OT_Late_Report.Month} = " & Me.DateTimePicker1.Value.Month & " and {View_Mian_OT_Late_Report.Year} = " & Me.DateTimePicker1.Value.Year & ""
-                ElseIf RadioButton2.Checked = True ' Desig Wise
+                ElseIf RadioButton2.Checked = True Then ' Desig Wise
                     Filter = "{View_Mian_OT_Late_Report.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Mian_OT_Late_Report.BranchID} = " & ShiftNameComboBox.SelectedValue & " And {View_Mian_OT_Late_Report.DesigName} = '" & DesigNameComboBox.Text & "' And {View_Mian_OT_Late_Report.Month} = " & Me.DateTimePicker1.Value.Month & " and {View_Mian_OT_Late_Report.Year} = " & Me.DateTimePicker1.Value.Year & ""
 
                 End If
@@ -2160,11 +2160,11 @@ Public Class frmPayRollReportSelector3
                 If RadioButton13.Checked = True Then ' All Emp
 
                     Filter = " {View_Mian_OT_Late_Report.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Mian_OT_Late_Report.BranchID} = " & BranchNameComboBox.SelectedValue & " And {View_Mian_OT_Late_Report.ShiftID} = " & ShiftNameComboBox.SelectedValue & "  And {View_Mian_OT_Late_Report.Month} = " & Me.DateTimePicker1.Value.Month & " and {View_Mian_OT_Late_Report.Year} = " & Me.DateTimePicker1.Value.Year & ""
-                ElseIf RadioButton6.Checked = True ' Main Dept
+                ElseIf RadioButton6.Checked = True Then ' Main Dept
                     Filter = " {View_Mian_OT_Late_Report.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Mian_OT_Late_Report.BranchID} = " & BranchNameComboBox.SelectedValue & " And {View_Mian_OT_Late_Report.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Mian_OT_Late_Report.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Mian_OT_Late_Report.Month} = " & Me.DateTimePicker1.Value.Month & " and {View_Mian_OT_Late_Report.Year} = " & Me.DateTimePicker1.Value.Year & ""
-                ElseIf RadioButton7.Checked = True ' Section Wise
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
                     Filter = " {View_Mian_OT_Late_Report.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Mian_OT_Late_Report.BranchID} = " & BranchNameComboBox.SelectedValue & "And {View_Mian_OT_Late_Report.ShiftID} = " & ShiftNameComboBox.SelectedValue & "  And {View_Mian_OT_Late_Report.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Mian_OT_Late_Report.SubDept1} = '" & SectionNameComboBox.Text & "' And {View_Mian_OT_Late_Report.Month} = " & Me.DateTimePicker1.Value.Month & " and {View_Mian_OT_Late_Report.Year} = " & Me.DateTimePicker1.Value.Year & ""
-                ElseIf RadioButton2.Checked = True ' Desig Wise
+                ElseIf RadioButton2.Checked = True Then ' Desig Wise
                     Filter = "{View_Mian_OT_Late_Report.ETID} = " & EmploymentNameComboBox.SelectedValue & " And {View_Mian_OT_Late_Report.BranchID} = " & ShiftNameComboBox.SelectedValue & " And {View_Mian_OT_Late_Report.ShiftID} = " & ShiftNameComboBox.SelectedValue & " And {View_Mian_OT_Late_Report.DesigName} = '" & DesigNameComboBox.Text & "' And {View_Mian_OT_Late_Report.Month} = " & Me.DateTimePicker1.Value.Month & " and {View_Mian_OT_Late_Report.Year} = " & Me.DateTimePicker1.Value.Year & ""
 
                 End If
@@ -2227,6 +2227,34 @@ Public Class frmPayRollReportSelector3
             End If
         End If
 
+        If RadioButton20.Checked = True Then
+            Path = "" & frmLogin.ReportsPath & "\PayRoll\RptVisitAttendenceMail.rpt"
+            Flag = False
+            If RadioButton30.Checked = True Then '' By Date
+
+                Filter = "{View_Att_DayGroup.AttDate} In  #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
+
+            End If
+        End If
+        If RadioButton22.Checked = True Then
+            Path = "" & frmLogin.ReportsPath & "\PayRoll\RptOT.rpt"
+            Flag = False
+            If RadioButton30.Checked = True Then '' By Date
+
+
+                If RadioButton13.Checked = True Then ' All EMp
+
+                    Filter = "{View_Union_NE_OT.AttDate} In  #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
+                ElseIf RadioButton6.Checked = True Then 'mani Dept
+                    Filter = "{View_Rpt_Acc_AllEmployees_3.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Union_NE_OT.AttDate} In  #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
+                ElseIf RadioButton7.Checked = True Then ' Section Wise
+                    Filter = "{View_Rpt_Acc_AllEmployees_3.DeptName} = '" & DeptNameComboBox.Text & "' And {View_Rpt_Acc_AllEmployees_3.SubDept1} = '" & SectionNameComboBox.Text & "' And {View_Union_NE_OT.AttDate} In  #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
+                ElseIf RadioButton2.Checked = True Then '  Deig Wise 
+                    Filter = "{View_Rpt_Acc_AllEmployees_3.DesigName} = '" & DesigNameComboBox.Text & "' And {View_Union_NE_OT.AttDate} In  #" & Format(Me.DateTimePicker1.Value, "MM/dd/yyyy") & "# To #" & Format(Me.DateTimePicker2.Value, "MM/dd/yyyy") & "#"
+                End If
+            End If
+        End If
+
         If Flag = True Then
             MessageBox.Show("Start Card Number is Missing", "Missing Field", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
@@ -2237,6 +2265,9 @@ Public Class frmPayRollReportSelector3
 
 
     End Sub
+
+
+
     Dim Flag As Boolean = False
 
     Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton2.CheckedChanged

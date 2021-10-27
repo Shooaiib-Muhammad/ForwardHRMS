@@ -1262,6 +1262,416 @@ Update Order Option
 Used to sort self-referenced table's rows
 </summary>
 </member>
+<member name="T:ERP_HRMS.DSAUTO">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAUTO.View_Acc_RFD_PayDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAUTO.View_Emp_Meal_AttendanceDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAUTO.View_Acc_FairShopDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAUTO.tbl_Hrm_HolidaysDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAUTO.View_Acc_Emp_MaxAdvance_DedRateDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAUTO.tbl_Acc_ShortTermAdvancesDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAUTO.View_Acc_Adv_BalanceDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAUTO.tbl_Acc_RFD_PayDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAUTO.View_Acc_RFD_PayRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAUTO.View_Emp_Meal_AttendanceRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAUTO.View_Acc_FairShopRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAUTO.tbl_Hrm_HolidaysRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAUTO.View_Acc_Emp_MaxAdvance_DedRateRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAUTO.tbl_Acc_ShortTermAdvancesRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAUTO.View_Acc_Adv_BalanceRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAUTO.tbl_Acc_RFD_PayRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAUTO.View_Acc_RFD_PayRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAUTO.View_Emp_Meal_AttendanceRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAUTO.View_Acc_FairShopRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAUTO.tbl_Hrm_HolidaysRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAUTO.View_Acc_Emp_MaxAdvance_DedRateRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAUTO.tbl_Acc_ShortTermAdvancesRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAUTO.View_Acc_Adv_BalanceRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAUTO.tbl_Acc_RFD_PayRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAUTOTableAdapters.View_Acc_RFD_PayTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAUTOTableAdapters.View_Emp_Meal_AttendanceTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAUTOTableAdapters.View_Acc_FairShopTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAUTOTableAdapters.tbl_Hrm_HolidaysTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAUTOTableAdapters.View_Acc_Emp_MaxAdvance_DedRateTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAUTOTableAdapters.tbl_Acc_ShortTermAdvancesTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAUTOTableAdapters.View_Acc_Adv_BalanceTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAUTOTableAdapters.tbl_Acc_RFD_PayTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAUTOTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:ERP_HRMS.DSAUTOTableAdapters.TableAdapterManager.UpdateUpdatedRows(ERP_HRMS.DSAUTO,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:ERP_HRMS.DSAUTOTableAdapters.TableAdapterManager.UpdateInsertedRows(ERP_HRMS.DSAUTO,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:ERP_HRMS.DSAUTOTableAdapters.TableAdapterManager.UpdateDeletedRows(ERP_HRMS.DSAUTO,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:ERP_HRMS.DSAUTOTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:ERP_HRMS.DSAUTOTableAdapters.TableAdapterManager.UpdateAll(ERP_HRMS.DSAUTO)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAUTOTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAUTOTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAutoCalc">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAutoCalc.View_HRMSDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAutoCalc.tbl_Acc_Salary_TransactionsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAutoCalc.View_Rpt_PayRoll_EmpAttRecordDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAutoCalc.View_Salary_PaidLeavesDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAutoCalc.View_Rpt_Acc_OverTimeSumDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAutoCalc.tbl_Emp_Salary_Calculation_AdjDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAutoCalc.tbl_Acc_RFD_PayDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAutoCalc.View_Emp_Deduction_Days_NEWDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAutoCalc.View_HRMSRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAutoCalc.tbl_Acc_Salary_TransactionsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAutoCalc.View_Rpt_PayRoll_EmpAttRecordRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAutoCalc.View_Salary_PaidLeavesRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAutoCalc.View_Rpt_Acc_OverTimeSumRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAutoCalc.tbl_Emp_Salary_Calculation_AdjRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAutoCalc.tbl_Acc_RFD_PayRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAutoCalc.View_Emp_Deduction_Days_NEWRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAutoCalc.View_HRMSRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAutoCalc.tbl_Acc_Salary_TransactionsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAutoCalc.View_Rpt_PayRoll_EmpAttRecordRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAutoCalc.View_Salary_PaidLeavesRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAutoCalc.View_Rpt_Acc_OverTimeSumRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAutoCalc.tbl_Emp_Salary_Calculation_AdjRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAutoCalc.tbl_Acc_RFD_PayRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAutoCalc.View_Emp_Deduction_Days_NEWRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAutoCalcTableAdapters.View_HRMSTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAutoCalcTableAdapters.tbl_Acc_Salary_TransactionsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAutoCalcTableAdapters.View_Rpt_PayRoll_EmpAttRecordTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAutoCalcTableAdapters.View_Salary_PaidLeavesTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAutoCalcTableAdapters.View_Rpt_Acc_OverTimeSumTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAutoCalcTableAdapters.tbl_Emp_Salary_Calculation_AdjTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAutoCalcTableAdapters.tbl_Acc_RFD_PayTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAutoCalcTableAdapters.View_Emp_Deduction_Days_NEWTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAutoCalcTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:ERP_HRMS.DSAutoCalcTableAdapters.TableAdapterManager.UpdateUpdatedRows(ERP_HRMS.DSAutoCalc,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:ERP_HRMS.DSAutoCalcTableAdapters.TableAdapterManager.UpdateInsertedRows(ERP_HRMS.DSAutoCalc,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:ERP_HRMS.DSAutoCalcTableAdapters.TableAdapterManager.UpdateDeletedRows(ERP_HRMS.DSAutoCalc,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:ERP_HRMS.DSAutoCalcTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:ERP_HRMS.DSAutoCalcTableAdapters.TableAdapterManager.UpdateAll(ERP_HRMS.DSAutoCalc)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAutoCalcTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSAutoCalcTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
 <member name="T:ERP_HRMS.DSCalculateSalary">
 <summary>
 Represents a strongly typed in-memory cache of data.
@@ -1417,6 +1827,11 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
+<member name="T:ERP_HRMS.DSCalculateSalary.tbl_Acc_INCDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
 <member name="T:ERP_HRMS.DSCalculateSalary.tbl_PayRoll_ShortLeavesRow">
 <summary>
 Represents strongly named DataRow class.
@@ -1567,6 +1982,11 @@ Represents strongly named DataRow class.
 Represents strongly named DataRow class.
 </summary>
 </member>
+<member name="T:ERP_HRMS.DSCalculateSalary.tbl_Acc_INCRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
 <member name="T:ERP_HRMS.DSCalculateSalary.tbl_PayRoll_ShortLeavesRowChangeEvent">
 <summary>
 Row event argument class
@@ -1713,6 +2133,11 @@ Row event argument class
 </summary>
 </member>
 <member name="T:ERP_HRMS.DSCalculateSalary.tbl_Acc_RFD_PayRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSCalculateSalary.tbl_Acc_INCRowChangeEvent">
 <summary>
 Row event argument class
 </summary>
@@ -7393,6 +7818,11 @@ Update Order Option
 Used to sort self-referenced table's rows
 </summary>
 </member>
+<member name="T:ERP_HRMS.DSAbsent">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
 <member name="T:ERP_HRMS.DSAttAdj">
 <summary>
 Represents a strongly typed in-memory cache of data.
@@ -8083,6 +8513,71 @@ Row event argument class
 Row event argument class
 </summary>
 </member>
+<member name="T:ERP_HRMS.DataSet8">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DataSet8.MissingAttendence1DataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DataSet8.MissingAttendence1Row">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DataSet8.MissingAttendence1RowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:ERP_HRMS.DataSet8TableAdapters.MissingAttendence1TableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DataSet8TableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:ERP_HRMS.DataSet8TableAdapters.TableAdapterManager.UpdateUpdatedRows(ERP_HRMS.DataSet8,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:ERP_HRMS.DataSet8TableAdapters.TableAdapterManager.UpdateInsertedRows(ERP_HRMS.DataSet8,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:ERP_HRMS.DataSet8TableAdapters.TableAdapterManager.UpdateDeletedRows(ERP_HRMS.DataSet8,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:ERP_HRMS.DataSet8TableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:ERP_HRMS.DataSet8TableAdapters.TableAdapterManager.UpdateAll(ERP_HRMS.DataSet8)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DataSet8TableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:ERP_HRMS.DataSet8TableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
 <member name="T:ERP_HRMS.att2000DataSet">
 <summary>
 Represents a strongly typed in-memory cache of data.
@@ -8539,6 +9034,11 @@ Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
 <member name="T:ERP_HRMS.DSCalculateSalaryTableAdapters.tbl_Acc_RFD_PayTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:ERP_HRMS.DSCalculateSalaryTableAdapters.tbl_Acc_INCTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>

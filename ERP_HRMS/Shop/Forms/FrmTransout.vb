@@ -113,7 +113,7 @@
                         End Try
                         If CardNoLabel1.Text > 0 Then
                             If BasicSalary.Text <= 30000 Then
-                                Limt = 6000
+                                Limt = 7000
                             Else
                                 Limt = 10000
                             End If
@@ -298,7 +298,7 @@
                         FairPrice = 0
                     End Try
                     If BasicSalary.Text <= 30000 Then
-                        Limt = 6000
+                        Limt = 7000
                     Else
                         Limt = 10000
                     End If
@@ -314,7 +314,7 @@
                                 FairPrice = 0
                             End Try
                             If BasicSalary.Text <= 30000 Then
-                                Limt = 6000
+                                Limt = 7000
                             Else
                                 Limt = 10000
                             End If
@@ -346,7 +346,7 @@
                                 FairPrice = 0
                             End Try
                             If BasicSalary.Text <= 30000 Then
-                                Limt = 6000
+                                Limt = 7000
                             Else
                                 Limt = 10000
                             End If
@@ -467,7 +467,7 @@
                 FairPrice = 0
             End Try
             If BasicSalary.Text <= 30000 Then
-                Limt = 6000
+                Limt = 7000
             Else
                 Limt = 10000
             End If

@@ -28,6 +28,7 @@ Partial Class frmLeavesPR
         Dim ShiftNameLabel As System.Windows.Forms.Label
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.RadioButton11 = New System.Windows.Forms.RadioButton()
         Me.RadioButton10 = New System.Windows.Forms.RadioButton()
         Me.RadioButton9 = New System.Windows.Forms.RadioButton()
         Me.RadioButton8 = New System.Windows.Forms.RadioButton()
@@ -109,7 +110,6 @@ Partial Class frmLeavesPR
         Me.Tbl_Comp_InfoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Tbl_Comp_InfoTableAdapter = New ERP_HRMS.DSUserTableAdapters.tbl_Comp_InfoTableAdapter()
         Me.TableAdapterManager2 = New ERP_HRMS.DSUserTableAdapters.TableAdapterManager()
-        Me.RadioButton11 = New System.Windows.Forms.RadioButton()
         DesigNameLabel = New System.Windows.Forms.Label()
         BranchNameLabel = New System.Windows.Forms.Label()
         ShiftNameLabel = New System.Windows.Forms.Label()
@@ -197,6 +197,17 @@ Partial Class frmLeavesPR
         Me.GroupBox2.TabIndex = 18
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Report Selector"
+        '
+        'RadioButton11
+        '
+        Me.RadioButton11.AutoSize = True
+        Me.RadioButton11.ForeColor = System.Drawing.Color.Black
+        Me.RadioButton11.Location = New System.Drawing.Point(10, 362)
+        Me.RadioButton11.Name = "RadioButton11"
+        Me.RadioButton11.Size = New System.Drawing.Size(182, 21)
+        Me.RadioButton11.TabIndex = 49
+        Me.RadioButton11.Text = "Employee Leave Details "
+        Me.RadioButton11.UseVisualStyleBackColor = True
         '
         'RadioButton10
         '
@@ -1035,17 +1046,6 @@ Partial Class frmLeavesPR
         Me.TableAdapterManager2.tbl_MIS_UserTableAdapter = Nothing
         Me.TableAdapterManager2.UpdateOrder = ERP_HRMS.DSUserTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager2.UsersTableAdapter = Nothing
-        '
-        'RadioButton11
-        '
-        Me.RadioButton11.AutoSize = True
-        Me.RadioButton11.ForeColor = System.Drawing.Color.Black
-        Me.RadioButton11.Location = New System.Drawing.Point(10, 362)
-        Me.RadioButton11.Name = "RadioButton11"
-        Me.RadioButton11.Size = New System.Drawing.Size(182, 21)
-        Me.RadioButton11.TabIndex = 49
-        Me.RadioButton11.Text = "Employee Leave Details "
-        Me.RadioButton11.UseVisualStyleBackColor = True
         '
         'frmLeavesPR
         '

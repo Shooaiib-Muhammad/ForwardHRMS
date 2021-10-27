@@ -518,6 +518,7 @@ Partial Class frmMain
         Me.ToolStripDomain = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripUN = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripLoginDateTime = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.AutoAbsentGenerationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MainMenu.SuspendLayout()
         Me.Admin.SuspendLayout()
         Me.HRMenu.SuspendLayout()
@@ -540,7 +541,7 @@ Partial Class frmMain
         Me.MainMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem1})
         Me.MainMenu.Location = New System.Drawing.Point(0, 0)
         Me.MainMenu.Name = "MainMenu"
-        Me.MainMenu.Size = New System.Drawing.Size(1687, 24)
+        Me.MainMenu.Size = New System.Drawing.Size(1604, 24)
         Me.MainMenu.TabIndex = 4
         Me.MainMenu.Text = "MenuStrip2"
         '
@@ -2611,7 +2612,7 @@ Partial Class frmMain
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem194, Me.UserManagementToolStripMenuItem1, Me.ToolStripMenuItem198, Me.ToolStripMenuItem372, Me.TrainingManagmentToolStripMenuItem, Me.ToolStripMenuItem248, Me.EmployeeManagementToolStripMenuItem, Me.ToolStripMenuItem213, Me.ToolStripMenuItem220, Me.ToolStripMenuItem233, Me.ToolStripMenuItem240, Me.ToolStripMenuItem255, Me.ToolStripMenuItem264, Me.VisitorsToolStripMenuItem3, Me.ToolStripMenuItem327, Me.ToolStripMenuItem280, Me.ToolStripMenuItem270, Me.ToolStripMenuItem359, Me.EmployeeToolStripMenuItem, Me.FactoryVehiclesToolStripMenuItem, Me.GrievanceToolStripMenuItem1})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 24)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1687, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1604, 24)
         Me.MenuStrip1.TabIndex = 31
         Me.MenuStrip1.Text = "MenuStrip2"
         Me.MenuStrip1.Visible = False
@@ -2995,7 +2996,7 @@ Partial Class frmMain
         '
         'ToolStripMenuItem220
         '
-        Me.ToolStripMenuItem220.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AutoAttendanceToolStripMenuItem4, Me.ToolStripMenuItem221, Me.ToolStripMenuItem222, Me.ToolStripMenuItem223, Me.ToolStripMenuItem224, Me.ToolStripMenuItem225, Me.ToolStripMenuItem227, Me.ToolStripMenuItem228, Me.ToolStripMenuItem229, Me.ToolStripMenuItem230, Me.ToolStripMenuItem231, Me.ToolStripMenuItem232, Me.VistisAttendanceToolStripMenuItem, Me.ExtraOverTimeCalculationToolStripMenuItem, Me.AutoAttendanceEntryToolStripMenuItem, Me.ShortLeaveEntryToolStripMenuItem})
+        Me.ToolStripMenuItem220.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AutoAttendanceToolStripMenuItem4, Me.ToolStripMenuItem221, Me.ToolStripMenuItem222, Me.ToolStripMenuItem223, Me.ToolStripMenuItem224, Me.ToolStripMenuItem225, Me.ToolStripMenuItem227, Me.ToolStripMenuItem228, Me.ToolStripMenuItem229, Me.ToolStripMenuItem230, Me.ToolStripMenuItem231, Me.ToolStripMenuItem232, Me.VistisAttendanceToolStripMenuItem, Me.ExtraOverTimeCalculationToolStripMenuItem, Me.AutoAttendanceEntryToolStripMenuItem, Me.ShortLeaveEntryToolStripMenuItem, Me.AutoAbsentGenerationToolStripMenuItem})
         Me.ToolStripMenuItem220.Name = "ToolStripMenuItem220"
         Me.ToolStripMenuItem220.Size = New System.Drawing.Size(68, 20)
         Me.ToolStripMenuItem220.Text = "PayRoll"
@@ -3679,7 +3680,7 @@ Partial Class frmMain
         Me.Visitors.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripDomain, Me.ToolStripUN, Me.ToolStripLoginDateTime})
         Me.Visitors.Location = New System.Drawing.Point(0, 712)
         Me.Visitors.Name = "Visitors"
-        Me.Visitors.Size = New System.Drawing.Size(1687, 30)
+        Me.Visitors.Size = New System.Drawing.Size(1604, 30)
         Me.Visitors.TabIndex = 39
         Me.Visitors.Text = "Visitors"
         '
@@ -3701,7 +3702,7 @@ Partial Class frmMain
         Me.ToolStripUN.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right
         Me.ToolStripUN.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStripUN.Name = "ToolStripUN"
-        Me.ToolStripUN.Size = New System.Drawing.Size(962, 25)
+        Me.ToolStripUN.Size = New System.Drawing.Size(879, 25)
         Me.ToolStripUN.Spring = True
         Me.ToolStripUN.Text = "User Name:"
         Me.ToolStripUN.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -3717,13 +3718,19 @@ Partial Class frmMain
         Me.ToolStripLoginDateTime.Text = "Login Date Time:"
         Me.ToolStripLoginDateTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
+        'AutoAbsentGenerationToolStripMenuItem
+        '
+        Me.AutoAbsentGenerationToolStripMenuItem.Name = "AutoAbsentGenerationToolStripMenuItem"
+        Me.AutoAbsentGenerationToolStripMenuItem.Size = New System.Drawing.Size(252, 22)
+        Me.AutoAbsentGenerationToolStripMenuItem.Text = "Auto Absent Generation"
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.ClientSize = New System.Drawing.Size(1687, 742)
+        Me.ClientSize = New System.Drawing.Size(1604, 742)
         Me.Controls.Add(Me.Visitors)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.Admin)
@@ -4269,4 +4276,5 @@ Partial Class frmMain
     Friend WithEvents ShortLeaveEntryToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EmployeeEvaluationToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EvaluationReportsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AutoAbsentGenerationToolStripMenuItem As ToolStripMenuItem
 End Class

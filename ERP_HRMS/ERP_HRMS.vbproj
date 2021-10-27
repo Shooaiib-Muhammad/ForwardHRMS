@@ -28,7 +28,7 @@
     <ProductName>HRMS</ProductName>
     <PublisherName>Forward Group</PublisherName>
     <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
-    <ApplicationRevision>781</ApplicationRevision>
+    <ApplicationRevision>812</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -178,6 +178,19 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DSAnnualLeavesTransactions.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\DS\DSAUTO.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSAUTO.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\DS\DSAutoCalc.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSAutoCalc.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\DS\DSAutoCalc.vb">
+      <DependentUpon>DSAutoCalc.xsd</DependentUpon>
     </Compile>
     <Compile Include="Accounts\DS\DSCalculateSalary.vb">
       <DependentUpon>DSCalculateSalary.xsd</DependentUpon>
@@ -784,6 +797,11 @@
     <Compile Include="Madication\Reports\mediReports.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="PayRoll\DS\DSAbsent.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSAbsent.xsd</DependentUpon>
+    </Compile>
     <Compile Include="PayRoll\DS\DSAttAdj.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -795,10 +813,21 @@
     <Compile Include="PayRoll\DS\DSExcelEmpData.vb">
       <DependentUpon>DSExcelEmpData.xsd</DependentUpon>
     </Compile>
+    <Compile Include="PayRoll\forms\DataSet8.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet8.xsd</DependentUpon>
+    </Compile>
     <Compile Include="PayRoll\forms\frmAttAcessToDBOld.Designer.vb">
       <DependentUpon>frmAttAcessToDBOld.vb</DependentUpon>
     </Compile>
     <Compile Include="PayRoll\forms\frmAttAcessToDBOld.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayRoll\forms\frmAutoAbsent.Designer.vb">
+      <DependentUpon>frmAutoAbsent.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PayRoll\forms\frmAutoAbsent.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PayRoll\forms\frmAutoAttEmpEntry.Designer.vb">
@@ -1759,6 +1788,9 @@
     <EmbeddedResource Include="PayRoll\forms\frmAttAcessToDBOld.resx">
       <DependentUpon>frmAttAcessToDBOld.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PayRoll\forms\frmAutoAbsent.resx">
+      <DependentUpon>frmAutoAbsent.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PayRoll\forms\frmAutoAttEmpEntry.resx">
       <DependentUpon>frmAutoAttEmpEntry.vb</DependentUpon>
     </EmbeddedResource>
@@ -2098,6 +2130,28 @@
     </None>
     <None Include="Accounts\DS\DSAnnualLeavesTransactions.xss">
       <DependentUpon>DSAnnualLeavesTransactions.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DSAUTO.xsc">
+      <DependentUpon>DSAUTO.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DSAUTO.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSAUTO.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Accounts\DS\DSAUTO.xss">
+      <DependentUpon>DSAUTO.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DSAutoCalc.xsc">
+      <DependentUpon>DSAutoCalc.xsd</DependentUpon>
+    </None>
+    <None Include="Accounts\DS\DSAutoCalc.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSAutoCalc.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Accounts\DS\DSAutoCalc.xss">
+      <DependentUpon>DSAutoCalc.xsd</DependentUpon>
     </None>
     <None Include="Accounts\DS\DSDeptsForPayrollReport.xsc">
       <DependentUpon>DSDeptsForPayrollReport.xsd</DependentUpon>
@@ -2654,6 +2708,17 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="PayRoll\DS\DSAbsent.xsc">
+      <DependentUpon>DSAbsent.xsd</DependentUpon>
+    </None>
+    <None Include="PayRoll\DS\DSAbsent.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSAbsent.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="PayRoll\DS\DSAbsent.xss">
+      <DependentUpon>DSAbsent.xsd</DependentUpon>
+    </None>
     <None Include="PayRoll\DS\DSAttAdj.xsc">
       <DependentUpon>DSAttAdj.xsd</DependentUpon>
     </None>
@@ -2664,6 +2729,17 @@
     </None>
     <None Include="PayRoll\DS\DSAttAdj.xss">
       <DependentUpon>DSAttAdj.xsd</DependentUpon>
+    </None>
+    <None Include="PayRoll\forms\DataSet8.xsc">
+      <DependentUpon>DataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="PayRoll\forms\DataSet8.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet8.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="PayRoll\forms\DataSet8.xss">
+      <DependentUpon>DataSet8.xsd</DependentUpon>
     </None>
     <None Include="Shop\DS\DSint.xsc">
       <DependentUpon>DSint.xsd</DependentUpon>

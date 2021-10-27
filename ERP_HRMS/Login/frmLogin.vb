@@ -123,7 +123,12 @@
         'Attributes = "SERVER=" & "Server" & Chr(0)
 
         'Try
-        Attributes = "SERVER=" & "Server" & Chr(0)
+        'Attributes = "SERVER=" & "server" & Chr(0)
+
+        Attributes = "SERVER=" & "192.168.10.1" & Chr(0)
+
+
+
         'Catch ex As Exception
         '    Attributes = "SERVER=" & "192.168.15.1" & Chr(0)
         'End Try

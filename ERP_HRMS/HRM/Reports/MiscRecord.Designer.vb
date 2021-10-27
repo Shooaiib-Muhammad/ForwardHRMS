@@ -109,6 +109,7 @@ Partial Class MiscRecord
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.RadioButton18 = New System.Windows.Forms.RadioButton()
         Me.RadioButton20 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton17 = New System.Windows.Forms.RadioButton()
         DeptNameLabel = New System.Windows.Forms.Label()
         SectionNameLabel = New System.Windows.Forms.Label()
         DesigNameLabel = New System.Windows.Forms.Label()
@@ -197,6 +198,7 @@ Partial Class MiscRecord
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.RadioButton17)
         Me.GroupBox1.Controls.Add(Me.RadioButton16)
         Me.GroupBox1.Controls.Add(Me.RadioButton15)
         Me.GroupBox1.Controls.Add(Me.RadioButton14)
@@ -677,6 +679,7 @@ Partial Class MiscRecord
         Me.TableAdapterManager.tbl_Acc_Salary1TableAdapter = Nothing
         Me.TableAdapterManager.tbl_Acc_Salary2TableAdapter = Nothing
         Me.TableAdapterManager.tbl_Acc_SalaryTableAdapter = Nothing
+        Me.TableAdapterManager.tbl_disability_descptionTableAdapter = Nothing
         Me.TableAdapterManager.tbl_HRM_App_AuthorityTableAdapter = Nothing
         Me.TableAdapterManager.tbl_HRM_BankTableAdapter = Nothing
         Me.TableAdapterManager.tbl_HRM_BranchTableAdapter = Nothing
@@ -685,6 +688,7 @@ Partial Class MiscRecord
         Me.TableAdapterManager.tbl_HRM_DeptTableAdapter = Me.Tbl_HRM_DeptTableAdapter
         Me.TableAdapterManager.tbl_HRM_Designation1TableAdapter = Nothing
         Me.TableAdapterManager.tbl_HRM_DesignationTableAdapter = Me.Tbl_HRM_DesignationTableAdapter
+        Me.TableAdapterManager.tbl_HRM_Emp_Info1TableAdapter = Nothing
         Me.TableAdapterManager.tbl_HRM_Emp_InfoTableAdapter = Nothing
         Me.TableAdapterManager.tbl_Hrm_Emp_NoticesTableAdapter = Nothing
         Me.TableAdapterManager.tbl_HRM_EmpCatagoryTableAdapter = Nothing
@@ -1066,6 +1070,17 @@ Partial Class MiscRecord
         Me.RadioButton20.Text = "All "
         Me.RadioButton20.UseVisualStyleBackColor = True
         '
+        'RadioButton17
+        '
+        Me.RadioButton17.AutoSize = True
+        Me.RadioButton17.ForeColor = System.Drawing.Color.Black
+        Me.RadioButton17.Location = New System.Drawing.Point(278, 285)
+        Me.RadioButton17.Name = "RadioButton17"
+        Me.RadioButton17.Size = New System.Drawing.Size(170, 21)
+        Me.RadioButton17.TabIndex = 50
+        Me.RadioButton17.Text = "Employee Pessi Salary"
+        Me.RadioButton17.UseVisualStyleBackColor = True
+        '
         'MiscRecord
         '
         Me.AcceptButton = Me.btnRptShow
@@ -1195,4 +1210,5 @@ Partial Class MiscRecord
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents RadioButton18 As RadioButton
     Friend WithEvents RadioButton20 As RadioButton
+    Friend WithEvents RadioButton17 As RadioButton
 End Class

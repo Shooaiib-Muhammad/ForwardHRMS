@@ -467,7 +467,7 @@ Public Class frmMonthlySalary
 
         intTotalSubtracts = CalculateSubtracts(Val(AmountLabel1.Text), Val(Label33.Text), Val(EOBILabel2.Text), Val(TaxDeductionLabel2.Text), Val(RentDeductionLabel1.Text), Val(lblShortDeducted.Text), IntMealDeductionValue, Val(FairAmountLabel3.Text), Val(RFAMTLabel1.Text))
         'intTotalSubtracts = CalculateSubtracts(Val(AmountLabel1.Text), Val(Label33.Text), Val(EOBILabel2.Text), Val(TaxDeductionLabel2.Text), Val(RentDeductionLabel1.Text), 0)
-        intTotalAdds = CalculateAdds(intDueSalary, Val(TravelAllowanceLabel2.Text), Val(EducationAllowanceLabel2.Text), intMealPayable, Val(SpecialAllowanceLabel2.Text), intOverTimePayable, SaniorityValue, Val(AccommodationLabel2.Text), Val(PerDTAPayable.Text), Val(DailyTA.Text))
+        intTotalAdds = CalculateAdds(intDueSalary, Val(TravelAllowanceLabel2.Text), Val(EducationAllowanceLabel2.Text), intMealPayable, Val(SpecialAllowanceLabel2.Text), intOverTimePayable, SaniorityValue(Val(LabelSenAllowance.Text)), Val(AccommodationLabel2.Text), Val(PerDTAPayable.Text), Val(DailyTA.Text))
         intFinalSalary = intTotalAdds - intTotalSubtracts
 
         LblTotalMealDeduction.Text = Math.Round(IntMealDeductionValue)
@@ -572,7 +572,7 @@ Public Class frmMonthlySalary
         Dim SPOTAmount As Integer
         Dim Bonus, BADV As Integer
         Dim SPLeave As Double
-
+        Dim Incentive As Double = 0
         BasicSalary = Val(GrossSalaryLabel2.Text)
         PerHourSalary = Math.Round(BasicSalary / 26 / 8, 2)
         OTHours = RoundSPOTHours(Val(SPLabel1.Text))
@@ -605,8 +605,18 @@ Public Class frmMonthlySalary
         Catch ex As Exception
             SPLeave = 0
         End Try
+
         SPOTAmount = ((OTHours * PerHourSalary) * 2)
-        Dim total As Double = Val(lblSalary.Text) + SPOTAmount + Bonus - BADV
+        Try
+            If Me.Tbl_Acc_INCTableAdapter.Fill(Me.DSCalculateSalary.tbl_Acc_INC, Me.EmpIDLabel2.Text, Me.DateTimePicker1.Value.Month, Me.DateTimePicker1.Value.Year) > 0 Then
+                Incentive = Me.DSCalculateSalary.tbl_Acc_INC.Rows(0).Item("Amt")
+            Else
+                Incentive = 0
+            End If
+        Catch ex As System.Exception
+            Incentive = 0
+        End Try
+        Dim total As Double = Val(lblSalary.Text) + SPOTAmount + Bonus - BADV + Incentive
         Dim FinalRFD As Double = total Mod 500
         If FinalRFD > 0 And Label42.Text = "Cash" Then
             FinalRFD = 500 - FinalRFD
@@ -616,8 +626,8 @@ Public Class frmMonthlySalary
 
         Dim RFDPay As Double = Val(RFAMTLabel1.Text)
         Try
-            Me.Tbl_Acc_Salary_TransactionsTableAdapter.Insert(Val(EmpIDLabel2.Text), Val(GrossSalaryLabel2.Text), Val(TaxDeductionLabel2.Text), Val(RentDeductionLabel1.Text), Val(EOBILabel2.Text), Val(TravelAllowanceLabel2.Text), Val(EducationAllowanceLabel2.Text), Val(SpecialAllowanceLabel2.Text), Val(MealAllowanceLabel2.Text), PaymentModeLabel2.Text, Val(AdvSumLabel1.Text), Val(Label33.Text), Val(TotalDedLabel1.Text) + Val(Label33.Text), Val(lblRemaining.Text) - Val(Label33.Text) - BADV, Val(AmountLabel1.Text), Nothing, Val(CasualLeaveLabel1.Text), Val(M1Label1.Text), Val(M2Label1.Text), SPLeave, Val(OTALLabel1.Text), Val(PaidLeavesLabel2.Text), Val(UnPaidLeavesLabel2.Text), Val(TotalFullDaysLabel1.Text), Val(TotalHalfDaysLabel1.Text), Val(lblOverTimeHours.Text), Val(lblOverTime.Text), Val(lblAbsents.Text), Val(lblTotalDaysWorked.Text), Val(lblTotalPayableDays.Text), Val(lblTotalMeal.Text), Math.Round(Val(GrossSalaryLabel2.Text) / DayCalc), Math.Round((Val(GrossSalaryLabel2.Text) / DayCalc) * Val(lblTotalPayableDays.Text)), Val(lblSalary.Text), FinancialPeriodComboBox.SelectedValue, "#01/" & DateTimePicker1.Value.Month & "/" & DateTimePicker1.Value.Year & "#", Val(lblMonthDays.Text), Val(lblSundays.Text), Val(HolidayCountLabel1.Text), Val(lblExtraDays.Text), Val(lblWorkingDays.Text), Now.Date, "Normal", "False", "True", Val(lblAdds.Text), Val(lblBeforeFinal.Text) + BADV, Val(lblTotalPayableDays.Text) - Val(PaidLeavesLabel2.Text), Val(MorningShortMinsLabel1.Text), Val(EveningShortMinsLabel1.Text), Val(lblShortAmt.Text), Val(lblShortDeducted.Text), PessiCont, PessiSalary, PessiGrossSalary, IntDedduction, SaniorityValue, Val(Me.EmpCountLabel1.Text), Val(LblTotalMealDeduction.Text), Val(AccommodationLabel2.Text), Val(MaskedTextBox1.Text), Val(MaskedTextBox2.Text), Val(TextBox4.Text), GradeLabel1.Text, DesigNameLabel1.Text, MainDeptLabel1.Text, SubDept1Label1.Text, OTHours, SPOTAmount, Val(FairAmountLabel3.Text), RFDPay, FinalRFD, Bonus, BADV)
-            If SaniorityValue() > 0 Then
+            Me.Tbl_Acc_Salary_TransactionsTableAdapter.Insert(Val(EmpIDLabel2.Text), Val(GrossSalaryLabel2.Text), Val(TaxDeductionLabel2.Text), Val(RentDeductionLabel1.Text), Val(EOBILabel2.Text), Val(TravelAllowanceLabel2.Text), Val(EducationAllowanceLabel2.Text), Val(SpecialAllowanceLabel2.Text), Val(MealAllowanceLabel2.Text), PaymentModeLabel2.Text, Val(AdvSumLabel1.Text), Val(Label33.Text), Val(TotalDedLabel1.Text) + Val(Label33.Text), Val(lblRemaining.Text) - Val(Label33.Text) - BADV, Val(AmountLabel1.Text), Nothing, Val(CasualLeaveLabel1.Text), Val(M1Label1.Text), Val(M2Label1.Text), SPLeave, Val(OTALLabel1.Text), Val(PaidLeavesLabel2.Text), Val(UnPaidLeavesLabel2.Text), Val(TotalFullDaysLabel1.Text), Val(TotalHalfDaysLabel1.Text), Val(lblOverTimeHours.Text), Val(lblOverTime.Text), Val(lblAbsents.Text), Val(lblTotalDaysWorked.Text), Val(lblTotalPayableDays.Text), Val(lblTotalMeal.Text), Math.Round(Val(GrossSalaryLabel2.Text) / DayCalc), Math.Round((Val(GrossSalaryLabel2.Text) / DayCalc) * Val(lblTotalPayableDays.Text)), Val(lblSalary.Text), FinancialPeriodComboBox.SelectedValue, "#01/" & DateTimePicker1.Value.Month & "/" & DateTimePicker1.Value.Year & "#", Val(lblMonthDays.Text), Val(lblSundays.Text), Val(HolidayCountLabel1.Text), Val(lblExtraDays.Text), Val(lblWorkingDays.Text), Now.Date, "Normal", "False", "True", Val(lblAdds.Text), Val(lblBeforeFinal.Text) + BADV, Val(lblTotalPayableDays.Text) - Val(PaidLeavesLabel2.Text), Val(MorningShortMinsLabel1.Text), Val(EveningShortMinsLabel1.Text), Val(lblShortAmt.Text), Val(lblShortDeducted.Text), PessiCont, PessiSalary, PessiGrossSalary, IntDedduction, SaniorityValue(Val(LabelSenAllowance.Text)), Val(Me.EmpCountLabel1.Text), Val(LblTotalMealDeduction.Text), Val(AccommodationLabel2.Text), Val(MaskedTextBox1.Text), Val(MaskedTextBox2.Text), Val(TextBox4.Text), GradeLabel1.Text, DesigNameLabel1.Text, MainDeptLabel1.Text, SubDept1Label1.Text, OTHours, SPOTAmount, Val(FairAmountLabel3.Text), RFDPay, FinalRFD, Bonus, BADV, Incentive, "M")
+            If SaniorityValue(Val(LabelSenAllowance.Text)) > 0 Then
                 Me.Tbl_Hrm_Emp_InfoTableAdapter.UpdateQuery(Me.EmpIDLabel2.Text)
             End If
             If FinalRFD > 0 Then
@@ -664,28 +674,29 @@ Public Class frmMonthlySalary
         Return OTHours
 
     End Function
-    Function SaniorityValue() As Integer
-        Dim SaniorityAllowance, YearValue As Integer
-        Try
-            SaniorityAllowance = 0
-            YearValue = DateDiff(DateInterval.Day, CType(DateOfJoiningLabel1.Text, Date), CType("#01/" & DateTimePicker1.Value.Month & "/" & DateTimePicker1.Value.Year & "#", Date))
-            YearValue = Fix(YearValue / 365)
-            If SenStatusLabel3.Text = True Or GradeLabel1.Text.Trim = "A+" Or GradeLabel1.Text.Trim = "S-2" Or GradeLabel1.Text.Trim = "A" Or GradeLabel1.Text.Trim = "B" Or GradeLabel1.Text.Trim = "C" Or GradeLabel1.Text.Trim = "D" Then
-                If YearValue <= 5 And YearValue > 0 Then
-                    SaniorityAllowance = YearValue * 250
-                ElseIf YearValue = 0 Then
-                    SaniorityAllowance = 0
-                Else
-                    SaniorityAllowance = 1250
-                End If
-            Else
-                SaniorityAllowance = 0
-            End If
-        Catch ex As Exception
-            SaniorityAllowance = 0
-        End Try
+    Function SaniorityValue(Sen As Integer) As Integer
+        'Dim SaniorityAllowance, YearValue As Integer
+        'Try
+        '    SaniorityAllowance = 0
+        '    YearValue = DateDiff(DateInterval.Day, CType(DateOfJoiningLabel1.Text, Date), CType("#01/" & DateTimePicker1.Value.Month & "/" & DateTimePicker1.Value.Year & "#", Date))
+        '    YearValue = Fix(YearValue / 365)
+        '    If SenStatusLabel3.Text = True Or GradeLabel1.Text.Trim = "A+" Or GradeLabel1.Text.Trim = "S-2" Or GradeLabel1.Text.Trim = "A" Or GradeLabel1.Text.Trim = "B" Or GradeLabel1.Text.Trim = "C" Or GradeLabel1.Text.Trim = "D" Then
+        '        If YearValue <= 5 And YearValue > 0 Then
+        '            SaniorityAllowance = YearValue * 250
+        '        ElseIf YearValue = 0 Then
+        '            SaniorityAllowance = 0
+        '        Else
+        '            SaniorityAllowance = 1250
+        '        End If
+        '    Else
+        '        SaniorityAllowance = 0
+        '    End If
+        'Catch ex As Exception
+        '    SaniorityAllowance = 0
+        'End Try
 
-        Return SaniorityAllowance
+        Return Sen
+
     End Function
     Private Sub InsertDeductions(BPA As Double)
         'This is deduction insert funtion against long term advances

@@ -19028,7 +19028,7 @@ Namespace DSPayRollTableAdapters
             Me._commandCollection(0) = New Global.System.Data.Odbc.OdbcCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        FinancialPeriod, Status"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            tbl_Acc_FinancialPeriod"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"W"& _ 
-                "HERE        (Status = 1)"
+                "HERE        (FinancialPeriod >= 'Jul2016-Jun2017')"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         

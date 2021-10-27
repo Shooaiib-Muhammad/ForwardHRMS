@@ -27,50 +27,51 @@ Public Class frmAutoSalCalculation
         End If
     End Sub
     Dim PDFPath As String
-    Function SaniorityValue() As Integer
-        Dim SaniorityAllowance, YearValue As Integer
-        Try
-            SaniorityAllowance = 0
-            YearValue = DateDiff(DateInterval.Day, CType(DateOfJoiningLabel1.Text, Date), CType("#01/" & DateTimePicker1.Value.Month & "/" & DateTimePicker1.Value.Year & "#", Date))
-            YearValue = Fix(YearValue / 365)
-            If SenStatusLabel3.Text = True Or GradeLabel2.Text.Trim = "A+" Or GradeLabel2.Text.Trim = "S-2" Or GradeLabel2.Text.Trim = "A" Or GradeLabel2.Text.Trim = "B" Or GradeLabel2.Text.Trim = "C" Or GradeLabel2.Text.Trim = "D" Then
-                If YearValue <= 5 And YearValue > 0 Then
-                    SaniorityAllowance = YearValue * 250
-                ElseIf YearValue = 0 Then
-                    SaniorityAllowance = 0
-                Else
-                    SaniorityAllowance = 1250
-                End If
-            Else
-                SaniorityAllowance = 0
-            End If
-        Catch ex As Exception
-            SaniorityAllowance = 0
-        End Try
+    'Function SaniorityValue() As Integer
+    '    Dim SaniorityAllowance, YearValue As Integer
+    '    Try
+    '        SaniorityAllowance = 0
+    '        YearValue = DateDiff(DateInterval.Day, CType(DateOfJoiningLabel1.Text, Date), CType("#01/" & DateTimePicker1.Value.Month & "/" & DateTimePicker1.Value.Year & "#", Date))
+    '        YearValue = Fix(YearValue / 365)
+    '        If SenStatusLabel3.Text = True Or GradeLabel2.Text.Trim = "A+" Or GradeLabel2.Text.Trim = "S-2" Or GradeLabel2.Text.Trim = "A" Or GradeLabel2.Text.Trim = "B" Or GradeLabel2.Text.Trim = "C" Or GradeLabel2.Text.Trim = "D" Then
+    '            If YearValue <= 5 And YearValue > 0 Then
+    '                SaniorityAllowance = YearValue * 250
+    '            ElseIf YearValue = 0 Then
+    '                SaniorityAllowance = 0
+    '            Else
+    '                SaniorityAllowance = 1250
+    '            End If
+    '        Else
+    '            SaniorityAllowance = 0
+    '        End If
+    '    Catch ex As Exception
+    '        SaniorityAllowance = 0
+    '    End Try
 
-        Return SaniorityAllowance
-    End Function
+    '    Return SaniorityAllowance
+    'End Function
     Private Sub frmMonthlySalary_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'DSAutoCalc.tbl_Emp_Salary_Calculation_Adj' table. You can move, or remove it, as needed.
+        'Me.Tbl_Emp_Salary_Calculation_AdjTableAdapter.Fill(Me.DSAutoCalc.tbl_Emp_Salary_Calculation_Adj)
+        'TODO: This line of code loads data into the 'DSAutoCalc.tbl_Acc_Salary_Transactions' table. You can move, or remove it, as needed.
+
+        'TODO: This line of code loads data into the 'DSAutoCalc.View_HRMS' table. You can move, or remove it, as needed.
+        Me.View_HRMSTableAdapter.Fill(Me.DSAutoCalc.View_HRMS)
         Me.Tbl_Comp_InfoTableAdapter.Fill(Me.DSUser.tbl_Comp_Info)
         Try
-            Me.Tbl_Hrm_Emp_Info_Cards_InfoTableAdapter.FillBy(Me.DSCalculateSalary.tbl_Hrm_Emp_Info_Cards_Info)
+            'Me.Tbl_Hrm_Emp_Info_Cards_InfoTableAdapter.FillBy(Me.DSCalculateSalary.tbl_Hrm_Emp_Info_Cards_Info)
         Catch ex As Exception
 
         End Try
 
-        Me.Tbl_Acc_FinancialPeriodTableAdapter.Fill(Me.HRMDBDataSet1.tbl_Acc_FinancialPeriod)
+        'Me.Tbl_Acc_FinancialPeriodTableAdapter.Fill(Me.HRMDBDataSet1.tbl_Acc_FinancialPeriod)
 
         Try
-            Me.Tbl_Hrm_Emp_Info_HTableAdapter.FillBy(Me.DSCalculateSalary.tbl_Hrm_Emp_Info_H)
+            'Me.Tbl_Hrm_Emp_Info_HTableAdapter.FillBy(Me.DSCalculateSalary.View_HRMS)
         Catch ex As Exception
 
         End Try
-        DTAAmount = Me.DSUser.tbl_Comp_Info.Rows(0).Item("DailyTravelAllowance")
-        Try
-            SelectFP()
-        Catch ex As Exception
-        End Try
-        NavigationFunction()
+
         PDFPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) & "\Auto Salary Error"
         If Directory.Exists(PDFPath) Then
         Else
@@ -101,160 +102,10 @@ Public Class frmAutoSalCalculation
         Timer2.Interval = 200
 
         ToolStripProgressBar1.Value = 0
-        ToolStripProgressBar1.Maximum = Me.Tbl_Hrm_Emp_Info_HBindingSource.Count - 1
+        ToolStripProgressBar1.Maximum = Me.View_HRMSBindingSource.Count - 1
 
     End Sub
     Dim BStatus As Boolean = False
-    Private Sub AssignZeros()
-        'Assign Zeros to all the labels on navigation of records
-        If GrossSalaryLabel2.Text = "" Then
-            GrossSalaryLabel2.Text = 0
-        End If
-        If TaxDeductionLabel2.Text = "" Then
-            TaxDeductionLabel2.Text = 0
-        End If
-        If TravelAllowanceLabel2.Text = "" Then
-            TravelAllowanceLabel2.Text = 0
-        End If
-        If EducationAllowanceLabel2.Text = "" Then
-            EducationAllowanceLabel2.Text = 0
-        End If
-        If MealAllowanceLabel2.Text = "" Then
-            MealAllowanceLabel2.Text = 0
-        End If
-        If SpecialAllowanceLabel2.Text = "" Then
-            SpecialAllowanceLabel2.Text = 0
-        End If
-        If EOBILabel2.Text = "" Then
-            EOBILabel2.Text = 0
-        End If
-        If PerDTAPayable.Text = "" Then
-            PerDTAPayable.Text = 0
-        End If
-        If DailyTA.Text = "" Then
-            DailyTA.Text = 0
-        End If
-        If PaidLeavesLabel2.Text = "" Then
-            PaidLeavesLabel2.Text = 0
-        End If
-        If CasualLeaveLabel1.Text = "" Then
-            CasualLeaveLabel1.Text = 0
-        End If
-        If M1Label1.Text = "" Then
-            M1Label1.Text = 0
-        End If
-        If M2Label1.Text = "" Then
-            M2Label1.Text = 0
-        End If
-        If SpecialLeaveLabel1.Text = "" Then
-            SpecialLeaveLabel1.Text = 0
-        End If
-        If TotalFullDaysLabel1.Text = "" Then
-            TotalFullDaysLabel1.Text = 0
-        End If
-        If TotalHalfDaysLabel1.Text = "" Then
-            TotalHalfDaysLabel1.Text = 0
-        End If
-        If HolidayCountLabel1.Text = "" Then
-            HolidayCountLabel1.Text = 0
-        End If
-        If AmountLabel1.Text = "" Then
-            AmountLabel1.Text = 0
-        End If
-        If TotalLeavesLabel1.Text = "" Then
-            TotalLeavesLabel1.Text = 0
-        End If
-        If OTALLabel1.Text = "" Then
-            OTALLabel1.Text = 0
-        End If
-        If RentDeductionLabel1.Text = "" Then
-            RentDeductionLabel1.Text = 0
-        End If
-        If FullMinutesWorkedLabel1.Text = "" Then
-            FullMinutesWorkedLabel1.Text = 0
-        End If
-        If AdvSumLabel1.Text = "" Then
-            AdvSumLabel1.Text = 0
-        End If
-        If TotalDedLabel1.Text = "" Then
-            TotalDedLabel1.Text = 0
-        End If
-        If PAdvDedRateLabel1.Text = "" Then
-            PAdvDedRateLabel1.Text = 0
-        End If
-        If EveningShortMinsLabel1.Text = "" Then
-            EveningShortMinsLabel1.Text = 0
-        End If
-        If MorningShortMinsLabel1.Text = "" Then
-            MorningShortMinsLabel1.Text = 0
-        End If
-
-    End Sub
-
-    'Private Sub btnSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSave.Click
-    '    'SaveNow()
-    '    Timer1.Stop()
-    'End Sub
-
-    Private Sub SaveNow()
-        'This function call InsertSalaryTransactions and refresh after saving.
-        If GrossSalaryLabel2.Text > 0 Then
-            If btnSave.Enabled = False Then
-                'MsgBox("Record Already Saved or Values are Over Flowing")
-                Me.Tbl_Emp_Salary_Calculation_AdjTableAdapter.Insert(Me.EmpIDLabel2.Text, "#01/" & DateTimePicker1.Value.Month & "/" & DateTimePicker1.Value.Year & "#", GrossSalaryLabel2.Text, Nothing, Nothing, Val(UnPaidLeavesLabel2.Text), Val(M2Label1.Text), Me.GradeLabel1.Text, Val(lblMonthDays.Text), Val(HolidayCountLabel1.Text), Val(lblTotalDaysWorked.Text))
-                ErrorFileWriter(FilePath, "CardNo: [" & Me.Label1.Text & "] , Message: [Salary Already Saved or Values are Over Flowing]")
-            Else
-                If Val(lblTotalDaysWorked.Text) < 5 And Val(PaidLeavesLabel2.Text) <= 5 Then
-                    'Dim DgResult As DialogResult = MessageBox.Show("Number of Working Days are Less than 5." & vbCrLf & "Are you sure you want to save Salary", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
-                    'If DgResult = Windows.Forms.DialogResult.Yes Then
-                    '    InsertSalaryTransaction()
-                    '    NavigationFunction()
-                    'End If
-                    Me.Tbl_Emp_Salary_Calculation_AdjTableAdapter.Insert(Me.EmpIDLabel2.Text, "#01/" & DateTimePicker1.Value.Month & "/" & DateTimePicker1.Value.Year & "#", GrossSalaryLabel2.Text, Nothing, Nothing, Val(UnPaidLeavesLabel2.Text), Val(M2Label1.Text), Me.GradeLabel1.Text, Val(lblMonthDays.Text), Val(HolidayCountLabel1.Text), Val(lblTotalDaysWorked.Text))
-                    ErrorFileWriter(FilePath, "CardNo: [" & Me.Label1.Text & "] , Message: [Number of Working Days are Less than 5.]")
-                Else
-                    InsertSalaryTransaction()
-                    'NavigationFunction()
-                End If
-            End If
-        Else
-            'MsgBox("Employees Gross Salary Was Inactive or Zero, " & vbCrLf & " So Salary Calculation is terminated")
-            Me.Tbl_Emp_Salary_Calculation_AdjTableAdapter.Insert(Me.EmpIDLabel2.Text, "#01/" & DateTimePicker1.Value.Month & "/" & DateTimePicker1.Value.Year & "#", 0, Nothing, Nothing, Val(UnPaidLeavesLabel2.Text), Val(M2Label1.Text), Me.GradeLabel1.Text, Val(lblMonthDays.Text), Val(HolidayCountLabel1.Text), Val(lblTotalDaysWorked.Text))
-            ErrorFileWriter(FilePath, "CardNo: [" & Me.Label1.Text & "] , Message: [Employees Gross Salary Was Inactive or Zero]")
-        End If
-
-    End Sub
-
-    Private Function CalculateSubtracts(ByVal ShortTermDeduct As Double, ByVal LongTermDeduct As Double, ByVal eobi As Double, ByVal tax As Double, ByVal RentDed As Double, ByVal ShortLeaveDed As Double, ByVal MealDeduction As Integer, FairShop As Double, RFDAdv As Double) As Double
-        Dim TotalD As Double
-        TotalD = ShortTermDeduct + RentDed + LongTermDeduct + eobi + tax + ShortLeaveDed + MealDeduction + FairShop + RFDAdv
-        Return TotalD
-    End Function
-
-    Private Function CalculatePerHourSalary(ByVal sal1 As Double) As Double
-        Dim PerHalfHourSalary As Double = sal1 / DayCalc / 8
-        Return PerHalfHourSalary
-    End Function
-
-    Private Function CalculteAbsentees(ByVal WorkingDays As Double, ByVal DaysWorked As Double, ByVal MaskedDays As Double, ByVal PaidLeaves As Double, ByVal Deductions As Double) As Double
-        Dim Absentees As Double
-        Absentees = WorkingDays - (DaysWorked + MaskedDays + PaidLeaves - Deductions)
-        If Absentees < 0 Then
-            Absentees = 0
-        End If
-        Return Absentees
-    End Function
-
-    Private Function CalculateAdds(ByVal dueSal As Double, ByVal travelA As Double, ByVal educationA As Double, ByVal mealA As Double, ByVal specialA As Double, ByVal OverTime As Double, ByVal SN As Integer, AccomAllowance As Double, ByVal TAllowance As Double, ByVal PerDTAPayable As Double) As Double
-        Dim TotalAdds As Double = dueSal + travelA + educationA + mealA + specialA + OverTime + SN + AccomAllowance + TAllowance + PerDTAPayable
-        Return TotalAdds
-    End Function
-
-    Private Sub CheckBox1_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBox1.CheckedChanged, CheckBox3.CheckedChanged
-        If Label5.Text = "" Or Label5.Text = "Values Over Flow..." Then
-            CalculateAllRecords()
-        End If
-    End Sub
 
     Private Function CalculateWorkingDays() As Integer
         Dim NoOfDaysinMonth As Integer
@@ -283,515 +134,28 @@ Public Class frmAutoSalCalculation
         Return OTMinutes / 60
     End Function
 
-    Private Sub NavigationFunction()
-        'This is navigation function, which is called on navigation of each record.
-        Dim TransCount As Integer
-        Dim PaidCount As Integer = 0
 
-        LoadData()
-        AssignZeros()
-        CalculateAllRecords()
-
-        TransCount = Me.Tbl_Acc_Salary_TransactionsTableAdapter.FillBy(Me.DSCalculateSalary.tbl_Acc_Salary_Transactions, Val(EmpIDLabel2.Text), FinancialPeriodComboBox.SelectedValue, DateTimePicker1.Value.Month, DateTimePicker1.Value.Year)
-        'PaidCount = Me.Tbl_Acc_Salary_TransactionsTableAdapter.FillBy1(Me.DSCalculateSalary.tbl_Acc_Salary_Transactions, Val(EmpIDLabel2.Text), FinancialPeriodComboBox.SelectedValue, DateTimePicker1.Value.Month, DateTimePicker1.Value.Year)
-
-        If PaidCount = 0 Then
-            If TransCount = 0 Then
-                ChangeColor()
-            Else
-                'Label5.Text = "Salary Have Been Saved But Not Paid To The Employee..."
-                btnSave.Enabled = False
-                'lblAdds.BackColor = Color.White
-                'lblAdds.ForeColor = Color.Black
-                'lblBeforeFinal.BackColor = Color.White
-                'lblBeforeFinal.ForeColor = Color.Black
-                'lblAbsents.BackColor = Color.White
-                'lblAbsents.ForeColor = Color.Black
-                lblSalary.BackColor = Color.Red
-                'lblSalary.ForeColor = Color.White
-                'lblTotalPayableDays.BackColor = Color.White
-                'lblTotalPayableDays.ForeColor = Color.Black
-            End If
-        Else
-            'Label5.Text = "Salary Have Been Saved And Also Paid..."
-            btnSave.Enabled = False
-            'lblAdds.BackColor = Color.White
-            'lblAdds.ForeColor = Color.Black
-            'lblBeforeFinal.BackColor = Color.White
-            'lblBeforeFinal.ForeColor = Color.Black
-            'lblAbsents.BackColor = Color.White
-            'lblAbsents.ForeColor = Color.Black
-            lblSalary.BackColor = Color.Red
-            'lblSalary.ForeColor = Color.White
-            'lblTotalPayableDays.BackColor = Color.White
-            'lblTotalPayableDays.ForeColor = Color.Black
-        End If
-
-        MaskedTextBox1.Clear()
-        MaskedTextBox2.Clear()
-        TextBox4.Clear()
-
-        If CheckBox1.Checked = False Then
-            CheckBox1.Checked = True
-        End If
-        'If CheckBox2.Checked = True Then
-        '    CheckBox2.Checked = False
-        'End If
-        'CardNoComboBox.Focus()
-
-    End Sub
     Dim IntDedduction As Integer = 0
-    Private Sub ChangeColor()
-        'This function changes the color of labels if values are over flowing.
-        If Val(lblAdds.Text) < 0 Or Val(lblBeforeFinal.Text) < 0 Or Val(lblSalary.Text) < 0 Or Val(lblAbsents.Text) < 0 Or Val(lblTotalPayableDays.Text) > DayCalc Or Val(lblTotalPayableDays.Text) <= 0 Then
-            btnSave.Enabled = False
-            Label5.Text = "Values Over Flow..."
-            'lblAdds.BackColor = Color.Red
-            'lblAdds.ForeColor = Color.White
-            'lblBeforeFinal.BackColor = Color.Red
-            'lblBeforeFinal.ForeColor = Color.White
-            'lblAbsents.BackColor = Color.Red
-            'lblAbsents.ForeColor = Color.White
-            lblSalary.BackColor = Color.Red
-            'lblSalary.ForeColor = Color.White
-            'lblTotalPayableDays.BackColor = Color.Red
-            'lblTotalPayableDays.ForeColor = Color.White
-        Else
-            btnSave.Enabled = True
-            Label5.Text = ""
-            'lblAdds.BackColor = Color.White
-            'lblAdds.ForeColor = Color.Black
-            'lblBeforeFinal.BackColor = Color.White
-            'lblBeforeFinal.ForeColor = Color.Black
-            'lblAbsents.BackColor = Color.White
-            'lblAbsents.ForeColor = Color.Black
-            lblSalary.BackColor = Color.DarkGreen
-            'lblSalary.ForeColor = Color.Purple
-            'lblTotalPayableDays.BackColor = Color.White
-            'lblTotalPayableDays.ForeColor = Color.Black
-        End If
-    End Sub
-
-    Private Sub CalculateAllRecords()
-        'This is main function that calculate all the values and assign these values to their respective labels.
-        'This function's most critical point to understand is its calculation of records in hierarchy.
-        Dim intUnpaidLeaves As Double
-        Dim intPerDaySalary As Double
-
-        Dim intTotalSubtracts As Double
-        Dim intTotalAdds As Double
-
-        Dim intSumOfHalfAndFullDays As Double
-        Dim intAbsentees As Double
-        Dim intTotalPayableDays As Double
-        Dim intMealPayable As Double
-        Dim intDueSalary As Double
-
-        Dim intFinalSalary As Double
-        Dim intOverTimePayable As Double
-        Dim intLTARemaining As Double
-        Dim intMaskedDays As Double
-        Dim intMaskedOTHours As Double
-        Dim intExtraDays As Integer
-        Dim FinalWorkingDays As Double
-        Dim IntDeduction As Integer
-        Dim IntMealDeduction As Integer
-        Dim IntMealDeductionValue As Integer
-
-
-        Dim DTA As Integer
 
 
 
-        DTA = Me.Tbl_Acc_Salary_TransactionsTableAdapter.TADays(Val(EmpIDLabel2.Text), FinancialPeriodComboBox.Text, DateTimePicker1.Value.Year, DateTimePicker1.Value.Month)
-        DailyTA.Text = DTAAmount * Val(DTA)
-        'DailyTA.Text = 50 * Val(DTA)
 
+    'Private Sub LoadData()
+    '    'This function loads data from tableadapters on each navigation.
+    '    Try
 
-        If TextBox4.Text <> "" And IsNumeric(TextBox4.Text) = True Then
-            If TextBox4.Text = "." Then
-                intMaskedOTHours = 0
-            Else
-                intMaskedOTHours = CType(TextBox4.Text, Double)
-            End If
-        End If
-        Try
-            IntDeduction = Val(Me.DayDeductionLabel1.Text)
-        Catch ex As Exception
-            IntDeduction = 0
-        End Try
-        Try
-            IntMealDeduction = Val(Me.EmpCountLabel1.Text)
-        Catch ex As Exception
-            IntMealDeduction = 0
-        End Try
-        intMaskedDays = Val(MaskedTextBox1.Text) + (Val(MaskedTextBox2.Text) / 2)
-        intUnpaidLeaves = Val(TotalLeavesLabel1.Text) - Val(PaidLeavesLabel2.Text)
-        intLTARemaining = Val(AdvSumLabel1.Text) - Val(TotalDedLabel1.Text)
-        intSumOfHalfAndFullDays = Val(TotalFullDaysLabel1.Text) + (Val(TotalHalfDaysLabel1.Text) / 2)
-        intPerDaySalary = Val(GrossSalaryLabel2.Text) / DayCalc
-        'If GradeLabel1.Text.Trim = "I" Or GradeLabel1.Text.Trim = "II" Or GradeLabel1.Text.Trim = "III" Or GradeLabel1.Text.Trim = "A" Then
-        '    intOverTimePayable = (Val(FullMinutesWorkedLabel1.Text) / 60 + RoundOTHours(intMaskedOTHours * 60)) * CalculatePerHourSalary(Val(GrossSalaryLabel2.Text))
-        'Else
-        intOverTimePayable = (Val(FullMinutesWorkedLabel1.Text) / 60 + RoundOTHours(intMaskedOTHours * 60)) * CalculatePerHourSalary(Val(GrossSalaryLabel2.Text)) * OT
-        'End If
-        If Me.DSCalculateSalary.tbl_Hrm_ExtraWorkingDays.Count = 1 Then
-            intExtraDays = Me.DSCalculateSalary.tbl_Hrm_ExtraWorkingDays(0).Item(0)
-        End If
+    '        Me.View_Emp_Deduction_DaysTableAdapter.Fill(Me.DSCalculateSalary.View_Emp_Deduction_Days, Me.DateTimePicker1.Value.Month, Me.DateTimePicker1.Value.Year, Val(Me.EmpIDLabel2.Text))
+    '    Catch ex As Exception
+    '    End Try
 
-        FinalWorkingDays = (CalculateWorkingDays() - Val(HolidayCountLabel1.Text)) + intExtraDays
-        intAbsentees = CalculteAbsentees(FinalWorkingDays, intSumOfHalfAndFullDays, intMaskedDays, Val(PaidLeavesLabel2.Text), IntDeduction)
-        'intTotalPayableDays = DayCalc - intAbsentees
-        Try
-            If CType(DateOfJoiningLabel1.Text, Date) > CType(1 & "/" & DateTimePicker1.Value.Month & "/" & DateTimePicker1.Value.Year, Date) Then
-                intTotalPayableDays = intSumOfHalfAndFullDays + intMaskedDays + Val(PaidLeavesLabel2.Text) + Val(HolidayCountLabel1.Text) - IntDeduction
-                If intTotalPayableDays > 26 Then
-                    intTotalPayableDays = 26
-                End If
-            Else
-                intTotalPayableDays = DayCalc - intAbsentees
-            End If
-        Catch ex As Exception
-            'MsgBox(ex.Message)
-        End Try
-        intDueSalary = intPerDaySalary * intTotalPayableDays
-
-        If CheckBox1.Checked Then
-            If intLTARemaining = 0 Then
-                Label33.Text = 0
-            Else
-                If intLTARemaining < Val(PAdvDedRateLabel1.Text) Then
-                    Label33.Text = intLTARemaining
-                Else
-                    Label33.Text = Val(PAdvDedRateLabel1.Text)
-                End If
-            End If
-        Else
-            Label33.Text = 0
-        End If
-
-        '/////////////Short Leave Area////////
-        lblTotalShortMinutes.Text = Val(MorningShortMinsLabel1.Text) + Val(EveningShortMinsLabel1.Text)
-        lblShortAmt.Text = Math.Round(Val(lblTotalShortMinutes.Text) / 60 * CalculatePerHourSalary(Val(GrossSalaryLabel2.Text)))
-        'If CheckBox2.Checked = False Then
-        txtSLeaveDeduct.Text = 0 '//Val(lblShortAmt.Text)
-        lblShortDeducted.Text = Val(txtSLeaveDeduct.Text)
-        txtSLeaveDeduct.Enabled = False
-        'Else
-        '    txtSLeaveDeduct.Text = Val(lblShortAmt.Text)
-        '    lblShortDeducted.Text = Val(txtSLeaveDeduct.Text)
-        '    txtSLeaveDeduct.Enabled = True
-        'End If
-        '/////////////Short Leave Area////////
-
-        lblRemaining.Text = intLTARemaining
-        UnPaidLeavesLabel2.Text = intUnpaidLeaves
-        lblTotalDaysWorked.Text = intSumOfHalfAndFullDays
-        lblAbsents.Text = intAbsentees
-        lblTotalPayableDays.Text = intTotalPayableDays
-        If Val(CanteenLabel.Text) > 0 Then
-            IntMealDeductionValue = (Val(CanteenLabel.Text) * IntMealDeduction)
-        Else
-            IntMealDeductionValue = 0
-        End If
-        If CheckBox3.CheckState = CheckState.Unchecked Then
-            intMealPayable = 0
-        ElseIf CheckBox3.CheckState = CheckState.Checked Then
-            If Val(MealAllowanceLabel2.Text) <= 0 Then
-                intMealPayable = 0
-            Else
-                intMealPayable = Val(MealAllowanceLabel2.Text) * (Val(lblTotalPayableDays.Text) - (Val(HolidayCountLabel1.Text)) - (Val(PaidLeavesLabel2.Text)))
-                If intMealPayable < 0 Then
-                    intMealPayable = 0
-
-                End If
-            End If
-
-        End If
-        Try
-            If Val(PerDTA.Text) <= 0 Then
-                PerDTAPayable.Text = 0
-            Else
-                PerDTAPayable.Text = Math.Round(Val(PerDTA.Text) * (Val(lblTotalDaysWorked.Text)))
-            End If
-        Catch ex As Exception
-            PerDTA.Text = 0
-            PerDTAPayable.Text = 0
-        End Try
-
-        'intMealPayable = Val(MealAllowanceLabel2.Text) * (Val(lblTotalPayableDays.Text) - (Val(PaidLeavesLabel2.Text)))
-
-        lblOverTimeHours.Text = Val(FullMinutesWorkedLabel1.Text) / 60 + RoundOTHours(intMaskedOTHours * 60)
-        lblWorkingDays.Text = FinalWorkingDays
-
-        lblMonthDays.Text = DateTime.DaysInMonth(DateTimePicker1.Value.Year, DateTimePicker1.Value.Month)
-        lblSundays.Text = DateTime.DaysInMonth(DateTimePicker1.Value.Year, DateTimePicker1.Value.Month) - CalculateWorkingDays()
-
-        intTotalSubtracts = CalculateSubtracts(Val(AmountLabel1.Text), Val(Label33.Text), Val(EOBILabel2.Text), Val(TaxDeductionLabel2.Text), Val(RentDeductionLabel1.Text), Val(lblShortDeducted.Text), IntMealDeductionValue, Val(FairAmountLabel3.Text), Val(RFAMTLabel1.Text))
-        'intTotalSubtracts = CalculateSubtracts(Val(AmountLabel1.Text), Val(Label33.Text), Val(EOBILabel2.Text), Val(TaxDeductionLabel2.Text), Val(RentDeductionLabel1.Text), 0)
-        intTotalAdds = CalculateAdds(intDueSalary, Val(TravelAllowanceLabel2.Text), Val(EducationAllowanceLabel2.Text), intMealPayable, Val(SpecialAllowanceLabel2.Text), intOverTimePayable, SaniorityValue, Val(Me.AccommodationLabel2.Text), Val(DailyTA.Text), Val(PerDTAPayable.Text))
-        intFinalSalary = intTotalAdds - intTotalSubtracts
-
-        LblTotalMealDeduction.Text = Math.Round(IntMealDeductionValue)
-        lblTotalMeal.Text = Math.Round(intMealPayable)
-        lblOverTime.Text = Math.Round(intOverTimePayable)
-        lblAdds.Text = Math.Round(intTotalAdds)
-        lblBeforeFinal.Text = Math.Round(intTotalSubtracts)
-        lblSalary.Text = Math.Round(intFinalSalary)
-        lblExtraDays.Text = intExtraDays
-        ChangeColor()
-
-    End Sub
-
-    Private Sub LoadData()
-        'This function loads data from tableadapters on each navigation.
-        Try
-            Me.Tbl_Hrm_Emp_InfoTableAdapter.Fill(Me.DSCalculateSalary.tbl_Hrm_Emp_Info, Val(CardNoLabel1.Text))
-
-            Me.View_Rpt_PayRoll_EmpAttRecordTableAdapter.Fill(Me.DSCalculateSalary.View_Rpt_PayRoll_EmpAttRecord, Val(EmpIDLabel2.Text), DateTimePicker1.Value.Year, DateTimePicker1.Value.Month)
-            Me.View_Rpt_PayRoll_EmpAttRecord1TableAdapter.Fill(Me.DSCalculateSalary.View_Rpt_PayRoll_EmpAttRecord1, Val(EmpIDLabel2.Text), DateTimePicker1.Value.Year, DateTimePicker1.Value.Month)
-
-            Me.View_Rpt_Acc_OverTimeSumTableAdapter.Fill(Me.DSCalculateSalary.View_Rpt_Acc_OverTimeSum, Val(EmpIDLabel2.Text), DateTimePicker1.Value.Year, DateTimePicker1.Value.Month)
-            Me.Tbl_Hrm_HolidaysTableAdapter.Fill(Me.DSCalculateSalary.tbl_Hrm_Holidays, DateTimePicker1.Value.Month, DateTimePicker1.Value.Year)
-            Me.Tbl_Acc_ShortTermAdvancesTableAdapter.Fill(Me.DSCalculateSalary.tbl_Acc_ShortTermAdvances, Val(EmpIDLabel2.Text), DateTimePicker1.Value.Month, DateTimePicker1.Value.Year)
-
-            Me.Tbl_PayRoll_LongLeavesTableAdapter.Fill(Me.DSCalculateSalary.tbl_PayRoll_LongLeaves, Val(EmpIDLabel2.Text), FinancialPeriodComboBox.SelectedValue, DateTimePicker1.Value.Year, DateTimePicker1.Value.Month)
-            Me.Tbl_PayRoll_LongLeaves1TableAdapter.Fill(Me.DSCalculateSalary.tbl_PayRoll_LongLeaves1, Val(EmpIDLabel2.Text), FinancialPeriodComboBox.SelectedValue, DateTimePicker1.Value.Year, DateTimePicker1.Value.Month)
-            Me.Tbl_PayRoll_LongLeaves5TableAdapter.Fill(Me.DSCalculateSalary.tbl_PayRoll_LongLeaves5, Val(EmpIDLabel2.Text), FinancialPeriodComboBox.SelectedValue, DateTimePicker1.Value.Year, DateTimePicker1.Value.Month)
-            'Me.Tbl_PayRoll_LongLeaves3TableAdapter.Fill(Me.DSCalculateSalary.tbl_PayRoll_LongLeaves3, Val(EmpIDLabel2.Text), FinancialPeriodComboBox.SelectedValue, DateTimePicker1.Value.Year, DateTimePicker1.Value.Month)
-            Me.Tbl_PayRoll_LongLeaves4TableAdapter.Fill(Me.DSCalculateSalary.tbl_PayRoll_LongLeaves4, Val(EmpIDLabel2.Text), FinancialPeriodComboBox.SelectedValue, DateTimePicker1.Value.Year, DateTimePicker1.Value.Month)
-            Me.Tbl_PayRoll_LongLeaves6TableAdapter.Fill(Me.DSCalculateSalary.tbl_PayRoll_LongLeaves6, Val(EmpIDLabel2.Text), FinancialPeriodComboBox.SelectedValue, DateTimePicker1.Value.Year, DateTimePicker1.Value.Month)
-            Me.Tbl_PayRoll_LongLeaves7TableAdapter.Fill(Me.DSCalculateSalary.tbl_PayRoll_LongLeaves7, Val(EmpIDLabel2.Text), FinancialPeriodComboBox.SelectedValue, DateTimePicker1.Value.Year, DateTimePicker1.Value.Month)
-
-            Me.View_Rpt_Acc_MorningShortMinsTableAdapter.Fill(Me.DSCalculateSalary.View_Rpt_Acc_MorningShortMins, Val(EmpIDLabel2.Text), FinancialPeriodComboBox.SelectedValue, DateTimePicker1.Value.Year, DateTimePicker1.Value.Month)
-            Me.View_Rpt_Acc_EveningShortMinsTableAdapter.Fill(Me.DSCalculateSalary.View_Rpt_Acc_EveningShortMins, Val(EmpIDLabel2.Text), FinancialPeriodComboBox.SelectedValue, DateTimePicker1.Value.Year, DateTimePicker1.Value.Month)
-
-
-            Me.Tbl_Acc_SalaryTableAdapter.Fill(Me.DSCalculateSalary.tbl_Acc_Salary, Val(EmpIDLabel2.Text))
-            Me.Tbl_Acc_PAdvDeductions1TableAdapter.Fill(Me.DSLongTermAdv.tbl_Acc_PAdvDeductions1, Val(EmpIDLabel2.Text))
-            Me.Tbl_Acc_PermanentAdvances1TableAdapter.Fill(Me.DSLongTermAdv.tbl_Acc_PermanentAdvances1, Val(EmpIDLabel2.Text))
-            Me.Tbl_Hrm_ExtraWorkingDaysTableAdapter.Fill(Me.DSCalculateSalary.tbl_Hrm_ExtraWorkingDays, DateTimePicker1.Value.Month, DateTimePicker1.Value.Year)
-            Me.View_Emp_Deduction_DaysTableAdapter.Fill(Me.DSCalculateSalary.View_Emp_Deduction_Days, Me.DateTimePicker1.Value.Month, Me.DateTimePicker1.Value.Year, Val(Me.EmpIDLabel2.Text))
-            Try
-                Me.Tbl_Acc_RFD_PayTableAdapter.Fill(Me.DSCalculateSalary.tbl_Acc_RFD_Pay, Me.DateTimePicker1.Value.Month, Me.DateTimePicker1.Value.Year, Me.EmpIDLabel2.Text)
-            Catch ex As System.Exception
-                'System.Windows.Forms.MessageBox.Show(ex.Message)
-            End Try
-            Try
-                Me.View_Acc_FairShopTableAdapter.Fill(Me.DSCalculateSalary.View_Acc_FairShop, Val(Me.EmpIDLabel2.Text), Me.DateTimePicker1.Value.Month, Me.DateTimePicker1.Value.Year)
-            Catch ex As System.Exception
-                'System.Windows.Forms.MessageBox.Show(ex.Message)
-            End Try
-            Try
-                Me.View_Emp_Meal_AttendanceTableAdapter.Fill(Me.DSCalculateSalary.View_Emp_Meal_Attendance, Val(Me.EmpIDLabel2.Text), Me.DateTimePicker1.Value.Month, Me.DateTimePicker1.Value.Year)
-            Catch ex As System.Exception
-                'System.Windows.Forms.MessageBox.Show(ex.Message)
-            End Try
-        Catch ex As Exception
-            'MsgBox(ex.Message)
-        End Try
-        Try
-            Me.View_SP_OTTableAdapter.Fill(Me.DSSP.View_SP_OT, Val(EmpIDLabel2.Text), DateTimePicker1.Value.Month, DateTimePicker1.Value.Year)
-        Catch ex As System.Exception
-            'System.Windows.Forms.MessageBox.Show(ex.Message)
-        End Try
-    End Sub
+    'End Sub
 
     Private Sub InsertSalaryTransaction()
-        'This is salary transaction insert funtion
-        Dim PessiGrossSalary, PessiSalary, PessiCont, DueSalary As Integer
-        If PESSIStatus.Text = False Then
-            PessiGrossSalary = 0
-            PessiSalary = 0
-            PessiCont = 0
-        Else
-            Dim totaldays As Double = Val(lblTotalDaysWorked.Text) + HolidayCountLabel1.Text
-            'DueSalary = Math.Round((Val(GrossSalaryLabel2.Text) / DayCalc) * Val(lblTotalPayableDays.Text))
-            DueSalary = Math.Round((Val(GrossSalaryLabel2.Text) / DayCalc) * totaldays)
-            If Val(GrossSalaryLabel2.Text) > CInt(Me.DSUser.tbl_Comp_Info.Rows(0).Item("PEESIFIX")) Then
-                PessiGrossSalary = CInt(Me.DSUser.tbl_Comp_Info.Rows(0).Item("PEESIFIX"))
-            Else
-                PessiGrossSalary = Val(GrossSalaryLabel2.Text)
-            End If
-            If DueSalary > CInt(Me.DSUser.tbl_Comp_Info.Rows(0).Item("PEESIFIX")) Then
-                PessiSalary = CInt(Me.DSUser.tbl_Comp_Info.Rows(0).Item("PEESIFIX"))
-            Else
-                PessiSalary = DueSalary
-            End If
-            PessiCont = PessiSalary * 0.06
-        End If
-        'DueSalary = Math.Round((Val(GrossSalaryLabel2.Text) / 26) * Val(lblTotalPayableDays.Text))
-        'If Val(GrossSalaryLabel2.Text) > 18000 Then
-        '    PessiGrossSalary = 18000
-        'Else
-        '    PessiGrossSalary = Val(GrossSalaryLabel2.Text)
-        'End If
-        'If DueSalary > 18000 Then
-        '    PessiSalary = 18000
-        'Else
-        '    PessiSalary = DueSalary
-        'End If
-        'PessiCont = PessiSalary * 0.06
-        'YearValue = DateDiff(DateInterval.Day, CType(DateOfJoiningLabel1.Text, Date), CType("#01/" & DateTimePicker1.Value.Month & "/" & DateTimePicker1.Value.Year & "#", Date))
-        'If YearValue <= 5 And YearValue > 0 Then
-        '    SaniorityAllowance = YearValue * 100
-        'Else
-        '    SaniorityAllowance = 500
-        'End If
-        'SaniorityAllowance = 0
-        'YearValue = DateDiff(DateInterval.Day, CType(DateOfJoiningLabel1.Text, Date), CType("#01/" & DateTimePicker1.Value.Month & "/" & DateTimePicker1.Value.Year & "#", Date))
-        'YearValue = Fix(YearValue / 365)
-        'If GradeLabel1.Text.Trim = "V" Or GradeLabel1.Text.Trim = "VI" Then
-        '    If YearValue <= 5 And YearValue > 0 Then
-        '        SaniorityAllowance = YearValue * 100
-        '    ElseIf YearValue = 0 Then
-        '        SaniorityAllowance = 0
-        '    Else
-        '        SaniorityAllowance = 500
-        '    End If
-        'Else
-        '    SaniorityAllowance = 0
-        'End If
-
-        Dim BasicSalary As Integer
-        Dim PerHourSalary As Double
-        Dim OTHours As Double
-        Dim SPOTAmount As Integer
-        Dim Bonus, BADV As Integer
-
-        BasicSalary = Val(GrossSalaryLabel2.Text)
-        PerHourSalary = Math.Round(BasicSalary / 26 / 8, 2)
-        OTHours = RoundSPOTHours(Val(SPLabel1.Text))
-        Dim SPLeave As Double
-
-        If BStatus = True Then
-            'Try
-            '    Bonus = Tbl_Hrm_Emp_InfoTableAdapter.Bonus(EmpIDLabel2.Text, Me.DateTimePicker1.Value.Month, Me.DateTimePicker1.Value.Year)
-            'Catch ex As Exception
-            '    Bonus = 0
-            'End Try
-            Try
-                If Me.View_Bonus_SalaryTableAdapter.Fill(Me.DataSet5.View_Bonus_Salary, EmpIDLabel2.Text, Me.DateTimePicker1.Value.Month, Me.DateTimePicker1.Value.Year) > 0 Then
-                    Bonus = Me.DataSet5.View_Bonus_Salary.Rows(0).Item("PayableBonus")
-                    BADV = Me.DataSet5.View_Bonus_Salary.Rows(0).Item("AmtDedAsLTA")
-                Else
-                    Bonus = 0
-                    BADV = 0
-                End If
 
 
-            Catch ex As System.Exception
-                'System.Windows.Forms.MessageBox.Show(ex.Message)
-            End Try
-        Else
-            Bonus = 0
-            BADV = 0
-        End If
 
-
-        Try
-            SPLeave = Me.Tbl_Hrm_Emp_InfoTableAdapter.SPLeave(Me.EmpIDLabel2.Text, Me.DateTimePicker1.Value.Year, DateTimePicker1.Value.Month)
-        Catch ex As Exception
-            SPLeave = 0
-        End Try
-
-        'If GradeId = 1 Or GradeId = 2 Or GradeId = 3 Or GradeId = 7 Then
-        '    'OTAmount = ((OTHours * PerHourSalary))
-        'Else
-        SPOTAmount = ((OTHours * PerHourSalary) * 2)
-        Dim total As Double = Val(lblSalary.Text) + SPOTAmount + Bonus - BADV
-        Dim FinalRFD As Double = total Mod 500
-        If FinalRFD > 0 And PaymentModeLabel2.Text = "Cash" Then
-            FinalRFD = 500 - FinalRFD
-        Else
-            FinalRFD = 0
-        End If
-
-        Dim RFDPay As Double = Val(RFAMTLabel1.Text)
-        Try
-            Me.Tbl_Acc_Salary_TransactionsTableAdapter.Insert(Val(EmpIDLabel2.Text), Val(GrossSalaryLabel2.Text), Val(TaxDeductionLabel2.Text), Val(RentDeductionLabel1.Text), Val(EOBILabel2.Text), Val(TravelAllowanceLabel2.Text), Val(EducationAllowanceLabel2.Text), Val(SpecialAllowanceLabel2.Text), Val(MealAllowanceLabel2.Text), PaymentModeLabel2.Text, Val(AdvSumLabel1.Text), Val(Label33.Text), Val(TotalDedLabel1.Text) + Val(Label33.Text), Val(lblRemaining.Text) - Val(Label33.Text) - BADV, Val(AmountLabel1.Text), Nothing, Val(CasualLeaveLabel1.Text), Val(M1Label1.Text), Val(M2Label1.Text), SPLeave, Val(OTALLabel1.Text), Val(PaidLeavesLabel2.Text), Val(UnPaidLeavesLabel2.Text), Val(TotalFullDaysLabel1.Text), Val(TotalHalfDaysLabel1.Text), Val(lblOverTimeHours.Text), Val(lblOverTime.Text), Val(lblAbsents.Text), Val(lblTotalDaysWorked.Text), Val(lblTotalPayableDays.Text), Val(lblTotalMeal.Text), Math.Round(Val(GrossSalaryLabel2.Text) / DayCalc), Math.Round((Val(GrossSalaryLabel2.Text) / DayCalc) * Val(lblTotalPayableDays.Text)), Val(lblSalary.Text), FinancialPeriodComboBox.SelectedValue, "#01/" & DateTimePicker1.Value.Month & "/" & DateTimePicker1.Value.Year & "#", Val(lblMonthDays.Text), Val(lblSundays.Text), Val(HolidayCountLabel1.Text), Val(lblExtraDays.Text), Val(lblWorkingDays.Text), Now.Date, "Normal", "False", "True", Val(lblAdds.Text), Val(lblBeforeFinal.Text) + BADV, Val(lblTotalPayableDays.Text) - Val(PaidLeavesLabel2.Text), Val(MorningShortMinsLabel1.Text), Val(EveningShortMinsLabel1.Text), Val(lblShortAmt.Text), Val(lblShortDeducted.Text), PessiCont, PessiSalary, PessiGrossSalary, IntDedduction, SaniorityValue, Val(Me.EmpCountLabel1.Text), Val(LblTotalMealDeduction.Text), Val(AccommodationLabel2.Text), 0, 0, 0, GradeLabel2.Text, DesigNameLabel1.Text, MainDeptLabel1.Text, SectionNameLabel.Text, OTHours, SPOTAmount, Val(FairAmountLabel3.Text), RFDPay, FinalRFD, Bonus, BADV)
-            If SaniorityValue() > 0 Then
-                Me.Tbl_Hrm_Emp_InfoTableAdapter.UpdateQuery(Me.EmpIDLabel2.Text)
-            End If
-            If FinalRFD > 0 Then
-                Me.Tbl_Acc_RFD_PayTableAdapter.InsertQuery(Me.EmpIDLabel2.Text, FinalRFD, Now.Date)
-            End If
-            If Me.IncStatusLabel.Text = True Then
-                'Try
-                '    If Me.View_Emp_Month_Zero_LeaveTableAdapter.Fill(Me.DSCalculateSalary.View_Emp_Month_Zero_Leave, "#01/" & DateTimePicker1.Value.Month & "/" & DateTimePicker1.Value.Year & "#", Val(lblWorkingDays.Text), Val(EmpIDLabel2.Text)) > 0 Then
-                '        Me.Tbl_Hrm_Emp_InfoTableAdapter.UpdateQuery1(Math.Round(Val(GrossSalaryLabel2.Text) / DayCalc), Val(EmpIDLabel2.Text), "#01/" & DateTimePicker1.Value.Month & "/" & DateTimePicker1.Value.Year & "#")
-                '    End If
-                'Catch ex3 As Exception
-
-                'End Try
-            End If
-            InsertDeductions(BADV)
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
-    Private Function RoundSPOTHours(ByVal OTMinutes As Double) As Double
-        'Roung Over Time Minutes
-        Dim OTHours As Double
-        Dim i As Double
-        Dim j As Double
-        Dim Diff As Double
-
-        i = Math.Truncate(OTMinutes / 60)
-        j = OTMinutes / 60
-        Diff = j - i
-        Diff = (Math.Truncate(Diff * 100)) / 100
-        If Diff >= 0 And Diff <= 0.41 Then
-            OTHours = i
-        ElseIf Diff > 0.41 And Diff <= 0.5 Then
-            OTHours = i + 0.5
-        ElseIf Diff > 0.5 And Diff <= 0.91 Then
-            OTHours = i + 0.5
-        ElseIf Diff > 0.91 And Diff <= 0.99 Then
-            OTHours = i + 1
-        Else
-            OTHours = i
-        End If
-        Return OTHours
-
-    End Function
-    Private Sub InsertDeductions(BPA As Double)
-        'This is deduction insert funtion against long term advances
-        If Val(AdvSumLabel1.Text) > 0 Then
-            If Val(lblRemaining.Text) > 0 Then
-                If CheckBox1.Checked = False Then
-                    Me.Tbl_Acc_PAdvDeductionsTableAdapter.Insert(Val(EmpIDLabel2.Text), Val(Label33.Text) + BPA, "#01/" & DateTimePicker1.Value.Month & "/" & DateTimePicker1.Value.Year & "#", "Zero Deduction from Salary (Checkbox was Unchecked)", FinancialPeriodComboBox.SelectedValue)
-                Else
-                    If Val(lblRemaining.Text) - Val(Label33.Text) = 0 Then
-                        Me.Tbl_Acc_PAdvDeductionsTableAdapter.Insert(Val(EmpIDLabel2.Text), Val(Label33.Text) + BPA, "#01/" & DateTimePicker1.Value.Month & "/" & DateTimePicker1.Value.Year & "#", "Normal Deduction from Salary", FinancialPeriodComboBox.SelectedValue)
-                    ElseIf Val(lblRemaining.Text) - Val(Label33.Text) < 0 Then
-                        Me.Tbl_Acc_PAdvDeductionsTableAdapter.Insert(Val(EmpIDLabel2.Text), Val(lblRemaining.Text) + BPA, "#01/" & DateTimePicker1.Value.Month & "/" & DateTimePicker1.Value.Year & "#", "Normal Deduction from Salary", FinancialPeriodComboBox.SelectedValue)
-                    Else
-                        Me.Tbl_Acc_PAdvDeductionsTableAdapter.Insert(Val(EmpIDLabel2.Text), Val(Label33.Text) + BPA, "#01/" & DateTimePicker1.Value.Month & "/" & DateTimePicker1.Value.Year & "#", "Normal Deduction from Salary", FinancialPeriodComboBox.SelectedValue)
-                    End If
-                End If
-            End If
-        End If
-
-    End Sub
-
-    Private Sub Tbl_Hrm_Emp_Info_HBindingSource_PositionChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Tbl_Hrm_Emp_Info_HBindingSource.PositionChanged
-        NavigationFunction()
-    End Sub
-
-    Private Sub MaskedTextBox1_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MaskedTextBox1.TextChanged
-        If Label5.Text = "" Or Label5.Text = "Values Over Flow..." Then
-            CalculateAllRecords()
-        End If
-    End Sub
-
-    Private Sub MaskedTextBox2_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MaskedTextBox2.TextChanged
-        If Label5.Text = "" Or Label5.Text = "Values Over Flow..." Then
-            CalculateAllRecords()
-        End If
     End Sub
     Dim flag As Boolean = False
-
 
     Private Sub btnRefresh_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
         'here
@@ -815,7 +179,7 @@ Public Class frmAutoSalCalculation
                 Dim dgResult As DialogResult = MessageBox.Show("Are you sure," & vbCrLf & "You want to Calculate Salary of  [" + Me.DateTimePicker1.Value.ToString("MMMM") + "-" + Me.DateTimePicker1.Value.Year.ToString + "] With Starting Card No.[" + Me.CardNoComboBox.Text + " ]?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk)
                 If dgResult = 6 Then
                     Me.DateTimePicker1.Enabled = False
-                    Me.FinancialPeriodComboBox.Enabled = False
+                    'Me.FinancialPeriodComboBox.Enabled = False
                     Me.CardNoComboBox.Enabled = False
                     Label6.Text = "Running"
                     Timer1.Start()
@@ -838,6 +202,7 @@ Public Class frmAutoSalCalculation
         '    ToolStripProgressBar1.Value = I
         'Next
         'End here
+        StartFlag = True
     End Sub
 
     Public Sub frmMonthlySalary_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyDown
@@ -850,193 +215,10 @@ Public Class frmAutoSalCalculation
         '    Tbl_Hrm_Emp_Info_HBindingSource.Position -= 1
         'End If
     End Sub
-
-    Private Sub MaskedTextBox1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MaskedTextBox1.KeyDown
-        'This function controls navigation of records through key board keys
-        If (e.Control) Then
-            SaveNow()
-        ElseIf e.KeyCode = Keys.Down Then
-            Tbl_Hrm_Emp_Info_HBindingSource.Position += 1
-        ElseIf e.KeyCode = Keys.Up Then
-            Tbl_Hrm_Emp_Info_HBindingSource.Position -= 1
-        End If
-    End Sub
-
-    Private Sub MaskedTextBox2_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MaskedTextBox2.KeyDown
-        'This function controls navigation of records through key board keys
-        If (e.Control) Then
-            SaveNow()
-        ElseIf e.KeyCode = Keys.Down Then
-            Tbl_Hrm_Emp_Info_HBindingSource.Position += 1
-        ElseIf e.KeyCode = Keys.Up Then
-            Tbl_Hrm_Emp_Info_HBindingSource.Position -= 1
-        End If
-    End Sub
-
-    Private Sub CheckBox1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles CheckBox1.KeyDown
-        'This function controls navigation of records through key board keys
-        If (e.Control) Then
-            SaveNow()
-        ElseIf e.KeyCode = Keys.Down Then
-            Tbl_Hrm_Emp_Info_HBindingSource.Position += 1
-        ElseIf e.KeyCode = Keys.Up Then
-            Tbl_Hrm_Emp_Info_HBindingSource.Position -= 1
-        End If
-    End Sub
-
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        'This funtion is used to undo salary transactions.
-        Dim PaidCount As Integer
-        Dim TransCount As Integer
-
-        'PaidCount = Me.Tbl_Acc_Salary_TransactionsTableAdapter.FillBy1(Me.DSCalculateSalary.tbl_Acc_Salary_Transactions, Val(EmpIDLabel2.Text), FinancialPeriodComboBox.SelectedValue, DateTimePicker1.Value.Month, DateTimePicker1.Value.Year)
-        PaidCount = 0
-
-        TransCount = Me.Tbl_Acc_Salary_TransactionsTableAdapter.FillBy(Me.DSCalculateSalary.tbl_Acc_Salary_Transactions, Val(EmpIDLabel2.Text), FinancialPeriodComboBox.SelectedValue, DateTimePicker1.Value.Month, DateTimePicker1.Value.Year)
-
-        If PaidCount = 0 Then
-            If TransCount = 0 Then
-                MsgBox("No Active Salary For This Month, So Undo Fail")
-            Else
-                Dim dgResults As DialogResult = MessageBox.Show("Are You Sure About the Action You Are Going to Perform?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
-                If dgResults = Windows.Forms.DialogResult.Yes Then
-                    Try
-                        Me.Tbl_Acc_PAdvDeductionsTableAdapter.DeleteDedForSalUndo(Val(EmpIDLabel2.Text), DateTimePicker1.Value.Month, DateTimePicker1.Value.Year)
-                        Me.Tbl_Acc_Salary_TransactionsTableAdapter.DeleteSalTrans(Val(EmpIDLabel2.Text), FinancialPeriodComboBox.SelectedValue, DateTimePicker1.Value.Month, DateTimePicker1.Value.Year)
-                        MsgBox("Record Undo Successfully")
-                        NavigationFunction()
-                    Catch ex As Exception
-                        MsgBox(ex.Message)
-                    End Try
-                End If
-            End If
-        Else
-            MsgBox("Salary Have Been Paid Or Not Calculated For this Employee, So Undo Fail")
-        End If
-
-    End Sub
-
-    Private Sub TextBox4_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBox4.TextChanged
-        If Label5.Text = "" Or Label5.Text = "Values Over Flow..." Then
-            CalculateAllRecords()
-        End If
-    End Sub
-
-    Private Sub FinancialPeriodComboBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FinancialPeriodComboBox.SelectedIndexChanged
-        'This function check either valid financial period was selected for salary calculation
-        'If invalid is selected then it is reset to the current financial period.
-        'Actually Financial Period was not required here to set or reset, it should be automatically selected in beckground
-        'So, It can be removed from here in future
-        Dim Obj As New UtilityClass()
-        If FinancialPeriodComboBox.SelectedValue <> Nothing Then
-            If FinancialPeriodComboBox.SelectedValue = Obj.ReturnFP(DateTimePicker1.Value.Month, DateTimePicker1.Value.Year) Then
-            Else
-                MsgBox("Invalid financial period as Per Selected Month or Year")
-                FinancialPeriodComboBox.SelectedValue = Obj.ReturnFP(DateTimePicker1.Value.Month, DateTimePicker1.Value.Year)
-            End If
-        Else
-            FinancialPeriodComboBox.SelectedValue = Obj.ReturnFP(DateTimePicker1.Value.Month, DateTimePicker1.Value.Year)
-        End If
-        NavigationFunction()
-    End Sub
-
-    Private Sub FinancialPeriodComboBox_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles FinancialPeriodComboBox.KeyDown
-        'This function controls navigation of records through key board keys
-        If e.Control Then
-            SaveNow()
-        ElseIf e.KeyCode = Keys.Down Then
-            Tbl_Hrm_Emp_Info_HBindingSource.Position += 1
-        ElseIf e.KeyCode = Keys.Up Then
-            Tbl_Hrm_Emp_Info_HBindingSource.Position -= 1
-        End If
-    End Sub
-
-    Private Sub TextBox4_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TextBox4.KeyDown
-        'This function controls navigation of records through key board keys
-        If (e.Control) Then
-            SaveNow()
-        ElseIf e.KeyCode = Keys.Down Then
-            Tbl_Hrm_Emp_Info_HBindingSource.Position += 1
-        ElseIf e.KeyCode = Keys.Up Then
-            Tbl_Hrm_Emp_Info_HBindingSource.Position -= 1
-        End If
-    End Sub
-
-    'Private Sub CardNoComboBox_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs)
-    '    'This function controls navigation of records through key board keys
-    '    If (e.Control) Then
-    '        SaveNow()
-    '    End If
-    'End Sub
-
-    Private Sub DateTimePicker1_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DateTimePicker1.ValueChanged
-        Try
-            SelectFP()
-        Catch ex As Exception
-        End Try
-        NavigationFunction()
-        If MonthFlag = True And flag26 = False Then
-            DayCalc = DateTime.DaysInMonth(DateTimePicker1.Value.Year, DateTimePicker1.Value.Month)
-        ElseIf MonthFlag = False And flag26 = True Then
-            DayCalc = 26
-        End If
-    End Sub
-
-    Private Sub DateTimePicker1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles DateTimePicker1.KeyDown
-        'This function controls navigation of records through key board keys
-        If (e.Control) Then
-            SaveNow()
-        ElseIf e.KeyCode = Keys.Down Then
-            Tbl_Hrm_Emp_Info_HBindingSource.Position += 1
-        ElseIf e.KeyCode = Keys.Up Then
-            Tbl_Hrm_Emp_Info_HBindingSource.Position -= 1
-        End If
-    End Sub
-
-    Private Sub SelectFP()
-        'Here Obj.ReturnFP() function is a utility function that returns financial period by providing Year and Month
-        Dim Obj As New UtilityClass()
-        If Obj.ReturnFP(DateTimePicker1.Value.Month, DateTimePicker1.Value.Year) <> Nothing Then
-            FinancialPeriodComboBox.SelectedValue = Obj.ReturnFP(DateTimePicker1.Value.Month, DateTimePicker1.Value.Year)
-        Else
-            MsgBox("Selected year was beyond the running financial period")
-            DateTimePicker1.Value = Now.Date
-        End If
-    End Sub
-
-    Private Sub CheckBox2_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        If Label5.Text = "" Or Label5.Text = "Values Over Flow..." Then
-            CalculateAllRecords()
-        End If
-    End Sub
-
-    Private Sub txtSLeaveDeduct_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtSLeaveDeduct.TextChanged
-        'This funtion set or reset short leave deduction amount.
-        'i.e either the user wants to deduct short leave amount or not for the selected employee
-        If txtSLeaveDeduct.TextLength = 0 Then
-            lblBeforeFinal.Text = Val(lblBeforeFinal.Text) - (Val(lblShortDeducted.Text) - Val(txtSLeaveDeduct.Text))
-            lblSalary.Text = Val(lblAdds.Text) - Val(lblBeforeFinal.Text)
-            lblShortDeducted.Text = Val(txtSLeaveDeduct.Text)
-            'CardNoComboBox.Focus()
-        Else
-            lblBeforeFinal.Text = Val(lblBeforeFinal.Text) - (Val(lblShortDeducted.Text) - Val(txtSLeaveDeduct.Text))
-            lblSalary.Text = Val(lblAdds.Text) - Val(lblBeforeFinal.Text)
-            lblShortDeducted.Text = Val(txtSLeaveDeduct.Text)
-        End If
-    End Sub
     Public Function FirstDayOfMonth(ByVal sourceDate As DateTime) As DateTime
         Return New DateTime(sourceDate.Year, sourceDate.Month, 1)
     End Function
-    Private Sub txtSLeaveDeduct_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtSLeaveDeduct.KeyDown
-        'This function controls navigation of records through key board keys
-        If (e.Control) Then
-            SaveNow()
-        ElseIf e.KeyCode = Keys.Down Then
-            Tbl_Hrm_Emp_Info_HBindingSource.Position += 1
-        ElseIf e.KeyCode = Keys.Up Then
-            Tbl_Hrm_Emp_Info_HBindingSource.Position -= 1
-        End If
-    End Sub
+
     Dim i As Integer = 0
     Private Sub Timer2_Tick(ByVal sender As Object, ByVal e As System.EventArgs) Handles Timer2.Tick
         '
@@ -1060,11 +242,14 @@ Public Class frmAutoSalCalculation
             Button2.BackColor = Color.Maroon
             Button2.ForeColor = Color.Yellow
             Button2.Text = "Stop To Calculate Salary"
-            If i < Me.Tbl_Hrm_Emp_Info_HBindingSource.Count Then
-                Me.Tbl_Hrm_Emp_Info_HBindingSource.Position = i
-                SaveNow()
+            If i < Me.View_HRMSBindingSource.Count Then
+                Me.View_HRMSBindingSource.Position = i
+                SaveRecord()
+                'Thread.Sleep(100)
+                'Application.DoEvents()
                 ToolStripProgressBar1.Value = i
                 i = i + 1
+
             Else
                 ToolStripProgressBar1.Value = 0
                 flag = False
@@ -1074,7 +259,7 @@ Public Class frmAutoSalCalculation
                 Me.Label8.Text = ""
                 MsgBox("Auto Monthly Salary Calculated and Saved Successfully", MsgBoxStyle.Information)
                 i = 0
-                Me.Tbl_Hrm_Emp_Info_HBindingSource.Position = i
+                Me.View_HRMSBindingSource.Position = i
                 Button2.BackColor = Color.Black
                 Button2.ForeColor = Color.Red
                 Button2.Text = "Start To Calculate Salary"
@@ -1087,8 +272,8 @@ Public Class frmAutoSalCalculation
         End If
     End Sub
 
-    Private Sub Tbl_Hrm_Emp_Info_Cards_InfoBindingSource_PositionChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Tbl_Hrm_Emp_Info_Cards_InfoBindingSource.PositionChanged
-        i = Me.Tbl_Hrm_Emp_Info_Cards_InfoBindingSource.Position
+    Private Sub Tbl_Hrm_Emp_Info_Cards_InfoBindingSource_PositionChanged(ByVal sender As Object, ByVal e As System.EventArgs)
+
     End Sub
 
 
@@ -1185,12 +370,12 @@ Public Class frmAutoSalCalculation
                     Dim obj As New UtilityClass
                     'Dim FP As String = obj.ReturnFP(Now.Date.Month, Now.Date.Year)
                     Try
-                        Returns = Me.Tbl_Hrm_Emp_InfoTableAdapter.Fill(Me.DSCalculateSalary.tbl_Hrm_Emp_Info, ExcelCard)
+                        'Returns = Me.Tbl_Hrm_Emp_InfoTableAdapter.Fill(Me.DSCalculateSalary.tbl_Hrm_Emp_Info, ExcelCard)
                     Catch ex As Exception
                     End Try
                     If Returns = 1 Then
                         Dim EmpID As Int16 = Me.DSCalculateSalary.tbl_Hrm_Emp_Info.Rows(0).Item("EmpID")
-                        Me.Tbl_Acc_Salary_TransactionsTableAdapter.UpdateArrears(ExcelArrears, Salalrymonth, EmpID)
+                        'Me.Tbl_Acc_Salary_TransactionsTableAdapter.UpdateArrears(ExcelArrears, Salalrymonth, EmpID)
                         PaintGrid(0, i, Color.DarkGreen, Color.White)
                         PaintGrid(1, i, Color.DarkGreen, Color.White)
                     Else
@@ -1225,6 +410,237 @@ Public Class frmAutoSalCalculation
             Label11.Visible = False
             Label12.Visible = False
         End If
+    End Sub
+    Dim StartFlag As Boolean = False
+    Dim FP As String
+    Private Sub View_HRMSBindingSource_PositionChanged(sender As Object, e As EventArgs) Handles View_HRMSBindingSource.PositionChanged
+
+        i = Me.View_HRMSBindingSource.Position
+
+    End Sub
+    Private Sub SaveRecord()
+        'If StartFlag = True Then
+        Try
+                Me.Tbl_Acc_Salary_TransactionsTableAdapter.FillBy2(Me.DSAutoCalc.tbl_Acc_Salary_Transactions, Me.EmpIDLabel1.Text, Me.DateTimePicker1.Value.Month, DateTimePicker1.Value.Year)
+            Catch ex As Exception
+
+            End Try
+
+        If Me.Tbl_Acc_Salary_TransactionsBindingSource.Count > 0 Then
+
+            ErrorFileWriter(FilePath, "CardNo: [" & Me.CardNoComboBox.Text & "] , Message: [Salary Already Saved or Values are Over Flowing]")
+        Else
+            Try
+                    Me.View_Salary_PaidLeavesTableAdapter.Fill(Me.DSAutoCalc.View_Salary_PaidLeaves, EmpIDLabel1.Text, Me.DateTimePicker1.Value.Month, DateTimePicker1.Value.Year)
+                Catch ex As System.Exception
+
+                End Try
+                Try
+                    Me.View_Rpt_PayRoll_EmpAttRecordTableAdapter.Fill(Me.DSAutoCalc.View_Rpt_PayRoll_EmpAttRecord, EmpIDLabel1.Text, Me.DateTimePicker1.Value.Year, Me.DateTimePicker1.Value.Month)
+                Catch ex As System.Exception
+
+                End Try
+                Try
+                    Me.View_Rpt_Acc_OverTimeSumTableAdapter.Fill(Me.DSAutoCalc.View_Rpt_Acc_OverTimeSum, Me.EmpIDLabel1.Text, DateTimePicker1.Value.Year, DateTimePicker1.Value.Month)
+                Catch ex As System.Exception
+
+                End Try
+                Try
+                    Me.View_Acc_RFD_PayTableAdapter.Fill(Me.DSAUTO.View_Acc_RFD_Pay, Me.DateTimePicker1.Value.Month, Me.DateTimePicker1.Value.Year, EmpIDLabel1.Text)
+                Catch ex As System.Exception
+
+                End Try
+
+                Try
+                    Me.View_Emp_Meal_AttendanceTableAdapter.Fill(Me.DSAUTO.View_Emp_Meal_Attendance, EmpIDLabel1.Text, DateTimePicker1.Value.Month, Me.DateTimePicker1.Value.Year)
+                Catch ex As System.Exception
+
+                End Try
+
+                Try
+                    Me.View_Acc_FairShopTableAdapter.Fill(Me.DSAUTO.View_Acc_FairShop, Me.EmpIDLabel1.Text, DateTimePicker1.Value.Month, DateTimePicker1.Value.Year)
+                Catch ex As System.Exception
+
+                End Try
+                Try
+                    Me.View_Acc_Emp_MaxAdvance_DedRateTableAdapter.Fill(Me.DSAUTO.View_Acc_Emp_MaxAdvance_DedRate, EmpIDLabel1.Text)
+                Catch ex As System.Exception
+
+                End Try
+
+                Try
+                    Me.View_Acc_Adv_BalanceTableAdapter.Fill(Me.DSAUTO.View_Acc_Adv_Balance, EmpIDLabel1.Text)
+                Catch ex As System.Exception
+
+                End Try
+
+                Try
+                    Me.Tbl_Acc_ShortTermAdvancesTableAdapter.Fill(Me.DSAUTO.tbl_Acc_ShortTermAdvances, Me.DateTimePicker1.Value.Month, DateTimePicker1.Value.Year, Me.EmpIDLabel1.Text)
+                Catch ex As System.Exception
+
+                End Try
+                Try
+                    Me.View_SP_OTTableAdapter.Fill(Me.DSSP.View_SP_OT, EmpIDLabel1.Text, DateTimePicker1.Value.Month, DateTimePicker1.Value.Year)
+                Catch ex As System.Exception
+
+                End Try
+            Dim TotalAdds As Integer = 0
+            Dim Incentive As Double = 0
+            Dim TotalSub As Integer = 0
+                Dim TWorkingdays As Int16 = SundayCount
+                Dim TSundays As Int16 = DateTime.DaysInMonth(DateTimePicker1.Value.Year, DateTimePicker1.Value.Month) - CalculateWorkingDays()
+                Dim HolidayCount As Int16 = Val(Me.HolidayCountLabel1.Text)
+            Dim TotalWorkingDays As Int16 = SundayCount - HolidayCount
+            Try
+                If Me.Tbl_Acc_INCTableAdapter.Fill(Me.DSCalculateSalary.tbl_Acc_INC, Me.EmpIDLabel1.Text, DateTimePicker1.Value.Month, DateTimePicker1.Value.Year) > 0 Then
+                    Incentive = Me.DSCalculateSalary.tbl_Acc_INC.Rows(0).Item("Amt")
+                Else
+                    Incentive = 0
+                End If
+            Catch ex As System.Exception
+                Incentive = 0
+            End Try
+
+
+            Dim Payabledays As Double = 26 - (TotalWorkingDays - (Val(FullDaysLabel1.Text) + Val(HalfDaysLabel1.Text) + Val(PaidLabel1.Text)))
+            If CType(DateOfJoningLabel1.Text, Date).Month = Me.DateTimePicker1.Value.Month And CType(DateOfJoningLabel1.Text, Date).Year = Me.DateTimePicker1.Value.Year Then
+                Try
+                    Me.View_Emp_Deduction_Days_NEWTableAdapter.Fill(Me.DSAutoCalc.View_Emp_Deduction_Days_NEW, Me.DateTimePicker1.Value.Month, DateTimePicker1.Value.Year, Me.EmpIDLabel1.Text)
+                Catch ex As System.Exception
+
+                End Try
+                Payabledays = Val(FullDaysLabel1.Text) + Val(HalfDaysLabel1.Text) + Val(PaidLabel1.Text) + Val(HolidayCountLabel1.Text) - Val(DayDeductionLabel1.Text)
+            End If
+            If Payabledays > 26 Then
+                Payabledays = 26
+            End If
+
+            Dim DueSalary As Double = Val(BasicSalaryLabel1.Text) / 26 * Payabledays
+            Dim NormalOTHRS As Double = Val(FullMinutesWorkedLabel1.Text) / 60
+            Dim NormalOTAmt As Integer = ((Val(BasicSalaryLabel1.Text) / 26 / 8) * NormalOTHRS) * 2
+            Dim SpOt As Double = Val(Me.SPLabel1.Text) / 60
+            Dim SPAmt As Integer = ((Val(BasicSalaryLabel1.Text) / 26 / 8) * SpOt) * 2
+                Dim MealPayable As Double = (Val(FullDaysLabel1.Text) + Val(HalfDaysLabel1.Text)) * Val(MealAllowanceLabel1.Text)
+
+                Dim CanteenDed As Double = Val(Me.EmpCountLabel2.Text) * Val(ConteenDeductLabel1.Text)
+
+                Dim DedRate As Double = 0
+                If Val(PBalanceLabel1.Text) > Val(DedRateLabel1.Text) Then
+                    DedRate = Val(DedRateLabel1.Text)
+                Else
+                    DedRate = Val(PBalanceLabel1.Text)
+                End If
+                Dim RFDPay As Double = Val(RFAMTLabel1.Text)
+
+            TotalAdds = DueSalary + SaniorityValue(LabelSenAll.Text) + Val(SpecialAllowanceLabel1.Text) + Val(EducationAllowanceLabel1.Text) + Val(TravelAllowanceLabel1.Text) + Val(AccommodationLabel1.Text) + MealPayable + NormalOTAmt + 0
+
+            TotalSub = RFDPay + Val(TaxDeductionLabel1.Text) + Val(RentDeductionLabel1.Text) + Val(EOBILabel1.Text) + Val(UnionFundLabel1.Text) + Val(TempAdvLabel1.Text) + Val(FairPriceLabel1.Text) + CanteenDed + DedRate
+                Dim TotalPAdv, PayBack, Remaining As Double
+                Try
+                    TotalPAdv = Me.DSAUTO.View_Acc_Adv_Balance.Rows(0).Item("TotalAdvance")
+
+                Catch ex As Exception
+                    TotalPAdv = 0
+                End Try
+                Try
+                    Remaining = Me.DSAUTO.View_Acc_Adv_Balance.Rows(0).Item("TotalAdvance") - Me.DSAUTO.View_Acc_Adv_Balance.Rows(0).Item("DedAmount") - DedRate
+                Catch ex As Exception
+                    Remaining = 0
+                End Try
+                Try
+                    PayBack = Me.DSAUTO.View_Acc_Adv_Balance.Rows(0).Item("DedAmount") + DedRate
+                Catch ex As Exception
+
+                End Try
+
+            Dim total As Double = TotalAdds - TotalSub + SPAmt + Incentive
+            Dim FinalRFD As Double = total Mod 500
+            If FinalRFD > 0 And PaymentModeLabel1.Text = "Cash" Then
+                FinalRFD = 500 - FinalRFD
+            Else
+                FinalRFD = 0
+            End If
+            Dim PessISalary As Integer
+            Dim PessiCont As Int16
+            lblAdds.Text = TotalAdds
+            lblBeforeFinal.Text = TotalSub
+            lblSalary.Text = TotalAdds - TotalSub
+            'Dim PAdv As Int16 = Val(AdvSumLabel1.Text)
+            'Me.Tbl_Acc_Salary_TransactionsTableAdapter.Insert(Me.EmpIDLabel1.Text, Me.BasicSalaryLabel1.Text, Me.TaxDeductionLabel1.Text, Me.RentDeductionLabel1.Text, Me.UnionFundLabel1.Text, Me.EOBILabel1.Text, Me.SpecialAllowanceLabel1.Text, Me.TravelAllowanceLabel1.Text, Me.EducationAllowanceLabel1.Text, Me.MealAllowanceLabel1.Text, Me.AccommodationLabel1.Text, Me.PaymentModeLabel1.Text, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, False, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,)
+            If Payabledays < 5 Then
+                Me.Tbl_Emp_Salary_Calculation_AdjTableAdapter.Insert(Me.EmpIDLabel1.Text, "#01/" & DateTimePicker1.Value.Month & "/" & DateTimePicker1.Value.Year & "#", Me.BasicSalaryLabel1.Text, Nothing, Now.Date, 0, 0, GradeNameLabel1.Text, DateTime.DaysInMonth(DateTimePicker1.Value.Year, DateTimePicker1.Value.Month), Me.HolidayCountLabel1.Text, Val(FullDaysLabel1.Text) + Val(HalfDaysLabel1.Text))
+                ErrorFileWriter(FilePath, "CardNo: [" & Me.CardNoComboBox.Text & "] , Message: [Number of Working Days are Less than 5.]")
+            Else
+                If TotalAdds - TotalSub > 0 Then
+                    If PESSIContLabel1.Text = True Then
+                        PessISalary = CInt(Me.DSUser.tbl_Comp_Info.Rows(0).Item("PEESIFIX"))
+                        If Val(BasicSalaryLabel1.Text) > PessISalary Then
+                        Else
+                            PessISalary = Val(BasicSalaryLabel1.Text)
+                        End If
+                        PessiCont = (PessISalary / 26) * (Val(FullDaysLabel1.Text) + Val(HalfDaysLabel1.Text)) * 0.06
+                    End If
+                    Try
+                        Me.Tbl_Acc_Salary_TransactionsTableAdapter.Insert(Val(EmpIDLabel1.Text), Val(BasicSalaryLabel1.Text), Val(TaxDeductionLabel1.Text), Val(RentDeductionLabel1.Text), Val(EOBILabel1.Text), Val(TravelAllowanceLabel1.Text), Val(EducationAllowanceLabel1.Text), Val(SpecialAllowanceLabel1.Text), Val(MealAllowanceLabel1.Text), PaymentModeLabel1.Text, TotalPAdv, DedRate, PayBack, Remaining, Val(TempAdvLabel1.Text), Nothing, Val(CasualLabel1.Text), Val(SickLabel1.Text), Val(M2Label1.Text), Val(SpecialLabel1.Text), 0, Val(PaidLabel1.Text), 0, Val(FullDaysLabel1.Text), Val(HalfDaysLabel1.Text), NormalOTHRS, NormalOTAmt, 26 - Payabledays, Val(FullDaysLabel1.Text) + Val(HalfDaysLabel1.Text), Payabledays, MealPayable, Val(BasicSalaryLabel1.Text) / 26, DueSalary, TotalAdds - TotalSub, FP, "#01/" & DateTimePicker1.Value.Month & "/" & DateTimePicker1.Value.Year & "#", DateTime.DaysInMonth(DateTimePicker1.Value.Year, DateTimePicker1.Value.Month), TSundays, Val(HolidayCountLabel1.Text), 0, TotalWorkingDays, Now.Date, "Normal", "False", "True", TotalAdds, TotalSub, Val(FullDaysLabel1.Text) + Val(HalfDaysLabel1.Text), 0, 0, 0, 0, PessiCont, PessISalary, PessISalary, Val(DayDeductionLabel1.Text), SaniorityValue(LabelSenAll.Text), Val(Me.EmpCountLabel1.Text), CanteenDed, Val(AccommodationLabel1.Text), 0, Val(Me.HalfDaysLabel1.Text), 0, Me.GradeNameLabel1.Text, Me.DesigNameLabel1.Text, Me.DeptNameLabel1.Text, SectionNameLabel1.Text, SpOt, SPAmt, Val(FairPriceLabel1.Text), RFDPay, FinalRFD, 0, 0, Val(AnnualLabel1.Text), Incentive, "Auto")
+                    Catch ex As Exception
+
+                    End Try
+                Else
+                    Me.Tbl_Emp_Salary_Calculation_AdjTableAdapter.Insert(Me.EmpIDLabel1.Text, "#01/" & DateTimePicker1.Value.Month & "/" & DateTimePicker1.Value.Year & "#", Me.BasicSalaryLabel1.Text, Nothing, Now.Date, 0, 0, GradeNameLabel1.Text, DateTime.DaysInMonth(DateTimePicker1.Value.Year, DateTimePicker1.Value.Month), Me.HolidayCountLabel1.Text, Val(FullDaysLabel1.Text) + Val(HalfDaysLabel1.Text))
+                    ErrorFileWriter(FilePath, "CardNo: [" & Me.CardNoComboBox.Text & "] , Message: [Value Over Flow]")
+                End If
+
+                If DedRate > 0 Then
+                    ' Me.Tbl_Acc_PAdvDeductionsTableAdapter.Insert(Val(EmpIDLabel2.Text), Val(Label33.Text) + BPA, "#01/" & DateTimePicker1.Value.Month & "/" & DateTimePicker1.Value.Year & "#", "Normal Deduction from Salary", FinancialPeriodComboBox.SelectedValue)
+                    Me.View_Acc_RFD_PayTableAdapter.InsertQuery1(Val(EmpIDLabel1.Text), DedRate, "Normal Deduction from Salary", False, "#01/" & DateTimePicker1.Value.Month & "/" & DateTimePicker1.Value.Year & "#", FP)
+                End If
+                If SaniorityValue(LabelSenAll.Text) > 0 Then
+                    'Me.View_HRMSTableAdapter.UpdateQuery(Me.EmpIDLabel1.Text)
+                End If
+                If FinalRFD > 0 Then
+                    Me.Tbl_Acc_RFD_PayTableAdapter.InsertQuery(Me.EmpIDLabel1.Text, FinalRFD, Now.Date)
+                End If
+
+            End If
+
+
+
+        End If
+    End Sub
+    Dim obj As New UtilityClass
+    Function SaniorityValue(Sen As Integer) As Integer
+        'Dim SaniorityAllowance, YearValue As Integer
+        'Try
+        '    SaniorityAllowance = 0
+        '    YearValue = DateDiff(DateInterval.Day, CType(DateOfJoningLabel1.Text, Date), CType("#01/" & DateTimePicker1.Value.Month & "/" & DateTimePicker1.Value.Year & "#", Date))
+        '    YearValue = Fix(YearValue / 365)
+        '    If SenStatusLabel1.Text = True Or GradeNameLabel1.Text.Trim = "A+" Or GradeNameLabel1.Text.Trim = "S-2" Or GradeNameLabel1.Text.Trim = "A" Or GradeNameLabel1.Text.Trim = "B" Or GradeNameLabel1.Text.Trim = "C" Or GradeNameLabel1.Text.Trim = "D" Then
+        '        If YearValue <= 5 And YearValue > 0 Then
+        '            SaniorityAllowance = YearValue * 250
+        '        ElseIf YearValue = 0 Then
+        '            SaniorityAllowance = 0
+        '        Else
+        '            SaniorityAllowance = 1250
+        '        End If
+        '    Else
+        '        SaniorityAllowance = 0
+        '    End If
+        'Catch ex As Exception
+        '    SaniorityAllowance = 0
+        'End Try
+
+        'Return SaniorityAllowance
+        Return Sen
+    End Function
+    Dim SundayCount As Int16
+    Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged
+        Try
+            Me.Tbl_Hrm_HolidaysTableAdapter.Fill(Me.DSAUTO.tbl_Hrm_Holidays, DateTimePicker1.Value.Month, DateTimePicker1.Value.Year)
+        Catch ex As System.Exception
+
+        End Try
+        SundayCount = CalculateWorkingDays()
+        FP = obj.ReturnFP(DateTimePicker1.Value.Month, DateTimePicker1.Value.Year)
     End Sub
 
 

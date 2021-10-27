@@ -1884,7 +1884,18 @@
             End If
 
         End If
+        If RadioButton17.Checked = True Then
+            Path = "" & frmLogin.ReportsPath & "\Accounts\Allowanceanddeduction\Rpt_Pessi_record.rpt"
 
+
+            If RadioButton1.Checked = True Then
+                Flag = False
+                Filter = "Year({view_Pessi_record.SalaryMonth}) = " & Bymonth.Value.Year & " and Month({view_Pessi_record.SalaryMonth}) = " & Bymonth.Value.Month & " "
+
+
+
+            End If
+        End If
         If Flag = True Then
             MessageBox.Show("Start Card Number Is Missing", "Missing Field", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else

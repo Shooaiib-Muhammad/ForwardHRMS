@@ -1767,6 +1767,31 @@
 
             End If
         End If
+        If RadioButton16.Checked = True Then
+
+            Path = "" & frmLogin.ReportsPath & "\HR\serverletter1.rpt"
+
+            Param = "Date=" & Me.DateTimePicker2.Text & ""
+            If CardRange.Checked = True Then
+
+                If TextBox1.Text.Length = 0 Then
+                    Flag = True
+                Else
+                    Flag = False
+                End If
+                If TextBox2.Text = "" Then
+                    Filter = " {View_Rpt_Acc_AllEmployees.CardNo} In " & TextBox1.Text & " To " & TextBox1.Text & " "
+                Else
+                    Filter = "{View_Rpt_Acc_AllEmployees.CardNo} In " & TextBox1.Text & " To " & TextBox2.Text & " "
+                End If
+            ElseIf SpecialBtn.Checked = True Then
+                Flag = False
+                Filter = "{View_Rpt_Acc_AllEmployees.CardNo} In  [" & GetCardsInString() & "]"
+
+
+
+            End If
+        End If
         If RadioButton15.Checked = True Then
 
             Path = "" & frmLogin.ReportsPath & "\HR\marriagecase.rpt"
@@ -2349,6 +2374,21 @@
 
     Private Sub RadioButton17_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton17.CheckedChanged
         If RadioButton17.Checked = True Then
+            CardRange.Checked = True
+            SpecialBtn.Enabled = True
+            DateTimePicker2.Visible = True
+            Label12.Visible = True
+        Else
+            SpecialBtn.Enabled = False
+            CardRange.Checked = False
+            AllButton.Checked = True
+            DateTimePicker2.Visible = False
+            Label12.Visible = True
+        End If
+    End Sub
+
+    Private Sub RadioButton16_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton16.CheckedChanged
+        If RadioButton16.Checked = True Then
             CardRange.Checked = True
             SpecialBtn.Enabled = True
             DateTimePicker2.Visible = True

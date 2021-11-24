@@ -110,6 +110,7 @@ Partial Class frmLeavesPR
         Me.Tbl_Comp_InfoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Tbl_Comp_InfoTableAdapter = New ERP_HRMS.DSUserTableAdapters.tbl_Comp_InfoTableAdapter()
         Me.TableAdapterManager2 = New ERP_HRMS.DSUserTableAdapters.TableAdapterManager()
+        Me.RadioButton12 = New System.Windows.Forms.RadioButton()
         DesigNameLabel = New System.Windows.Forms.Label()
         BranchNameLabel = New System.Windows.Forms.Label()
         ShiftNameLabel = New System.Windows.Forms.Label()
@@ -174,6 +175,7 @@ Partial Class frmLeavesPR
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.RadioButton12)
         Me.GroupBox2.Controls.Add(Me.RadioButton11)
         Me.GroupBox2.Controls.Add(Me.RadioButton10)
         Me.GroupBox2.Controls.Add(Me.RadioButton9)
@@ -193,7 +195,7 @@ Partial Class frmLeavesPR
         Me.GroupBox2.ForeColor = System.Drawing.Color.Blue
         Me.GroupBox2.Location = New System.Drawing.Point(12, 96)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(319, 383)
+        Me.GroupBox2.Size = New System.Drawing.Size(309, 425)
         Me.GroupBox2.TabIndex = 18
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Report Selector"
@@ -388,7 +390,7 @@ Partial Class frmLeavesPR
         Me.GroupBox1.Controls.Add(Me.RadioByDate)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.Blue
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 496)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 541)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(320, 136)
         Me.GroupBox1.TabIndex = 19
@@ -1047,6 +1049,17 @@ Partial Class frmLeavesPR
         Me.TableAdapterManager2.UpdateOrder = ERP_HRMS.DSUserTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager2.UsersTableAdapter = Nothing
         '
+        'RadioButton12
+        '
+        Me.RadioButton12.AutoSize = True
+        Me.RadioButton12.ForeColor = System.Drawing.Color.Black
+        Me.RadioButton12.Location = New System.Drawing.Point(11, 389)
+        Me.RadioButton12.Name = "RadioButton12"
+        Me.RadioButton12.Size = New System.Drawing.Size(172, 21)
+        Me.RadioButton12.TabIndex = 50
+        Me.RadioButton12.Text = "Monthly Leaves Report"
+        Me.RadioButton12.UseVisualStyleBackColor = True
+        '
         'frmLeavesPR
         '
         Me.AcceptButton = Me.Button1
@@ -1176,4 +1189,5 @@ Partial Class frmLeavesPR
     Friend WithEvents RadioButton9 As RadioButton
     Friend WithEvents RadioButton10 As RadioButton
     Friend WithEvents RadioButton11 As RadioButton
+    Friend WithEvents RadioButton12 As RadioButton
 End Class

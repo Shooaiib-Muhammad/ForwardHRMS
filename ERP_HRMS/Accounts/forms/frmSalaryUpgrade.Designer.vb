@@ -84,14 +84,14 @@ Partial Class frmSalaryUpgrade
         Me.Tbl_HRM_CardTableAdapter = New ERP_HRMS.DSAdvanceTableAdapters.tbl_HRM_CardTableAdapter()
         Me.Tbl_HRM_CardBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.EmpIDLabel1 = New System.Windows.Forms.Label()
+        Me.Salary_UpgradeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.UpGradeSalary = New ERP_HRMS.UpGradeSalary()
         Me.EmpIDLabel2 = New System.Windows.Forms.Label()
+        Me.Tbl_Acc_SalaryBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Tbl_Acc_SalaryBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.UpGradeSalary = New ERP_HRMS.UpGradeSalary()
-        Me.Salary_UpgradeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TableAdapterManager2 = New ERP_HRMS.UpGradeSalaryTableAdapters.TableAdapterManager()
         Me.Salary_UpgradeTableAdapter = New ERP_HRMS.UpGradeSalaryTableAdapters.Salary_UpgradeTableAdapter()
         Me.Tbl_Acc_SalaryTableAdapter = New ERP_HRMS.UpGradeSalaryTableAdapters.tbl_Acc_SalaryTableAdapter()
@@ -121,9 +121,9 @@ Partial Class frmSalaryUpgrade
         CType(Me.Tbl_HRM_Card11BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.View_Card_InfoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Tbl_HRM_CardBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Tbl_Acc_SalaryBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.UpGradeSalary, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Salary_UpgradeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.UpGradeSalary, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Tbl_Acc_SalaryBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DSAdvance
@@ -359,7 +359,9 @@ Partial Class frmSalaryUpgrade
         Me.TableAdapterManager1.tbl_HRM_Grade_NEWTableAdapter = Nothing
         Me.TableAdapterManager1.tbl_HRM_GradeTableAdapter = Me.Tbl_HRM_GradeTableAdapter
         Me.TableAdapterManager1.tbl_HRM_Section_NewTableAdapter = Nothing
+        Me.TableAdapterManager1.tbl_Pro_VendorTableAdapter = Nothing
         Me.TableAdapterManager1.UpdateOrder = ERP_HRMS.DSDeptTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager1.View_HRM_Leave_ReasonTableAdapter = Nothing
         Me.TableAdapterManager1.View_Inactive_EmpTableAdapter = Nothing
         '
         'Tbl_Fin_DebitCredit_Entry1TableAdapter
@@ -506,6 +508,16 @@ Partial Class frmSalaryUpgrade
         Me.EmpIDLabel1.Size = New System.Drawing.Size(100, 23)
         Me.EmpIDLabel1.TabIndex = 18
         '
+        'Salary_UpgradeBindingSource
+        '
+        Me.Salary_UpgradeBindingSource.DataMember = "Salary_Upgrade"
+        Me.Salary_UpgradeBindingSource.DataSource = Me.UpGradeSalary
+        '
+        'UpGradeSalary
+        '
+        Me.UpGradeSalary.DataSetName = "UpGradeSalary"
+        Me.UpGradeSalary.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'EmpIDLabel2
         '
         Me.EmpIDLabel2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tbl_Acc_SalaryBindingSource, "EmpID", True))
@@ -515,6 +527,11 @@ Partial Class frmSalaryUpgrade
         Me.EmpIDLabel2.Size = New System.Drawing.Size(100, 23)
         Me.EmpIDLabel2.TabIndex = 19
         Me.EmpIDLabel2.Text = "Label1"
+        '
+        'Tbl_Acc_SalaryBindingSource
+        '
+        Me.Tbl_Acc_SalaryBindingSource.DataMember = "tbl_Acc_Salary"
+        Me.Tbl_Acc_SalaryBindingSource.DataSource = Me.UpGradeSalary
         '
         'Label12
         '
@@ -551,21 +568,6 @@ Partial Class frmSalaryUpgrade
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(24, 20)
         Me.Label4.TabIndex = 91
-        '
-        'Tbl_Acc_SalaryBindingSource
-        '
-        Me.Tbl_Acc_SalaryBindingSource.DataMember = "tbl_Acc_Salary"
-        Me.Tbl_Acc_SalaryBindingSource.DataSource = Me.UpGradeSalary
-        '
-        'UpGradeSalary
-        '
-        Me.UpGradeSalary.DataSetName = "UpGradeSalary"
-        Me.UpGradeSalary.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'Salary_UpgradeBindingSource
-        '
-        Me.Salary_UpgradeBindingSource.DataMember = "Salary_Upgrade"
-        Me.Salary_UpgradeBindingSource.DataSource = Me.UpGradeSalary
         '
         'TableAdapterManager2
         '
@@ -629,9 +631,9 @@ Partial Class frmSalaryUpgrade
         CType(Me.Tbl_HRM_Card11BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.View_Card_InfoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Tbl_HRM_CardBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Tbl_Acc_SalaryBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.UpGradeSalary, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Salary_UpgradeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UpGradeSalary, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Tbl_Acc_SalaryBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

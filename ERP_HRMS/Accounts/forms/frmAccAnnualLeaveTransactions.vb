@@ -93,10 +93,10 @@
                     Else
                         PayDays = 14
                         Amt = Math.Round((Me.DSAnnualLeavesTransactions.View_Rpt_Acc_PreSalary.Rows(i).Item("GrossSalary") / 26) * 14)
-                        If GradeID <= 6 Then
-                            PayDays = 7
-                            Amt = Amt / 2
-                        End If
+                        'If GradeID <= 6 Then
+                        '    'PayDays = 7
+                        '    Amt = Amt / 2
+                        'End If
                         Me.Tbl_Acc_AnnualLeaveTransactionsTableAdapter.Insert(EmpID, FinancialPeriodComboBox.SelectedValue, DateTimePicker1.Value.Date, DateDiff(DateInterval.Month, DateOfPermanent, DateTimePicker1.Value.Date), Amt, Nothing, Nothing, False, False, Nothing, DOJ, DOP, PayDays, Me.DSAnnualLeavesTransactions.View_Rpt_Acc_PreSalary.Rows(i).Item("GrossSalary"))
                     End If
                 End If

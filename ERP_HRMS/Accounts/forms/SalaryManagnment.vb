@@ -214,6 +214,12 @@ Me.Tbl_Acc_SalaryDataGridView(17, e.RowIndex).Value Is DBNull.Value Then
                     Me.Tbl_Acc_SalaryDataGridView(0, e.RowIndex).Value = Me.Tbl_Acc_SalaryDataGridView(0, e.RowIndex - 1).Value
                 Catch ex As Exception
                 End Try
+                Try
+                    Me.Tbl_Acc_SalaryDataGridView(23, e.RowIndex).ReadOnly = False
+                    Me.Tbl_Acc_SalaryDataGridView(23, e.RowIndex).Value = Me.Tbl_Acc_SalaryDataGridView(23, e.RowIndex - 1).Value
+                Catch ex As Exception
+                    Me.Tbl_Acc_SalaryDataGridView(23, e.RowIndex).Value = 0
+                End Try
             End If
         End If
         If e.ColumnIndex = 1 Then

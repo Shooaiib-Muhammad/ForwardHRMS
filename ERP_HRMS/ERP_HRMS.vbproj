@@ -28,7 +28,7 @@
     <ProductName>HRMS</ProductName>
     <PublisherName>Forward Group</PublisherName>
     <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
-    <ApplicationRevision>812</ApplicationRevision>
+    <ApplicationRevision>819</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>

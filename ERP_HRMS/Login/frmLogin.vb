@@ -125,6 +125,7 @@
         'Try
         'Attributes = "SERVER=" & "server" & Chr(0)
 
+        'Attributes = "SERVER=" & "Server" & Chr(0)
         Attributes = "SERVER=" & "192.168.10.1" & Chr(0)
 
 

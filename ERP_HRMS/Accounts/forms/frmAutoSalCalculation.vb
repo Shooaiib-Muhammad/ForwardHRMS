@@ -585,21 +585,23 @@ Public Class frmAutoSalCalculation
                     Catch ex As Exception
 
                     End Try
+                    If DedRate > 0 Then
+                        ' Me.Tbl_Acc_PAdvDeductionsTableAdapter.Insert(Val(EmpIDLabel2.Text), Val(Label33.Text) + BPA, "#01/" & DateTimePicker1.Value.Month & "/" & DateTimePicker1.Value.Year & "#", "Normal Deduction from Salary", FinancialPeriodComboBox.SelectedValue)
+                        Me.View_Acc_RFD_PayTableAdapter.InsertQuery1(Val(EmpIDLabel1.Text), DedRate, "Normal Deduction from Salary", False, "#01/" & DateTimePicker1.Value.Month & "/" & DateTimePicker1.Value.Year & "#", FP)
+                    End If
+                    If FinalRFD > 0 Then
+                        Me.Tbl_Acc_RFD_PayTableAdapter.InsertQuery(Me.EmpIDLabel1.Text, FinalRFD, Now.Date)
+                    End If
                 Else
                     Me.Tbl_Emp_Salary_Calculation_AdjTableAdapter.Insert(Me.EmpIDLabel1.Text, "#01/" & DateTimePicker1.Value.Month & "/" & DateTimePicker1.Value.Year & "#", Me.BasicSalaryLabel1.Text, Nothing, Now.Date, 0, 0, GradeNameLabel1.Text, DateTime.DaysInMonth(DateTimePicker1.Value.Year, DateTimePicker1.Value.Month), Me.HolidayCountLabel1.Text, Val(FullDaysLabel1.Text) + Val(HalfDaysLabel1.Text))
                     ErrorFileWriter(FilePath, "CardNo: [" & Me.CardNoComboBox.Text & "] , Message: [Value Over Flow]")
                 End If
 
-                If DedRate > 0 Then
-                    ' Me.Tbl_Acc_PAdvDeductionsTableAdapter.Insert(Val(EmpIDLabel2.Text), Val(Label33.Text) + BPA, "#01/" & DateTimePicker1.Value.Month & "/" & DateTimePicker1.Value.Year & "#", "Normal Deduction from Salary", FinancialPeriodComboBox.SelectedValue)
-                    Me.View_Acc_RFD_PayTableAdapter.InsertQuery1(Val(EmpIDLabel1.Text), DedRate, "Normal Deduction from Salary", False, "#01/" & DateTimePicker1.Value.Month & "/" & DateTimePicker1.Value.Year & "#", FP)
-                End If
+
                 If SaniorityValue(LabelSenAll.Text) > 0 Then
                     'Me.View_HRMSTableAdapter.UpdateQuery(Me.EmpIDLabel1.Text)
                 End If
-                If FinalRFD > 0 Then
-                    Me.Tbl_Acc_RFD_PayTableAdapter.InsertQuery(Me.EmpIDLabel1.Text, FinalRFD, Now.Date)
-                End If
+
 
             End If
 

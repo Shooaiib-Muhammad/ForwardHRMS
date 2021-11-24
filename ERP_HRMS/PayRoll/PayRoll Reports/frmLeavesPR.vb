@@ -2626,6 +2626,15 @@
 
             End If
         End If
+        If RadioButton12.Checked = True Then
+            Path = "" & frmLogin.ReportsPath & "\PayRoll\Rpt_Monthly_leave.rpt"
+            If RadioByDate.Checked = True Then ' By date 
+                Flag = False
+                Filter = "{tbl_PayRoll_LongLeaves_Manual.LeaveMonth} In #" & Format(Me.StrtTime.Value, "dd/MM/yyyy") & "# To #" & Format(Me.EndTime.Value, "dd/MM/yyyy") & "# "
+
+            End If
+        End If
+
         If Flag = True Then
             MessageBox.Show("Start Card Number Is Missing", "Missing Field", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
